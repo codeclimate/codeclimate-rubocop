@@ -115,7 +115,7 @@ module CC::Engine
       def includes_check?(output, cop_name)
         issues = output.split("\0").map { |x| JSON.parse(x) }
 
-        !!issues.detect { |i| i["check"] =~ /#{cop_name}$/ }
+        !!issues.detect { |i| i["check_name"] =~ /#{cop_name}$/ }
       end
 
       def create_source_file(path, content)
