@@ -64,6 +64,31 @@ module CC
         RuboCop::Cop::Team.new(RuboCop::Cop::Cop.all, rubocop_config)
       end
 
+      def violation_positions(location)
+        if location.is_a? RuboCop::Cop::Lint::Syntax::PseudoSourceRange
+          first_line = location.line
+          last_line = location.line
+          first_column = location.column
+          last_column = location.column
+        else
+          first_line = location.first_line
+          last_line = location.last_line
+          first_column = location.column
+          last_column = location.last_column
+        end
+
+        {
+          begin:  {
+            column: first_column + 1, # columns are 0-based in Parser
+            line: first_line,
+          },
+          end: {
+            column: last_column + 1,
+            line: last_line,
+          }
+        }
+      end
+
       def violation_json(violation, local_path)
         {
           type: "Issue",
@@ -73,16 +98,7 @@ module CC
           remediation_points: 50_000,
           location: {
             path: local_path,
-            positions: {
-              begin:  {
-                column: violation.location.column + 1, # columns are 0-based in Parser
-                line: violation.location.first_line,
-              },
-              end: {
-                column: violation.location.last_column + 1,
-                line: violation.location.last_line,
-              }
-            },
+            positions: violation_positions(violation.location),
           },
         }.to_json
       end
