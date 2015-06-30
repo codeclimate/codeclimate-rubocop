@@ -65,7 +65,7 @@ module CC
       end
 
       def violation_positions(location)
-        if location.is_a? RuboCop::Cop::Lint::Syntax::PseudoSourceRange
+        if location.is_a?(RuboCop::Cop::Lint::Syntax::PseudoSourceRange)
           first_line = location.line
           last_line = location.line
           first_column = location.column
