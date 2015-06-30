@@ -112,6 +112,35 @@ module CC::Engine
         assert !includes_check?(output, "Lint/UselessAssignment")
       end
 
+      it "handles different locations properly" do
+        RuboCop::Cop::Team.any_instance.expects(:inspect_file).returns([OpenStruct.new(
+          location: RuboCop::Cop::Lint::Syntax::PseudoSourceRange.new(1, 0, ''),
+          cop_name: "fake",
+          message: "message"
+        )])
+        create_source_file("my_script.rb", <<-EORUBY)
+          #!/usr/bin/env ruby
+
+          def method
+            unused = "x"
+
+            return false
+          end
+        EORUBY
+        output = run_engine
+        json = output.split("\u0000")
+
+        result = JSON.parse(json.first)
+        location = {
+          "path" => "my_script.rb",
+          "positions" => {
+            "begin" => { "column"=>1, "line"=>1 },
+            "end" => { "column"=>1, "line"=>1 }
+          }
+        }
+        assert_equal location, result["location"]
+      end
+
       def includes_check?(output, cop_name)
         issues = output.split("\0").map { |x| JSON.parse(x) }
 
