@@ -6,9 +6,9 @@ require "cc/engine/category_parser"
 module CC
   module Engine
     class Rubocop
-      def initialize(code, config, io)
+      def initialize(code, engine_config, io)
         @code = code
-        @config = config
+        @engine_config = engine_config || {}
         @io = io
       end
 
@@ -36,23 +36,15 @@ module CC
         CategoryParser.new(cop_name).category
       end
 
-      def engine_config
-        if @config
-          @engine_config ||= JSON.parse(@config)
-        else
-          {}
-        end
-      end
-
       def exclude?(local_path)
-        exclusions = engine_config["exclude_paths"] || []
+        exclusions = @engine_config["exclude_paths"] || []
         exclusions.include?(local_path)
       end
 
       def rubocop_config_store
         @rubocop_config_store ||= begin
           config_store = RuboCop::ConfigStore.new
-          if (config_file = engine_config["config"])
+          if (config_file = @engine_config["config"])
             config_store.options_config = config_file
           end
           config_store

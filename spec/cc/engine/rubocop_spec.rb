@@ -26,7 +26,7 @@ module CC::Engine
           def method
             unused = "x" and "y"
 
-            return false  
+            return false
           end
         EORUBY
 
@@ -35,7 +35,7 @@ module CC::Engine
           "Lint/UselessAssignment:\n  Enabled: false\n"
         )
 
-        config = { config: "rubocop.yml" }.to_json
+        config = { "config" => "rubocop.yml" }
         output = run_engine(config)
 
         assert includes_check?(output, "Style/AndOr")
@@ -70,7 +70,7 @@ module CC::Engine
           "rubocop.yml",
           "AllCops:\n  Exclude:\n    - \"my_script\"\n"
         )
-        config = { config: "rubocop.yml" }.to_json
+        config = { "config" => "rubocop.yml" }
         output = run_engine(config)
         assert !includes_check?(output, "Lint/UselessAssignment")
       end
@@ -85,7 +85,7 @@ module CC::Engine
             return false
           end
         EORUBY
-        config = {exclude_paths: ['my_script']}.to_json
+        config = { "exclude_paths" => ["my_script"] }
         output = run_engine(config)
         assert !includes_check?(output, "Lint/UselessAssignment")
       end
@@ -107,14 +107,14 @@ module CC::Engine
           "rubocop.yml",
           "AllCops:\n  Exclude:\n    - \"foo.rb\"\n"
         )
-        config = {config: 'rubocop.yml', exclude_paths: ['bar.rb']}.to_json
+        config = { "config" => "rubocop.yml", "exclude_paths" => ["bar.rb"] }
         output = run_engine(config)
         assert !includes_check?(output, "Lint/UselessAssignment")
       end
 
       it "handles different locations properly" do
         RuboCop::Cop::Team.any_instance.expects(:inspect_file).returns([OpenStruct.new(
-          location: RuboCop::Cop::Lint::Syntax::PseudoSourceRange.new(1, 0, ''),
+          location: RuboCop::Cop::Lint::Syntax::PseudoSourceRange.new(1, 0, ""),
           cop_name: "fake",
           message: "message"
         )])
@@ -151,9 +151,9 @@ module CC::Engine
         File.write(File.join(@code, path), content)
       end
 
-      def run_engine(config_json = nil)
+      def run_engine(config = nil)
         io = StringIO.new
-        rubocop = Rubocop.new(@code, config_json, io)
+        rubocop = Rubocop.new(@code, config, io)
         rubocop.run
 
         io.string
