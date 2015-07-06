@@ -85,7 +85,7 @@ module CC::Engine
             return false
           end
         EORUBY
-        config = {"exclude_paths" => ['my_script']}
+        config = { "exclude_paths" => ["my_script"] }
         output = run_engine(config)
         assert !includes_check?(output, "Lint/UselessAssignment")
       end
@@ -107,14 +107,14 @@ module CC::Engine
           "rubocop.yml",
           "AllCops:\n  Exclude:\n    - \"foo.rb\"\n"
         )
-        config = { "config" => 'rubocop.yml', "exclude_paths" => ['bar.rb'] }
+        config = { "config" => "rubocop.yml", "exclude_paths" => ["bar.rb"] }
         output = run_engine(config)
         assert !includes_check?(output, "Lint/UselessAssignment")
       end
 
       it "handles different locations properly" do
         RuboCop::Cop::Team.any_instance.expects(:inspect_file).returns([OpenStruct.new(
-          location: RuboCop::Cop::Lint::Syntax::PseudoSourceRange.new(1, 0, ''),
+          location: RuboCop::Cop::Lint::Syntax::PseudoSourceRange.new(1, 0, ""),
           cop_name: "fake",
           message: "message"
         )])
