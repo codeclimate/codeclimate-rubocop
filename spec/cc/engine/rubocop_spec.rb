@@ -39,7 +39,7 @@ module CC::Engine
         output = run_engine(config)
 
         assert includes_check?(output, "Style/AndOr")
-        assert !includes_check?(output, "Style/UselessAssignment")
+        assert !includes_check?(output, "Lint/UselessAssignment")
       end
 
       it "reads a file with a #!.*ruby declaration at the top" do
