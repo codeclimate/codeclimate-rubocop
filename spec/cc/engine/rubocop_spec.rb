@@ -39,7 +39,27 @@ module CC::Engine
         output = run_engine(config)
 
         assert includes_check?(output, "Style/AndOr")
-        assert !includes_check?(output, "Style/UselessAssignment")
+        assert !includes_check?(output, "Lint/UselessAssignment")
+      end
+
+      it "respects the default .rubocop.yml file" do
+        create_source_file("foo.rb", <<-EORUBY)
+          def method
+            unused = "x" and "y"
+
+            return false
+          end
+        EORUBY
+
+        create_source_file(
+          ".rubocop.yml",
+          "Lint/UselessAssignment:\n  Enabled: false\n"
+        )
+
+        output = run_engine
+
+        assert includes_check?(output, "Style/AndOr")
+        assert !includes_check?(output, "Lint/UselessAssignment")
       end
 
       it "reads a file with a #!.*ruby declaration at the top" do
