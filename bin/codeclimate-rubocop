@@ -1,12 +1,13 @@
 #!/usr/bin/env ruby
 $LOAD_PATH.unshift(File.expand_path(File.join(File.dirname(__FILE__), "../lib")))
 
-require 'cc/engine/rubocop'
+require "cc/engine/rubocop"
 
 if File.exists?("/config.json")
   engine_config = JSON.parse(File.read("/config.json"))
 else
   engine_config = {}
 end
+
 
 CC::Engine::Rubocop.new("/code", engine_config, STDOUT).run
