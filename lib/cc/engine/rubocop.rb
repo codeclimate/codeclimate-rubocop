@@ -1,6 +1,6 @@
 require "json"
 require "pathname"
-require "rubocop/cop/patch_method_complexity"
+require "rubocop/cop/method_complexity_patch"
 require "rubocop"
 require "cc/engine/category_parser"
 
