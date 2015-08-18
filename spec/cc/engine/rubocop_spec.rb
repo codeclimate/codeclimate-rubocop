@@ -161,6 +161,46 @@ module CC::Engine
         assert_equal location, result["location"]
       end
 
+      it "includes complete method body for cyclomatic complexity issue" do
+        create_source_file("my_script", <<-EORUBY)
+          #!/usr/bin/env ruby
+
+          def method(a,b,c,d,e,f,g)
+            r = 1
+            if a
+              if !b
+                if c
+                  if !d
+                    if e
+                      if !f
+                        (1..g).each do |n|
+                          r = (r * n) - n
+                        end
+                      end
+                    end
+                  end
+                end
+              end
+            end
+            r
+          end
+        EORUBY
+        output = run_engine
+        assert includes_check?(output, "Metrics/CyclomaticComplexity")
+
+        json = JSON.parse('[' + output.split("\u0000").join(',') + ']')
+
+        result = json.select { |i| i && i["check_name"] =~ /Metrics\/CyclomaticComplexity/ }.first
+        location = {
+          "path" => "my_script",
+          "positions" => {
+            "begin" => { "column"=>11, "line"=>3 },
+            "end" => { "column"=>14, "line"=>21 }
+          }
+        }
+        assert_equal location, result["location"]
+      end
+
       def includes_check?(output, cop_name)
         issues = output.split("\0").map { |x| JSON.parse(x) }
 
