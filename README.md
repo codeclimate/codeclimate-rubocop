@@ -1,6 +1,6 @@
 # Code Climate Rubocop Engine
 
-[![Code Climate](https://codeclimate.com/repos/5584174c6956807f6701c8f5/badges/9b8937da146a0abf21d4/gpa.svg)](https://codeclimate.com/repos/5584174c6956807f6701c8f5/feed)
+[![Code Climate](https://codeclimate.com/repos/55ccc68e6956802d030012f3/badges/fce009562bca1c1fc8dc/gpa.svg)](https://codeclimate.com/repos/55ccc68e6956802d030012f3/feed)
 
 `codeclimate-rubocop` is a Code Climate engine that wraps the [RuboCop](https://github.com/bbatsov/rubocop) static analysis tool. You can run it on your command line using the Code Climate CLI, or on our hosted analysis platform.
 
