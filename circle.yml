@@ -3,6 +3,9 @@ machine:
     - docker
   environment:
     CLOUDSDK_CORE_DISABLE_PROMPTS: 1
+    PRIVATE_REGISTRY: us.gcr.io/code_climate
+    PUBLIC_REGISTRY: hub.docker.com/codeclimate
+    
 
 dependencies:
   pre:
@@ -14,7 +17,7 @@ dependencies:
 test:
   override:
     - bundle exec rake
-    - docker build -t=$registry_root/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM .
+    - docker build -t=$PRIVATE_REGISTRY/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM .
 
 deployment:
   registry:
@@ -22,6 +25,6 @@ deployment:
     owner: codeclimate
     commands:
       - git tag b$CIRCLE_BUILD_NUM master && git push origin b$CIRCLE_BUILD_NUM
-      - docker push $registry_root/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM
-      - docker push $public_registry_root/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM
+      - docker push $PRIVATE_REGISTRY/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM
+      - docker push $PUBLIC_REGISTRY/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM
 
