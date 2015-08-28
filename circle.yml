@@ -3,7 +3,6 @@ machine:
     - docker
   environment:
     CLOUDSDK_CORE_DISABLE_PROMPTS: 1
-    image_name: codeclimate-rubocop
 
 dependencies:
   pre:
@@ -15,11 +14,14 @@ dependencies:
 test:
   override:
     - bundle exec rake
-    - docker build -t=$registry_root/$image_name:b$CIRCLE_BUILD_NUM .
+    - docker build -t=$registry_root/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM .
 
 deployment:
   registry:
     branch: master
+    owner: codeclimate
     commands:
-      - docker push $registry_root/$image_name:b$CIRCLE_BUILD_NUM
+      - git tag b$CIRCLE_BUILD_NUM master && git push origin b$CIRCLE_BUILD_NUM
+      - docker push $registry_root/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM
+      - docker push $public_registry_root/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM
 
