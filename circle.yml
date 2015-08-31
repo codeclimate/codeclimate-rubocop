@@ -20,3 +20,7 @@ deployment:
       - gcloud auth activate-service-account --key-file /tmp/gcloud_key.json
       - gcloud docker -a
       - docker push $PRIVATE_REGISTRY/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM
+
+notify:
+  webhooks:
+    - url: https://cc-slack-proxy.herokuapp.com/circle
