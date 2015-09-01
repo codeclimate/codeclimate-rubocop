@@ -3,6 +3,8 @@ require "pathname"
 require "rubocop"
 require "rubocop/cop/method_complexity_patch"
 require "cc/engine/category_parser"
+require "active_support"
+require "active_support/core_ext"
 
 module CC
   module Engine
@@ -83,17 +85,25 @@ module CC
       end
 
       def violation_json(violation, local_path)
-        {
-          type: "Issue",
-          check_name: "Rubocop/#{violation.cop_name}",
-          description: violation.message,
-          categories: [category(violation.cop_name)],
-          remediation_points: 50_000,
-          location: {
-            path: local_path,
-            positions: violation_positions(violation.location),
-          },
-        }.to_json
+        violation_hash = {
+                            type: "Issue",
+                            check_name: "Rubocop/#{violation.cop_name}",
+                            description: violation.message,
+                            categories: [category(violation.cop_name)],
+                            remediation_points: 50_000,
+                            location: {
+                              path: local_path,
+                              positions: violation_positions(violation.location),
+                            },
+                         }
+        body = content_body(violation.cop_name)
+        violation_hash.merge!(content: { body: body }) if body.present?
+        violation_hash.to_json
+      end
+
+      def content_body(cop_name)
+        path = File.expand_path("../../../../config/contents/#{cop_name.underscore}.md", __FILE__)
+        File.exist?(path) ? File.read(path) : nil
       end
     end
   end

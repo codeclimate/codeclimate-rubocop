@@ -201,10 +201,27 @@ module CC::Engine
         assert_equal location, result["location"]
       end
 
-      def includes_check?(output, cop_name)
-        issues = output.split("\0").map { |x| JSON.parse(x) }
+      it 'includes issue content when available' do
+        lines = "  test\n" * 101
+        create_source_file('klass.rb', "class Klass\n#{lines}end")
 
-        !!issues.detect { |i| i["check_name"] =~ /#{cop_name}$/ }
+        output = run_engine
+
+        assert includes_content_for?(output, 'Metrics/ClassLength')
+      end
+
+      def includes_check?(output, cop_name)
+        !!issues(output).detect { |i| i['check_name'] =~ /#{cop_name}$/ }
+      end
+
+      def includes_content_for?(output, cop_name)
+        issue = issues(output).detect { |i| i['check_name'] =~ /#{cop_name}$/ }
+
+        issue['content']['body'].present?
+      end
+
+      def issues(output)
+        issues = output.split("\0").map { |x| JSON.parse(x) }
       end
 
       def create_source_file(path, content)
