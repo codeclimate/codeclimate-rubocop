@@ -4,7 +4,6 @@ machine:
   environment:
     CLOUDSDK_CORE_DISABLE_PROMPTS: 1
     PRIVATE_REGISTRY: us.gcr.io/code_climate
-    PUBLIC_REGISTRY: hub.docker.com/codeclimate
 
 test:
   override:
@@ -20,7 +19,8 @@ deployment:
       - curl https://sdk.cloud.google.com | bash
       - gcloud auth activate-service-account --key-file /tmp/gcloud_key.json
       - gcloud docker -a
-      - git tag b$CIRCLE_BUILD_NUM master && git push origin b$CIRCLE_BUILD_NUM
       - docker push $PRIVATE_REGISTRY/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM
-      - docker tag $PRIVATE_REGISTRY/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM $PUBLIC_REGISTRY/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM
-      - docker push $PUBLIC_REGISTRY/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM
+
+notify:
+  webhooks:
+    - url: https://cc-slack-proxy.herokuapp.com/circle
