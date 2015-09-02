@@ -201,23 +201,23 @@ module CC::Engine
         assert_equal location, result["location"]
       end
 
-      it 'includes issue content when available' do
+      it "includes issue content when available" do
         lines = "  test\n" * 101
-        create_source_file('klass.rb', "class Klass\n#{lines}end")
+        create_source_file("klass.rb", "class Klass\n#{lines}end")
 
         output = run_engine
 
-        assert includes_content_for?(output, 'Metrics/ClassLength')
+        assert includes_content_for?(output, "Metrics/ClassLength")
       end
 
       def includes_check?(output, cop_name)
-        !!issues(output).detect { |i| i['check_name'] =~ /#{cop_name}$/ }
+        !!issues(output).detect { |i| i["check_name"] =~ /#{cop_name}$/ }
       end
 
       def includes_content_for?(output, cop_name)
-        issue = issues(output).detect { |i| i['check_name'] =~ /#{cop_name}$/ }
+        issue = issues(output).detect { |i| i["check_name"] =~ /#{cop_name}$/ }
 
-        issue['content']['body'].present?
+        issue["content"]["body"].present?
       end
 
       def issues(output)

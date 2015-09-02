@@ -86,16 +86,16 @@ module CC
 
       def violation_json(violation, local_path)
         violation_hash = {
-                            type: "Issue",
-                            check_name: "Rubocop/#{violation.cop_name}",
-                            description: violation.message,
-                            categories: [category(violation.cop_name)],
-                            remediation_points: 50_000,
-                            location: {
-                              path: local_path,
-                              positions: violation_positions(violation.location),
-                            },
-                         }
+          type: "Issue",
+          check_name: "Rubocop/#{violation.cop_name}",
+          description: violation.message,
+          categories: [category(violation.cop_name)],
+          remediation_points: 50_000,
+          location: {
+            path: local_path,
+            positions: violation_positions(violation.location),
+          },
+        }
         body = content_body(violation.cop_name)
         violation_hash.merge!(content: { body: body }) if body.present?
         violation_hash.to_json
