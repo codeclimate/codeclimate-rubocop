@@ -17,31 +17,45 @@ module CC
 
       def run
         Dir.chdir(@code) do
-          runner = RuboCop::Runner.new({}, rubocop_config_store)
-          paths = runner.send :find_target_files, []
-          paths.each do |path|
-            realpath = Pathname.new(@code).realpath.to_s
-            local_path = path.gsub(%r|^#{realpath}/|, '')
-            unless exclude?(local_path)
-              parsed = RuboCop::ProcessedSource.from_file(path)
-              rubocop_team_for_path(path).inspect_file(parsed).each do |violation|
-                json = violation_json(violation, local_path)
-                @io.print "#{json}\0"
-              end
-            end
+          files_to_inspect.each do |path|
+            inspect_file(path)
           end
         end
       end
 
       private
 
+      def files_to_inspect
+        runner = RuboCop::Runner.new({}, rubocop_config_store)
+        if @engine_config["include_paths"]
+          runner.send(:find_target_files, @engine_config["include_paths"])
+        else
+          runner.send(:find_target_files, []).reject do |path|
+            exclude_due_to_config?(path)
+          end
+        end
+      end
+
       def category(cop_name)
         CategoryParser.new(cop_name).category
       end
 
-      def exclude?(local_path)
+      def exclude_due_to_config?(path)
         exclusions = @engine_config["exclude_paths"] || []
-        exclusions.include?(local_path)
+        exclusions.include?(local_path(path))
+      end
+
+      def inspect_file(path)
+        parsed = RuboCop::ProcessedSource.from_file(path)
+        rubocop_team_for_path(path).inspect_file(parsed).each do |violation|
+          json = violation_json(violation, local_path(path))
+          @io.print "#{json}\0"
+        end
+      end
+
+      def local_path(path)
+        realpath = Pathname.new(@code).realpath.to_s
+        path.gsub(%r|^#{realpath}/|, '')
       end
 
       def rubocop_config_store
