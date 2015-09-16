@@ -210,6 +210,35 @@ module CC::Engine
         assert includes_content_for?(output, "Metrics/ClassLength")
       end
 
+      it "uses only include_paths when they're passed in via the config hash" do
+        okay_contents = <<-EORUBY
+          #!/usr/bin/env ruby
+
+          puts "Hello world"
+        EORUBY
+        create_source_file("included_root_file.rb", okay_contents)
+        create_source_file("subdir/subdir_file.rb", okay_contents)
+        create_source_file("ignored_root_file.rb", <<-EORUBY)
+          def method
+            unused = "x" and "y"
+
+            return false
+          end
+        EORUBY
+        create_source_file("ignored_subdir/subdir_file.rb", <<-EORUBY)
+          def method
+            unused = "x"
+
+            return false
+          end
+        EORUBY
+        output = run_engine(
+          "include_paths" => %w(included_root_file.rb subdir/)
+        )
+        assert !includes_check?(output, "Lint/UselessAssignment")
+        assert !includes_check?(output, "Style/AndOr")
+      end
+
       def includes_check?(output, cop_name)
         !!issues(output).detect { |i| i["check_name"] =~ /#{cop_name}$/ }
       end
@@ -221,11 +250,13 @@ module CC::Engine
       end
 
       def issues(output)
-        issues = output.split("\0").map { |x| JSON.parse(x) }
+        output.split("\0").map { |x| JSON.parse(x) }
       end
 
       def create_source_file(path, content)
-        File.write(File.join(@code, path), content)
+        abs_path = File.join(@code, path)
+        FileUtils.mkdir_p(File.dirname(abs_path))
+        File.write(abs_path, content)
       end
 
       def run_engine(config = nil)
