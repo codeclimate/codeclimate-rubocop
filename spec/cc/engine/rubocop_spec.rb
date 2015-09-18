@@ -243,11 +243,11 @@ module CC::Engine
         config_yml = "foo:\n  bar: \"baz\""
         create_source_file("config.yml", config_yml)
         output = run_engine(
-          "include_paths" => %w(config.yml)
+          "include_paths" => %w[config.yml]
         )
-        assert !issues(output).detect { |i| 
+        refute (issues(output).detect do |i| 
           i["description"] == "unexpected token tCOLON"
-        }
+        end)
       end
 
       it "includes Ruby files even if they don't end with .rb" do

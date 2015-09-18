@@ -16,7 +16,7 @@ module CC
         end
       end
 
-      protected
+      private
 
       def exclude_based_files_to_inspect
         rubocop_runner.send(:find_target_files, []).reject do |path|
@@ -47,8 +47,7 @@ module CC
         if file =~ /\.rb$/
           true
         else
-          dir = File.dirname(file)
-          basename = File.basename(file)
+          dir, basename = File.split(file)
           @rubocop_config_store.for(dir).file_to_include?(basename)
         end
       end

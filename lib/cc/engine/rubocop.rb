@@ -28,7 +28,8 @@ module CC
 
       def files_to_inspect
         @file_list_resolver = FileListResolver.new(
-          code: @code, engine_config: @engine_config,
+          code: @code,
+          engine_config: @engine_config,
           rubocop_config_store: rubocop_config_store
         )
         @file_list_resolver.expanded_list
