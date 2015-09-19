@@ -3,6 +3,7 @@ require "pathname"
 require "rubocop"
 require "rubocop/cop/method_complexity_patch"
 require "cc/engine/category_parser"
+require "cc/engine/file_list_resolver"
 require "active_support"
 require "active_support/core_ext"
 
@@ -26,23 +27,16 @@ module CC
       private
 
       def files_to_inspect
-        runner = RuboCop::Runner.new({}, rubocop_config_store)
-        if @engine_config["include_paths"]
-          runner.send(:find_target_files, @engine_config["include_paths"])
-        else
-          runner.send(:find_target_files, []).reject do |path|
-            exclude_due_to_config?(path)
-          end
-        end
+        @file_list_resolver = FileListResolver.new(
+          code: @code,
+          engine_config: @engine_config,
+          rubocop_config_store: rubocop_config_store
+        )
+        @file_list_resolver.expanded_list
       end
 
       def category(cop_name)
         CategoryParser.new(cop_name).category
-      end
-
-      def exclude_due_to_config?(path)
-        exclusions = @engine_config["exclude_paths"] || []
-        exclusions.include?(local_path(path))
       end
 
       def inspect_file(path)
@@ -60,11 +54,13 @@ module CC
 
       def rubocop_config_store
         @rubocop_config_store ||= begin
-          config_store = RuboCop::ConfigStore.new
-          if (config_file = @engine_config["config"])
-            config_store.options_config = config_file
+          Dir.chdir(@code) do
+            config_store = RuboCop::ConfigStore.new
+            if (config_file = @engine_config["config"])
+              config_store.options_config = config_file
+            end
+            config_store
           end
-          config_store
         end
       end
 

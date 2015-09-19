@@ -239,6 +239,29 @@ module CC::Engine
         assert !includes_check?(output, "Style/AndOr")
       end
 
+      it "ignores non-Ruby files even when passed in as include_paths" do
+        config_yml = "foo:\n  bar: \"baz\""
+        create_source_file("config.yml", config_yml)
+        output = run_engine(
+          "include_paths" => %w[config.yml]
+        )
+        refute (issues(output).detect do |i| 
+          i["description"] == "unexpected token tCOLON"
+        end)
+      end
+
+      it "includes Ruby files even if they don't end with .rb" do
+        create_source_file("Rakefile", <<-EORUBY)
+          def method
+            unused = "x"
+
+            return false
+          end
+        EORUBY
+        output = run_engine("include_paths" => %w(Rakefile))
+        assert includes_check?(output, "Lint/UselessAssignment")
+      end
+
       def includes_check?(output, cop_name)
         !!issues(output).detect { |i| i["check_name"] =~ /#{cop_name}$/ }
       end
