@@ -1,0 +1,19 @@
+Metrics/ModuleLength:
+  Exclude:
+    - 'spec/**/*'
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'spec/**/*'
+Style/Documentation:
+  Enabled: false
+Style/FileName:
+  Exclude:
+    - 'bin/codeclimate-rubocop'
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%w': '[]'
+    '%W': '[]'
+Style/StringLiterals:
+  Enabled: false
+Style/TrailingComma:
+  Enabled: false

@@ -40,7 +40,7 @@ module CC
 
       def local_path(path)
         realpath = Pathname.new(@code).realpath.to_s
-        path.gsub(%r|^#{realpath}/|, '')
+        path.gsub(%r{^#{realpath}/}, '')
       end
 
       def rubocop_file_to_include?(file)

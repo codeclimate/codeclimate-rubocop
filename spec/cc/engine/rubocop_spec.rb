@@ -133,11 +133,17 @@ module CC::Engine
       end
 
       it "handles different locations properly" do
-        RuboCop::Cop::Team.any_instance.expects(:inspect_file).returns([OpenStruct.new(
-          location: RuboCop::Cop::Lint::Syntax::PseudoSourceRange.new(1, 0, ""),
-          cop_name: "fake",
-          message: "message"
-        )])
+        RuboCop::Cop::Team.any_instance.expects(:inspect_file).returns(
+          [
+            OpenStruct.new(
+              location: RuboCop::Cop::Lint::Syntax::PseudoSourceRange.new(
+                1, 0, ""
+              ),
+              cop_name: "fake",
+              message: "message"
+            )
+          ]
+        )
         create_source_file("my_script.rb", <<-EORUBY)
           #!/usr/bin/env ruby
 
@@ -154,8 +160,8 @@ module CC::Engine
         location = {
           "path" => "my_script.rb",
           "positions" => {
-            "begin" => { "column"=>1, "line"=>1 },
-            "end" => { "column"=>1, "line"=>1 }
+            "begin" => { "column" => 1, "line" => 1 },
+            "end" => { "column" => 1, "line" => 1 }
           }
         }
         assert_equal location, result["location"]
@@ -190,12 +196,14 @@ module CC::Engine
 
         json = JSON.parse('[' + output.split("\u0000").join(',') + ']')
 
-        result = json.select { |i| i && i["check_name"] =~ /Metrics\/CyclomaticComplexity/ }.first
+        result = json.find do |i|
+          i && i["check_name"] =~ %r{Metrics\/CyclomaticComplexity}
+        end
         location = {
           "path" => "my_script",
           "positions" => {
-            "begin" => { "column"=>11, "line"=>3 },
-            "end" => { "column"=>14, "line"=>21 }
+            "begin" => { "column" => 11, "line" => 3 },
+            "end" => { "column" => 14, "line" => 21 }
           }
         }
         assert_equal location, result["location"]
@@ -233,7 +241,7 @@ module CC::Engine
           end
         EORUBY
         output = run_engine(
-          "include_paths" => %w(included_root_file.rb subdir/)
+          "include_paths" => %w[included_root_file.rb subdir/]
         )
         assert !includes_check?(output, "Lint/UselessAssignment")
         assert !includes_check?(output, "Style/AndOr")
@@ -245,7 +253,7 @@ module CC::Engine
         output = run_engine(
           "include_paths" => %w[config.yml]
         )
-        refute (issues(output).detect do |i| 
+        refute(issues(output).detect do |i|
           i["description"] == "unexpected token tCOLON"
         end)
       end
@@ -258,12 +266,12 @@ module CC::Engine
             return false
           end
         EORUBY
-        output = run_engine("include_paths" => %w(Rakefile))
+        output = run_engine("include_paths" => %w[Rakefile])
         assert includes_check?(output, "Lint/UselessAssignment")
       end
 
       def includes_check?(output, cop_name)
-        !!issues(output).detect { |i| i["check_name"] =~ /#{cop_name}$/ }
+        issues(output).any? { |i| i["check_name"] =~ /#{cop_name}$/ }
       end
 
       def includes_content_for?(output, cop_name)
