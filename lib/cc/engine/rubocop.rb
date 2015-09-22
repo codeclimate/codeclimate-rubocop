@@ -49,7 +49,7 @@ module CC
 
       def local_path(path)
         realpath = Pathname.new(@code).realpath.to_s
-        path.gsub(%r|^#{realpath}/|, '')
+        path.gsub(%r{^#{realpath}/}, '')
       end
 
       def rubocop_config_store
@@ -83,7 +83,7 @@ module CC
         end
 
         {
-          begin:  {
+          begin: {
             column: first_column + 1, # columns are 0-based in Parser
             line: first_line,
           },
@@ -112,7 +112,9 @@ module CC
       end
 
       def content_body(cop_name)
-        path = File.expand_path("../../../../config/contents/#{cop_name.underscore}.md", __FILE__)
+        path = File.expand_path(
+          "../../../../config/contents/#{cop_name.underscore}.md", __FILE__
+        )
         File.exist?(path) ? File.read(path) : nil
       end
     end
