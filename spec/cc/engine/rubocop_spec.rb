@@ -218,6 +218,21 @@ module CC::Engine
         assert includes_content_for?(output, "Metrics/ClassLength")
       end
 
+      it "includes remediation points" do
+        create_source_file("klass.rb", <<-EORUBY)
+          class Klass
+            def method
+            end
+            def method
+            end
+          end
+        EORUBY
+
+        output = run_engine
+        issue = issue(output, "Lint/DuplicateMethods")
+        assert_equal issue['remediation_points'], 100_000
+      end
+
       it "uses only include_paths when they're passed in via the config hash" do
         okay_contents = <<-EORUBY
           #!/usr/bin/env ruby
@@ -271,13 +286,17 @@ module CC::Engine
       end
 
       def includes_check?(output, cop_name)
-        issues(output).any? { |i| i["check_name"] =~ /#{cop_name}$/ }
+        issue(output, cop_name).present?
       end
 
       def includes_content_for?(output, cop_name)
-        issue = issues(output).detect { |i| i["check_name"] =~ /#{cop_name}$/ }
+        issue = issue(output, cop_name)
 
         issue["content"]["body"].present?
+      end
+
+      def issue(output, cop_name)
+        issues(output).detect { |i| i["check_name"] =~ /#{cop_name}$/ }
       end
 
       def issues(output)

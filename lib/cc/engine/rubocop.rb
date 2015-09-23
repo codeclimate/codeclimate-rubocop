@@ -6,6 +6,7 @@ require "cc/engine/category_parser"
 require "cc/engine/file_list_resolver"
 require "active_support"
 require "active_support/core_ext"
+require 'dentaku'
 
 module CC
   module Engine
@@ -100,7 +101,7 @@ module CC
           check_name: "Rubocop/#{violation.cop_name}",
           description: violation.message,
           categories: [category(violation.cop_name)],
-          remediation_points: 50_000,
+          remediation_points: remediation_points(violation),
           location: {
             path: local_path,
             positions: violation_positions(violation.location),
@@ -116,6 +117,27 @@ module CC
           "../../../../config/contents/#{cop_name.underscore}.md", __FILE__
         )
         File.exist?(path) ? File.read(path) : nil
+      end
+
+      def remediation_points(violation)
+        formula = points_hash[violation.cop_name]
+        formula.try(:gsub!, '_', '')
+        return unless formula.present?
+        %r{\[(?<observed>\d+)/(?<max>\d+)\]$} =~ violation.message
+        calculator.evaluate(formula, max: max, observed: observed)
+      end
+
+      def calculator
+        @calculator ||= Dentaku::Calculator.new
+      end
+
+      def points_hash
+        @points_hash ||=
+          YAML.load(
+            File.read(
+              File.expand_path("../../../../config/points.yml", __FILE__)
+            )
+          )
       end
     end
   end
