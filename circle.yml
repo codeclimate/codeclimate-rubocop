@@ -7,8 +7,8 @@ machine:
 
 test:
   override:
-    - bundle exec rake
     - docker build -t=$PRIVATE_REGISTRY/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM .
+    - docker run $PRIVATE_REGISTRY/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM bundle exec rake
 
 deployment:
   registry:
