@@ -4,6 +4,7 @@ require "rubocop"
 require "rubocop/cop/method_complexity_patch"
 require "cc/engine/category_parser"
 require "cc/engine/file_list_resolver"
+require "cc/engine/lockfile_specs"
 require "active_support"
 require "active_support/core_ext"
 
@@ -66,7 +67,7 @@ module CC
 
       def rubocop_team_for_path(path)
         rubocop_config = rubocop_config_store.for(path)
-        RuboCop::Cop::Team.new(RuboCop::Cop::Cop.all, rubocop_config)
+        RuboCop::Cop::Team.new(cops, rubocop_config)
       end
 
       def violation_positions(location)
@@ -116,6 +117,16 @@ module CC
           "../../../../config/contents/#{cop_name.underscore}.md", __FILE__
         )
         File.exist?(path) ? File.read(path) : nil
+      end
+
+      def cops
+        specs = LockfileSpecs.new("Gemfile.lock")
+
+        if specs.include?("railties")
+          RuboCop::Cop::Cop.all
+        else
+          RuboCop::Cop::Cop.non_rails
+        end
       end
     end
   end
