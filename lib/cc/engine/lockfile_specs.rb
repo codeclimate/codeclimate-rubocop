@@ -1,4 +1,4 @@
-require "bundler/lockfile_parser"
+require "bundler"
 
 class LockfileSpecs
   def initialize(lockfile)
