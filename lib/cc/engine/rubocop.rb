@@ -11,6 +11,8 @@ require "active_support/core_ext"
 module CC
   module Engine
     class Rubocop
+      DEFAULT_REMEDIATION_POINTS = 200_000
+
       def initialize(code, engine_config, io)
         @code = code
         @engine_config = engine_config || {}
@@ -101,7 +103,7 @@ module CC
           check_name: "Rubocop/#{violation.cop_name}",
           description: violation.message,
           categories: [category(violation.cop_name)],
-          remediation_points: 50_000,
+          remediation_points: remediation_points_for(violation.cop_name),
           location: {
             path: local_path,
             positions: violation_positions(violation.location),
@@ -126,6 +128,22 @@ module CC
           RuboCop::Cop::Cop.all
         else
           RuboCop::Cop::Cop.non_rails
+        end
+      end
+
+      def remediation_points_for(cop_name)
+        cop_list.fetch(cop_name, DEFAULT_REMEDIATION_POINTS)
+      end
+
+      def cop_list
+        return @cop_list if @cop_list
+
+        cops_path = File.expand_path(
+          File.join(File.dirname(__FILE__), "../../../config/cops.yml")
+        )
+
+        File.open(cops_path, "r") do |file|
+          @cop_list = YAML.load(file.read)
         end
       end
     end
