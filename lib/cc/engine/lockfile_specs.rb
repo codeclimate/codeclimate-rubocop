@@ -1,15 +1,13 @@
-require "bundler"
-
 class LockfileSpecs
   def initialize(lockfile)
-    @contents = File.read(lockfile) if File.exist?(lockfile)
+    @lockfile = lockfile
   end
 
   def include?(name)
-    return false if @contents.nil?
-    @lockfile ||= Bundler::LockfileParser.new(@contents)
-    @lockfile.specs.any? { |spec| spec.name == name }
-  rescue Bundler::LockfileError
-    false
+    return false unless File.exist?(@lockfile)
+
+    File.open(@lockfile) do |file|
+      file.each_line.any? { |line| line =~ /#{name}/ }
+    end
   end
 end

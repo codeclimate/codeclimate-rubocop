@@ -20,13 +20,6 @@ module CC::Engine
         @specs.include?("python").must_equal(false)
       end
 
-      it "returns false when a LockfileError occurs while parsing" do
-        fixture = "./spec/fixtures/Gemfile.lock.with_merge_conflicts"
-        specs = LockfileSpecs.new(fixture)
-
-        specs.include?("ansi").must_equal(false)
-      end
-
       it "returns false when no Gemfile.lock file is found" do
         specs = LockfileSpecs.new(SecureRandom.hex(32))
 

@@ -141,29 +141,6 @@ module CC::Engine
         assert !includes_check?(run_engine, "Rubocop/Rails/Delegate")
       end
 
-      it "excludes Rails cops when there is no valid Gemfile.lock file" do
-        create_source_file("object.rb", <<-EORUBY)
-          class Object
-            def method
-              target.method
-            end
-          end
-        EORUBY
-
-        # This will create a parse error as Bundler::LockfileParser looks
-        # specifically for merge conflict artifacts and bails.
-        create_source_file("Gemfile.lock", <<-EORUBY.strip_heredoc)
-          <<<<<<< HEAD
-          =======
-          GEM
-            remote: https://rubygems.org/
-            specs:
-              rake (10.4.2)
-        EORUBY
-
-        assert !includes_check?(run_engine, "Rubocop/Rails/Delegate")
-      end
-
       it "includes Rails cops when railties is in the Gemfile.lock file" do
         create_source_file("object.rb", <<-EORUBY)
           class Object
