@@ -4,6 +4,9 @@ Metrics/ModuleLength:
 Style/ClassAndModuleChildren:
   Exclude:
     - 'spec/**/*'
+Metrics/LineLength:
+  Exclude:
+    - 'spec/**/*'
 Style/Documentation:
   Enabled: false
 Style/FileName:
@@ -16,4 +19,9 @@ Style/PercentLiteralDelimiters:
 Style/StringLiterals:
   Enabled: false
 Style/TrailingComma:
+  Enabled: false
+Style/DotPosition:
+  EnforcedStyle: 'trailing'
+  Enabled: true
+Style/MultilineOperationIndentation:
   Enabled: false

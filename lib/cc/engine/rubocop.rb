@@ -5,14 +5,13 @@ require "rubocop/cop/method_complexity_patch"
 require "cc/engine/category_parser"
 require "cc/engine/file_list_resolver"
 require "cc/engine/lockfile_specs"
+require "cc/engine/violation_decorator"
 require "active_support"
 require "active_support/core_ext"
 
 module CC
   module Engine
     class Rubocop
-      DEFAULT_REMEDIATION_POINTS = 200_000
-
       def initialize(code, engine_config, io)
         @code = code
         @engine_config = engine_config || {}
@@ -45,7 +44,8 @@ module CC
       def inspect_file(path)
         parsed = RuboCop::ProcessedSource.from_file(path)
         rubocop_team_for_path(path).inspect_file(parsed).each do |violation|
-          json = violation_json(violation, local_path(path))
+          decorated_violation = ViolationDecorator.new(violation)
+          json = violation_json(decorated_violation, local_path(path))
           @io.print "#{json}\0"
         end
       end
@@ -103,7 +103,7 @@ module CC
           check_name: "Rubocop/#{violation.cop_name}",
           description: violation.message,
           categories: [category(violation.cop_name)],
-          remediation_points: remediation_points_for(violation.cop_name),
+          remediation_points: violation.remediation_points,
           location: {
             path: local_path,
             positions: violation_positions(violation.location),
@@ -128,22 +128,6 @@ module CC
           RuboCop::Cop::Cop.all
         else
           RuboCop::Cop::Cop.non_rails
-        end
-      end
-
-      def remediation_points_for(cop_name)
-        cop_list.fetch(cop_name, DEFAULT_REMEDIATION_POINTS)
-      end
-
-      def cop_list
-        return @cop_list if @cop_list
-
-        cops_path = File.expand_path(
-          File.join(File.dirname(__FILE__), "../../../config/cops.yml")
-        )
-
-        File.open(cops_path, "r") do |file|
-          @cop_list = YAML.load(file.read)
         end
       end
     end
