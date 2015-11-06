@@ -1,4 +1,5 @@
 require 'safe_yaml'
+SafeYAML::OPTIONS[:default_mode] = :safe
 
 module CC
   module Engine
