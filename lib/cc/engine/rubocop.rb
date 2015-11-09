@@ -43,6 +43,7 @@ module CC
       def inspect_file(path)
         parsed = RuboCop::ProcessedSource.from_file(path)
         rubocop_team_for_path(path).inspect_file(parsed).each do |violation|
+          next if violation.disabled?
           decorated_violation = ViolationDecorator.new(violation)
           json = violation_json(decorated_violation, local_path(path))
           @io.print "#{json}\0"

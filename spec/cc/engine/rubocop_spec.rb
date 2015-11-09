@@ -270,6 +270,19 @@ module CC::Engine
         assert includes_check?(output, "Lint/UselessAssignment")
       end
 
+      it "skips local disables" do
+        create_source_file("test.rb", <<-EORUBY)
+          def method
+            # rubocop:disable UselessAssignment
+            unused = "x"
+
+            return false
+          end
+        EORUBY
+        output = run_engine
+        refute includes_check?(output, "Lint/UselessAssignment")
+      end
+
       def includes_check?(output, cop_name)
         issues(output).any? { |i| i["check_name"] =~ /#{cop_name}$/ }
       end
