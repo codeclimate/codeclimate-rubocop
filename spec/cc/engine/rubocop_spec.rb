@@ -283,6 +283,39 @@ module CC::Engine
         refute includes_check?(output, "Lint/UselessAssignment")
       end
 
+      it "shows full source of long methods" do
+        create_source_file("test.rb", <<-EORUBY)
+          def method
+            #{"puts 'hi'\n" * 10}
+            return false
+          end
+        EORUBY
+        output = run_engine
+        issues = output.split("\0").map { |issue| JSON.parse(issue) }
+        violation = issues.find do |issue|
+          issue["check_name"] == "Rubocop/Metrics/MethodLength"
+        end
+
+        assert_equal 1, violation["location"]["positions"]["begin"]["line"]
+        assert_equal 14, violation["location"]["positions"]["end"]["line"]
+      end
+
+      it "shows full source of long classes" do
+        create_source_file("test.rb", <<-EORUBY)
+          class Awesome
+            #{"foo = 1\n" * 102}
+          end
+        EORUBY
+        output = run_engine
+        issues = output.split("\0").map { |issue| JSON.parse(issue) }
+        violation = issues.find do |issue|
+          issue["check_name"] == "Rubocop/Metrics/ClassLength"
+        end
+
+        assert_equal 1, violation["location"]["positions"]["begin"]["line"]
+        assert_equal 105, violation["location"]["positions"]["end"]["line"]
+      end
+
       def includes_check?(output, cop_name)
         issues(output).any? { |i| i["check_name"] =~ /#{cop_name}$/ }
       end
