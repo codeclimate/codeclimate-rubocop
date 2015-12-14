@@ -14,8 +14,10 @@ namespace :docs do
       class_doc = content.match(/(\s+#.*)+/).to_s
       doc_lines = class_doc.
         gsub(/^\n/,"").
+        gsub("@example", "### Example:").
         split("\n").
-        map { |line| line.gsub(/\s+#\s?/, "") }.
+        map { |line| line.gsub(/\A\s+#\s?/, "") }.
+        map { |line| line.gsub(/\A\s{2}/, " " * 4) }.
         join("\n")
       hash[file] = doc_lines
     end
