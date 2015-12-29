@@ -323,7 +323,7 @@ module CC::Engine
       def includes_content_for?(output, cop_name)
         issue = issues(output).detect { |i| i["check_name"] =~ /#{cop_name}$/ }
 
-        issue["content"]["body"].present?
+        issue["content"] && issue["content"]["body"].present?
       end
 
       def issues(output)
