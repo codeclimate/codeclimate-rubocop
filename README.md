@@ -6,6 +6,8 @@
 
 RuboCop helps you enforce many of the guidelines outlined in the community [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide). Most aspects of its behavior can be tweaked via various [configuration options](https://github.com/bbatsov/rubocop/blob/master/config/default.yml), which are set in a **.rubocop.yml** file.
 
+You can find some basic setup instructions and links to the RuboCop OSS project below. For additional Code Climate-specific config details, check out our [RuboCop engine documentation][cc-docs-rubocop].
+
 ### Installation
 
 1. If you haven't already, [install the Code Climate CLI](https://github.com/codeclimate/codeclimate).
@@ -16,4 +18,6 @@ RuboCop helps you enforce many of the guidelines outlined in the community [Ruby
 
 For help with RuboCop, [check out their documentation](https://github.com/bbatsov/rubocop).
 
-If you're running into a Code Climate issue, first look over this project's [GitHub Issues](https://github.com/codeclimate/codeclimate-rubocop/issues), as your question may have already been covered. If not, [go ahead and open a support ticket with us](https://codeclimate.com/help).
+If you're running into a Code Climate issue, first check out [our RuboCop engine docs][cc-docs-rubocop] and look over this project's [GitHub Issues](https://github.com/codeclimate/codeclimate-rubocop/issues), as your question may have already been covered. If not, [go ahead and open a support ticket with us](https://codeclimate.com/help).
+
+[cc-docs-rubocop]: https://docs.codeclimate.com/docs/rubocop
