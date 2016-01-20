@@ -18,7 +18,7 @@ Style/PercentLiteralDelimiters:
     '%W': '[]'
 Style/StringLiterals:
   Enabled: false
-Style/TrailingComma:
+Style/TrailingCommaInLiteral:
   Enabled: false
 Style/DotPosition:
   EnforcedStyle: 'trailing'
