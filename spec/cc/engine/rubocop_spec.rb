@@ -18,7 +18,7 @@ module CC::Engine
 
         output = run_engine
 
-        assert includes_check?(output, "Lint/UselessAssignment")
+        expect(includes_check?(output, "Lint/UselessAssignment")).to be true
       end
 
       it "reads the configured ruby_style file" do
@@ -38,8 +38,8 @@ module CC::Engine
         config = { "config" => "rubocop.yml" }
         output = run_engine(config)
 
-        assert includes_check?(output, "Style/AndOr")
-        assert !includes_check?(output, "Lint/UselessAssignment")
+        expect(includes_check?(output, "Style/AndOr")).to be true
+        expect(includes_check?(output, "Lint/UselessAssignment")).to be false
       end
 
       it "respects the default .rubocop.yml file" do
@@ -58,8 +58,8 @@ module CC::Engine
 
         output = run_engine
 
-        assert includes_check?(output, "Style/AndOr")
-        assert !includes_check?(output, "Lint/UselessAssignment")
+        expect(includes_check?(output, "Style/AndOr")).to be true
+        expect(includes_check?(output, "Lint/UselessAssignment")).to be false
       end
 
       it "reads a file with a #!.*ruby declaration at the top" do
@@ -73,7 +73,8 @@ module CC::Engine
           end
         EORUBY
         output = run_engine
-        assert includes_check?(output, "Lint/UselessAssignment")
+
+        expect(includes_check?(output, "Lint/UselessAssignment")).to be true
       end
 
       it "uses excludes from the specified YAML config" do
@@ -92,7 +93,8 @@ module CC::Engine
         )
         config = { "config" => "rubocop.yml" }
         output = run_engine(config)
-        assert !includes_check?(output, "Lint/UselessAssignment")
+
+        expect(includes_check?(output, "Lint/UselessAssignment")).to be false
       end
 
       it "uses exclusions passed in via the config hash" do
@@ -107,7 +109,8 @@ module CC::Engine
         EORUBY
         config = { "exclude_paths" => ["my_script"] }
         output = run_engine(config)
-        assert !includes_check?(output, "Lint/UselessAssignment")
+
+        expect(includes_check?(output, "Lint/UselessAssignment")).to be false
       end
 
       it "layers config exclusions on top of the YAML config" do
@@ -129,11 +132,12 @@ module CC::Engine
         )
         config = { "config" => "rubocop.yml", "exclude_paths" => ["bar.rb"] }
         output = run_engine(config)
-        assert !includes_check?(output, "Lint/UselessAssignment")
+
+        expect(includes_check?(output, "Lint/UselessAssignment")).to be false
       end
 
       it "handles different locations properly" do
-        RuboCop::Cop::Team.any_instance.expects(:inspect_file).returns(
+        allow_any_instance_of(RuboCop::Cop::Team).to receive(:inspect_file).and_return(
           [
             OpenStruct.new(
               location: RuboCop::Cop::Lint::Syntax::PseudoSourceRange.new(
@@ -164,7 +168,8 @@ module CC::Engine
             "end" => { "column" => 1, "line" => 1 }
           }
         }
-        assert_equal location, result["location"]
+
+        expect(result["location"]).to eq(location)
       end
 
       it "includes complete method body for cyclomatic complexity issue" do
@@ -192,7 +197,7 @@ module CC::Engine
           end
         EORUBY
         output = run_engine
-        assert includes_check?(output, "Metrics/CyclomaticComplexity")
+        expect(includes_check?(output, "Metrics/CyclomaticComplexity")).to be true
 
         json = JSON.parse('[' + output.split("\u0000").join(',') + ']')
 
@@ -206,7 +211,8 @@ module CC::Engine
             "end" => { "column" => 14, "line" => 21 }
           }
         }
-        assert_equal location, result["location"]
+
+        expect(result["location"]).to eq(location)
       end
 
       it "includes issue content when available" do
@@ -215,7 +221,7 @@ module CC::Engine
 
         output = run_engine
 
-        assert includes_content_for?(output, "Metrics/ClassLength")
+        expect(includes_content_for?(output, "Metrics/ClassLength")).to be true
       end
 
       it "uses only include_paths when they're passed in via the config hash" do
@@ -243,8 +249,9 @@ module CC::Engine
         output = run_engine(
           "include_paths" => %w[included_root_file.rb subdir/]
         )
-        assert !includes_check?(output, "Lint/UselessAssignment")
-        assert !includes_check?(output, "Style/AndOr")
+
+        expect(includes_check?(output, "Lint/UselessAssignment")).to be false
+        expect(includes_check?(output, "Style/AndOr")).to be false
       end
 
       it "ignores non-Ruby files even when passed in as include_paths" do
@@ -253,9 +260,11 @@ module CC::Engine
         output = run_engine(
           "include_paths" => %w[config.yml]
         )
-        refute(issues(output).detect do |i|
+        issue = issues(output).detect do |i|
           i["description"] == "unexpected token tCOLON"
-        end)
+        end
+
+        expect(issue).to be nil
       end
 
       it "includes Ruby files even if they don't end with .rb" do
@@ -267,7 +276,8 @@ module CC::Engine
           end
         EORUBY
         output = run_engine("include_paths" => %w[Rakefile])
-        assert includes_check?(output, "Lint/UselessAssignment")
+
+        expect(includes_check?(output, "Lint/UselessAssignment")).to be true
       end
 
       it "skips local disables" do
@@ -280,7 +290,8 @@ module CC::Engine
           end
         EORUBY
         output = run_engine
-        refute includes_check?(output, "Lint/UselessAssignment")
+
+        expect(includes_check?(output, "Lint/UselessAssignment")).to be false
       end
 
       it "shows full source of long methods" do
@@ -296,8 +307,8 @@ module CC::Engine
           i["check_name"] == "Rubocop/Metrics/MethodLength"
         end
 
-        assert_equal 1, issue["location"]["positions"]["begin"]["line"]
-        assert_equal 14, issue["location"]["positions"]["end"]["line"]
+        expect(issue["location"]["positions"]["begin"]["line"]).to eq(1)
+        expect(issue["location"]["positions"]["end"]["line"]).to eq(14)
       end
 
       it "shows full source of long classes" do
@@ -312,8 +323,8 @@ module CC::Engine
           i["check_name"] == "Rubocop/Metrics/ClassLength"
         end
 
-        assert_equal 1, issue["location"]["positions"]["begin"]["line"]
-        assert_equal 105, issue["location"]["positions"]["end"]["line"]
+        expect(issue["location"]["positions"]["begin"]["line"]).to eq(1)
+        expect(issue["location"]["positions"]["end"]["line"]).to eq(105)
       end
 
       def includes_check?(output, cop_name)

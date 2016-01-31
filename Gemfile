@@ -7,8 +7,6 @@ gem "safe_yaml"
 gem "pry", require: false
 
 group :test do
-  gem "mocha"
   gem "rake"
-  gem "minitest"
-  gem "minitest-reporters"
+  gem "rspec"
 end

@@ -15,10 +15,9 @@ module CC::Engine
             offense = OpenStruct.new
             offense.cop_name = "Metrics/BlockNesting"
             offense.message = "This has no multiplier"
-
             issue = Issue.new(offense, "/code/file", cop_list: cop_list)
 
-            issue.remediation_points.must_equal(300_000)
+            expect(issue.remediation_points).to eq(300_000)
           end
         end
 
@@ -33,13 +32,11 @@ module CC::Engine
             offense = OpenStruct.new
             offense.cop_name = "Metrics/AbcSize"
             offense.message = "This has a [32/20] multiplier"
-
             issue = Issue.new(offense, "/code/file", cop_list: cop_list)
-
             base_points = 5_000_000
             overage_points = 100_000 * 12
 
-            issue.remediation_points.must_equal(base_points + overage_points)
+            expect(issue.remediation_points).to eq(base_points + overage_points)
           end
         end
       end
@@ -50,12 +47,9 @@ module CC::Engine
             offense = OpenStruct.new
             offense.cop_name = "Some/UnconfiguredCop"
             offense.message = "This has no multiplier"
-
             issue = Issue.new(offense, "/code/file.rb")
 
-            issue.remediation_points.must_equal(
-              Issue::DEFAULT_REMEDIATION_POINTS
-            )
+            expect(issue.remediation_points).to eq(Issue::DEFAULT_REMEDIATION_POINTS)
           end
         end
 
@@ -64,13 +58,11 @@ module CC::Engine
             offense = OpenStruct.new
             offense.cop_name = "Some/UnconfiguredCop"
             offense.message = "This has a [22/20] multiplier"
-
             issue = Issue.new(offense, "/code/file")
-
             base_points = Issue::DEFAULT_BASE_POINTS
             overage_points = Issue::DEFAULT_OVERAGE_POINTS * 2
 
-            issue.remediation_points.must_equal(base_points + overage_points)
+            expect(issue.remediation_points).to eq(base_points + overage_points)
           end
         end
       end
