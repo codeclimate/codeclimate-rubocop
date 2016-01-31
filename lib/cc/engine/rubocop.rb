@@ -43,7 +43,8 @@ module CC
       end
 
       def inspect_file(path)
-        parsed = RuboCop::ProcessedSource.from_file(path)
+        ruby_version = target_ruby_version(path)
+        parsed = RuboCop::ProcessedSource.from_file(path, ruby_version)
         rubocop_team_for_path(path).inspect_file(parsed).each do |violation|
           next if violation.disabled?
           decorated_violation = ViolationDecorator.new(violation)
@@ -72,6 +73,11 @@ module CC
       def rubocop_team_for_path(path)
         rubocop_config = rubocop_config_store.for(path)
         RuboCop::Cop::Team.new(RuboCop::Cop::Cop.all, rubocop_config)
+      end
+
+      def target_ruby_version(path)
+        config_store = rubocop_config_store.for(path)
+        config_store["AllCops"] && config_store["AllCops"]["TargetRubyVersion"]
       end
 
       def violation_positions(location)
