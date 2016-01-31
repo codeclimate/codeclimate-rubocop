@@ -21,10 +21,14 @@ Style/PercentLiteralDelimiters:
     '%W': '[]'
 Style/StringLiterals:
   Enabled: false
-Style/TrailingComma:
-  Enabled: false
 Style/DotPosition:
   EnforcedStyle: 'trailing'
   Enabled: true
-Style/MultilineOperationIndentation:
+Style/MultilineMethodCallIndentation:
+  Enabled: false
+Style/TrailingCommaInArguments:
+  Enabled: false
+Style/TrailingCommaInLiteral:
+  Enabled: false
+Style/ConditionalAssignment:
   Enabled: false

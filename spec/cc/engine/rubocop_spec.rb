@@ -292,12 +292,12 @@ module CC::Engine
         EORUBY
         output = run_engine
         issues = output.split("\0").map { |issue| JSON.parse(issue) }
-        violation = issues.find do |issue|
-          issue["check_name"] == "Rubocop/Metrics/MethodLength"
+        issue = issues.find do |i|
+          i["check_name"] == "Rubocop/Metrics/MethodLength"
         end
 
-        assert_equal 1, violation["location"]["positions"]["begin"]["line"]
-        assert_equal 14, violation["location"]["positions"]["end"]["line"]
+        assert_equal 1, issue["location"]["positions"]["begin"]["line"]
+        assert_equal 14, issue["location"]["positions"]["end"]["line"]
       end
 
       it "shows full source of long classes" do
@@ -308,12 +308,12 @@ module CC::Engine
         EORUBY
         output = run_engine
         issues = output.split("\0").map { |issue| JSON.parse(issue) }
-        violation = issues.find do |issue|
-          issue["check_name"] == "Rubocop/Metrics/ClassLength"
+        issue = issues.find do |i|
+          i["check_name"] == "Rubocop/Metrics/ClassLength"
         end
 
-        assert_equal 1, violation["location"]["positions"]["begin"]["line"]
-        assert_equal 105, violation["location"]["positions"]["end"]["line"]
+        assert_equal 1, issue["location"]["positions"]["begin"]["line"]
+        assert_equal 105, issue["location"]["positions"]["end"]["line"]
       end
 
       def includes_check?(output, cop_name)
