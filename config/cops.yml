@@ -2,7 +2,8 @@ Metrics/AbcSize:
   base_points: 1_000_000
   overage_points: 70_000
 Metrics/BlockNesting:
-  remediation_points: 100_000
+  base_points: 100_000
+  overage_points: 50_000
 Metrics/ClassLength:
   base_points: 5_000_000
   overage_points: 35_000
@@ -10,7 +11,8 @@ Metrics/CyclomaticComplexity:
   base_points: 1_000_000
   overage_points: 70_000
 Metrics/LineLength:
-  remediation_points: 50_000
+  base_points: 50_000
+  overage_points: 0
 Metrics/MethodLength:
   base_points: 1_000_000
   overage_points: 70_000

@@ -3,6 +3,41 @@ require "cc/engine/issue"
 
 module CC::Engine
   describe Issue do
+    describe "#to_json" do
+      let(:issue) do
+        location = OpenStruct.new
+        location.first_line = 10
+        location.last_line = 10
+        location.column = 3
+        location.last_column = 99
+
+        offense = OpenStruct.new
+        offense.cop_name = "Metrics/LineLength"
+        offense.message = "Line too long [100/80]"
+        offense.location = location
+
+        Issue.new(offense, "app/models/user.rb")
+      end
+
+      it "returns a json issue for a Rubocop offense" do
+        attributes = JSON.parse(issue.to_json)
+
+        expect(attributes["type"]).to eq("Issue")
+        expect(attributes["check_name"]).to eq("Rubocop/Metrics/LineLength")
+        expect(attributes["description"]).to eq("Line too long [100/80]")
+        expect(attributes["categories"]).to eq(["Style"])
+        expect(attributes["remediation_points"]).to eq(50_000)
+        expect(attributes["location"]["path"]).to eq("app/models/user.rb")
+        expect(attributes["location"]["positions"]["begin"]["line"]).to eq(10)
+        expect(attributes["location"]["positions"]["end"]["line"]).to eq(10)
+        expect(attributes["location"]["positions"]["begin"]["column"]).to eq(4)
+        expect(attributes["location"]["positions"]["end"]["column"]).to eq(100)
+        expect(attributes["content"]["body"]).to include(
+          "This cop checks the length of lines in the source code."
+        )
+      end
+    end
+
     describe "#remediation points" do
       describe "cop has configured remediation points" do
         describe "without a multiplier" do

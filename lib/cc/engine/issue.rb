@@ -12,6 +12,7 @@ module CC
       def initialize(issue, path, cop_list: nil)
         @path = path
         @cop_list = cop_list
+
         super(issue)
       end
 
@@ -73,8 +74,8 @@ module CC
 
       def multiplier
         result = message.scan(MULTIPLIER_REGEX)
-        score, max = result[0]
-        score.to_i - max.to_i
+        score, threshold = result[0]
+        score.to_i - threshold.to_i
       end
 
       def category
@@ -94,29 +95,25 @@ module CC
         }
       end
 
-      # Increment column value as columns are 0-based in parser
+      # Increments column values as columns are 0-based in parser
       def columns
         return @columns if defined?(@columns)
 
-        if location.is_a?(RuboCop::Cop::Lint::Syntax::PseudoSourceRange)
-          @columns = [location.column + 1, location.column + 1]
-        else
-          @columns = [location.column + 1, location.last_column + 1]
-        end
+        end_column = location.try(:last_column) || location.column
+        @columns = [location.column + 1, end_column + 1]
       end
 
       def lines
         return @lines if defined?(@lines)
 
-        if location.is_a?(RuboCop::Cop::Lint::Syntax::PseudoSourceRange)
-          @lines = [location.line, location.line]
-        else
-          @lines = [location.first_line, location.last_line]
-        end
+        begin_line = location.try(:first_line) || location.line
+        end_line = location.try(:last_line) || location.line
+        @lines = [begin_line, end_line]
       end
 
       def content_body
         return @content_body if defined?(@content_body)
+
         content_path = expand_config_path("contents/#{cop_name.underscore}.md")
         @content_body = File.exist?(content_path) && File.read(content_path)
       end
