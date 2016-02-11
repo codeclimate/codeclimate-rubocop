@@ -1,6 +1,3 @@
-AllCops:
-  TargetRubyVersion: 2.2
-
 Metrics/ModuleLength:
   Exclude:
     - 'spec/**/*'
@@ -21,14 +18,10 @@ Style/PercentLiteralDelimiters:
     '%W': '[]'
 Style/StringLiterals:
   Enabled: false
+Style/TrailingComma:
+  Enabled: false
 Style/DotPosition:
   EnforcedStyle: 'trailing'
   Enabled: true
-Style/MultilineMethodCallIndentation:
-  Enabled: false
-Style/TrailingCommaInArguments:
-  Enabled: false
-Style/TrailingCommaInLiteral:
-  Enabled: false
-Style/ConditionalAssignment:
+Style/MultilineOperationIndentation:
   Enabled: false
