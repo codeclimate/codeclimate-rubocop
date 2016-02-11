@@ -3,16 +3,22 @@ require "cc/engine/category_parser"
 
 module CC::Engine
   describe CategoryParser do
-    it "returns a category for the cop name" do
-      CategoryParser.new("Rails/Delegate").category.must_equal("Clarity")
+    it "returns the category mapped to the full cop name if present" do
+      category_parser = CategoryParser.new("Rails/Delegate")
+
+      expect(category_parser.category).to eq("Clarity")
     end
 
-    it "returns a category for the cop" do
-      CategoryParser.new("Performance/Sup").category.must_equal("BugRisk")
+    it "returns the category mapped to the cop category if present" do
+      category_parser = CategoryParser.new("Rails/ScopeArgs")
+
+      expect(category_parser.category).to eq("BugRisk")
     end
 
-    it "returns a default" do
-      CategoryParser.new("Sup").category.must_equal("Style")
+    it "returns Style as the default" do
+      category_parser = CategoryParser.new("Pretend")
+
+      expect(category_parser.category).to eq("Style")
     end
   end
 end

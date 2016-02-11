@@ -1,11 +1,11 @@
 module CC
   module Engine
     class FileListResolver
-      def initialize(code:, engine_config: {}, rubocop_config_store:)
-        @code = code
+      def initialize(root:, engine_config: {}, config_store:)
+        @root = root
         @exclude_paths = engine_config["exclude_paths"] || []
         @include_paths = engine_config["include_paths"]
-        @rubocop_config_store = rubocop_config_store
+        @config_store = config_store
       end
 
       def expanded_list
@@ -39,7 +39,7 @@ module CC
       end
 
       def local_path(path)
-        realpath = Pathname.new(@code).realpath.to_s
+        realpath = Pathname.new(@root).realpath.to_s
         path.gsub(%r{^#{realpath}/}, '')
       end
 
@@ -47,13 +47,13 @@ module CC
         if file =~ /\.rb$/
           true
         else
-          dir, basename = File.split(file)
-          @rubocop_config_store.for(dir).file_to_include?(basename)
+          root, basename = File.split(file)
+          @config_store.for(root).file_to_include?(basename)
         end
       end
 
       def rubocop_runner
-        @rubocop_runner ||= RuboCop::Runner.new({}, @rubocop_config_store)
+        @rubocop_runner ||= RuboCop::Runner.new({}, @config_store)
       end
     end
   end

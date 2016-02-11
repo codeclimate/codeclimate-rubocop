@@ -1,25 +1,27 @@
 Metrics/AbcSize:
   base_points: 1_000_000
-  violation_points: 70_000
+  overage_points: 70_000
 Metrics/BlockNesting:
   base_points: 100_000
+  overage_points: 50_000
 Metrics/ClassLength:
   base_points: 5_000_000
-  violation_points: 35_000
-Metrics/CyclomaticComplexity: # This check is per method
+  overage_points: 35_000
+Metrics/CyclomaticComplexity:
   base_points: 1_000_000
-  violation_points: 70_000
+  overage_points: 70_000
 Metrics/LineLength:
   base_points: 50_000
+  overage_points: 0
 Metrics/MethodLength:
   base_points: 1_000_000
-  violation_points: 70_000
+  overage_points: 70_000
 Metrics/ModuleLength:
   base_points: 5_000_000
-  violation_points: 35_000
+  overage_points: 35_000
 Metrics/ParameterList:
   base_points: 500_000
-  violation_points: 100_000
+  overage_points: 100_000
 Metrics/PerceivedComplexity:
   base_points: 1_000_000
-  violation_points: 70_000
+  overage_points: 70_000
