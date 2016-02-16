@@ -29,18 +29,22 @@ module CC
       end
 
       def include_based_files_to_inspect
-        @include_paths.map do |path|
-          if path =~ %r{/$}
+        absolute_include_paths.flat_map do |path|
+          if Dir.exist?(path)
             rubocop_runner.send(:find_target_files, [path])
           elsif rubocop_file_to_include?(path)
             path
           end
-        end.flatten.compact
+        end.compact
       end
 
       def local_path(path)
         realpath = Pathname.new(@root).realpath.to_s
         path.gsub(%r{^#{realpath}/}, '')
+      end
+
+      def absolute_include_paths
+        @include_paths.map { |path| Pathname.new(path).realpath.to_s }
       end
 
       def rubocop_file_to_include?(file)
