@@ -1,7 +1,8 @@
 namespace :docs do
   desc "Scrapes documentation from the rubocop gem"
   task :scrape do
-    TAG = "v0.34.2"
+    require "rubocop"
+    TAG = "v#{RuboCop::Version.version}"
     COP_FOLDERS = %w[lint metrics performance rails style]
 
     %x{git clone https://github.com/bbatsov/rubocop.git rubocop-git}
