@@ -128,45 +128,6 @@ module CC::Engine
         expect(includes_check?(output, "Lint/UselessAssignment")).to be false
       end
 
-      it "uses exclusions passed in via the config hash" do
-        create_source_file("my_script", <<-EORUBY)
-          #!/usr/bin/env ruby
-
-          def method
-            unused = "x"
-
-            return false
-          end
-        EORUBY
-        config = { "exclude_paths" => ["my_script"] }
-        output = run_engine(config)
-
-        expect(includes_check?(output, "Lint/UselessAssignment")).to be false
-      end
-
-      it "layers config exclusions on top of the YAML config" do
-        create_source_file("foo.rb", <<-EORUBY)
-          def method
-            unused = "x"
-            return false
-          end
-        EORUBY
-        create_source_file("bar.rb", <<-EORUBY)
-          def method
-            unused = "x"
-            return false
-          end
-        EORUBY
-        create_source_file(
-          "rubocop.yml",
-          "AllCops:\n  Exclude:\n    - \"foo.rb\"\n"
-        )
-        config = { "config" => "rubocop.yml", "exclude_paths" => ["bar.rb"] }
-        output = run_engine(config)
-
-        expect(includes_check?(output, "Lint/UselessAssignment")).to be false
-      end
-
       it "handles different locations properly" do
         allow_any_instance_of(RuboCop::Cop::Team).to receive(:inspect_file).and_return(
           [
