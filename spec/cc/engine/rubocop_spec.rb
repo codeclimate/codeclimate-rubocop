@@ -62,6 +62,37 @@ module CC::Engine
         expect(includes_check?(output, "Lint/UselessAssignment")).to be false
       end
 
+      it "respects excludes in an inherit_from directive" do
+        create_source_file("foo.rb", <<-EORUBY)
+          def method
+            unused = "x"
+            return false
+          end
+        EORUBY
+        create_source_file("bar.rb", <<-EORUBY)
+          def method
+            unused = 42
+            return true
+          end
+        EORUBY
+
+        create_source_file(
+          ".rubocop.yml",
+          "inherit_from: .rubocop_todo.yml\nAllCops:\n  DisabledByDefault: true\nLint/UselessAssignment:\n  Enabled: true\n"
+        )
+        create_source_file(
+          ".rubocop_todo.yml",
+          "Lint/UselessAssignment:\n  Exclude:\n    - bar.rb\n"
+        )
+
+        output = run_engine("include_paths" => ["foo.rb", "bar.rb"])
+        issues = output.split("\0").map { |istr| JSON.parse(istr) }
+        lint_issues = issues.select { |issue| issue["check_name"] == "Rubocop/Lint/UselessAssignment" }
+
+        expect(lint_issues.detect { |i| i["location"]["path"] == "foo.rb" }).to be_present
+        expect(lint_issues.detect { |i| i["location"]["path"] == "bar.rb" }).to be_nil
+      end
+
       it "reads a file with a #!.*ruby declaration at the top" do
         create_source_file("my_script", <<-EORUBY)
           #!/usr/bin/env ruby
