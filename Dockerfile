@@ -17,4 +17,7 @@ USER app
 RUN cd /usr/src/app && \
     rake docs:scrape
 
+VOLUME /code
+WORKDIR /code
+
 CMD ["/usr/src/app/bin/codeclimate-rubocop"]
