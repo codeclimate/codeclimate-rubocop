@@ -20,7 +20,13 @@ module CC
       private
 
       def absolute_include_paths
-        @include_paths.map { |path| Pathname.new(path).realpath.to_s }
+        @include_paths.map do |path|
+          begin
+            Pathname.new(path).realpath.to_s
+          rescue Errno::ENOENT
+            nil
+          end
+        end.compact
       end
 
       def rubocop_file_to_include?(file)
