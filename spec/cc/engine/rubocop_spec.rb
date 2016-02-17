@@ -4,6 +4,7 @@ require "tmpdir"
 
 module CC::Engine
   describe Rubocop do
+    include FilesystemHelpers
     before { @code = Dir.mktmpdir }
 
     describe "#run" do
@@ -331,12 +332,6 @@ module CC::Engine
 
       def issues(output)
         output.split("\0").map { |x| JSON.parse(x) }
-      end
-
-      def create_source_file(path, content)
-        abs_path = File.join(@code, path)
-        FileUtils.mkdir_p(File.dirname(abs_path))
-        File.write(abs_path, content)
       end
 
       def run_engine(config = nil)
