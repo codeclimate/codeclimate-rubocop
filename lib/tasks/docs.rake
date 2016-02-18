@@ -1,7 +1,8 @@
 namespace :docs do
   desc "Scrapes documentation from the rubocop gem"
   task :scrape do
-    TAG = "v0.34.2"
+    require "rubocop"
+    TAG = "v#{RuboCop::Version.version}"
     COP_FOLDERS = %w[lint metrics performance rails style]
 
     %x{git clone https://github.com/bbatsov/rubocop.git rubocop-git}
@@ -11,7 +12,12 @@ namespace :docs do
 
     documentation = files.each_with_object({}) do |file, hash|
       content = File.read(file)
-      class_doc = content.match(/(\s+#.*)+/).to_s
+      seen_non_comment_lines = false
+      sanitized_content = content.split("\n").reject do |line|
+        seen_non_comment_lines = true unless line.start_with?("#")
+        !seen_non_comment_lines
+      end.join("\n")
+      class_doc = sanitized_content.match(/(\s+#.*)+/).to_s
       doc_lines = class_doc.
         gsub(/^\n/,"").
         gsub("@example", "### Example:").
