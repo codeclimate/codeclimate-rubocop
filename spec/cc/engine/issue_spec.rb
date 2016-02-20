@@ -12,8 +12,8 @@ module CC::Engine
         location.last_column = 99
 
         offense = OpenStruct.new
-        offense.cop_name = "Metrics/LineLength"
-        offense.message = "Line too long [100/80]"
+        offense.cop_name = "Metrics/CyclomaticComplexity"
+        offense.message = "Cyclomatic complexity for complex_method is too high [10/5]"
         offense.location = location
 
         Issue.new(offense, "app/models/user.rb")
@@ -23,17 +23,17 @@ module CC::Engine
         attributes = JSON.parse(issue.to_json)
 
         expect(attributes["type"]).to eq("Issue")
-        expect(attributes["check_name"]).to eq("Rubocop/Metrics/LineLength")
-        expect(attributes["description"]).to eq("Line too long [100/80]")
-        expect(attributes["categories"]).to eq(["Style"])
-        expect(attributes["remediation_points"]).to eq(50_000)
+        expect(attributes["check_name"]).to eq("Rubocop/Metrics/CyclomaticComplexity")
+        expect(attributes["description"]).to eq("Cyclomatic complexity for complex_method is too high [10/5]")
+        expect(attributes["categories"]).to eq(["Complexity"])
+        expect(attributes["remediation_points"]).to eq(1_350_000)
         expect(attributes["location"]["path"]).to eq("app/models/user.rb")
         expect(attributes["location"]["positions"]["begin"]["line"]).to eq(10)
         expect(attributes["location"]["positions"]["end"]["line"]).to eq(10)
         expect(attributes["location"]["positions"]["begin"]["column"]).to eq(4)
         expect(attributes["location"]["positions"]["end"]["column"]).to eq(100)
-        expect(attributes["content"]["body"]).to include(
-          "This cop checks the length of lines in the source code."
+        expect(attributes["content"]["body"].squish).to include(
+          "This cop checks that the cyclomatic complexity of methods is not higher than the configured maximum."
         )
       end
     end

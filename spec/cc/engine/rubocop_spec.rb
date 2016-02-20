@@ -208,15 +208,6 @@ module CC::Engine
         expect(result["location"]).to eq(location)
       end
 
-      it "includes issue content when available" do
-        lines = "  test\n" * 101
-        create_source_file("klass.rb", "class Klass\n#{lines}end")
-
-        output = run_engine
-
-        expect(includes_content_for?(output, "Metrics/ClassLength")).to be true
-      end
-
       it "uses only include_paths when they're passed in via the config hash" do
         okay_contents = <<-EORUBY
           #!/usr/bin/env ruby
