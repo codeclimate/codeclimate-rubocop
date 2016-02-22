@@ -1,20 +1,25 @@
+require "rubocop"
+
 namespace :docs do
   desc "Scrapes documentation from the rubocop gem"
   task :scrape do
-    TAG = "v0.34.2"
     COP_FOLDERS = %w[lint metrics performance rails style]
 
     %x{git clone https://github.com/bbatsov/rubocop.git rubocop-git}
-    %x{cd rubocop-git && git checkout tags/#{TAG}}
+    %x{cd rubocop-git && git checkout tags/v#{RuboCop::Version.version}}
 
     files = Dir.glob("./rubocop-git/lib/rubocop/cop/{#{COP_FOLDERS.join(',')}}/**.rb")
 
     documentation = files.each_with_object({}) do |file, hash|
       content = File.read(file)
+      content = content.gsub(/.*\n\s+(?=module RuboCop)/, "")
+
       class_doc = content.match(/(\s+#.*)+/).to_s
       doc_lines = class_doc.
         gsub(/^\n/,"").
         gsub("@example", "### Example:").
+        gsub("@good", "# good").
+        gsub("@bad", "# bad").
         split("\n").
         map { |line| line.gsub(/\A\s+#\s?/, "") }.
         map { |line| line.gsub(/\A\s{2}/, " " * 4) }.
