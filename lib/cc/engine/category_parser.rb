@@ -6,7 +6,7 @@ module CC
       end
 
       def category
-        CATEGORIES[cop_name] || CATEGORIES[cop] || DEFAULT_CATEGORY
+        CATEGORIES[cop_name] || CATEGORIES[namespace] || DEFAULT_CATEGORY
       end
 
       private
@@ -14,6 +14,7 @@ module CC
       DEFAULT_CATEGORY = "Style".freeze
       CATEGORIES = {
         "Lint" => "Style",
+        "Lint/Eval" => "Security",
         "Metrics" => "Complexity",
         "Metrics/LineLength" => "Style",
         "Performance" => "BugRisk",
@@ -28,7 +29,7 @@ module CC
 
       attr_reader :cop_name
 
-      def cop
+      def namespace
         cop_name.split("/").first
       end
     end
