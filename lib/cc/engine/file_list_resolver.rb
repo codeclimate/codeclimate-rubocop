@@ -19,6 +19,8 @@ module CC
 
       private
 
+      attr_reader :config_store
+
       def absolute_include_paths
         @include_paths.map do |path|
           begin
@@ -30,12 +32,12 @@ module CC
       end
 
       def rubocop_file_to_include?(file)
-        if file =~ /\.rb$/
-          true
-        else
-          root, basename = File.split(file)
-          @config_store.for(root).file_to_include?(basename)
-        end
+        root, basename = File.split(file)
+        store = config_store.for(root)
+
+        return false if store.file_to_exclude?(basename)
+
+        file =~ /\.rb$/ || store.file_to_include?(basename)
       end
 
       def rubocop_runner
