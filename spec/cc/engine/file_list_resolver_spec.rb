@@ -41,11 +41,12 @@ module CC::Engine
 
     it "respects rubocop excludes" do
       Dir.chdir(@code) do
+        create_source_file("Gemfile", "source 'https://rubygems.org'")
         create_source_file("src/b.rb", "def a; true; end")
         create_source_file("src/c.rb", "def a; true; end")
-        create_source_file(".rubocop.yml", "AllCops:\n  Exclude:\n    - src/c.rb")
+        create_source_file(".rubocop.yml", "AllCops:\n  Exclude:\n    - src/c.rb\n    - Gemfile\n")
 
-        resolver = FileListResolver.new(root: @code, engine_config: { "include_paths" => %w[src/] }, config_store: rubocop_config)
+        resolver = FileListResolver.new(root: @code, engine_config: { "include_paths" => %w[Gemfile src/] }, config_store: rubocop_config)
         expect(resolver.expanded_list).to eq [Pathname.new("src/b.rb").realpath.to_s]
       end
     end
