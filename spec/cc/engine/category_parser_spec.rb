@@ -12,7 +12,7 @@ module CC::Engine
     it "returns the category mapped to the cop category if present" do
       category_parser = CategoryParser.new("Rails/ScopeArgs")
 
-      expect(category_parser.category).to eq("BugRisk")
+      expect(category_parser.category).to eq("Bug Risk")
     end
 
     it "returns Style as the default" do
