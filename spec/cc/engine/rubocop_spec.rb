@@ -43,6 +43,22 @@ module CC::Engine
         expect(includes_check?(output, "Lint/UselessAssignment")).to be false
       end
 
+      it "generates a fingerprint for method/class offenses" do
+        create_source_file("foo.rb", <<-EORUBY)
+          def method(a, b, c, d)
+            x = Math.sqrt((a * a) + (b * b)) + Math.sqrt((a * a) + (b * b))
+            y = Math.sqrt((b * b) + (c * c)) + Math.sqrt((b * b) + (c * c))
+            z = Math.sqrt((c * c) + (d * d)) + Math.sqrt((c * c) + (d * d))
+            x + y + z
+          end
+        EORUBY
+
+        output = run_engine
+
+        expect(includes_check?(output, "Metrics/AbcSize")).to be true
+        expect(includes_fingerprint?(output, "303630e0015ba1c6de300b983babac59")).to be true
+      end
+
       it "respects the default .rubocop.yml file" do
         create_source_file("foo.rb", <<-EORUBY)
           def method
@@ -313,6 +329,10 @@ module CC::Engine
 
       def includes_check?(output, cop_name)
         issues(output).any? { |i| i["check_name"] =~ /#{cop_name}$/ }
+      end
+
+      def includes_fingerprint?(output, fingerprint)
+        issues(output).any? { |i| i["fingerprint"] == fingerprint }
       end
 
       def includes_content_for?(output, cop_name)
