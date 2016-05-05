@@ -71,8 +71,10 @@ Style/PredicateName:
 # We use %w[ ], not %w( ) because the former looks like an array
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
-    "%w": []
-    "%W": []
+    "%i": "[]"
+    "%I": "[]"
+    "%w": "[]"
+    "%W": "[]"
 
 # Allow "trivial" accessors when defined as a predicate? method
 Style/TrivialAccessors:
