@@ -4,7 +4,7 @@ require "cc/engine/issue"
 module CC::Engine
   describe Issue do
     describe "#to_json" do
-      let(:issue) do
+      let(:offense) do
         location = OpenStruct.new
         location.first_line = 10
         location.last_line = 10
@@ -15,11 +15,11 @@ module CC::Engine
         offense.cop_name = "Metrics/CyclomaticComplexity"
         offense.message = "Cyclomatic complexity for complex_method is too high [10/5]"
         offense.location = location
-
-        Issue.new(offense, "app/models/user.rb")
+        offense
       end
 
       it "returns a json issue for a Rubocop offense" do
+        issue = Issue.new(offense, "app/models/user.rb")
         attributes = JSON.parse(issue.to_json)
 
         expect(attributes["type"]).to eq("Issue")
@@ -35,6 +35,22 @@ module CC::Engine
         expect(attributes["content"]["body"].squish).to include(
           "This cop checks that the cyclomatic complexity of methods is not higher than the configured maximum."
         )
+      end
+
+      it "sets a fingerprint for method/class offenses" do
+        offense.cop_name = "Metrics/AbcSize"
+        issue = Issue.new(offense, "app/models/user.rb")
+        attributes = JSON.parse(issue.to_json)
+
+        expect(attributes).to have_key("fingerprint")
+      end
+
+      it "does not set a fingerprint for other offenses" do
+        offense.cop_name = "Style/AlignParameters"
+        issue = Issue.new(offense, "app/models/user.rb")
+        attributes = JSON.parse(issue.to_json)
+
+        expect(attributes).not_to have_key("fingerprint")
       end
     end
 

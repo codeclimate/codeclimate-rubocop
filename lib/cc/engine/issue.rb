@@ -1,4 +1,5 @@
-require 'safe_yaml'
+require "safe_yaml"
+
 SafeYAML::OPTIONS[:default_mode] = :safe
 
 module CC
@@ -20,7 +21,7 @@ module CC
       def to_json
         hash = {
           type: "Issue",
-          check_name: "Rubocop/#{cop_name}",
+          check_name: check_name,
           description: message,
           categories: [category],
           remediation_points: remediation_points,
@@ -30,7 +31,16 @@ module CC
           },
         }
         hash[:content] = { body: content_body } if content_body.present?
+
+        if (fingerprint = Fingerprint.new(path, cop_name, message).compute)
+          hash[:fingerprint] = fingerprint
+        end
+
         hash.to_json
+      end
+
+      def check_name
+        "Rubocop/#{cop_name}"
       end
 
       def remediation_points

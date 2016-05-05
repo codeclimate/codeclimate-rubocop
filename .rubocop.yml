@@ -1,29 +1,17 @@
-Metrics/ModuleLength:
-  Exclude:
-    - 'spec/**/*'
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'spec/**/*'
-Metrics/LineLength:
-  Exclude:
-    - 'spec/**/*'
-Style/Documentation:
-  Enabled: false
+inherit_from: base_rubocop.yml
+
 Style/FileName:
   Exclude:
     - 'bin/codeclimate-rubocop'
-Style/PercentLiteralDelimiters:
-  PreferredDelimiters:
-    '%w': '[]'
-    '%W': '[]'
+
 Style/StringLiterals:
   Enabled: false
+
 Style/TrailingCommaInLiteral:
   Enabled: false
+
 Style/TrailingCommaInArguments:
   Enabled: false
-Style/DotPosition:
-  EnforcedStyle: 'trailing'
-  Enabled: true
+
 Style/MultilineOperationIndentation:
   Enabled: false

@@ -8,7 +8,7 @@ namespace :docs do
     %x{git clone https://github.com/bbatsov/rubocop.git rubocop-git}
     %x{cd rubocop-git && git checkout tags/v#{RuboCop::Version.version}}
 
-    files = Dir.glob("./rubocop-git/lib/rubocop/cop/{#{COP_FOLDERS.join(',')}}/**.rb")
+    files = Dir.glob("./rubocop-git/lib/rubocop/cop/{#{COP_FOLDERS.join(",")}}/**.rb")
 
     documentation = files.each_with_object({}) do |file, hash|
       content = File.read(file)
