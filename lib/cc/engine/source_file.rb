@@ -26,7 +26,7 @@ module CC
       end
 
       def target_ruby_version
-        config_store["AllCops"] && config_store["AllCops"]["TargetRubyVersion"]
+        config_store.target_ruby_version
       end
 
       def rubocop_team
