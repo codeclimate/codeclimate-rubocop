@@ -1,5 +1,7 @@
 inherit_from: base_rubocop.yml
 
+require: rubocop-rspec
+
 Style/FileName:
   Exclude:
     - 'bin/codeclimate-rubocop'
