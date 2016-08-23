@@ -12,6 +12,9 @@ module CC
         Metrics/PerceivedComplexity
       ].freeze
 
+      URL_REGEX = / \(https?\:.+\)/
+      LINES_REGEX = / \[.+\]$/
+
       def initialize(path, cop_name, message)
         @path = path
         @cop_name = cop_name
@@ -33,7 +36,7 @@ module CC
       attr_reader :path, :cop_name, :message
 
       def stripped_message
-        message.gsub(/ \[.+\]$/, "")
+        message.gsub(URL_REGEX, "").strip.gsub(LINES_REGEX, "")
       end
     end
   end
