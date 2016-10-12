@@ -17,4 +17,4 @@ USER app
 VOLUME /code
 WORKDIR /code
 
-CMD ["/usr/src/app/bin/codeclimate-rubocop"]
+CMD ["/usr/src/app/bin/engine-cache", "/usr/src/app/bin/codeclimate-rubocop"]
