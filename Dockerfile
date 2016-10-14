@@ -16,5 +16,6 @@ USER app
 
 VOLUME /code
 WORKDIR /code
+ENV GEM_PATH /code/vendor/bundle/ruby/2.2.0
 
 CMD ["/usr/src/app/bin/codeclimate-rubocop"]
