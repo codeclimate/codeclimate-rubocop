@@ -5,6 +5,7 @@ module CC
     class Fingerprint
       OVERRIDE_COP_NAMES = %w[
         Metrics/AbcSize
+        Metrics/BlockLength
         Metrics/ClassLength
         Metrics/CyclomaticComplexity
         Metrics/MethodLength
