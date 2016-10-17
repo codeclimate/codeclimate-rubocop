@@ -1,28 +1,27 @@
 machine:
   services:
     - docker
-  environment:
-    CLOUDSDK_CORE_DISABLE_PROMPTS: 1
-    PRIVATE_REGISTRY: us.gcr.io/code_climate
 
 dependencies:
   override:
-    - echo "no-op"
+    - make image
 
 test:
   override:
-    - IMAGE_NAME="$PRIVATE_REGISTRY/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM" make test
+    - make test
 
 deployment:
   registry:
     branch: master
     owner: codeclimate
     commands:
-      - echo $GCLOUD_JSON_KEY_BASE64 | sed 's/ //g' | base64 -d > /tmp/gcloud_key.json
-      - curl https://sdk.cloud.google.com | bash
-      - gcloud auth activate-service-account --key-file /tmp/gcloud_key.json
-      - gcloud docker -a
-      - docker push $PRIVATE_REGISTRY/$CIRCLE_PROJECT_REPONAME:b$CIRCLE_BUILD_NUM
+      - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+      - make release RELEASE_TAG=latest
+      - make release RELEASE_TAG=b$CIRCLE_BUILD_NUM
+
+      # Temporarily push to GCR
+      - docker login -u _json_key -p "$(echo $GCLOUD_JSON_KEY_BASE64 | sed 's/ //g' | base64 -d)" us.gcr.io
+      - make release RELEASE_REGISTRY=us.gcr.io/code_climate RELEASE_TAG=b$CIRCLE_BUILD_NUM
 
 notify:
   webhooks:
