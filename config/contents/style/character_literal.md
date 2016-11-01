@@ -1,1 +1,0 @@
-Checks for uses of the character literal ?x.

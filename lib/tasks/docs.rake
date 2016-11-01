@@ -1,9 +1,11 @@
 require "rubocop"
+require "fileutils"
 
 namespace :docs do
   desc "Scrapes documentation from the rubocop gem"
   task :scrape do
-    COP_FOLDERS = %w[lint metrics performance rails style]
+    MIN_LINES = 3
+    COP_FOLDERS = %w[lint metrics performance rails security style].freeze
 
     %x{git clone https://github.com/bbatsov/rubocop.git rubocop-git}
     %x{cd rubocop-git && git checkout tags/v#{RuboCop::Version.version}}
@@ -34,12 +36,14 @@ namespace :docs do
       folder_path = "./config/contents/#{namespace}"
       write_path = "#{folder_path}/#{file_name}.md"
 
-      puts "Writing documentation to #{write_path}"
+      if documentation.split("\n").count >= MIN_LINES
+        puts "Writing documentation to #{write_path}"
 
-
-      FileUtils.mkdir_p(folder_path)
-      File.open(write_path, 'w') do |file|
-        file.write(documentation)
+        FileUtils.mkdir_p(folder_path)
+        File.write(write_path, documentation)
+      else
+        puts "Documentation for #{file_name} looks poor: deleting it."
+        FileUtils.rm(write_path) if File.exist?(write_path)
       end
     end
 

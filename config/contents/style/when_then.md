@@ -1,1 +1,0 @@
-This cop checks for *when;* uses in *case* expressions.

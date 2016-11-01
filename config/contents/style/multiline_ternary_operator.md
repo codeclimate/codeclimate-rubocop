@@ -1,1 +1,0 @@
-This cop checks for multi-line ternary op expressions.

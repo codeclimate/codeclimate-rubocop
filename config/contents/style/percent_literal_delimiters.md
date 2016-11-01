@@ -1,1 +1,0 @@
-This cop enforces the consistent usage of `%`-literal delimiters.

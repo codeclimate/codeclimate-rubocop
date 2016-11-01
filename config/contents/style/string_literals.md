@@ -1,1 +1,0 @@
-Checks if uses of quotes match the configured preference.

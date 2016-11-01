@@ -1,1 +1,0 @@
-Checks for spaces inside ordinary round parentheses.
