@@ -1,1 +1,0 @@
-This cop checks for *rescue* blocks targeting the Exception class.

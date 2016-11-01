@@ -1,1 +1,0 @@
-This cop checks for the use of output calls like puts and print

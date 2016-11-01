@@ -1,1 +1,0 @@
-This cop checks for empty `ensure` blocks

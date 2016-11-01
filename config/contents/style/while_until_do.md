@@ -1,1 +1,0 @@
-Checks for uses of `do` in multi-line `while/until` statements.

@@ -1,1 +1,0 @@
-This cop checks for uses of Module#attr.

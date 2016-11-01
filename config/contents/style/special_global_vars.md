@@ -1,1 +1,0 @@
-This cop looks for uses of Perl-style global variables.
