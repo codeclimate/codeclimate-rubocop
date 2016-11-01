@@ -1,9 +1,17 @@
-This cops checks if empty lines around the bodies of methods match
-the configuration.
+This cops checks if empty lines exist around the bodies of methods.
 
 ### Example:
 
-    def something(arg)
+    # good
+
+    def foo
+      ...
+    end
+
+    # bad
+
+    def bar
 
       ...
+
     end

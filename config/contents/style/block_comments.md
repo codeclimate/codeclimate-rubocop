@@ -1,0 +1,1 @@
+This cop looks for uses of block comments (=begin...=end).

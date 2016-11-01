@@ -4,7 +4,7 @@ write_attribute methods.
 ### Example:
 
     # bad
-    x = read_attributed(:attr)
+    x = read_attribute(:attr)
     write_attribute(:attr, val)
 
     # good

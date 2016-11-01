@@ -3,13 +3,12 @@ can better be implemented using `casecmp`.
 
 ### Example:
     # bad
-    'aBc'.downcase == 'abc'
-    'abc'.upcase.eql? 'ABC'
-    'abc' == 'ABC'.downcase
-    'ABC'.eql? 'abc'.upcase
-    'abc'.downcase == 'abc'.downcase
+    str.downcase == 'abc'
+    str.upcase.eql? 'ABC'
+    'abc' == str.downcase
+    'ABC'.eql? str.upcase
+    str.downcase == str.downcase
 
     # good
-    'aBc'.casecmp('ABC').zero?
-    'abc'.casecmp('abc').zero?
-    'abc'.casecmp('ABC'.downcase).zero?
+    str.casecmp('ABC').zero?
+    'abc'.casecmp(str).zero?

@@ -1,0 +1,1 @@
+This cop looks for *unless* expressions with *else* clauses.

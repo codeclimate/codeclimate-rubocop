@@ -1,0 +1,1 @@
+This cop checks for non-ascii characters in identifier names.

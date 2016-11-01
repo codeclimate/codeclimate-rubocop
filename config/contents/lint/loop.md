@@ -1,0 +1,1 @@
+This cop checks for uses of *begin...end while/until something*.

@@ -1,0 +1,1 @@
+This cop checks for usage of the %Q() syntax when %q() would do.

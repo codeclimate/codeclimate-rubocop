@@ -1,0 +1,1 @@
+This cop looks for trailing whitespace in the source code.

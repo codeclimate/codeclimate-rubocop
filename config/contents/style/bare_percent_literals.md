@@ -1,0 +1,1 @@
+This cop checks if usage of %() or %Q() matches configuration.

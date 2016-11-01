@@ -1,0 +1,1 @@
+This cop checks for *return* from an *ensure* block.
