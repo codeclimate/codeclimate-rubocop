@@ -17,7 +17,6 @@ RuboCop::Cop::Lint::UnderscorePrefixedVariableName
 RuboCop::Cop::Lint::UnifiedInteger
 RuboCop::Cop::Lint::UnneededDisable
 RuboCop::Cop::Lint::UnneededSplatExpansion
-RuboCop::Cop::Lint::UnreachableCode
 RuboCop::Cop::Lint::UselessAssignment
 RuboCop::Cop::Lint::Void
 RuboCop::Cop::Metrics::AbcSize
