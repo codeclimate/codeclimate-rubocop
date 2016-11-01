@@ -5,6 +5,7 @@ SupportedStyles:
 
 ### Example:
     # good for all styles
+
     if condition
       statement
     else
@@ -16,8 +17,9 @@ SupportedStyles:
       statement
     end
 
-empty - warn only on empty else
-    ### Example:
+### Example:
+    # empty - warn only on empty else
+
     # bad
     if condition
       statement
@@ -31,8 +33,9 @@ empty - warn only on empty else
       nil
     end
 
-nil - warn on else with nil in it
-    ### Example:
+### Example:
+    # nil - warn on else with nil in it
+
     # bad
     if condition
       statement
@@ -46,8 +49,9 @@ nil - warn on else with nil in it
     else
     end
 
-both - warn on empty else and else with nil in it
-    ### Example:
+### Example:
+    # both - warn on empty else and else with nil in it
+
     # bad
     if condition
       statement

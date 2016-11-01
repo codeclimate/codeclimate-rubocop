@@ -1,0 +1,1 @@
+Checks for uses of while with a negated condition.

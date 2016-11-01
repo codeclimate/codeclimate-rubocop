@@ -3,7 +3,20 @@ the configuration.
 
 ### Example:
 
-    something do
+    # EnforcedStyle: empty_lines
 
+    # good
+
+    foo do |bar|
+
+      ...
+
+    end
+
+    # EnforcedStyle: no_empty_lines
+
+    # good
+
+    foo do |bar|
       ...
     end

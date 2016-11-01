@@ -1,0 +1,1 @@
+Checks for uses of semicolon in if statements.

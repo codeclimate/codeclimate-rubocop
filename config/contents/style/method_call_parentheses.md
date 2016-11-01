@@ -1,0 +1,1 @@
+This cop checks for unwanted parentheses in parameterless method calls.

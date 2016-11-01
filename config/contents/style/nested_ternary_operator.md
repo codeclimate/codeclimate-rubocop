@@ -1,0 +1,1 @@
+This cop checks for nested ternary op expressions.

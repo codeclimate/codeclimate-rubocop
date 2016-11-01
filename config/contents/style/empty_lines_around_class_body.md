@@ -1,11 +1,15 @@
-This cops checks if empty lines around the bodies of classes match the
-configuration.
+This cops checks if empty lines around the bodies of classes match
+the configuration.
 
 ### Example:
 
-    class Test
+    EnforcedStyle: empty_lines
 
-       def something
+    # good
+
+    class Foo
+
+       def bar
          ...
        end
 

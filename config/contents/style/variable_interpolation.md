@@ -1,0 +1,1 @@
+This cop checks for variable interpolation (like "#@ivar").

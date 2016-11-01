@@ -1,0 +1,1 @@
+This cop checks for tabs inside the source code.

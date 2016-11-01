@@ -1,0 +1,1 @@
+This cop checks for calls to debugger or pry.

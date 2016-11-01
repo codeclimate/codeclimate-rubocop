@@ -12,3 +12,8 @@ and change them to use `detect` instead.
     # good
     [].detect { |item| true }
     [].reverse.detect { |item| true }
+
+`ActiveRecord` compatibility:
+`ActiveRecord` does not implement a `detect` method and `find` has its
+own meaning. Correcting ActiveRecord methods with this cop should be
+considered unsafe.

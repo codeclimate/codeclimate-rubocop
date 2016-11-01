@@ -1,0 +1,1 @@
+This cop checks for the use of old-style attribute validation macros.

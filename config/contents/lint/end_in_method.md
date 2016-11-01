@@ -1,0 +1,1 @@
+This cop checks for END blocks in method definitions.

@@ -1,0 +1,1 @@
+This cop checks for *rescue* blocks with no body.
