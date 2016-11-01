@@ -1,4 +1,5 @@
 require "safe_yaml"
+require "cc/engine/content_resolver"
 
 SafeYAML::OPTIONS[:default_mode] = :safe
 
@@ -124,8 +125,7 @@ module CC
       def content_body
         return @content_body if defined?(@content_body)
 
-        content_path = expand_config_path("contents/#{cop_name.underscore}.md")
-        @content_body = File.exist?(content_path) && File.read(content_path)
+        @content_body = ContentResolver.new(cop_name.underscore).content
       end
     end
   end
