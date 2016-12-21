@@ -18,7 +18,6 @@ module CC::Engine
           describe "#{cop.name}" do
             it "has content" do
               resolver = ContentResolver.new(cop.name)
-              FileUtils.touch(resolver.content_path)
               expect(resolver.content).to be_a(String)
               expect(resolver.content.length).to (be > 0), "#{cop.name} should have content. Hint, update: #{resolver.content_path}"
             end
