@@ -5,7 +5,7 @@ namespace :docs do
   desc "Scrapes documentation from the rubocop gem"
   task :scrape do
     MIN_LINES = 3
-    COP_FOLDERS = %w[lint metrics performance rails security style].freeze
+    COP_FOLDERS = %w[bundler lint metrics performance rails security style].freeze
 
     %x{git clone https://github.com/bbatsov/rubocop.git rubocop-git}
     %x{cd rubocop-git && git checkout tags/v#{RuboCop::Version.version}}

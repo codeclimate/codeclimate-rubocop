@@ -29,3 +29,17 @@ parentheses using `EnforcedStyle`.
     foo = (bar?) ? a : b
     foo = (bar.baz) ? a : b
     foo = (bar && baz) ? a : b
+
+### Example:
+
+    EnforcedStyle: require_parentheses_when_complex
+
+    # bad
+    foo = (bar?) ? a : b
+    foo = (bar.baz?) ? a : b
+    foo = bar && baz ? a : b
+
+    # good
+    foo = bar? ? a : b
+    foo = bar.baz ? a : b
+    foo = (bar && baz) ? a : b
