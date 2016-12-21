@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module CC
   module Engine
     class CategoryParser
@@ -11,7 +13,7 @@ module CC
 
       private
 
-      DEFAULT_CATEGORY = "Style".freeze
+      DEFAULT_CATEGORY = "Style"
       CATEGORIES = {
         "Lint" => "Style",
         "Lint/Eval" => "Security",

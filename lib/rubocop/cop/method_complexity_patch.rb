@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Monkey patching! Here be dragons.
 RuboCop::Cop::MethodComplexity.module_eval do
   # RuboCop's default implementation of `add_offense` in `Cop` only gets the

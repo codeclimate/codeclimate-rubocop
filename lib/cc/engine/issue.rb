@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "safe_yaml"
 require "cc/engine/content_resolver"
 
@@ -78,7 +80,7 @@ module CC
 
       def overage_points
         overage_points = cop_definition.
-          fetch("overage_points", DEFAULT_OVERAGE_POINTS)
+                         fetch("overage_points", DEFAULT_OVERAGE_POINTS)
 
         overage_points * multiplier
       end

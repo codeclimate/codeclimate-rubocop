@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RuboCop::Cop::Metrics::ClassLength.module_eval do
   def check_code_length(node, *_)
     length = code_length(node)
