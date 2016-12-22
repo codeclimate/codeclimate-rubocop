@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RuboCop::Config.class_eval do
   def reject_obsolete_cops
     RuboCop::Config::OBSOLETE_COPS.each do |cop_name, message|
