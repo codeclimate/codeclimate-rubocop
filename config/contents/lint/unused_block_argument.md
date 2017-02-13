@@ -16,6 +16,8 @@ This cop checks for unused block arguments.
       puts :baz
     end
 
+### Example:
+
     # bad
 
     do_something do |used, _unused|

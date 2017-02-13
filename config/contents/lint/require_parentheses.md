@@ -9,6 +9,14 @@ an operand of &&/||.
 
 ### Example:
 
+    # bad
+
     if day.is? :tuesday && month == :jan
       ...
     end
+
+### Example:
+
+    # good
+
+    if day.is?(:tuesday) && month == :jan
