@@ -4,7 +4,8 @@ WORKDIR /usr/src/app
 COPY Gemfile /usr/src/app/
 COPY Gemfile.lock /usr/src/app/
 
-RUN gem install bundler && \
+RUN gem update --system && \
+    gem install bundler && \
     bundle install -j 4 && \
     rm -fr /usr/share/ri
 
