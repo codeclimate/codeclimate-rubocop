@@ -1,9 +1,7 @@
 This cop checks for unneeded usages of splat expansion
 
 ### Example:
-
     # bad
-
     a = *[1, 2, 3]
     a = *'a'
     a = *1
@@ -21,10 +19,7 @@ This cop checks for unneeded usages of splat expansion
       baz
     end
 
-### Example:
-
     # good
-
     c = [1, 2, 3]
     a = *c
     a, b = *c

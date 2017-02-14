@@ -3,19 +3,7 @@ expression of a function definition.
 
 ### Example:
 
-    # bad
-
-    def something
-      x = Something.new
-      x.attr = 5
-    end
-
-### Example:
-
-    # good
-
-    def something
-      x = Something.new
-      x.attr = 5
-      x
-    end
+ def something
+     x = Something.new
+     x.attr = 5
+ end

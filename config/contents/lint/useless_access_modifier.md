@@ -73,15 +73,3 @@ are not redundant.
       def some_other_private_method
       end
     end
-
-### Example:
-    # Lint/UselessAccessModifier:
-    #   MethodCreatingMethods:
-    #     - delegate
-    require 'active_support/core_ext/module/delegation'
-    class Foo
-      # this is not redundant because `delegate` creates methods
-      private
-
-      delegate :method_a, to: :method_b
-    end
