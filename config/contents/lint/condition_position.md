@@ -3,17 +3,7 @@ if/while/until.
 
 ### Example:
 
-    # bad
-
     if
       some_condition
-      do_something
-    end
-
-### Example:
-
-    # good
-
-    if some_condition
       do_something
     end

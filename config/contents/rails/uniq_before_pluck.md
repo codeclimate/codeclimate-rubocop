@@ -10,11 +10,11 @@ the database.
     # good
     Model.uniq.pluck(:id)
 
-This cop has two different enforcement modes. When the EnforcedStyle
+This cop has two different enforcement modes. When the EnforcedMode
 is conservative (the default) then only calls to pluck on a constant
 (i.e. a model class) before uniq are added as offenses.
 
-When the EnforcedStyle is aggressive then all calls to pluck before
+When the EnforcedMode is aggressive then all calls to pluck before
 uniq are added as offenses. This may lead to false positives as the cop
 cannot distinguish between calls to pluck on an ActiveRecord::Relation
 vs a call to pluck on an ActiveRecord::Associations::CollectionProxy.

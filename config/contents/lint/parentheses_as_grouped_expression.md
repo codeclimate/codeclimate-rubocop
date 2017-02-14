@@ -3,12 +3,4 @@ parenthesis.
 
 ### Example:
 
-    # bad
-
     puts (x + y)
-
-### Example:
-
-    # good
-
-    puts(x + y)
