@@ -22,3 +22,15 @@ sudo chown -R $(id -u):$(id -g) config
 
 You should add any new cops without docs that fail specs to
 `spec/support/currently_undocumented_cops.txt`.
+
+When doing QA, it's good to confirm the engine will run successfully when using
+the default inferred configuration:
+
+```
+rm .rubocop.yml
+codeclimate init --upgrade
+codeclimate analyze -e rubocop
+```
+
+If configuration was changed in the release, this might not succeed, and the
+default configuration will need to be updated.
