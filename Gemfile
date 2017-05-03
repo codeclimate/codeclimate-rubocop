@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem "activesupport", require: false
-gem "rubocop", "~> 0.41.2", require: false
+gem "rubocop", "0.42", require: false
 gem "rubocop-rspec", require: false
 gem "rubocop-migrations", require: false
 gem "safe_yaml"
