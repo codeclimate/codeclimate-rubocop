@@ -3,7 +3,9 @@ less specific exception being rescued before a more specific
 exception is rescued.
 
 ### Example:
+
     # bad
+
     begin
       something
     rescue Exception
@@ -12,7 +14,10 @@ exception is rescued.
       handle_standard_error
     end
 
+### Example:
+
     # good
+
     begin
       something
     rescue StandardError

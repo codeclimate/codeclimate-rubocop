@@ -11,8 +11,8 @@ right-hand-side of a multi-line assignment.
     # good
     value =
       if foo
-      'bar'
-    end
+        'bar'
+      end
 
 The indentation of the remaining lines can be corrected with
 other cops such as `IndentationConsistency` and `EndAlignment`.

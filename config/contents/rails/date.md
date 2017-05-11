@@ -20,7 +20,7 @@ and only 'to_time' is reported as warning.
     Time.zone.today
     Time.zone.today - 1.day
 
-    # acceptable
+    # flexible
     Date.current
     Date.yesterday
 

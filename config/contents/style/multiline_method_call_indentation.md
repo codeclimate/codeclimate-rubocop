@@ -3,15 +3,15 @@ that span more than one line.
 
 ### Example:
     # bad
-    while a
+    while myvariable
     .b
-      something
+      # do something
     end
 
     # good, EnforcedStyle: aligned
-    while a
+    while myvariable
           .b
-      something
+      # do something
     end
 
     # good, EnforcedStyle: aligned
@@ -19,8 +19,26 @@ that span more than one line.
          .b
          .c
 
-    # good, EnforcedStyle: indented
-    while a
-        .b
-      something
+    # good, EnforcedStyle:    indented,
+            IndentationWidth: 2
+    while myvariable
+      .b
+
+      # do something
     end
+
+    # good, EnforcedStyle:    indented_relative_to_receiver,
+            IndentationWidth: 2
+    while myvariable
+            .a
+            .b
+
+      # do something
+    end
+
+    # good, EnforcedStyle:    indented_relative_to_receiver,
+            IndentationWidth: 2
+    myvariable = Thing
+                   .a
+                   .b
+                   .c
