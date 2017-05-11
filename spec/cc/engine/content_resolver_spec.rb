@@ -18,7 +18,7 @@ module CC::Engine
           describe "#{cop.name}" do
             it "has content" do
               resolver = ContentResolver.new(cop.name)
-              expect(resolver.content).to be_a(String)
+              expect(resolver.content).to be_a(String), "#{cop.name} has no content, consider running `rake docs:scrape`"
               expect(resolver.content.length).to (be > 0), "#{cop.name} should have content. Hint, update: #{resolver.content_path}"
             end
           end
