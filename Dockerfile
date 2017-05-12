@@ -8,6 +8,8 @@ RUN gem install bundler && \
     bundle install -j 4 && \
     rm -fr /usr/share/ri
 
+RUN apk --update add git
+
 RUN adduser -u 9000 -D app
 COPY . /usr/src/app
 RUN chown -R app:app /usr/src/app
