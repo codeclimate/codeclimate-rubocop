@@ -10,6 +10,7 @@ test: image
 
 docs: image
 	docker run --rm \
+		--user root \
 		--workdir /usr/src/app \
 		--volume $(PWD):/usr/src/app \
 		$(IMAGE_NAME) sh -c "bundle exec rake docs:scrape"
