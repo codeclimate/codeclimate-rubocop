@@ -6,4 +6,13 @@ It's definitely a bug.
 
 ### Example:
 
+    # bad
+
     sum = numbers.each_with_object(0) { |e, a| a += e }
+
+### Example:
+
+    # good
+
+    num = 0
+    sum = numbers.each_with_object(num) { |e, a| a += e }
