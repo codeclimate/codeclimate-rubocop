@@ -14,6 +14,7 @@ require "cc/engine/file_list_resolver"
 require "cc/engine/issue"
 require "cc/engine/fingerprint"
 require "active_support"
+require "active_support/core_ext/module/remove_method" # Temporary, can be removed in activesupport 5.0.4
 require "active_support/core_ext"
 
 module CC
