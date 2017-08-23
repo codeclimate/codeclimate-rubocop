@@ -9,7 +9,7 @@ module CC::Engine
     whitelist = File.read("./spec/support/currently_undocumented_cops.txt").lines.map(&:chomp)
 
     it "has cops" do
-      expect(cops.count).to be > 300
+      expect(cops.count).to eq 347
     end
 
     describe "#content" do

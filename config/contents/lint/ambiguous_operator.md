@@ -2,11 +2,16 @@ This cop checks for ambiguous operators in the first argument of a
 method invocation without parentheses.
 
 ### Example:
-    array = [1, 2, 3]
+
+    # bad
 
     # The `*` is interpreted as a splat operator but it could possibly be
-    # a `*` method invocation (i.e. `do_something.*(array)`).
-    do_something *array
+    # a `*` method invocation (i.e. `do_something.*(some_array)`).
+    do_something *some_array
+
+### Example:
+
+    # good
 
     # With parentheses, there's no ambiguity.
-    do_something(*array)
+    do_something(*some_array)
