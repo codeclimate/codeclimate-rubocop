@@ -1,4 +1,5 @@
-Gems in consecutive lines should be alphabetically sorted
+Gems should be alphabetically sorted within groups.
+
 ### Example:
     # bad
     gem 'rubocop'
@@ -11,4 +12,10 @@ Gems in consecutive lines should be alphabetically sorted
     # good
     gem 'rubocop'
 
+    gem 'rspec'
+
+    # good only if TreatCommentsAsGroupSeparators is true
+    # For code quality
+    gem 'rubocop'
+    # For tests
     gem 'rspec'

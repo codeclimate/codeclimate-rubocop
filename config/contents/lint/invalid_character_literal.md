@@ -11,4 +11,7 @@ warning without syntax errors.
          ^
 
 ### Example:
+
+    # bad
+
     p(? )
