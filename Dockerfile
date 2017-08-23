@@ -1,17 +1,17 @@
-FROM ruby:2.3-alpine
-
-WORKDIR /usr/src/app
-COPY Gemfile /usr/src/app/
-COPY Gemfile.lock /usr/src/app/
-
-RUN gem install bundler && \
-    bundle install -j 4 && \
-    rm -fr /usr/share/ri
-
-RUN apk --update add git
+FROM ruby:2.4-alpine
 
 RUN adduser -u 9000 -D app
+
+WORKDIR /usr/src/app
+
+COPY Gemfile Gemfile.lock ./
+
+RUN gem install --no-document bundler && \
+  bundler install --clean -j 4 && \
+  rm -r /usr/local/bundle/cache ~/.bundle ~/.gem
+
 COPY . /usr/src/app
+
 RUN chown -R app:app /usr/src/app
 
 USER app

@@ -13,4 +13,4 @@ docs: image
 		--user root \
 		--workdir /usr/src/app \
 		--volume $(PWD):/usr/src/app \
-		$(IMAGE_NAME) sh -c "bundle exec rake docs:scrape"
+		$(IMAGE_NAME) sh -c "apk --update add git && rake docs:scrape"
