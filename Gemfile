@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 gem "activesupport", require: false
-gem "parser", "~> 2.3.3.1"
+gem "parser", "~> 2.4.0"
 gem "pry", require: false
 gem "rubocop", "~> 0.48", require: false
 gem "rubocop-migrations", require: false
