@@ -14,7 +14,7 @@ GEM
     method_source (0.8.2)
     minitest (5.10.3)
     parallel (1.12.0)
-    parser (2.3.3.1)
+    parser (2.4.0.0)
       ast (~> 2.2)
     powerpack (0.1.1)
     pry (0.10.4)
@@ -61,7 +61,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
-  parser (~> 2.3.3.1)
+  parser (~> 2.4.0)
   pry
   rake
   rspec
@@ -71,4 +71,4 @@ DEPENDENCIES
   safe_yaml
 
 BUNDLED WITH
-   1.14.2
+   1.15.4
