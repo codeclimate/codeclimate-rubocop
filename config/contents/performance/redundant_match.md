@@ -1,4 +1,4 @@
-This cop identifies use of `Regexp#match` or `String#match in a context
+This cop identifies use of `Regexp#match` or `String#match` in a context
 where the integral return value of `=~` would do just as well.
 
 ### Example:

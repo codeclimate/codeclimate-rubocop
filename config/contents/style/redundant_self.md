@@ -25,6 +25,10 @@ This cop checks for redundant uses of `self`.
       self.bar # resolves name clash with local variable
     end
 
+    %w[x y z].select do |bar|
+      self.bar == bar # resolves name clash with argument of a block
+    end
+
 * Calling an attribute writer to prevent an local variable assignment
 
     attr_writer :bar
