@@ -38,7 +38,7 @@ non-public methods.
       end
     end
 
-    # Documenation
+    # Documentation
     def foo.bar
       puts baz
     end
