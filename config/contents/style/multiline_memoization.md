@@ -1,7 +1,8 @@
-This cop checks that multiline memoizations are wrapped in a `begin`
-and `end` block.
+This cop checks expressions wrapping styles for multiline memoization.
 
 ### Example:
+
+    # EnforcedStyle: keyword (default)
 
     # bad
     foo ||= (
@@ -14,3 +15,19 @@ and `end` block.
       bar
       baz
     end
+
+### Example:
+
+    # EnforcedStyle: braces
+
+    # bad
+    foo ||= begin
+      bar
+      baz
+    end
+
+    # good
+    foo ||= (
+      bar
+      baz
+    )

@@ -4,8 +4,21 @@ which is usually a mistake.
 
 ### Example:
 
+    # bad
+
     if something
       ...
     else do_this
+      do_that
+    end
+
+### Example:
+
+    # good
+
+    if something
+      ...
+    else
+      do_this
       do_that
     end
