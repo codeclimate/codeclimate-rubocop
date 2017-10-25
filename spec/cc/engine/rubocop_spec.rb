@@ -4,8 +4,7 @@ require "tmpdir"
 
 module CC::Engine
   describe Rubocop do
-    include FilesystemHelpers
-    before { @code = Dir.mktmpdir }
+    include RubocopRunner
 
     describe "#run" do
       it "analyzes ruby files using rubocop" do
@@ -17,13 +16,13 @@ module CC::Engine
           end
         EORUBY
 
-        output = run_engine
+        run_engine
 
-        expect(includes_check?(output, "Lint/UselessAssignment")).to be true
+        expect(issues).to include_check "Lint/UselessAssignment"
       end
 
       it "reads the configured ruby_style file" do
-        create_source_file("foo.rb", <<-EORUBY)
+        create_source_file("foo.rb", <<~EORUBY)
           def method
             unused = "x" and "y"
 
@@ -37,14 +36,14 @@ module CC::Engine
         )
 
         config = { "config" => "rubocop.yml" }
-        output = run_engine(config)
+        run_engine(config)
 
-        expect(includes_check?(output, "Style/AndOr")).to be true
-        expect(includes_check?(output, "Lint/UselessAssignment")).to be false
+        expect(issues).to include_check "Style/AndOr"
+        expect(issues).to_not include_check "Lint/UselessAssignment"
       end
 
       it "generates a fingerprint for method/class offenses" do
-        create_source_file("foo.rb", <<-EORUBY)
+        create_source_file("foo.rb", <<~EORUBY)
           def method(a, b, c, d)
             x = Math.sqrt((a * a) + (b * b)) + Math.sqrt((a * a) + (b * b))
             y = Math.sqrt((b * b) + (c * c)) + Math.sqrt((b * b) + (c * c))
@@ -53,14 +52,14 @@ module CC::Engine
           end
         EORUBY
 
-        output = run_engine
+        run_engine
 
-        expect(includes_check?(output, "Metrics/AbcSize")).to be true
-        expect(includes_fingerprint?(output, "bebf6280d947e167c1e7b70c069ee856")).to be true
+        expect(issues).to include_check "Metrics/AbcSize"
+        expect(issues).to include_fingerprint "303630e0015ba1c6de300b983babac59"
       end
 
       it "respects the default .rubocop.yml file" do
-        create_source_file("foo.rb", <<-EORUBY)
+        create_source_file("foo.rb", <<~EORUBY)
           def method
             unused = "x" and "y"
 
@@ -73,37 +72,39 @@ module CC::Engine
           "Lint/UselessAssignment:\n  Enabled: false\n"
         )
 
-        output = run_engine
+        run_engine
 
-        expect(includes_check?(output, "Style/AndOr")).to be true
-        expect(includes_check?(output, "Lint/UselessAssignment")).to be false
+        expect(issues).to include_check "Style/AndOr"
+        expect(issues).to_not include_check "Lint/UselessAssignment"
       end
 
       it "respects excludes in an inherit_from directive" do
-        create_source_file("foo.rb", <<-EORUBY)
+        create_source_file("foo.rb", <<~EORUBY)
           def method
             unused = "x"
             return false
           end
         EORUBY
-        create_source_file("bar.rb", <<-EORUBY)
+        create_source_file("bar.rb", <<~EORUBY)
           def method
             unused = 42
             return true
           end
         EORUBY
+        create_source_file(".rubocop.yml", <<~CONFIG)
+          inherit_from: .rubocop_todo.yml
+          AllCops:
+            DisabledByDefault: true
+          Lint/UselessAssignment:
+            Enabled: true
+        CONFIG
+        create_source_file(".rubocop_todo.yml", <<~CONFIG)
+          Lint/UselessAssignment:
+            Exclude:
+              - bar.rb
+        CONFIG
 
-        create_source_file(
-          ".rubocop.yml",
-          "inherit_from: .rubocop_todo.yml\nAllCops:\n  DisabledByDefault: true\nLint/UselessAssignment:\n  Enabled: true\n"
-        )
-        create_source_file(
-          ".rubocop_todo.yml",
-          "Lint/UselessAssignment:\n  Exclude:\n    - bar.rb\n"
-        )
-
-        output = run_engine("include_paths" => ["foo.rb", "bar.rb"])
-        issues = output.split("\0").map { |istr| JSON.parse(istr) }
+        run_engine("include_paths" => ["foo.rb", "bar.rb"])
         lint_issues = issues.select { |issue| issue["check_name"] == "Rubocop/Lint/UselessAssignment" }
 
         expect(lint_issues.detect { |i| i["location"]["path"] == "foo.rb" }).to be_present
@@ -111,7 +112,7 @@ module CC::Engine
       end
 
       it "reads a file with a #!.*ruby declaration at the top" do
-        create_source_file("my_script", <<-EORUBY)
+        create_source_file("my_script", <<~EORUBY)
           #!/usr/bin/env ruby
 
           def method
@@ -120,13 +121,14 @@ module CC::Engine
             return false
           end
         EORUBY
-        output = run_engine
 
-        expect(includes_check?(output, "Lint/UselessAssignment")).to be true
+        run_engine
+
+        expect(issues).to include_check "Lint/UselessAssignment"
       end
 
       it "uses excludes from the specified YAML config" do
-        create_source_file("my_script", <<-EORUBY)
+        create_source_file("my_script", <<~EORUBY)
           #!/usr/bin/env ruby
 
           def method
@@ -135,14 +137,15 @@ module CC::Engine
             return false
           end
         EORUBY
-        create_source_file(
-          "rubocop.yml",
-          "AllCops:\n  Exclude:\n    - \"my_script\"\n"
-        )
-        config = { "config" => "rubocop.yml" }
-        output = run_engine(config)
+        create_source_file("rubocop.yml", <<~CONFIG)
+          AllCops:
+            Exclude:
+              - "my_script"
+        CONFIG
 
-        expect(includes_check?(output, "Lint/UselessAssignment")).to be false
+        run_engine("config" => "rubocop.yml")
+
+        expect(issues).to_not include_check "Lint/UselessAssignment"
       end
 
       it "handles different locations properly" do
@@ -157,7 +160,7 @@ module CC::Engine
             )
           ]
         )
-        create_source_file("my_script.rb", <<-EORUBY)
+        create_source_file("my_script.rb", <<~EORUBY)
           #!/usr/bin/env ruby
 
           def method
@@ -166,10 +169,9 @@ module CC::Engine
             return false
           end
         EORUBY
-        output = run_engine
-        json = output.split("\u0000")
 
-        result = JSON.parse(json.first)
+        run_engine
+
         location = {
           "path" => "my_script.rb",
           "positions" => {
@@ -178,89 +180,50 @@ module CC::Engine
           }
         }
 
-        expect(result["location"]).to eq(location)
-      end
-
-      it "includes complete method body for cyclomatic complexity issue" do
-        create_source_file("my_script", <<-EORUBY)
-          #!/usr/bin/env ruby
-
-          def method(a,b,c,d,e,f,g)
-            r = 1
-            if a
-              if !b
-                if c
-                  if !d
-                    if e
-                      if !f
-                        (1..g).each do |n|
-                          r = (r * n) - n
-                        end
-                      end
-                    end
-                  end
-                end
-              end
-            end
-            r
-          end
-        EORUBY
-        output = run_engine
-        expect(includes_check?(output, "Metrics/CyclomaticComplexity")).to be true
-
-        json = JSON.parse('[' + output.split("\u0000").join(',') + ']')
-
-        result = json.find do |i|
-          i && i["check_name"] =~ %r{Metrics\/CyclomaticComplexity}
-        end
-        location = {
-          "path" => "my_script",
-          "positions" => {
-            "begin" => { "column" => 11, "line" => 3 },
-            "end" => { "column" => 14, "line" => 21 }
-          }
-        }
-
-        expect(result["location"]).to eq(location)
+        expect(issues.first["location"]).to eq(location)
       end
 
       it "uses only include_paths when they're passed in via the config hash" do
-        okay_contents = <<-EORUBY
+        okay_contents = <<~EORUBY
           #!/usr/bin/env ruby
 
           puts "Hello world"
         EORUBY
         create_source_file("included_root_file.rb", okay_contents)
         create_source_file("subdir/subdir_file.rb", okay_contents)
-        create_source_file("ignored_root_file.rb", <<-EORUBY)
+        create_source_file("ignored_root_file.rb", <<~EORUBY)
           def method
             unused = "x" and "y"
 
             return false
           end
         EORUBY
-        create_source_file("ignored_subdir/subdir_file.rb", <<-EORUBY)
+        create_source_file("ignored_subdir/subdir_file.rb", <<~EORUBY)
           def method
             unused = "x"
 
             return false
           end
         EORUBY
-        output = run_engine(
+
+        run_engine(
           "include_paths" => %w[included_root_file.rb subdir/]
         )
 
-        expect(includes_check?(output, "Lint/UselessAssignment")).to be false
-        expect(includes_check?(output, "Style/AndOr")).to be false
+        expect(issues).to_not include_check "Lint/UselessAssignment"
+        expect(issues).to_not include_check "Style/AndOr"
       end
 
       it "ignores non-Ruby files even when passed in as include_paths" do
-        config_yml = "foo:\n  bar: \"baz\""
-        create_source_file("config.yml", config_yml)
-        output = run_engine(
+        create_source_file("config.yml", <<~CONFIG)
+          foo:
+            bar: "baz"
+        CONFIG
+
+        run_engine(
           "include_paths" => %w[config.yml]
         )
-        issue = issues(output).detect do |i|
+        issue = issues.find do |i|
           i["description"] == "unexpected token tCOLON"
         end
 
@@ -268,20 +231,21 @@ module CC::Engine
       end
 
       it "includes Ruby files even if they don't end with .rb" do
-        create_source_file("Rakefile", <<-EORUBY)
+        create_source_file("Rakefile", <<~EORUBY)
           def method
             unused = "x"
 
             return false
           end
         EORUBY
-        output = run_engine("include_paths" => %w[Rakefile])
 
-        expect(includes_check?(output, "Lint/UselessAssignment")).to be true
+        run_engine("include_paths" => %w[Rakefile])
+
+        expect(issues).to include_check "Lint/UselessAssignment"
       end
 
       it "skips local disables" do
-        create_source_file("test.rb", <<-EORUBY)
+        create_source_file("test.rb", <<~EORUBY)
           def method
             # rubocop:disable UselessAssignment
             unused = "x"
@@ -289,68 +253,10 @@ module CC::Engine
             return false
           end
         EORUBY
-        output = run_engine
 
-        expect(includes_check?(output, "Lint/UselessAssignment")).to be false
-      end
+        run_engine
 
-      it "shows full source of long methods" do
-        create_source_file("test.rb", <<-EORUBY)
-          def method
-            #{"puts 'hi'\n" * 10}
-            return false
-          end
-        EORUBY
-        output = run_engine
-        issues = output.split("\0").map { |issue| JSON.parse(issue) }
-        issue = issues.find do |i|
-          i["check_name"] == "Rubocop/Metrics/MethodLength"
-        end
-
-        expect(issue["location"]["positions"]["begin"]["line"]).to eq(1)
-        expect(issue["location"]["positions"]["end"]["line"]).to eq(14)
-      end
-
-      it "shows full source of long classes" do
-        create_source_file("test.rb", <<-EORUBY)
-          class Awesome
-            #{"foo = 1\n" * 102}
-          end
-        EORUBY
-        output = run_engine
-        issues = output.split("\0").map { |issue| JSON.parse(issue) }
-        issue = issues.find do |i|
-          i["check_name"] == "Rubocop/Metrics/ClassLength"
-        end
-
-        expect(issue["location"]["positions"]["begin"]["line"]).to eq(1)
-        expect(issue["location"]["positions"]["end"]["line"]).to eq(105)
-      end
-
-      def includes_check?(output, cop_name)
-        issues(output).any? { |i| i["check_name"] =~ /#{cop_name}$/ }
-      end
-
-      def includes_fingerprint?(output, fingerprint)
-        issues(output).any? { |i| i["fingerprint"] == fingerprint }
-      end
-
-      def includes_content_for?(output, cop_name)
-        issue = issues(output).detect { |i| i["check_name"] =~ /#{cop_name}$/ }
-
-        issue["content"] && issue["content"]["body"].present?
-      end
-
-      def issues(output)
-        output.split("\0").map { |x| JSON.parse(x) }
-      end
-
-      def run_engine(config = nil)
-        io = StringIO.new
-        rubocop = Rubocop.new(@code, config, io)
-        rubocop.run
-
-        io.string
+        expect(issues).to_not include_check "Lint/UselessAssignment"
       end
     end
   end
