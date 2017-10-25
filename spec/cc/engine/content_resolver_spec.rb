@@ -14,8 +14,12 @@ module CC::Engine
 
     describe "#content" do
       cops.each do |cop|
-        if !whitelist.include?(cop.name)
-          describe "#{cop.name}" do
+        context "for #{cop.name}" do
+          if whitelist.include?(cop.name)
+            it "has no content" do
+              expect(ContentResolver.new(cop.name).content).to eq false
+            end
+          else
             it "has content" do
               resolver = ContentResolver.new(cop.name)
               expect(resolver.content).to be_a(String), "#{cop.name} has no content, consider running `rake docs:scrape`"

@@ -56,7 +56,7 @@ module CC::Engine
         output = run_engine
 
         expect(includes_check?(output, "Metrics/AbcSize")).to be true
-        expect(includes_fingerprint?(output, "303630e0015ba1c6de300b983babac59")).to be true
+        expect(includes_fingerprint?(output, "bebf6280d947e167c1e7b70c069ee856")).to be true
       end
 
       it "respects the default .rubocop.yml file" do
