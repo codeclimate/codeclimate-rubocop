@@ -2,10 +2,7 @@ This cop enforces consistency between 'return nil' and 'return'.
 
 Supported styles are: return, return_nil.
 
-### Example:
-
-    # EnforcedStyle: return (default)
-
+### Example: EnforcedStyle: return (default)
     # bad
     def foo(arg)
       return nil if arg
@@ -16,8 +13,7 @@ Supported styles are: return, return_nil.
       return if arg
     end
 
-    # EnforcedStyle: return_nil
-
+### Example: EnforcedStyle: return_nil
     # bad
     def foo(arg)
       return if arg

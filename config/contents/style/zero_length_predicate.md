@@ -5,7 +5,6 @@ receiver.length < 1 and receiver.size == 0 that can be
 replaced by receiver.empty? and !receiver.empty.
 
 ### Example:
-
     # bad
     [1, 2, 3].length == 0
     0 == "foobar".length

@@ -19,7 +19,7 @@ call or a Model.update(id, attributes) call.
 
     # good
     unless user.save
-       . . .
+      # ...
     end
     user.save!
     user.update!(name: 'Joe')
@@ -28,5 +28,5 @@ call or a Model.update(id, attributes) call.
 
     user = User.find_or_create_by(name: 'Joe')
     unless user.persisted?
-       . . .
+      # ...
     end

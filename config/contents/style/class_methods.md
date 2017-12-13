@@ -5,13 +5,13 @@ self, when defining class/module methods.
     # bad
     class SomeClass
       def SomeClass.class_method
-        ...
+        # ...
       end
     end
 
     # good
     class SomeClass
       def self.class_method
-        ...
+        # ...
       end
     end

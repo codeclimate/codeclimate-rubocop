@@ -3,10 +3,7 @@ single line lambdas, and the method call syntax for multiline lambdas.
 It is configurable to enforce one of the styles for both single line
 and multiline lambdas as well.
 
-### Example:
-
-    # EnforcedStyle: line_count_dependent (default)
-
+### Example: EnforcedStyle: line_count_dependent (default)
     # bad
     f = lambda { |x| x }
     f = ->(x) do
@@ -19,10 +16,7 @@ and multiline lambdas as well.
           x
         end
 
-### Example:
-
-    # EnforcedStyle: lambda
-
+### Example: EnforcedStyle: lambda
     # bad
     f = ->(x) { x }
     f = ->(x) do
@@ -35,10 +29,7 @@ and multiline lambdas as well.
           x
         end
 
-### Example:
-
-    # EnforcedStyle: literal
-
+### Example: EnforcedStyle: literal
     # bad
     f = lambda { |x| x }
     f = lambda do |x|

@@ -21,7 +21,7 @@ vs a call to pluck on an ActiveRecord::Associations::CollectionProxy.
 
 ### Example:
     # this will return a Relation that pluck is called on
-    Model.where(...).pluck(:id).uniq
+    Model.where(cond: true).pluck(:id).uniq
 
     # an association on an instance will return a CollectionProxy
     instance.assoc.pluck(:id).uniq

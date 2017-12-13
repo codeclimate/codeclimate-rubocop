@@ -12,34 +12,33 @@ left-hand-side of the variable assignment, if there is one.
 If it's set to `start_of_line`, the `end` shall be aligned with the
 start of the line where the matching keyword appears.
 
-### Example:
-
+### Example: EnforcedStyleAlignWith: keyword (default)
     # bad
 
     variable = if true
         end
-
-### Example:
-
-    # EnforcedStyleAlignWith: keyword (default)
 
     # good
 
     variable = if true
                end
 
-### Example:
+### Example: EnforcedStyleAlignWith: variable
+    # bad
 
-    # EnforcedStyleAlignWith: variable
+    variable = if true
+        end
 
     # good
 
     variable = if true
     end
 
-### Example:
+### Example: EnforcedStyleAlignWith: start_of_line
+    # bad
 
-    # EnforcedStyleAlignWith: start_of_line
+    variable = if true
+        end
 
     # good
 

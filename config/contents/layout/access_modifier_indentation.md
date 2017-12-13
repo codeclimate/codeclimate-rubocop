@@ -1,9 +1,7 @@
 Modifiers should be indented as deep as method definitions, or as deep
 as the class/module keyword, depending on configuration.
 
-### Example:
-    # EnforcedStyle: indent (default)
-
+### Example: EnforcedStyle: indent (default)
     # bad
     class Plumbus
     private
@@ -16,8 +14,7 @@ as the class/module keyword, depending on configuration.
       def smooth; end
     end
 
-    # EnforcedStyle: outdent
-
+### Example: EnforcedStyle: outdent
     # bad
     class Plumbus
       private

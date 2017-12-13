@@ -3,10 +3,7 @@ Hash#has_value? where it enforces Hash#key? and Hash#value?
 It is configurable to enforce the inverse, using `verbose` method
 names also.
 
-### Example:
-
- # EnforcedStyle: short (default)
-
+### Example: EnforcedStyle: short (default)
  # bad
  Hash#has_key?
  Hash#has_value?
@@ -15,10 +12,7 @@ names also.
  Hash#key?
  Hash#value?
 
-### Example:
-
- # EnforcedStyle: verbose
-
+### Example: EnforcedStyle: verbose
  # bad
  Hash#key?
  Hash#value?

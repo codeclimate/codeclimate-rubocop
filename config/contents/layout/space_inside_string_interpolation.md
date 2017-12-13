@@ -1,8 +1,15 @@
 This cop checks for whitespace within string interpolations.
 
-### Example:
-    # Good if EnforcedStyle is no_space, bad if space.
+### Example: EnforcedStyle: no_space (default)
+    # bad
+       var = "This is the #{ space } example"
+
+    # good
        var = "This is the #{no_space} example"
 
-    # Good if EnforceStyle is space, bad if no_space.
+### Example: EnforcedStyle: space
+    # bad
+       var = "This is the #{no_space} example"
+
+    # good
        var = "This is the #{ space } example"
