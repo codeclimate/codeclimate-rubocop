@@ -6,10 +6,7 @@ to go on its own line (expanded style).
 Note: A method definition is not considered empty if it contains
         comments.
 
-### Example:
-
-    # EnforcedStyle: compact (default)
-
+### Example: EnforcedStyle: compact (default)
     # bad
     def foo(bar)
     end
@@ -26,10 +23,7 @@ Note: A method definition is not considered empty if it contains
 
     def self.foo(bar); end
 
-### Example:
-
-    # EnforcedStyle: expanded
-
+### Example: EnforcedStyle: expanded
     # bad
     def foo(bar); end
 

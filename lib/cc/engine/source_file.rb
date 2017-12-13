@@ -32,7 +32,7 @@ module CC
       end
 
       def rubocop_team
-        RuboCop::Cop::Team.new(RuboCop::Cop::Cop.registry, config_store)
+        RuboCop::Cop::Team.new(RuboCop::Cop::Cop.registry, config_store, display_cop_names: false)
       end
 
       def display_path

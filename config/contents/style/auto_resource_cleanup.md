@@ -9,5 +9,5 @@ resource cleanup.
 
     # good
     File.open('file') do |f|
-      ...
+      # ...
     end

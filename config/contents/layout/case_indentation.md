@@ -25,12 +25,10 @@ It will register a separate offense for each misaligned *when*.
       y / 3
     end
 
-### Example:
+### Example: EnforcedStyle: case (default)
     # if EndAlignment is set to other style such as
     # start_of_line (as shown below), then *when* alignment
     # configuration does have an effect.
-
-    # EnforcedStyle: case (default)
 
     # bad
     a = case n
@@ -48,8 +46,7 @@ It will register a separate offense for each misaligned *when*.
           y / 3
     end
 
-    # EnforcedStyle: end
-
+### Example: EnforcedStyle: end
     # bad
     a = case n
         when 0

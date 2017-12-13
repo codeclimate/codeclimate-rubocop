@@ -24,6 +24,6 @@ allowed.
     end
 
     # good
-    class x # :nodoc:
+    class X # :nodoc:
       y
     end

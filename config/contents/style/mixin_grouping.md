@@ -2,10 +2,7 @@ This cop checks for grouping of mixins in `class` and `module` bodies.
 By default it enforces mixins to be placed in separate declarations,
 but it can be configured to enforce grouping them in one declaration.
 
-### Example:
-
-    EnforcedStyle: separated (default)
-
+### Example: EnforcedStyle: separated (default)
     # bad
     class Foo
       include Bar, Qox
@@ -17,8 +14,7 @@ but it can be configured to enforce grouping them in one declaration.
       include Bar
     end
 
-    EnforcedStyle: grouped
-
+### Example: EnforcedStyle: grouped
     # bad
     class Foo
       extend Bar

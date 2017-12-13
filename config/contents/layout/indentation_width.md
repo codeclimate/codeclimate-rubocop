@@ -5,16 +5,22 @@ See also the IndentationConsistency cop which is the companion to this
 one.
 
 ### Example:
-    # bad, Width: 2
+    # bad
     class A
      def test
       puts 'hello'
      end
     end
 
-    # bad, Width: 2,
-           IgnoredPatterns:
-             - '^\s*module'
+    # good
+    class A
+      def test
+        puts 'hello'
+      end
+    end
+
+### Example: IgnoredPatterns: ['^\s*module']
+    # bad
     module A
     class B
       def test
@@ -23,16 +29,7 @@ one.
     end
     end
 
-    # good, Width: 2
-    class A
-      def test
-        puts 'hello'
-      end
-    end
-
-    # good, Width: 2,
-            IgnoredPatterns:
-              - '^\s*module'
+    # good
     module A
     class B
       def test

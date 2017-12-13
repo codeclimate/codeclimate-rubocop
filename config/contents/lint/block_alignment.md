@@ -13,8 +13,7 @@ start of the line where the expression started.
 `either` (which is the default) : the `end` is allowed to be in either
 location. The autofixer will default to `start_of_line`.
 
-### Example:
-
+### Example: EnforcedStyleAlignWith: either (default)
     # bad
 
     foo.bar
@@ -22,19 +21,19 @@ location. The autofixer will default to `start_of_line`.
          baz
            end
 
-### Example:
-
-    # EnforcedStyleAlignWith: either (default)
-
     # good
 
     variable = lambda do |i|
       i
     end
 
-### Example:
+### Example: EnforcedStyleAlignWith: start_of_block
+    # bad
 
-    # EnforcedStyleAlignWith: start_of_block
+    foo.bar
+       .each do
+         baz
+           end
 
     # good
 
@@ -43,9 +42,13 @@ location. The autofixer will default to `start_of_line`.
          baz
        end
 
-### Example:
+### Example: EnforcedStyleAlignWith: start_of_line
+    # bad
 
-    # EnforcedStyleAlignWith: start_of_line
+    foo.bar
+       .each do
+         baz
+           end
 
     # good
 

@@ -7,25 +7,22 @@ parameter. If it's set to `start_of_line` (which is the default), the
 keyword is. If it's set to `def`, the `end` shall be aligned with the
 `def` keyword.
 
-### Example:
-
+### Example: EnforcedStyleAlignWith: start_of_line (default)
     # bad
 
     private def foo
                 end
-
-### Example:
-
-    # EnforcedStyleAlignWith: start_of_line (default)
 
     # good
 
     private def foo
     end
 
-### Example:
+### Example: EnforcedStyleAlignWith: def
+    # bad
 
-    # EnforcedStyleAlignWith: def
+    private def foo
+                end
 
     # good
 

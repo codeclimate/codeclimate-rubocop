@@ -29,6 +29,7 @@ line as the last parameter of the definition.
       def foo(a,
         b
       )
+      end
 
       # symmetrical: bad
       # new_line: bad
@@ -36,12 +37,14 @@ line as the last parameter of the definition.
       def foo(
         a,
         b)
+      end
 
       # symmetrical: good
       # new_line: bad
       # same_line: good
       def foo(a,
         b)
+      end
 
       # symmetrical: good
       # new_line: good
@@ -50,3 +53,4 @@ line as the last parameter of the definition.
         a,
         b
       )
+      end

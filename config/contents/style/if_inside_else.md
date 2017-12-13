@@ -3,15 +3,6 @@ it can be combined with the `else` to become an `elsif`.
 This helps to keep the nesting level from getting too deep.
 
 ### Example:
-    # good
-    if condition_a
-      action_a
-    elsif condition_b
-      action_b
-    else
-      action_c
-    end
-
     # bad
     if condition_a
       action_a
@@ -21,4 +12,13 @@ This helps to keep the nesting level from getting too deep.
       else
         action_c
       end
+    end
+
+    # good
+    if condition_a
+      action_a
+    elsif condition_b
+      action_b
+    else
+      action_c
     end

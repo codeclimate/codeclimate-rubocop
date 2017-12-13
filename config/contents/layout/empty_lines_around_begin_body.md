@@ -6,13 +6,13 @@ blocks.
     # good
 
     begin
-      ...
+      # ...
     end
 
     # bad
 
     begin
 
-      ...
+      # ...
 
     end

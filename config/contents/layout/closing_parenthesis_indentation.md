@@ -20,3 +20,4 @@ closing parenthesis means `)` preceded by a line break.
       x,
       y
       )
+    end

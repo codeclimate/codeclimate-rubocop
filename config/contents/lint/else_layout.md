@@ -7,7 +7,7 @@ which is usually a mistake.
     # bad
 
     if something
-      ...
+      # ...
     else do_this
       do_that
     end
@@ -17,7 +17,7 @@ which is usually a mistake.
     # good
 
     if something
-      ...
+      # ...
     else
       do_this
       do_that

@@ -2,15 +2,15 @@ This cop checks for options hashes and discourages them if the
 current Ruby version supports keyword arguments.
 
 ### Example:
-    Instead of:
 
+    # bad
     def fry(options = {})
       temperature = options.fetch(:temperature, 300)
-      ...
+      # ...
     end
 
-    Prefer:
 
+    # good
     def fry(temperature: 300)
-      ...
+      # ...
     end

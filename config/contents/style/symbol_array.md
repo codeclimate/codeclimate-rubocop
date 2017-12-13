@@ -9,18 +9,14 @@ If set, arrays with fewer elements than this value will not trigger the
 cop. For example, a `MinSize of `3` will not enforce a style on an array
 of 2 or fewer elements.
 
-### Example:
-    EnforcedStyle: percent (default)
-
+### Example: EnforcedStyle: percent (default)
     # good
     %i[foo bar baz]
 
     # bad
     [:foo, :bar, :baz]
 
-### Example:
-    EnforcedStyle: brackets
-
+### Example: EnforcedStyle: brackets
     # good
     [:foo, :bar, :baz]
 
