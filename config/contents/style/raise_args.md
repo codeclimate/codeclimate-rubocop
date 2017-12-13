@@ -8,10 +8,7 @@ The exploded style works identically, but with the addition that it
 will also suggest constructing error objects when the exception is
 passed multiple arguments.
 
-### Example:
-
-    # EnforcedStyle: exploded
-
+### Example: EnforcedStyle: exploded (default)
     # bad
     raise StandardError.new("message")
 
@@ -21,10 +18,7 @@ passed multiple arguments.
     raise MyCustomError.new(arg1, arg2, arg3)
     raise MyKwArgError.new(key1: val1, key2: val2)
 
-### Example:
-
-    # EnforcedStyle: compact
-
+### Example: EnforcedStyle: compact
     # bad
     raise StandardError, "message"
     raise RuntimeError, arg1, arg2, arg3

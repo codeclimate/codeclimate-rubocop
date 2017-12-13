@@ -12,7 +12,7 @@ an operand of &&/||.
     # bad
 
     if day.is? :tuesday && month == :jan
-      ...
+      # ...
     end
 
 ### Example:
@@ -20,3 +20,5 @@ an operand of &&/||.
     # good
 
     if day.is?(:tuesday) && month == :jan
+      # ...
+    end

@@ -11,10 +11,7 @@ The cop ignores comparisons to global variables, since they are often
 populated with objects which can be compared with integers, but are
 not themselves `Interger` polymorphic.
 
-### Example:
-
-    # EnforcedStyle: predicate (default)
-
+### Example: EnforcedStyle: predicate (default)
     # bad
 
     foo == 0
@@ -27,10 +24,7 @@ not themselves `Interger` polymorphic.
     foo.negative?
     bar.baz.positive?
 
-### Example:
-
-    # EnforcedStyle: comparison
-
+### Example: EnforcedStyle: comparison
     # bad
 
     foo.zero?

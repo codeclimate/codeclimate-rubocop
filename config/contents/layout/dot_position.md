@@ -1,6 +1,6 @@
 This cop checks the . position in multi-line method calls.
 
-### Example:
+### Example: EnforcedStyle: leading (default)
     # bad
     something.
       mehod
@@ -8,3 +8,12 @@ This cop checks the . position in multi-line method calls.
     # good
     something
       .method
+
+### Example: EnforcedStyle: trailing
+    # bad
+    something
+      .method
+
+    # good
+    something.
+      mehod

@@ -5,17 +5,9 @@ without else are considered. There are three different styles:
     - prefix
     - postfix
 
-### Example:
-
-    # EnforcedStyle: both
+### Example: EnforcedStyle: both (default)
     # enforces `unless` for `prefix` and `postfix` conditionals
 
-    # good
-
-    unless foo
-      bar
-    end
-
     # bad
 
     if !foo
@@ -24,23 +16,21 @@ without else are considered. There are three different styles:
 
     # good
 
-    bar unless foo
+    unless foo
+      bar
+    end
 
     # bad
 
     bar if !foo
 
-### Example:
+    # good
 
-    # EnforcedStyle: prefix
+    bar unless foo
+
+### Example: EnforcedStyle: prefix
     # enforces `unless` for just `prefix` conditionals
 
-    # good
-
-    unless foo
-      bar
-    end
-
     # bad
 
     if !foo
@@ -49,20 +39,24 @@ without else are considered. There are three different styles:
 
     # good
 
-    bar if !foo
-
-### Example:
-
-    # EnforcedStyle: postfix
-    # enforces `unless` for just `postfix` conditionals
+    unless foo
+      bar
+    end
 
     # good
 
-    bar unless foo
+    bar if !foo
+
+### Example: EnforcedStyle: postfix
+    # enforces `unless` for just `postfix` conditionals
 
     # bad
 
     bar if !foo
+
+    # good
+
+    bar unless foo
 
     # good
 

@@ -1,9 +1,6 @@
 This cop checks expressions wrapping styles for multiline memoization.
 
-### Example:
-
-    # EnforcedStyle: keyword (default)
-
+### Example: EnforcedStyle: keyword (default)
     # bad
     foo ||= (
       bar
@@ -16,10 +13,7 @@ This cop checks expressions wrapping styles for multiline memoization.
       baz
     end
 
-### Example:
-
-    # EnforcedStyle: braces
-
+### Example: EnforcedStyle: braces
     # bad
     foo ||= begin
       bar

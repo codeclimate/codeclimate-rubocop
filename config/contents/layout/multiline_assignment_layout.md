@@ -1,27 +1,28 @@
 This cop checks whether the multiline assignments have a newline
 after the assignment operator.
 
-### Example:
-    # bad (with EnforcedStyle set to new_line)
+### Example: EnforcedStyle: new_line (default)
+    # bad
     foo = if expression
       'bar'
     end
 
-    # good (with EnforcedStyle set to same_line)
-    foo = if expression
-      'bar'
-    end
-
-    # good (with EnforcedStyle set to new_line)
+    # good
     foo =
       if expression
         'bar'
       end
 
-    # good (with EnforcedStyle set to new_line)
+    # good
     foo =
       begin
         compute
       rescue => e
         nil
       end
+
+### Example: EnforcedStyle: same_line
+    # good
+    foo = if expression
+      'bar'
+    end

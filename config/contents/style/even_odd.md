@@ -5,6 +5,8 @@ should have been used.
 
     # bad
     if x % 2 == 0
+    end
 
     # good
     if x.even?
+    end

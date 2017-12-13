@@ -5,13 +5,13 @@ This cops checks if empty lines exist around the bodies of methods.
     # good
 
     def foo
-      ...
+      # ...
     end
 
     # bad
 
     def bar
 
-      ...
+      # ...
 
     end
