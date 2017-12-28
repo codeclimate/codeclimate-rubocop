@@ -14,7 +14,7 @@ more than the start of the line where the opening square bracket is.
 This default style is called 'special_inside_parentheses'. Alternative
 styles are 'consistent' and 'align_brackets'. Here are examples:
 
-### Example: EnforcedStyle: special_inside_parentheses
+### Example: EnforcedStyle: special_inside_parentheses (default)
     # The `special_inside_parentheses` style enforces that the first
     # element in an array literal where the opening bracket and first
     # element are on seprate lines is indented one step (two spaces) more

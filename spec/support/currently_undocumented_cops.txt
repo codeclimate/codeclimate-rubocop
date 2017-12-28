@@ -14,8 +14,6 @@ RuboCop::Cop::Style::BeginBlock
 RuboCop::Cop::Style::ConditionalAssignment
 RuboCop::Cop::Style::Encoding
 RuboCop::Cop::Style::EndBlock
-RuboCop::Cop::Style::MethodDefParentheses
-RuboCop::Cop::Style::MultilineTernaryOperator
 RuboCop::Cop::Style::NegatedWhile
 RuboCop::Cop::Style::NestedTernaryOperator
 RuboCop::Cop::Style::OneLineConditional
