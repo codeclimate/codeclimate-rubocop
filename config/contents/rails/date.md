@@ -15,18 +15,26 @@ and 'to_time_in_current_zone' is reported as warning.
 When EnforcedStyle is 'flexible' then only 'Date.today' is prohibited
 and only 'to_time' is reported as warning.
 
-### Example:
-    # no offense
+### Example: EnforcedStyle: strict
+    # bad
+    Date.current
+    Date.yesterday
+    Date.today
+    date.to_time
+    date.to_time_in_current_zone
+
+    # good
     Time.zone.today
     Time.zone.today - 1.day
 
-    # flexible
-    Date.current
-    Date.yesterday
-
-    # always reports offense
+### Example: EnforcedStyle: flexible (default)
+    # bad
     Date.today
     date.to_time
 
-    # reports offense only when style is 'strict'
+    # good
+    Time.zone.today
+    Time.zone.today - 1.day
+    Date.current
+    Date.yesterday
     date.to_time_in_current_zone
