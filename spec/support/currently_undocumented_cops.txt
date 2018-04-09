@@ -1,15 +1,8 @@
 RuboCop::Cop::Layout::EndOfLine
-RuboCop::Cop::Layout::InitialIndentation
 RuboCop::Cop::Layout::SpaceInsideBrackets
-RuboCop::Cop::Layout::Tab
-RuboCop::Cop::Layout::TrailingBlankLines
-RuboCop::Cop::Layout::TrailingWhitespace
 RuboCop::Cop::Lint::MissingCopEnableDirective
-RuboCop::Cop::Lint::ScriptPermission
 RuboCop::Cop::Lint::Syntax
 RuboCop::Cop::Metrics::LineLength
-RuboCop::Cop::Performance::FixedSize
-RuboCop::Cop::Rails::Validation
 RuboCop::Cop::Style::BeginBlock
 RuboCop::Cop::Style::ConditionalAssignment
 RuboCop::Cop::Style::Encoding
