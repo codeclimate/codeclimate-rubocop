@@ -14,81 +14,148 @@ can also be configured. The options are:
     - ignore_implicit (without curly braces)
     - ignore_explicit (with curly braces)
 
-### Example:
+### Example: EnforcedHashRocketStyle: key (default)
+    # bad
+    {
+      :foo => bar,
+       :ba => baz
+    }
 
-    # EnforcedHashRocketStyle: key (default)
-    # EnforcedColonStyle: key (default)
+    # good
+    {
+      :foo => bar,
+      :ba => baz
+    }
+
+### Example: EnforcedHashRocketStyle: separator
+    # bad
+    {
+      :foo => bar,
+      :ba => baz
+    }
+    {
+      :foo => bar,
+      :ba  => baz
+    }
+
+    # good
+    {
+      :foo => bar,
+       :ba => baz
+    }
+
+### Example: EnforcedHashRocketStyle: table
+    # bad
+    {
+      :foo => bar,
+       :ba => baz
+    }
+
+    # good
+    {
+      :foo => bar,
+      :ba  => baz
+    }
+
+### Example: EnforcedColonStyle: key (default)
+    # bad
+    {
+      foo: bar,
+       ba: baz
+    }
 
     # good
     {
       foo: bar,
       ba: baz
     }
-    {
-      :foo => bar,
-      :ba => baz
-    }
 
+### Example: EnforcedColonStyle: separator
     # bad
-    {
-      foo: bar,
-       ba: baz
-    }
-    {
-      :foo => bar,
-       :ba => baz
-    }
-
-### Example:
-
-    # EnforcedHashRocketStyle: separator
-    # EnforcedColonStyle: separator
-
-    #good
-    {
-      foo: bar,
-       ba: baz
-    }
-    {
-      :foo => bar,
-       :ba => baz
-    }
-
-    #bad
     {
       foo: bar,
       ba: baz
     }
+
+    # good
     {
-      :foo => bar,
-      :ba => baz
-    }
-    {
-      :foo => bar,
-      :ba  => baz
+      foo: bar,
+       ba: baz
     }
 
-### Example:
+### Example: EnforcedColonStyle: table
+    # bad
+    {
+      foo: bar,
+      ba: baz
+    }
 
-    # EnforcedHashRocketStyle: table
-    # EnforcedColonStyle: table
-
-    #good
+    # good
     {
       foo: bar,
       ba:  baz
     }
-    {
-      :foo => bar,
-      :ba  => baz
-    }
 
-    #bad
-    {
-      foo: bar,
-      ba: baz
-    }
-    {
-      :foo => bar,
-       :ba => baz
-    }
+### Example: EnforcedLastArgumentHashStyle: always_inspect (default)
+    # Inspect both implicit and explicit hashes.
+
+    # bad
+    do_something(foo: 1,
+      bar: 2)
+
+    # bad
+    do_something({foo: 1,
+      bar: 2})
+
+    # good
+    do_something(foo: 1,
+                 bar: 2)
+
+    # good
+    do_something(
+      foo: 1,
+      bar: 2
+    )
+
+    # good
+    do_something({foo: 1,
+                  bar: 2})
+
+    # good
+    do_something({
+      foo: 1,
+      bar: 2
+    })
+
+### Example: EnforcedLastArgumentHashStyle: always_ignore
+    # Ignore both implicit and explicit hashes.
+
+    # good
+    do_something(foo: 1,
+      bar: 2)
+
+    # good
+    do_something({foo: 1,
+      bar: 2})
+
+### Example: EnforcedLastArgumentHashStyle: ignore_implicit
+    # Ignore only implicit hashes.
+
+    # bad
+    do_something({foo: 1,
+      bar: 2})
+
+    # good
+    do_something(foo: 1,
+      bar: 2)
+
+### Example: EnforcedLastArgumentHashStyle: ignore_explicit
+    # Ignore only explicit hashes.
+
+    # bad
+    do_something(foo: 1,
+      bar: 2)
+
+    # good
+    do_something({foo: 1,
+      bar: 2})
