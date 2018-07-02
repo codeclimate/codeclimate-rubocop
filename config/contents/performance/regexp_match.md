@@ -14,6 +14,13 @@ So, when `MatchData` is not used, use `match?` instead of `match`.
 
     # bad
     def foo
+      if x !~ /re/
+        do_something
+      end
+    end
+
+    # bad
+    def foo
       if x.match(/re/)
         do_something
       end
@@ -29,6 +36,13 @@ So, when `MatchData` is not used, use `match?` instead of `match`.
     # good
     def foo
       if x.match?(/re/)
+        do_something
+      end
+    end
+
+    # good
+    def foo
+      if !x.match?(/re/)
         do_something
       end
     end
