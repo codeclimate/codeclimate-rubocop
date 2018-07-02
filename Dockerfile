@@ -6,10 +6,12 @@ RUN adduser -u 9000 -D app
 
 COPY Gemfile Gemfile.lock /usr/src/app/
 
-RUN gem install bundler && \
-    bundle install -j 4 --without=test && \
+RUN apk add --update build-base && \
+    gem install bundler && \
+    bundle install --quiet -j 4 --without=test && \
     chown -R app:app /usr/local/bundle && \
-    rm -fr ~/.gem ~/.bundle ~/.wh..gem
+    rm -fr ~/.gem ~/.bundle ~/.wh..gem && \
+    apk del build-base
 
 COPY . /usr/src/app
 RUN chown -R app:app .
