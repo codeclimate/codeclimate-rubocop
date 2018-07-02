@@ -6,9 +6,9 @@ This cop checks for extra/unnecessary whitespace.
     name      = "RuboCop"
     # Some comment and an empty line
 
-    website  += "/bbatsov/rubocop" unless cond
+    website  += "/rubocop-hq/rubocop" unless cond
     puts        "rubocop"          if     debug
 
     # bad for any configuration
     set_app("RuboCop")
-    website  = "https://github.com/bbatsov/rubocop"
+    website  = "https://github.com/rubocop-hq/rubocop"
