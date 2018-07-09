@@ -31,6 +31,26 @@ the configuration.
 
     end
 
+### Example: Enforcedstyle: beginning_only
+    # good
+
+    class Foo
+
+      def bar
+        # ...
+      end
+    end
+
+### Example: Enforcedstyle: ending_only
+    # good
+
+    class Foo
+      def bar
+        # ...
+      end
+
+    end
+
 ### Example: EnforcedStyle: no_empty_lines (default)
     # good
 
