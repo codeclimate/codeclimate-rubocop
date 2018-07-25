@@ -18,7 +18,7 @@ GEM
     mry (0.52.0.0)
       rubocop (>= 0.41.0)
     parallel (1.12.1)
-    parser (2.5.1.0)
+    parser (2.5.1.2)
       ast (~> 2.4.0)
     powerpack (0.1.2)
     pry (0.11.3)
@@ -39,10 +39,10 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
-    rubocop (0.58.0)
+    rubocop (0.58.2)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
-      parser (>= 2.5)
+      parser (>= 2.5, != 2.5.1.1)
       powerpack (~> 0.1)
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
@@ -68,10 +68,10 @@ DEPENDENCIES
   pry
   rake
   rspec
-  rubocop (~> 0.58.0)
+  rubocop (~> 0.58.2)
   rubocop-migrations
   rubocop-rspec
   safe_yaml
 
 BUNDLED WITH
-   1.16.1
+   1.16.3
