@@ -1,0 +1,38 @@
+#!/bin/sh
+set -eu
+
+if [ $# -eq 0 ]; then
+  >&2 echo "Usage: 'bin/newver X.Y.Z', where X.Y.Z is the Rubocop version to add."
+  exit 1
+fi
+NEWVER="$1"
+
+git checkout Gemfile*
+git checkout -b "newver/${NEWVER}"
+
+ed Gemfile <<-EDITS
+/gem "parser",/c
+gem "parser"
+.
+/gem "rubocop",/c
+gem "rubocop", "~> ${NEWVER}", require: false
+.
+wq
+EDITS
+
+make bundle -e BUNDLE_ARGS="update rubocop"
+make image
+make docs
+sudo chown -R $(id -u):$(id -g) config
+
+set +e
+make test
+retval=$?
+if [ $retval -ne 0 ]; then
+  >&2 echo "If tests fail, you may need to modify spec/support/currently_undocumented_cops.txt"
+  exit $retval
+fi
+set -e
+
+git add config spec Gemfile*
+git commit -v -m "Updated channel and documentation to Rubocop v${NEWVER}"
