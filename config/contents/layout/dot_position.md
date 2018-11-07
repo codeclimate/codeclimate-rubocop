@@ -3,7 +3,7 @@ This cop checks the . position in multi-line method calls.
 ### Example: EnforcedStyle: leading (default)
     # bad
     something.
-      mehod
+      method
 
     # good
     something
@@ -16,4 +16,4 @@ This cop checks the . position in multi-line method calls.
 
     # good
     something.
-      mehod
+      method
