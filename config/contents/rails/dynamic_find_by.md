@@ -1,6 +1,6 @@
 This cop checks dynamic `find_by_*` methods.
 Use `find_by` instead of dynamic method.
-See. https://github.com/rubocop-hq/rails-style-guide#find_by
+See. https://github.com/bbatsov/rails-style-guide#find_by
 
 ### Example:
     # bad

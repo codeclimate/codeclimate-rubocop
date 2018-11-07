@@ -1,7 +1,7 @@
 Checks that braces used for hash literals have or don't have
 surrounding space depending on configuration.
 
-### Example: EnforcedStyle: space (default)
+### Example: EnforcedStyle: space
     # The `space` style enforces that hash literals have
     # surrounding space.
 
@@ -31,28 +31,3 @@ surrounding space depending on configuration.
 
     # good
     h = { a: { b: 2 }}
-
-
-### Example: EnforcedStyleForEmptyBraces: no_space (default)
-    # The `no_space` EnforcedStyleForEmptyBraces style enforces that
-    # empty hash braces do not contain spaces.
-
-    # bad
-    foo = { }
-    bar = {    }
-
-    # good
-    foo = {}
-    bar = {}
-
-### Example: EnforcedStyleForEmptyBraces: space
-    # The `space` EnforcedStyleForEmptyBraces style enforces that
-    # empty hash braces contain space.
-
-    # bad
-    foo = {}
-
-    # good
-    foo = { }
-    foo = {  }
-    foo = {     }

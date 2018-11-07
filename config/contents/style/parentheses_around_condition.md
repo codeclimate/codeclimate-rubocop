@@ -17,20 +17,3 @@ condition of if/unless/while/until.
     if x > 10
     elsif x < 3
     end
-
-### Example: AllowInMultilineConditions: false (default)
-    # bad
-    if (x > 10 &&
-       y > 10)
-    end
-
-    # good
-     if x > 10 &&
-        y > 10
-     end
-
-### Example: AllowInMultilineConditions: true
-    # good
-    if (x > 10 &&
-       y > 10)
-    end

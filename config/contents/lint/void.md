@@ -1,5 +1,5 @@
-This cop checks for operators, variables, literals, and nonmutating
-methods used in void context.
+This cop checks for operators, variables and literals used
+in void context.
 
 ### Example:
 
@@ -21,15 +21,6 @@ methods used in void context.
 
 ### Example:
 
-    # bad, when CheckForMethodsWithNoSideEffects is set true
-
-    def some_method(some_array)
-      some_array.sort
-      do_something(some_array)
-    end
-
-### Example:
-
     # good
 
     def some_method
@@ -44,13 +35,4 @@ methods used in void context.
     def some_method(some_var)
       do_something
       some_var
-    end
-
-### Example:
-
-    # good, when CheckForMethodsWithNoSideEffects is set true
-
-    def some_method(some_array)
-      some_array.sort!
-      do_something(some_array)
     end

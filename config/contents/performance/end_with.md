@@ -3,7 +3,6 @@ would suffice.
 
 ### Example:
     # bad
-    'abc'.match?(/bc\Z/)
     'abc' =~ /bc\Z/
     'abc'.match(/bc\Z/)
 

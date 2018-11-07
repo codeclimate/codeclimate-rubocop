@@ -98,4 +98,4 @@ possible to group categories of macros.
       end
     end
 
-@see https://github.com/rubocop-hq/ruby-style-guide#consistent-classes
+@see https://github.com/bbatsov/ruby-style-guide#consistent-classes

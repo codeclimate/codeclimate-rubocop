@@ -1,4 +1,4 @@
-In Ruby 2.4, `String#match?`, `Regexp#match?`, and `Symbol#match?`
+In Ruby 2.4, `String#match?`, `Regexp#match?` and `Symbol#match?`
 have been added. The methods are faster than `match`.
 Because the methods avoid creating a `MatchData` object or saving
 backref.
@@ -8,13 +8,6 @@ So, when `MatchData` is not used, use `match?` instead of `match`.
     # bad
     def foo
       if x =~ /re/
-        do_something
-      end
-    end
-
-    # bad
-    def foo
-      if x !~ /re/
         do_something
       end
     end
@@ -36,13 +29,6 @@ So, when `MatchData` is not used, use `match?` instead of `match`.
     # good
     def foo
       if x.match?(/re/)
-        do_something
-      end
-    end
-
-    # good
-    def foo
-      if !x.match?(/re/)
         do_something
       end
     end

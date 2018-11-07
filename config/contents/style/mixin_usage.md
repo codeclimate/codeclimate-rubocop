@@ -1,6 +1,8 @@
-This cop checks that `include`, `extend` and `prepend` statements appear
-inside classes and modules, not at the top level, so as to not affect
-the behavior of `Object`.
+This cop checks that `include`, `extend` and `prepend` exists at
+the top level.
+Using these at the top level affects the behavior of `Object`.
+There will not be using `include`, `extend` and `prepend` at
+the top level. Let's use it inside `class` or `module`.
 
 ### Example:
     # bad

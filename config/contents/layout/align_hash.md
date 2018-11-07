@@ -2,7 +2,7 @@ Check that the keys, separators, and values of a multi-line hash
 literal are aligned according to configuration. The configuration
 options are:
 
-    - key (left align keys, one space before hash rockets and values)
+    - key (left align keys)
     - separator (align hash rockets and colons, right align keys)
     - table (left align keys, hash rockets, and values)
 
@@ -14,156 +14,81 @@ can also be configured. The options are:
     - ignore_implicit (without curly braces)
     - ignore_explicit (with curly braces)
 
-### Example: EnforcedHashRocketStyle: key (default)
-    # bad
-    {
-      :foo => bar,
-       :ba => baz
-    }
-    {
-      :foo => bar,
-      :ba  => baz
-    }
+### Example:
+
+    # EnforcedHashRocketStyle: key (default)
+    # EnforcedColonStyle: key (default)
 
     # good
+    {
+      foo: bar,
+      ba: baz
+    }
     {
       :foo => bar,
       :ba => baz
     }
 
-### Example: EnforcedHashRocketStyle: separator
-    # bad
-    {
-      :foo => bar,
-      :ba => baz
-    }
-    {
-      :foo => bar,
-      :ba  => baz
-    }
-
-    # good
-    {
-      :foo => bar,
-       :ba => baz
-    }
-
-### Example: EnforcedHashRocketStyle: table
-    # bad
-    {
-      :foo => bar,
-       :ba => baz
-    }
-
-    # good
-    {
-      :foo => bar,
-      :ba  => baz
-    }
-
-### Example: EnforcedColonStyle: key (default)
     # bad
     {
       foo: bar,
        ba: baz
     }
     {
-      foo: bar,
-      ba:  baz
+      :foo => bar,
+       :ba => baz
     }
 
-    # good
-    {
-      foo: bar,
-      ba: baz
-    }
+### Example:
 
-### Example: EnforcedColonStyle: separator
-    # bad
-    {
-      foo: bar,
-      ba: baz
-    }
+    # EnforcedHashRocketStyle: separator
+    # EnforcedColonStyle: separator
 
-    # good
+    #good
     {
       foo: bar,
        ba: baz
     }
+    {
+      :foo => bar,
+       :ba => baz
+    }
 
-### Example: EnforcedColonStyle: table
-    # bad
+    #bad
     {
       foo: bar,
       ba: baz
     }
+    {
+      :foo => bar,
+      :ba => baz
+    }
+    {
+      :foo => bar,
+      :ba  => baz
+    }
 
-    # good
+### Example:
+
+    # EnforcedHashRocketStyle: table
+    # EnforcedColonStyle: table
+
+    #good
     {
       foo: bar,
       ba:  baz
     }
+    {
+      :foo => bar,
+      :ba  => baz
+    }
 
-### Example: EnforcedLastArgumentHashStyle: always_inspect (default)
-    # Inspect both implicit and explicit hashes.
-
-    # bad
-    do_something(foo: 1,
-      bar: 2)
-
-    # bad
-    do_something({foo: 1,
-      bar: 2})
-
-    # good
-    do_something(foo: 1,
-                 bar: 2)
-
-    # good
-    do_something(
-      foo: 1,
-      bar: 2
-    )
-
-    # good
-    do_something({foo: 1,
-                  bar: 2})
-
-    # good
-    do_something({
-      foo: 1,
-      bar: 2
-    })
-
-### Example: EnforcedLastArgumentHashStyle: always_ignore
-    # Ignore both implicit and explicit hashes.
-
-    # good
-    do_something(foo: 1,
-      bar: 2)
-
-    # good
-    do_something({foo: 1,
-      bar: 2})
-
-### Example: EnforcedLastArgumentHashStyle: ignore_implicit
-    # Ignore only implicit hashes.
-
-    # bad
-    do_something({foo: 1,
-      bar: 2})
-
-    # good
-    do_something(foo: 1,
-      bar: 2)
-
-### Example: EnforcedLastArgumentHashStyle: ignore_explicit
-    # Ignore only explicit hashes.
-
-    # bad
-    do_something(foo: 1,
-      bar: 2)
-
-    # good
-    do_something({foo: 1,
-      bar: 2})
+    #bad
+    {
+      foo: bar,
+      ba: baz
+    }
+    {
+      :foo => bar,
+       :ba => baz
+    }
