@@ -1,4 +1,4 @@
-This cops checks if empty lines around the bodies of modules match
+This cop checks if empty lines around the bodies of modules match
 the configuration.
 
 ### Example: EnforcedStyle: empty_lines

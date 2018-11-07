@@ -1,4 +1,4 @@
-This cops checks the indentation of comments.
+This cop checks the indentation of comments.
 
 ### Example:
     # bad
