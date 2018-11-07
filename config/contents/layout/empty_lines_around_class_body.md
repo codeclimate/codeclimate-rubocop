@@ -1,4 +1,4 @@
-This cop checks if empty lines around the bodies of classes match
+This cops checks if empty lines around the bodies of classes match
 the configuration.
 
 ### Example: EnforcedStyle: empty_lines
@@ -28,26 +28,6 @@ the configuration.
     class Foo
 
       def bar; end
-
-    end
-
-### Example: Enforcedstyle: beginning_only
-    # good
-
-    class Foo
-
-      def bar
-        # ...
-      end
-    end
-
-### Example: Enforcedstyle: ending_only
-    # good
-
-    class Foo
-      def bar
-        # ...
-      end
 
     end
 

@@ -1,10 +1,10 @@
-This cop checks that methods specified in the filter's `only` or
-`except` options are defined within the same class or module.
+This cop checks that methods specified in the filter's `only`
+or `except` options are explicitly defined in the controller.
 
-You can technically specify methods of superclass or methods added
-by mixins on the filter, but these confuse developers. If you
-specify methods that are defined in other classes or modules, you
-should define the filter in that class or module.
+You can specify methods of superclass or methods added by mixins
+on the filter, but these confuse developers. If you specify methods
+where are defined on another controller, you should define the filter
+in that controller.
 
 ### Example:
     # bad
@@ -26,28 +26,5 @@ should define the filter in that class or module.
       end
 
       def logout
-      end
-    end
-
-### Example:
-    # bad
-    module FooMixin
-      extend ActiveSupport::Concern
-
-      included do
-        before_action proc { authenticate }, only: :foo
-      end
-    end
-
-    # good
-    module FooMixin
-      extend ActiveSupport::Concern
-
-      included do
-        before_action proc { authenticate }, only: :foo
-      end
-
-      def foo
-        # something
       end
     end

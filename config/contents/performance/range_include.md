@@ -4,14 +4,7 @@ item in a `Range` to see if a specified item is there. In contrast,
 end points of the `Range`. In a great majority of cases, this is what
 is wanted.
 
-### Example:
-    # bad
-    ('a'..'z').include?('b') # => true
+Here is an example of a case where `Range#cover?` may not provide the
+desired result:
 
-    # good
-    ('a'..'z').cover?('b') # => true
-
-    # Example of a case where `Range#cover?` may not provide
-    # the desired result:
-
-    ('a'..'z').cover?('yellow') # => true
+      ('a'..'z').cover?('yellow') # => true

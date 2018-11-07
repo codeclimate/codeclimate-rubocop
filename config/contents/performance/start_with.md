@@ -3,7 +3,6 @@ This cop identifies unnecessary use of a regex where
 
 ### Example:
     # bad
-    'abc'.match?(/\Aab/)
     'abc' =~ /\Aab/
     'abc'.match(/\Aab/)
 

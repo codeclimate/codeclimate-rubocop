@@ -11,7 +11,7 @@ surrounding space depending on configuration.
     # good
     array = [ a, b, c, d ]
 
-### Example: EnforcedStyle: no_space (default)
+### Example: EnforcedStyle: no_space
     # The `no_space` style enforces that array literals have
     # no surrounding space.
 
@@ -31,28 +31,3 @@ surrounding space depending on configuration.
 
     # good
     array = [ a, [ b, c ]]
-
-
-### Example: EnforcedStyleForEmptyBrackets: no_space (default)
-    # The `no_space` EnforcedStyleForEmptyBrackets style enforces that
-    # empty array brackets do not contain spaces.
-
-    # bad
-    foo = [ ]
-    bar = [     ]
-
-    # good
-    foo = []
-    bar = []
-
-### Example: EnforcedStyleForEmptyBrackets: space
-    # The `space` EnforcedStyleForEmptyBrackets style enforces that
-    # empty array brackets contain exactly one space.
-
-    # bad
-    foo = []
-    bar = [    ]
-
-    # good
-    foo = [ ]
-    bar = [ ]

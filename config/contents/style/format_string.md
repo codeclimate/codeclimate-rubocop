@@ -6,7 +6,7 @@ manner for all cases, so only two scenarios are considered -
 if the first argument is a string literal and if the second
 argument is an array literal.
 
-### Example: EnforcedStyle: format (default)
+### Example: EnforcedStyle: format(default)
     # bad
     puts sprintf('%10s', 'hoge')
     puts '%10s' % 'hoge'

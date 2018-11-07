@@ -1,14 +1,8 @@
 This cop looks for has_(one|many) and belongs_to associations where
-Active Record can't automatically determine the inverse association
-because of a scope or the options used. Using the blog with order scope
-example below, traversing the a Blog's association in both directions
-with `blog.posts.first.blog` would cause the `blog` to be loaded from
-the database twice.
-
-`:inverse_of` must be manually specified for Active Record to use the
-associated object in memory, or set to `false` to opt-out. Note that
-setting `nil` does not stop Active Record from trying to determine the
-inverse automatically, and is not considered a valid value for this.
+ActiveRecord can't automatically determine the inverse association
+because of a scope or the options used. This can result in unnecessary
+queries in some circumstances. `:inverse_of` must be manually specified
+for associations to work in both ways, or set to `false` to opt-out.
 
 ### Example:
     # good
@@ -51,15 +45,6 @@ inverse automatically, and is not considered a valid value for this.
 
     class Post < ApplicationRecord
       belongs_to :blog
-    end
-
-    # good
-    # When you don't want to use the inverse association.
-    class Blog < ApplicationRecord
-      has_many(:posts,
-        -> { order(published_at: :desc) },
-        inverse_of: false
-      )
     end
 
 ### Example:

@@ -1,40 +1,34 @@
-This cop checks for code that can be written with simpler conditionals
-using `Object#blank?` defined by Active Support.
+This cops checks for code that can be changed to `blank?`.
+Settings:
+    NilOrEmpty: Convert checks for `nil` or `empty?` to `blank?`
+    NotPresent: Convert usages of not `present?` to `blank?`
+    UnlessPresent: Convert usages of `unless` `present?` to `blank?`
 
-### Example: NilOrEmpty: true (default)
-    # Converts usages of `nil? || empty?` to `blank?`
+### Example:
+    # NilOrEmpty: true
+      # bad
+      foo.nil? || foo.empty?
+      foo == nil || foo.empty?
 
-    # bad
-    foo.nil? || foo.empty?
-    foo == nil || foo.empty?
+      # good
+      foo.blank?
 
-    # good
-    foo.blank?
+    # NotPresent: true
+      # bad
+      !foo.present?
 
-### Example: NotPresent: true (default)
-    # Converts usages of `!present?` to `blank?`
+      # good
+      foo.blank?
 
-    # bad
-    !foo.present?
+    # UnlessPresent: true
+      # bad
+      something unless foo.present?
+      unless foo.present?
+        something
+      end
 
-    # good
-    foo.blank?
-
-### Example: UnlessPresent: true (default)
-    # Converts usages of `unless present?` to `if blank?`
-
-    # bad
-    something unless foo.present?
-
-    # good
-    something if foo.blank?
-
-    # bad
-    unless foo.present?
-      something
-    end
-
-    # good
-    if foo.blank?
-      something
-    end
+      # good
+      something if foo.blank?
+      if foo.blank?
+        something
+      end

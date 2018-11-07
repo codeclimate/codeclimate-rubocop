@@ -1,7 +1,7 @@
 This cop checks the indentation of the method name part in method calls
 that span more than one line.
 
-### Example: EnforcedStyle: aligned (default)
+### Example: EnforcedStyle: aligned
     # bad
     while myvariable
     .b
