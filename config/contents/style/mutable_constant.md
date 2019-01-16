@@ -7,3 +7,8 @@ mutable literal (e.g. array or hash).
 
     # good
     CONST = [1, 2, 3].freeze
+
+    # good
+    CONST = <<~TESTING.freeze
+    This is a heredoc
+    TESTING
