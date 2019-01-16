@@ -30,7 +30,7 @@ When set to `false`, this case is legal.
       foo.bar
     end
 
-    # EnforceForPrefixed: true
+### Example: EnforceForPrefixed: true (default)
     # bad
     def foo_bar
       foo.bar
@@ -39,7 +39,7 @@ When set to `false`, this case is legal.
     # good
     delegate :bar, to: :foo, prefix: true
 
-    # EnforceForPrefixed: false
+### Example: EnforceForPrefixed: false
     # good
     def foo_bar
       foo.bar
