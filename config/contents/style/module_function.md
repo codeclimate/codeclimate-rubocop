@@ -1,4 +1,4 @@
-This cops checks for use of `extend self` or `module_function` in a
+This cop checks for use of `extend self` or `module_function` in a
 module.
 
 Supported styles are: module_function, extend_self.
@@ -13,6 +13,18 @@ Supported styles are: module_function, extend_self.
     # good
     module Test
       module_function
+      # ...
+    end
+
+In case there are private methods, the cop won't be activated.
+Otherwise, it forces to change the flow of the default code.
+
+### Example: EnforcedStyle: module_function (default)
+    # good
+    module Test
+      extend self
+      # ...
+      private
       # ...
     end
 
