@@ -119,4 +119,4 @@ reversible.
       end
     end
 
-@see http://api.rubyonrails.org/classes/ActiveRecord/Migration/CommandRecorder.html
+@see https://api.rubyonrails.org/classes/ActiveRecord/Migration/CommandRecorder.html
