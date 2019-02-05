@@ -51,6 +51,7 @@ GEM
       rubocop (>= 0.52.0)
     ruby-progressbar (1.9.0)
     safe_yaml (1.0.4)
+    test-prof (0.7.3)
     thread_safe (0.3.6)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
@@ -70,6 +71,7 @@ DEPENDENCIES
   rubocop-migrations
   rubocop-rspec
   safe_yaml
+  test-prof
 
 BUNDLED WITH
    1.16.1

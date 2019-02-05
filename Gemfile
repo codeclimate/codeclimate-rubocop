@@ -10,6 +10,7 @@ gem "rubocop", "~> 0.52.1", require: false
 gem "rubocop-migrations", require: false
 gem "rubocop-rspec", require: false
 gem "safe_yaml"
+gem "test-prof", require: false
 
 group :test do
   gem "rake"
