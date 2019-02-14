@@ -10,4 +10,4 @@ array literal or the second is a string literal.
     %w(foo bar baz) * ","
 
     # good
-    %w(foo bar bax).join(",")
+    %w(foo bar baz).join(",")
