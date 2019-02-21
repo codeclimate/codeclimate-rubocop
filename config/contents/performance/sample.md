@@ -1,11 +1,14 @@
-This cop is used to identify usages of `shuffle.first`, `shuffle.last`
-and `shuffle[]` and change them to use `sample` instead.
+This cop is used to identify usages of `shuffle.first`,
+`shuffle.last`, and `shuffle[]` and change them to use
+`sample` instead.
 
 ### Example:
     # bad
     [1, 2, 3].shuffle.first
     [1, 2, 3].shuffle.first(2)
     [1, 2, 3].shuffle.last
+    [2, 1, 3].shuffle.at(0)
+    [2, 1, 3].shuffle.slice(0)
     [1, 2, 3].shuffle[2]
     [1, 2, 3].shuffle[0, 2]    # sample(2) will do the same
     [1, 2, 3].shuffle[0..2]    # sample(3) will do the same
