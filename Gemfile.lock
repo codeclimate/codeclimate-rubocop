@@ -39,7 +39,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.0)
-    rubocop (0.63.0)
+    rubocop (0.63.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.5, != 2.5.1.1)
@@ -49,7 +49,7 @@ GEM
       unicode-display_width (~> 1.4.0)
     rubocop-migrations (0.1.2)
       rubocop (~> 0.41)
-    rubocop-rspec (1.31.0)
+    rubocop-rspec (1.32.0)
       rubocop (>= 0.60.0)
     ruby-progressbar (1.10.0)
     safe_yaml (1.0.4)
@@ -68,7 +68,7 @@ DEPENDENCIES
   pry
   rake
   rspec
-  rubocop (~> 0.63)
+  rubocop (~> 0.63, < 0.64)
   rubocop-migrations
   rubocop-rspec
   safe_yaml
