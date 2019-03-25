@@ -1,4 +1,4 @@
-This cops checks the indentation of the first key in a hash literal
+This cop checks the indentation of the first key in a hash literal
 where the opening brace and the first key are on separate lines. The
 other keys' indentations are handled by the AlignHash cop.
 
@@ -40,7 +40,7 @@ styles are 'consistent' and 'align_braces'. Here are examples:
 ### Example: EnforcedStyle: consistent
     # The `consistent` style enforces that the first key in a hash
     # literal where the opening brace and the first key are on
-    # seprate lines is indented the same as a hash literal which is not
+    # separate lines is indented the same as a hash literal which is not
     # defined inside a method call.
 
     # bad
