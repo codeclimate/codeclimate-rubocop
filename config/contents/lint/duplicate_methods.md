@@ -5,11 +5,11 @@ definitions.
 
     # bad
 
-    def duplicated
+    def foo
       1
     end
 
-    def duplicated
+    def foo
       2
     end
 
@@ -17,20 +17,30 @@ definitions.
 
     # bad
 
-    def duplicated
+    def foo
       1
     end
 
-    alias duplicated other_duplicated
+    alias foo bar
 
 ### Example:
 
     # good
 
-    def duplicated
+    def foo
       1
     end
 
-    def other_duplicated
+    def bar
       2
     end
+
+### Example:
+
+    # good
+
+    def foo
+      1
+    end
+
+    alias bar foo
