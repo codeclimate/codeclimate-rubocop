@@ -17,8 +17,8 @@ GEM
     minitest (5.10.3)
     mry (0.52.0.0)
       rubocop (>= 0.41.0)
-    parallel (1.15.0)
-    parser (2.6.2.0)
+    parallel (1.17.0)
+    parser (2.6.2.1)
       ast (~> 2.4.0)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -39,7 +39,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.0)
-    rubocop (0.66.0)
+    rubocop (0.67.2)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.5, != 2.5.1.1)
@@ -49,6 +49,8 @@ GEM
       unicode-display_width (>= 1.4.0, < 1.6)
     rubocop-migrations (0.1.2)
       rubocop (~> 0.41)
+    rubocop-performance (1.1.0)
+      rubocop (>= 0.67.0)
     rubocop-rspec (1.32.0)
       rubocop (>= 0.60.0)
     ruby-progressbar (1.10.0)
@@ -68,10 +70,11 @@ DEPENDENCIES
   pry
   rake
   rspec
-  rubocop (~> 0.66.0)
+  rubocop (~> 0.67.0)
   rubocop-migrations
+  rubocop-performance
   rubocop-rspec
   safe_yaml
 
 BUNDLED WITH
-   1.16.6
+   1.17.3

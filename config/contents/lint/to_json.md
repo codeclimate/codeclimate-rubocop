@@ -9,5 +9,5 @@ for an optional argument, your method should too.
     end
 
     # good
-    def to_json(_opts)
+    def to_json(*_args)
     end
