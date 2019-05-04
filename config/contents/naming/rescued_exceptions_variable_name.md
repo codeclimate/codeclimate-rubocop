@@ -19,6 +19,13 @@ the required name of the variable. Its default is `e`.
       # do something
     end
 
+    # good
+    begin
+      # do something
+    rescue MyException => _e
+      # do something
+    end
+
 ### Example: PreferredName: exception
     # bad
     begin
@@ -31,5 +38,12 @@ the required name of the variable. Its default is `e`.
     begin
       # do something
     rescue MyException => exception
+      # do something
+    end
+
+    # good
+    begin
+      # do something
+    rescue MyException => _exception
       # do something
     end

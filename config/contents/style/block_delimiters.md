@@ -89,3 +89,14 @@ multi-line blocks.
     words.each { |word|
       word.flip.flop
     }.join("-")
+
+### Example: EnforcedStyle: always_braces
+    # bad
+    words.each do |word|
+      word.flip.flop
+    end
+
+    # good
+    words.each { |word|
+      word.flip.flop
+    }
