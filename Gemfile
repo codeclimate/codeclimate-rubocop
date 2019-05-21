@@ -2,17 +2,17 @@
 
 source 'https://rubygems.org'
 
-gem "activesupport", require: false
-gem "mry", "~> 0.52.0", require: false
-gem "parser"
-gem "pry", require: false
-gem "rubocop", "~> 0.67.0", require: false
-gem "rubocop-migrations", require: false
-gem "rubocop-performance", require: false
-gem "rubocop-rspec", require: false
-gem "safe_yaml"
+gem 'activesupport', require: false
+gem 'mry', '~> 0.52.0', require: false
+gem 'parser'
+gem 'pry', require: false
+gem 'rubocop', '~> 0.69.0', require: false
+gem 'rubocop-migrations', require: false
+gem 'rubocop-performance', require: false
+gem 'rubocop-rspec', require: false
+gem 'safe_yaml'
 
 group :test do
-  gem "rake"
-  gem "rspec"
+  gem 'rake'
+  gem 'rspec'
 end
