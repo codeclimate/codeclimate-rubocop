@@ -1,4 +1,4 @@
-Information for engine developers & contributors
+# Information for engine developers & contributors
 
 ## Testing local changes
 
@@ -13,7 +13,7 @@ against real repos using the Code Climate CLI.
 If you are upgrading to a new version of RuboCop, please re-run the doc scraper
 to get any new or updated docs:
 
-```
+```shell
 docker run \
   --rm --volume "$PWD:/usr/src/app" --user root --workdir /usr/src/app \
   codeclimate/codeclimate-rubocop bundle exec rake docs:scrape
@@ -26,7 +26,7 @@ You should add any new cops without docs that fail specs to
 When doing QA, it's good to confirm the engine will run successfully when using
 the default inferred configuration:
 
-```
+```shell
 rm .rubocop.yml
 codeclimate init --upgrade
 codeclimate analyze -e rubocop
