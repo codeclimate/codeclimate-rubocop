@@ -12,7 +12,9 @@ can also be configured. The options are:
     - always_inspect
     - always_ignore
     - ignore_implicit (without curly braces)
-    - ignore_explicit (with curly braces)
+
+Alternatively you can specify multiple allowed styles. That's done by
+passing a list of styles to EnforcedStyles.
 
 ### Example: EnforcedHashRocketStyle: key (default)
     # bad
