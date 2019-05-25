@@ -8,6 +8,8 @@ module CC::Engine
 
     it "upgrades old configs" do
       create_source_file("test.rb", <<~CODE)
+        # frozen_string_literal: true
+
         def get_true
           true
         end
