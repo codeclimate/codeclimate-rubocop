@@ -8,15 +8,23 @@ and its standard library subclasses, excluding subclasses of
 
     class C < Exception; end
 
+    C = Class.new(Exception)
+
     # good
 
     class C < RuntimeError; end
+
+    C = Class.new(RuntimeError)
 
 ### Example: EnforcedStyle: standard_error
     # bad
 
     class C < Exception; end
 
+    C = Class.new(Exception)
+
     # good
 
     class C < StandardError; end
+
+    C = Class.new(StandardError)

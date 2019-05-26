@@ -2,6 +2,9 @@ This cop makes sure that predicates are named properly.
 
 ### Example:
     # bad
+    def is_even(value)
+    end
+
     def is_even?(value)
     end
 
@@ -10,6 +13,9 @@ This cop makes sure that predicates are named properly.
     end
 
     # bad
+    def has_value
+    end
+
     def has_value?
     end
 

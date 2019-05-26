@@ -1,6 +1,5 @@
 This cop converts usages of `try!` to `&.`. It can also be configured
-to convert `try`. It will convert code to use safe navigation if the
-target Ruby version is set to 2.3+
+to convert `try`. It will convert code to use safe navigation.
 
 ### Example:
     # ConvertTry: false
