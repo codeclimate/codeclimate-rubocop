@@ -1,7 +1,11 @@
 This cop checks for underscore-prefixed variables that are actually
 used.
 
-### Example:
+Since block keyword arguments cannot be arbitrarily named at call
+sites, the `AllowKeywordBlockArguments` will allow use of underscore-
+prefixed block keyword arguments.
+
+### Example: AllowKeywordBlockArguments: false (default)
 
     # bad
 
@@ -9,7 +13,9 @@ used.
       do_something(_num)
     end
 
-### Example:
+    query(:sales) do |_id:, revenue:, cost:|
+      {_id: _id, profit: revenue - cost}
+    end
 
     # good
 
@@ -17,10 +23,14 @@ used.
       do_something(num)
     end
 
-### Example:
+    [1, 2, 3].each do |_num|
+      do_something # not using `_num`
+    end
+
+### Example: AllowKeywordBlockArguments: true
 
     # good
 
-    [1, 2, 3].each do |_num|
-      do_something # not using `_num`
+    query(:sales) do |_id:, revenue:, cost:|
+      {_id: _id, profit: revenue - cost}
     end
