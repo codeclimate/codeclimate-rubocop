@@ -5,6 +5,9 @@ This cop checks for trailing comma in argument lists.
     method(1, 2,)
 
     # good
+    method(1, 2)
+
+    # good
     method(
       1, 2,
       3,
@@ -21,6 +24,9 @@ This cop checks for trailing comma in argument lists.
     method(1, 2,)
 
     # good
+    method(1, 2)
+
+    # good
     method(
       1,
       2,
@@ -29,6 +35,9 @@ This cop checks for trailing comma in argument lists.
 ### Example: EnforcedStyleForMultiline: no_comma (default)
     # bad
     method(1, 2,)
+
+    # good
+    method(1, 2)
 
     # good
     method(
