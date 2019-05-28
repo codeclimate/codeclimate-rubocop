@@ -1,34 +1,50 @@
-This cops checks for code that can be changed to `blank?`.
-Settings:
-    NilOrEmpty: Convert checks for `nil` or `empty?` to `blank?`
-    NotPresent: Convert usages of not `present?` to `blank?`
-    UnlessPresent: Convert usages of `unless` `present?` to `blank?`
+This cop checks for code that can be written with simpler conditionals
+using `Object#blank?` defined by Active Support.
 
-### Example:
-    # NilOrEmpty: true
-      # bad
-      foo.nil? || foo.empty?
-      foo == nil || foo.empty?
+Interaction with `Style/UnlessElse`:
+The configuration of `NotPresent` will not produce an offense in the
+context of `unless else` if `Style/UnlessElse` is inabled. This is
+to prevent interference between the auto-correction of the two cops.
 
-      # good
-      foo.blank?
+### Example: NilOrEmpty: true (default)
+    # Converts usages of `nil? || empty?` to `blank?`
 
-    # NotPresent: true
-      # bad
-      !foo.present?
+    # bad
+    foo.nil? || foo.empty?
+    foo == nil || foo.empty?
 
-      # good
-      foo.blank?
+    # good
+    foo.blank?
 
-    # UnlessPresent: true
-      # bad
-      something unless foo.present?
-      unless foo.present?
-        something
-      end
+### Example: NotPresent: true (default)
+    # Converts usages of `!present?` to `blank?`
 
-      # good
-      something if foo.blank?
-      if foo.blank?
-        something
-      end
+    # bad
+    !foo.present?
+
+    # good
+    foo.blank?
+
+### Example: UnlessPresent: true (default)
+    # Converts usages of `unless present?` to `if blank?`
+
+    # bad
+    something unless foo.present?
+
+    # good
+    something if foo.blank?
+
+    # bad
+    unless foo.present?
+      something
+    end
+
+    # good
+    if foo.blank?
+      something
+    end
+
+    # good
+    def blank?
+      !present?
+    end

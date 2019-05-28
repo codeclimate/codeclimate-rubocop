@@ -22,3 +22,4 @@ of the block that is passed to the method should be defined in
     foo != bar
     foo == bar
     !!('foo' =~ /^\w+$/)
+    !(foo.class < Numeric) # Checking class hierarchy is allowed
