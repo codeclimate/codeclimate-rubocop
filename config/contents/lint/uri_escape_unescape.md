@@ -1,9 +1,9 @@
 This cop identifies places where `URI.escape` can be replaced by
-`CGI.escape`, `URI.encode_www_form` or `URI.encode_www_form_component`
+`CGI.escape`, `URI.encode_www_form`, or `URI.encode_www_form_component`
 depending on your specific use case.
 Also this cop identifies places where `URI.unescape` can be replaced by
-`CGI.unescape`, `URI.decode_www_form` or `URI.decode_www_form_component`
-depending on your specific use case.
+`CGI.unescape`, `URI.decode_www_form`,
+or `URI.decode_www_form_component` depending on your specific use case.
 
 ### Example:
     # bad
