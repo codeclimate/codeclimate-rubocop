@@ -15,6 +15,8 @@ module CC::Engine
       create_source_file(".rubocop.yml", <<~CONFIG)
         Style/AccessorMethodName:
           Enabled: false
+        Style/FrozenStringLiteralComment:
+          Enabled: false
       CONFIG
 
       # No warnings about obsolete cop name
