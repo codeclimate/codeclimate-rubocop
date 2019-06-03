@@ -1,15 +1,28 @@
 This cop checks the indentation of the right hand side operand in
 binary operations that span more than one line.
 
-### Example:
+### Example: EnforcedStyle: aligned (default)
     # bad
     if a +
-    b
+        b
       something
     end
 
     # good
     if a +
        b
+      something
+    end
+
+### Example: EnforcedStyle: indented
+    # bad
+    if a +
+       b
+      something
+    end
+
+    # good
+    if a +
+        b
       something
     end
