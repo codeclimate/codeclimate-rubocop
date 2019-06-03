@@ -20,7 +20,7 @@ gem "rubocop", "~> ${NEWVER}", require: false
 wq
 EDITS
 
-make bundle -e BUNDLE_ARGS="update rubocop"
+make bundle -e BUNDLE_ARGS="update rubocop rubocop-rspec rubocop-migrations"
 make image
 make docs
 sudo chown -R $(id -u):$(id -g) config
