@@ -9,6 +9,7 @@ gem "pry", require: false
 gem "rubocop", "~> 0.71.0", require: false
 gem "rubocop-migrations", require: false
 gem "rubocop-rspec", require: false
+gem "rubocop-rails", require: false
 gem "safe_yaml"
 
 group :test do
