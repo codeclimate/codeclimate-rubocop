@@ -12,6 +12,6 @@ gem "rubocop-rspec", require: false
 gem "safe_yaml"
 
 group :test do
-  gem 'rake'
-  gem 'rspec'
+  gem "rake"
+  gem "rspec"
 end
