@@ -15,7 +15,7 @@ ed Gemfile <<-EDITS
 gem "parser"
 .
 /gem "rubocop",/c
-gem "rubocop", "~> ${NEWVER}", require: false
+gem "rubocop", "${NEWVER}", require: false
 .
 wq
 EDITS
