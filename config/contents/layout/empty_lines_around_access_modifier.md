@@ -1,6 +1,6 @@
 Access modifiers should be surrounded by blank lines.
 
-### Example:
+### Example: EnforcedStyle: around (default)
 
     # bad
     class Foo
@@ -15,5 +15,22 @@ Access modifiers should be surrounded by blank lines.
 
       private
 
+      def baz; end
+    end
+
+### Example: EnforcedStyle: only_before
+
+    # bad
+    class Foo
+      def bar; end
+      private
+      def baz; end
+    end
+
+    # good
+    class Foo
+      def bar; end
+
+      private
       def baz; end
     end

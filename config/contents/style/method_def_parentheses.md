@@ -1,4 +1,4 @@
-This cops checks for parentheses around the arguments in method
+This cop checks for parentheses around the arguments in method
 definitions. Both instance and class/singleton methods are checked.
 
 ### Example: EnforcedStyle: require_parentheses (default)
@@ -55,8 +55,8 @@ definitions. Both instance and class/singleton methods are checked.
 
 ### Example: EnforcedStyle: require_no_parentheses_except_multiline
     # The `require_no_parentheses_except_multiline` style prefers no
-    # parantheses when method definition arguments fit on single line,
-    # but prefers parantheses when arguments span multiple lines.
+    # parentheses when method definition arguments fit on single line,
+    # but prefers parentheses when arguments span multiple lines.
 
     # bad
     def bar(num1, num2)
