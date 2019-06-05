@@ -8,7 +8,9 @@ fi
 NEWVER="$1"
 
 previous_channel() {
-  ruby -e "version = \"${NEWVER}\".match(/(\d+).(\d+).(\d+)/); minor = version[2].to_i - 1; puts \"channel/rubocop-#{version[1]}-#{minor}\""
+  ruby -e "version = \"${NEWVER}\".match(/(\d+).(\d+).(\d+)/); \
+    minor = version[2].to_i - 1; \
+    puts \"channel/rubocop-#{version[1]}-#{minor}\""
 }
 
 git checkout Gemfile*
@@ -16,7 +18,7 @@ git checkout $(previous_channel)
 git checkout -b "newver/${NEWVER}"
 
 ed Gemfile <<-EDITS
-/gem "parser",/c
+/gem "parser"/c
 gem "parser"
 .
 /gem "rubocop",/c
