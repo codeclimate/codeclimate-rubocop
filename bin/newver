@@ -14,6 +14,7 @@ previous_channel() {
 }
 
 git checkout Gemfile*
+git fetch origin
 git checkout $(previous_channel)
 git checkout -b "newver/${NEWVER}"
 
