@@ -1,4 +1,4 @@
-FROM ruby:2.6-alpine
+FROM ruby:2.6.3-alpine3.9
 
 LABEL name="Ruby-2.6" \
       version="1.0"
