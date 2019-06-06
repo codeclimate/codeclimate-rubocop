@@ -1,5 +1,0 @@
-RuboCop::Cop::Layout::FirstParameterIndentation
-RuboCop::Cop::Layout::SpaceInsideBrackets
-RuboCop::Cop::Lint::MissingCopEnableDirective
-RuboCop::Cop::Style::ConditionalAssignment
-RuboCop::Cop::Style::MethodCallWithArgsParentheses
