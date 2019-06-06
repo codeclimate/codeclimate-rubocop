@@ -23,3 +23,8 @@ of the block that is passed to the method should be defined in
     foo == bar
     !!('foo' =~ /^\w+$/)
     !(foo.class < Numeric) # Checking class hierarchy is allowed
+    # Blocks with guard clauses are ignored:
+    foo.select do |f|
+      next if f.zero?
+      f != 1
+    end
