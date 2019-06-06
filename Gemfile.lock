@@ -51,7 +51,7 @@ GEM
       rubocop (>= 0.68.0)
     rubocop-rspec (1.33.0)
       rubocop (>= 0.60.0)
-    ruby-progressbar (1.10.0)
+    ruby-progressbar (1.10.1)
     safe_yaml (1.0.5)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
