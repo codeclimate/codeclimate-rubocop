@@ -8,11 +8,11 @@ fi
 NEWVER="$1"
 
 previous_channel() {
-  cat <<EOF | ruby
-    version = \"${NEWVER}\".match(/(\d+).(\d+).(\d+)/)
+  cat <<EOM | ruby
+    version = "${NEWVER}".match(/(\d+).(\d+).(\d+)/)
     minor = version[2].to_i - 1
-    puts \"channel/rubocop-#{version[1]}-#{minor}\"
-  EOF
+    puts "channel/rubocop-#{version[1]}-#{minor}"
+EOM
 }
 
 git checkout Gemfile*
