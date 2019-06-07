@@ -21,9 +21,6 @@ git checkout $(previous_channel)
 git checkout -b "newver/${NEWVER}"
 
 ed Gemfile <<-EDITS
-/gem "parser"/c
-gem "parser"
-.
 /gem "rubocop",/c
 gem "rubocop", "${NEWVER}", require: false
 .
