@@ -39,13 +39,3 @@ Currently it checks for code like this:
     rescue => ex
       anything
     end
-
-    # good
-    # Stabby lambdas don't support implicit `begin` in `do-end` blocks.
-    -> do
-      begin
-        foo
-      rescue Bar
-        baz
-      end
-    end

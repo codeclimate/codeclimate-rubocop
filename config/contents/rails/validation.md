@@ -10,7 +10,6 @@ This cop checks for the use of old-style attribute validation macros.
     validates_length_of :foo
     validates_numericality_of :foo
     validates_presence_of :foo
-    validates_absence_of :foo
     validates_size_of :foo
     validates_uniqueness_of :foo
 
@@ -23,6 +22,5 @@ This cop checks for the use of old-style attribute validation macros.
     validates :foo, length: true
     validates :foo, numericality: true
     validates :foo, presence: true
-    validates :foo, absence: true
     validates :foo, size: true
     validates :foo, uniqueness: true

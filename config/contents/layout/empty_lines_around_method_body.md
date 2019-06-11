@@ -1,4 +1,4 @@
-This cop checks if empty lines exist around the bodies of methods.
+This cops checks if empty lines exist around the bodies of methods.
 
 ### Example:
 

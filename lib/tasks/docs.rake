@@ -18,7 +18,7 @@ namespace :docs do
       content = File.read(file)
       content = content.gsub(/.*\n\s+(?=module RuboCop)/, "")
 
-      class_doc = content.match(/(\s+#.*)+/).to_s
+      class_doc = content.match(/(\s+#.*)+(?=\n\s+class)/).to_s
       doc_lines = class_doc.
                   gsub(/^\n/, "").
                   gsub("@example", "### Example:").

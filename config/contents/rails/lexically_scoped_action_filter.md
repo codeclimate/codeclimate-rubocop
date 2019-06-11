@@ -1,13 +1,10 @@
-This cop checks that methods specified in the filter's `only` or
-`except` options are defined within the same class or module.
+This cop checks that methods specified in the filter's `only`
+or `except` options are explicitly defined in the class or module.
 
-You can technically specify methods of superclass or methods added by
-mixins on the filter, but these can confuse developers. If you specify
-methods that are defined in other classes or modules, you should
-define the filter in that class or module.
-
-If you rely on behaviour defined in the superclass actions, you must
-remember to invoke `super` in the subclass actions.
+You can specify methods of superclass or methods added by mixins
+on the filter, but these confuse developers. If you specify methods
+where are defined on another classes or modules, you should define
+the filter in that class or module.
 
 ### Example:
     # bad
@@ -52,28 +49,5 @@ remember to invoke `super` in the subclass actions.
 
       def foo
         # something
-      end
-    end
-
-### Example:
-    class ContentController < ApplicationController
-      def update
-        @content.update(content_attributes)
-      end
-    end
-
-    class ArticlesController < ContentController
-      before_action :load_article, only: [:update]
-
-      # the cop requires this method, but it relies on behaviour defined
-      # in the superclass, so needs to invoke `super`
-      def update
-        super
-      end
-
-      private
-
-      def load_article
-        @content = Article.find(params[:article_id])
       end
     end

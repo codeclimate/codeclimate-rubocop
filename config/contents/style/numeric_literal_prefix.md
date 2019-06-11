@@ -1,4 +1,4 @@
-This cop checks for octal, hex, binary, and decimal literals using
+This cop checks for octal, hex, binary and decimal literals using
 uppercase prefixes and corrects them to lowercase prefix
 or no prefix (in case of decimals).
 

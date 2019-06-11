@@ -2,7 +2,7 @@ Check that the keys, separators, and values of a multi-line hash
 literal are aligned according to configuration. The configuration
 options are:
 
-    - key (left align keys, one space before hash rockets and values)
+    - key (left align keys)
     - separator (align hash rockets and colons, right align keys)
     - table (left align keys, hash rockets, and values)
 
@@ -19,10 +19,6 @@ can also be configured. The options are:
     {
       :foo => bar,
        :ba => baz
-    }
-    {
-      :foo => bar,
-      :ba  => baz
     }
 
     # good
@@ -66,10 +62,6 @@ can also be configured. The options are:
     {
       foo: bar,
        ba: baz
-    }
-    {
-      foo: bar,
-      ba:  baz
     }
 
     # good

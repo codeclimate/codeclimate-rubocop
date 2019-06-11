@@ -1,10 +1,7 @@
 This cop checks for code that can be written with simpler conditionals
 using `Object#present?` defined by Active Support.
 
-Interaction with `Style/UnlessElse`:
-The configuration of `NotBlank` will not produce an offense in the
-context of `unless else` if `Style/UnlessElse` is inabled. This is
-to prevent interference between the auto-correction of the two cops.
+simpler conditionals.
 
 ### Example: NotNilAndNotEmpty: true (default)
     # Converts usages of `!nil? && !empty?` to `present?`

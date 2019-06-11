@@ -21,6 +21,6 @@ use a class instance variable instead.
 
     class A
       def test
-        @@test # you can access class variable without offense
+        @@test # you can access class variable without offence
       end
     end

@@ -1,4 +1,4 @@
-This cop checks the indentation of hanging closing parentheses in
+This cops checks the indentation of hanging closing parentheses in
 method calls, method definitions, and grouped expressions. A hanging
 closing parenthesis means `)` preceded by a line break.
 

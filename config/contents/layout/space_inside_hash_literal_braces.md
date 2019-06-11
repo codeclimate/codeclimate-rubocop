@@ -28,11 +28,10 @@ surrounding space depending on configuration.
 
     # bad
     h = { a: { b: 2 } }
-    foo = { { a: 1 } => { b: { c: 2 } } }
 
     # good
     h = { a: { b: 2 }}
-    foo = {{ a: 1 } => { b: { c: 2 }}}
+
 
 ### Example: EnforcedStyleForEmptyBraces: no_space (default)
     # The `no_space` EnforcedStyleForEmptyBraces style enforces that

@@ -1,8 +1,4 @@
 RuboCop::Cop::Layout::IndentFirstArgument
-RuboCop::Cop::Lint::MissingCopEnableDirective
 RuboCop::Cop::Metrics::LineLength
-RuboCop::Cop::Performance::FixedSize
-RuboCop::Cop::Style::ConditionalAssignment
-RuboCop::Cop::Style::MethodCallWithArgsParentheses
 
 

@@ -1,4 +1,4 @@
-This cop checks the indentation of the here document bodies. The bodies
+This cops checks the indentation of the here document bodies. The bodies
 are indented one step.
 In Ruby 2.3 or newer, squiggly heredocs (`<<~`) should be used. If you
 use the older rubies, you should introduce some library to your project

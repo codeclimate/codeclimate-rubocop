@@ -1,9 +1,6 @@
-This cop checks for comparison of something with nil using `==` and
-`nil?`.
+This cop checks for comparison of something with nil using ==.
 
-Supported styles are: predicate, comparison.
-
-### Example: EnforcedStyle: predicate (default)
+### Example:
 
     # bad
     if x == nil
@@ -11,14 +8,4 @@ Supported styles are: predicate, comparison.
 
     # good
     if x.nil?
-    end
-
-### Example: EnforcedStyle: comparison
-
-    # bad
-    if x.nil?
-    end
-
-    # good
-    if x == nil
     end

@@ -1,5 +1,5 @@
-This cop checks for places where `Integer#even?` or `Integer#odd?`
-can be used.
+This cop checks for places where Integer#even? or Integer#odd?
+should have been used.
 
 ### Example:
 

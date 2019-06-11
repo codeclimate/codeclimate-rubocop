@@ -1,8 +1,8 @@
 This Cop checks whether alter queries are combinable.
 If combinable queries are detected, it suggests to you
 to use `change_table` with `bulk: true` instead.
-This option causes the migration to generate a single
-ALTER TABLE statement combining multiple column alterations.
+When use this method, make combinable alter queries
+a bulk alter query.
 
 The `bulk` option is only supported on the MySQL and
 the PostgreSQL (5.2 later) adapter; thus it will
@@ -58,5 +58,5 @@ this Cop ignores offenses.
       end
     end
 
-@see https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-change_table
-@see https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/Table.html
+@see http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-change_table
+@see http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/Table.html

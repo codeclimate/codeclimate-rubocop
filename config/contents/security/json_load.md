@@ -10,9 +10,9 @@ option, like `JSON.parse('false', quirks_mode: true)`.
 Other similar issues may apply.
 
 ### Example:
-    # bad
+    # always offense
     JSON.load("{}")
     JSON.restore("{}")
 
-    # good
+    # no offense
     JSON.parse("{}")

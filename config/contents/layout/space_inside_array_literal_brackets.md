@@ -28,15 +28,10 @@ surrounding space depending on configuration.
 
     # bad
     array = [ a, [ b, c ] ]
-    array = [
-      [ a ],
-      [ b, c ]
-    ]
 
     # good
     array = [ a, [ b, c ]]
-    array = [[ a ],
-      [ b, c ]]
+
 
 ### Example: EnforcedStyleForEmptyBrackets: no_space (default)
     # The `no_space` EnforcedStyleForEmptyBrackets style enforces that

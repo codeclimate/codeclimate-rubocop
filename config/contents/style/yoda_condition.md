@@ -1,8 +1,8 @@
-This cop can either enforce or forbid Yoda conditions,
-i.e. comparison operations where the order of expression is reversed.
-eg. `5 == x`
+This cop checks for Yoda conditions, i.e. comparison operations where
+readability is reduced because the operands are not ordered the same
+way as they would be ordered in spoken English.
 
-### Example: EnforcedStyle: forbid_for_all_comparison_operators (default)
+### Example: EnforcedStyle: all_comparison_operators (default)
     # bad
     99 == foo
     "bar" != foo
@@ -15,7 +15,7 @@ eg. `5 == x`
     foo <= 42
     bar > 10
 
-### Example: EnforcedStyle: forbid_for_equality_operators_only
+### Example: EnforcedStyle: equality_operators_only
     # bad
     99 == foo
     "bar" != foo
@@ -23,25 +23,3 @@ eg. `5 == x`
     # good
     99 >= foo
     3 < a && a < 5
-
-### Example: EnforcedStyle: require_for_all_comparison_operators
-    # bad
-    foo == 99
-    foo == "bar"
-    foo <= 42
-    bar > 10
-
-    # good
-    99 == foo
-    "bar" != foo
-    42 >= foo
-    10 < bar
-
-### Example: EnforcedStyle: require_for_equality_operators_only
-    # bad
-    99 >= foo
-    3 < a && a < 5
-
-    # good
-    99 == foo
-    "bar" != foo
