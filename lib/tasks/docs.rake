@@ -9,7 +9,7 @@ namespace :docs do
     MIN_LINES = 3
     COP_FOLDERS = %w[bundler gemspec layout lint metrics naming performance rails security style].freeze
 
-    `git clone https://github.com/bbatsov/rubocop.git rubocop-git`
+    `git clone https://github.com/rubocop-hq/rubocop rubocop-git`
     `cd rubocop-git && git checkout tags/v#{RuboCop::Version.version}`
 
     files = Dir.glob("./rubocop-git/lib/rubocop/cop/{#{COP_FOLDERS.join(",")}}/**.rb")
