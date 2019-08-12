@@ -10,4 +10,4 @@ module RuboCopConfigRescue
   end
 end
 
-RuboCop::Config.prepend RuboCopConfigRescue
+RuboCop::ConfigObsoletion.prepend RuboCopConfigRescue
