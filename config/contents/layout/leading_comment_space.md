@@ -11,3 +11,21 @@ or rackup options.
 
     # good
     # Some comment
+
+### Example: AllowDoxygenCommentStyle: false (default)
+
+    # bad
+
+    #**
+    # Some comment
+    # Another line of comment
+    #*
+
+### Example: AllowDoxygenCommentStyle: true
+
+    # good
+
+    #**
+    # Some comment
+    # Another line of comment
+    #*
