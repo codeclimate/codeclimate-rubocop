@@ -3,3 +3,4 @@ RuboCop::Cop::Lint::MissingCopEnableDirective
 RuboCop::Cop::Metrics::LineLength
 RuboCop::Cop::Style::ConditionalAssignment
 RuboCop::Cop::Style::MethodCallWithArgsParentheses
+RuboCop::Cop::Style::DoubleCopDisableDirective
