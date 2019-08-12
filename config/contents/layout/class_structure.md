@@ -124,4 +124,4 @@ automatically.
       end
     end
 
-@see https://github.com/rubocop-hq/ruby-style-guide#consistent-classes
+@see https://rubystyle.guide#consistent-classes

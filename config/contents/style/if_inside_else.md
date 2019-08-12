@@ -22,3 +22,33 @@ This helps to keep the nesting level from getting too deep.
     else
       action_c
     end
+
+### Example: AllowIfModifier: false (default)
+    # bad
+    if condition_a
+      action_a
+    else
+      action_b if condition_b
+    end
+
+    # good
+    if condition_a
+      action_a
+    elsif condition_b
+      action_b
+    end
+
+### Example: AllowIfModifier: true
+    # good
+    if condition_a
+      action_a
+    else
+      action_b if condition_b
+    end
+
+    # good
+    if condition_a
+      action_a
+    elsif condition_b
+      action_b
+    end

@@ -61,3 +61,4 @@ closing parenthesis means `)` preceded by a line break.
       x: 1,
       y: 2
     )
+
