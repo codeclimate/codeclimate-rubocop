@@ -40,7 +40,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.0)
-    rubocop (0.75.1)
+    rubocop (0.76.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.6)
@@ -60,6 +60,7 @@ GEM
       rubocop (>= 0.68.1)
     ruby-progressbar (1.10.1)
     safe_yaml (1.0.5)
+    test-prof (0.10.1)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
@@ -76,13 +77,14 @@ DEPENDENCIES
   pry
   rake
   rspec
-  rubocop (= 0.75.1)
+  rubocop (= 0.76.0)
   rubocop-migrations
   rubocop-minitest
   rubocop-performance
   rubocop-rails
   rubocop-rspec
   safe_yaml
+  test-prof
 
 BUNDLED WITH
    2.0.2

@@ -6,13 +6,14 @@ gem "activesupport", require: false
 gem "mry", require: false
 gem "parser"
 gem "pry", require: false
-gem "rubocop", "0.75.1", require: false
-gem "rubocop-performance", require: false
+gem "rubocop", "0.76.0", require: false
 gem "rubocop-migrations", require: false
 gem "rubocop-minitest", require: false
+gem "rubocop-performance", require: false
 gem "rubocop-rails", require: false
 gem "rubocop-rspec", require: false
 gem "safe_yaml"
+gem "test-prof", require: false
 
 group :test do
   gem "rake"
