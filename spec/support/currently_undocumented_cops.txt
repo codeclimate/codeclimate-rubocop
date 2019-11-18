@@ -1,6 +1,7 @@
 RuboCop::Cop::Layout::IndentFirstArgument
 RuboCop::Cop::Lint::MissingCopEnableDirective
 RuboCop::Cop::Metrics::LineLength
+RuboCop::Cop::Migration::DepartmentName
 RuboCop::Cop::Style::ConditionalAssignment
-RuboCop::Cop::Style::MethodCallWithArgsParentheses
 RuboCop::Cop::Style::DoubleCopDisableDirective
+RuboCop::Cop::Style::MethodCallWithArgsParentheses
