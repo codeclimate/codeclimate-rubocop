@@ -47,6 +47,8 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
+    rubocop-i18n (2.0.1)
+      rubocop (~> 0.51)
     rubocop-migrations (0.1.2)
       rubocop (~> 0.41)
     rubocop-minitest (0.4.1)
@@ -58,6 +60,8 @@ GEM
       rubocop (>= 0.72.0)
     rubocop-rspec (1.36.0)
       rubocop (>= 0.68.1)
+    rubocop-thread_safety (0.3.4)
+      rubocop (>= 0.51.0)
     ruby-progressbar (1.10.1)
     safe_yaml (1.0.5)
     test-prof (0.10.1)
@@ -78,11 +82,13 @@ DEPENDENCIES
   rake
   rspec
   rubocop (= 0.76.0)
+  rubocop-i18n
   rubocop-migrations
   rubocop-minitest
   rubocop-performance
   rubocop-rails
   rubocop-rspec
+  rubocop-thread_safety
   safe_yaml
   test-prof
 
