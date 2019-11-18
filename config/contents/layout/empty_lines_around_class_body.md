@@ -31,7 +31,7 @@ the configuration.
 
     end
 
-### Example: Enforcedstyle: beginning_only
+### Example: EnforcedStyle: beginning_only
     # good
 
     class Foo
@@ -41,7 +41,7 @@ the configuration.
       end
     end
 
-### Example: Enforcedstyle: ending_only
+### Example: EnforcedStyle: ending_only
     # good
 
     class Foo

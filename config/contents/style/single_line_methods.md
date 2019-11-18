@@ -8,6 +8,13 @@ It will accept single-line methods with no body.
     def @table.columns; super; end
 
     # good
-    def no_op; end
     def self.resource_class=(klass); end
     def @table.columns; end
+
+### Example: AllowIfMethodIsEmpty: true (default)
+    # good
+    def no_op; end
+
+### Example: AllowIfMethodIsEmpty: false
+    # bad
+    def no_op; end

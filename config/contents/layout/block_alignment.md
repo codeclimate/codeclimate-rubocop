@@ -39,8 +39,8 @@ location. The autofixer will default to `start_of_line`.
 
     foo.bar
       .each do
-         baz
-       end
+        baz
+      end
 
 ### Example: EnforcedStyleAlignWith: start_of_line
     # bad
