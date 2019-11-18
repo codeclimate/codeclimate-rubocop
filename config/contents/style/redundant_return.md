@@ -29,3 +29,15 @@ This cop checks for redundant `return` expressions.
       else
       end
     end
+
+### Example: AllowMultipleReturnValues: false (default)
+    # bad
+    def test
+      return x, y
+    end
+
+### Example: AllowMultipleReturnValues: true
+    # good
+    def test
+      return x, y
+    end
