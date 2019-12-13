@@ -32,7 +32,10 @@ Style/StringLiteralsInInterpolation:
 Style/TrailingCommaInArguments:
   EnforcedStyleForMultiline: comma
 
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
 
 # We avoid GuardClause because it can result in "suprise return"
@@ -65,7 +68,7 @@ Style/SpecialGlobalVars:
 # We have common cases where has_ and have_ make sense
 Style/PredicateName:
   Enabled: true
-  NamePrefixBlacklist:
+  ForbiddenPrefixes:
   - is_
 
 # We use %w[ ], not %w( ) because the former looks like an array
