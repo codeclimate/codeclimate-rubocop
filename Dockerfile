@@ -10,7 +10,7 @@ RUN adduser -u 9000 -D app
 COPY Gemfile Gemfile.lock /usr/src/app/
 
 RUN apk add --update build-base git && \
-    gem install bundler && \
+    gem install bundler -v 2.0.2 && \
     bundle install --quiet -j 4 && \
     chown -R app:app /usr/local/bundle && \
     rm -fr ~/.gem ~/.bundle ~/.wh..gem && \
