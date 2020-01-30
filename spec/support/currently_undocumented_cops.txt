@@ -1,3 +1,4 @@
+RuboCop::Cop::Layout::FirstArgumentIndentation
 RuboCop::Cop::Layout::IndentFirstArgument
 RuboCop::Cop::Lint::MissingCopEnableDirective
 RuboCop::Cop::Metrics::LineLength
