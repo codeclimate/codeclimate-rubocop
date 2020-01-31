@@ -5,7 +5,7 @@ require "spec_helper"
 module CC::Engine
   describe "Rubocop config patch" do
 
-    it "prevents config from raisong on obsolete cops" do
+    it "prevents config from raising on obsolete cops" do
       config = RuboCop::Config.new(
         {
           "Style/TrailingComma" => {
@@ -19,8 +19,26 @@ module CC::Engine
         expect { config.validate }.to_not raise_error
       end.to output(//).to_stderr
     end
-
     it "warns about obsolete cops" do
+      config = RuboCop::Config.new(
+        {
+          "Layout/AlignArguments" => {
+            "Enabled" => true
+          }
+        },
+        ".rubocop.yml"
+      )
+
+      expected = <<~EOM
+        The `Layout/AlignArguments` cop has been renamed to `Layout/ArgumentAlignment`.
+        (obsolete configuration found in .rubocop.yml, please update it)
+        unrecognized cop Layout/AlignArguments found in .rubocop.yml
+      EOM
+
+      expect { config.validate }.to output(expected).to_stderr
+    end
+
+    it "warns about removed cops" do
       config = RuboCop::Config.new(
         {
           "Style/TrailingComma" => {
@@ -30,9 +48,14 @@ module CC::Engine
         ".rubocop.yml"
       )
 
-      expect { config.validate }.to output(
-        %r{Warning: unrecognized cop Style/TrailingComma found in .rubocop.yml}
-      ).to_stderr
+
+      expected = <<~EOM
+        The `Style/TrailingComma` cop has been removed. Please use `Style/TrailingCommaInArguments`, `Style/TrailingCommaInArrayLiteral`, and/or `Style/TrailingCommaInHashLiteral` instead.
+        (obsolete configuration found in .rubocop.yml, please update it)
+        unrecognized cop Style/TrailingComma found in .rubocop.yml
+      EOM
+
+      expect { config.validate }.to output(expected).to_stderr
     end
   end
 end
