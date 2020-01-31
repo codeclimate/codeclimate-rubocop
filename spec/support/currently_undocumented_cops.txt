@@ -5,4 +5,3 @@ RuboCop::Cop::Metrics::LineLength
 RuboCop::Cop::Migration::DepartmentName
 RuboCop::Cop::Style::ConditionalAssignment
 RuboCop::Cop::Style::DoubleCopDisableDirective
-RuboCop::Cop::Style::MethodCallWithArgsParentheses
