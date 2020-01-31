@@ -15,5 +15,10 @@ This cop checks for extra underscores in variable assignment.
     a, *b, _ = foo()
     # => The correction `a, *b, = foo()` is a syntax error
 
-    # good if AllowNamedUnderscoreVariables is true
+### Example: AllowNamedUnderscoreVariables: true (default)
+    # good
+    a, b, _something = foo()
+
+### Example: AllowNamedUnderscoreVariables: false
+    # bad
     a, b, _something = foo()
