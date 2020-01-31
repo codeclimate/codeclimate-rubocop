@@ -1,6 +1,6 @@
 Checks for while and until statements that would fit on one line
 if written as a modifier while/until. The maximum line length is
-configured in the `Metrics/LineLength` cop.
+configured in the `Layout/LineLength` cop.
 
 ### Example:
     # bad
