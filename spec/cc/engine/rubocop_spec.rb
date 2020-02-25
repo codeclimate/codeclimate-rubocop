@@ -247,7 +247,7 @@ module CC::Engine
       it "skips local disables" do
         create_source_file("test.rb", <<~EORUBY)
           def method
-            # rubocop:disable UselessAssignment
+            # rubocop:disable Lint/UselessAssignment
             unused = "x"
 
             return false
