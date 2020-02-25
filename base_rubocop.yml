@@ -5,6 +5,13 @@
 Layout/LineLength:
   Enabled: false
 
+# Disallow extra spacing for token alignment
+Layout/ExtraSpacing:
+  AllowForAlignment: false
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
 ################################################################################
 # Metrics
 ################################################################################
@@ -13,13 +20,23 @@ Metrics/AbcSize:
   Enabled: false
 
 ################################################################################
-# Style
+# Naming
 ################################################################################
 
 # Executables are conventionally named bin/foo-bar
-Style/FileName:
+Naming/FileName:
   Exclude:
   - bin/**/*
+
+# We have common cases where has_ and have_ make sense
+Naming/PredicateName:
+  Enabled: true
+  ForbiddenPrefixes:
+  - is_
+
+################################################################################
+# Style
+################################################################################
 
 # We don't (currently) document our code
 Style/Documentation:
@@ -54,9 +71,6 @@ Style/IfUnlessModifier:
 Style/SignalException:
   EnforcedStyle: only_raise
 
-Style/DotPosition:
-  EnforcedStyle: trailing
-
 # Common globals we allow
 Style/GlobalVars:
   AllowedVariables:
@@ -68,12 +82,6 @@ Style/GlobalVars:
 # we prefer the perl names for consistency.
 Style/SpecialGlobalVars:
   EnforcedStyle: use_perl_names
-
-# We have common cases where has_ and have_ make sense
-Style/PredicateName:
-  Enabled: true
-  ForbiddenPrefixes:
-  - is_
 
 # We use %w[ ], not %w( ) because the former looks like an array
 Style/PercentLiteralDelimiters:
@@ -94,9 +102,14 @@ Style/Next:
 Style/ModuleFunction:
   Enabled: false
 
-# Disallow extra spacing for token alignment
-Style/ExtraSpacing:
-  AllowForAlignment: false
+Style/HashEachMethods:
+  Enabled: false
+
+Style/HashTransformKeys:
+  Enabled: false
+
+Style/HashTransformValues:
+  Enabled: false
 
 ################################################################################
 # Specs - be more lenient on length checks and block styles
