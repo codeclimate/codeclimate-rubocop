@@ -16,7 +16,7 @@ namespace :docs do
 
     documentation_files = files.each_with_object({}) do |file, hash|
       content = File.read(file)
-      content = content.gsub(/.*\n\s+(?=module RuboCop)/, "")
+      content = content.gsub(/.*\n.+(?=module RuboCop)/m, "")
 
       class_doc = content.match(/(\s+#.*)+/).to_s
       doc_lines = class_doc.
