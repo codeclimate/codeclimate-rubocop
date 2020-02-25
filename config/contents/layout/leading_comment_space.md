@@ -29,3 +29,17 @@ or rackup options.
     # Some comment
     # Another line of comment
     #*
+
+### Example: AllowGemfileRubyComment: false (default)
+
+    # bad
+
+    #ruby=2.7.0
+    #ruby-gemset=myproject
+
+### Example: AllowGemfileRubyComment: true
+
+    # good
+
+    #ruby=2.7.0
+    #ruby-gemset=myproject

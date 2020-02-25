@@ -100,3 +100,29 @@ multi-line blocks.
     words.each { |word|
       word.flip.flop
     }
+
+### Example: BracesRequiredMethods: ['sig']
+
+    # Methods listed in the BracesRequiredMethods list, such as 'sig'
+    # in this example, will require `{...}` braces. This option takes
+    # precedence over all other configurations except IgnoredMethods.
+
+    # bad
+    sig do
+      params(
+        foo: string,
+      ).void
+    end
+    def bar(foo)
+      puts foo
+    end
+
+    # good
+    sig {
+      params(
+        foo: string,
+      ).void
+    }
+    def bar(foo)
+      puts foo
+    end
