@@ -18,11 +18,11 @@ module CC::Engine
         Style/FrozenStringLiteralComment:
           Enabled: false
         Style/HashEachMethods:
-          Enabled: false
+          Enabled: true
         Style/HashTransformKeys:
-          Enabled: false
+          Enabled: true
         Style/HashTransformValues:
-          Enabled: false
+          Enabled: true
       CONFIG
 
       # No warnings about obsolete cop name
