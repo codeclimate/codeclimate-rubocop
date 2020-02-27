@@ -2,7 +2,10 @@ inherit_from: base_rubocop.yml
 
 require: rubocop-rspec
 
-Style/FileName:
+Layout/MultilineOperationIndentation:
+  Enabled: false
+
+Naming/FileName:
   Exclude:
     - 'bin/codeclimate-rubocop'
 
@@ -16,7 +19,4 @@ Style/TrailingCommaInHashLiteral:
   Enabled: false
 
 Style/TrailingCommaInArguments:
-  Enabled: false
-
-Style/MultilineOperationIndentation:
   Enabled: false
