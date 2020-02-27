@@ -102,15 +102,6 @@ Style/Next:
 Style/ModuleFunction:
   Enabled: false
 
-Style/HashEachMethods:
-  Enabled: false
-
-Style/HashTransformKeys:
-  Enabled: false
-
-Style/HashTransformValues:
-  Enabled: false
-
 ################################################################################
 # Specs - be more lenient on length checks and block styles
 ################################################################################
