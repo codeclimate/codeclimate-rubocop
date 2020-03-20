@@ -8,6 +8,7 @@ gem "parser", "~> 2.4.0"
 gem "pry", require: false
 gem "rubocop", "~> 0.52.1", require: false
 gem "rubocop-migrations", require: false
+gem "rubocop-rake", require: false
 gem "rubocop-rspec", require: false
 gem "safe_yaml"
 

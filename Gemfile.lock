@@ -47,6 +47,8 @@ GEM
       unicode-display_width (~> 1.0, >= 1.0.1)
     rubocop-migrations (0.1.2)
       rubocop (~> 0.41)
+    rubocop-rake (0.5.1)
+      rubocop
     rubocop-rspec (1.21.0)
       rubocop (>= 0.52.0)
     ruby-progressbar (1.9.0)
@@ -68,8 +70,9 @@ DEPENDENCIES
   rspec
   rubocop (~> 0.52.1)
   rubocop-migrations
+  rubocop-rake
   rubocop-rspec
   safe_yaml
 
 BUNDLED WITH
-   1.16.1
+   1.17.3
