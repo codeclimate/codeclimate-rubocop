@@ -19,7 +19,7 @@ GEM
     mry (0.59.0.0)
       rubocop (>= 0.41.0)
     parallel (1.19.1)
-    parser (2.7.0.2)
+    parser (2.7.0.5)
       ast (~> 2.4.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -41,7 +41,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.0)
-    rubocop (0.80.0)
+    rubocop (0.80.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.7.0.1)
@@ -60,7 +60,7 @@ GEM
     rubocop-rails (2.3.2)
       rack (>= 1.1)
       rubocop (>= 0.72.0)
-    rubocop-rspec (1.37.1)
+    rubocop-rspec (1.38.1)
       rubocop (>= 0.68.1)
     rubocop-thread_safety (0.3.4)
       rubocop (>= 0.51.0)
@@ -83,7 +83,7 @@ DEPENDENCIES
   pry
   rake
   rspec
-  rubocop (= 0.80.0)
+  rubocop (= 0.80.1)
   rubocop-i18n
   rubocop-migrations
   rubocop-minitest
