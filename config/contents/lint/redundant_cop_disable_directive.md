@@ -1,6 +1,3 @@
-# The Lint/RedundantCopDisableDirective cop needs to be disabled so as
-# to be able to provide a (bad) example of a redundant disable.
-# rubocop:disable Lint/RedundantCopDisableDirective
 This cop detects instances of rubocop:disable comments that can be
 removed without causing any offenses to be reported. It's implemented
 as a cop in that it inherits from the Cop base class and calls
