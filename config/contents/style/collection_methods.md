@@ -22,6 +22,7 @@ The default mapping for `PreferredMethods` behaves as follows.
     items.inject
     items.detect
     items.find_all
+    items.member?
 
     # good
     items.map
@@ -29,3 +30,4 @@ The default mapping for `PreferredMethods` behaves as follows.
     items.reduce
     items.find
     items.select
+    items.include?

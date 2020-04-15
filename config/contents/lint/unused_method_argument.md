@@ -32,3 +32,23 @@ This cop checks for unused method arguments.
     # bad
     def do_something(unused)
     end
+
+### Example: IgnoreNotImplementedMethods: true (default)
+    # good
+    def do_something(unused)
+      raise NotImplementedError
+    end
+
+    def do_something_else(unused)
+      fail "TODO"
+    end
+
+### Example: IgnoreNotImplementedMethods: false
+    # bad
+    def do_something(unused)
+      raise NotImplementedError
+    end
+
+    def do_something_else(unused)
+      fail "TODO"
+    end

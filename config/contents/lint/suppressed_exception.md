@@ -1,6 +1,6 @@
 This cop checks for *rescue* blocks with no body.
 
-### Example: AllowComments: false (default)
+### Example:
 
     # bad
     def some_method
@@ -9,23 +9,9 @@ This cop checks for *rescue* blocks with no body.
     end
 
     # bad
-    def some_method
-      do_something
-    rescue
-      # do nothing
-    end
-
-    # bad
     begin
       do_something
     rescue
-    end
-
-    # bad
-    begin
-      do_something
-    rescue
-      # do nothing
     end
 
     # good
@@ -42,30 +28,34 @@ This cop checks for *rescue* blocks with no body.
       handle_exception
     end
 
-### Example: AllowComments: true
-
-    # bad
-    def some_method
-      do_something
-    rescue
-    end
-
-    # bad
-    begin
-      do_something
-    rescue
-    end
+### Example: AllowComments: true (default)
 
     # good
     def some_method
       do_something
     rescue
-      # do nothing but comment
+      # do nothing
     end
 
     # good
     begin
       do_something
     rescue
-      # do nothing but comment
+      # do nothing
+    end
+
+### Example: AllowComments: false
+
+    # bad
+    def some_method
+      do_something
+    rescue
+      # do nothing
+    end
+
+    # bad
+    begin
+      do_something
+    rescue
+      # do nothing
     end
