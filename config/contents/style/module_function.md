@@ -1,7 +1,7 @@
 This cop checks for use of `extend self` or `module_function` in a
 module.
 
-Supported styles are: module_function, extend_self.
+Supported styles are: module_function, extend_self, forbidden.
 
 ### Example: EnforcedStyle: module_function (default)
     # bad
@@ -38,6 +38,29 @@ Otherwise, it forces to change the flow of the default code.
     # good
     module Test
       extend self
+      # ...
+    end
+
+The option `forbidden` prohibits the usage of both styles.
+
+### Example: EnforcedStyle: forbidden
+    # bad
+    module Test
+      module_function
+      # ...
+    end
+
+    # bad
+    module Test
+      extend self
+      # ...
+    end
+
+    # bad
+    module Test
+      extend self
+      # ...
+      private
       # ...
     end
 

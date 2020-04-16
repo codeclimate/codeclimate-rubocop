@@ -22,16 +22,18 @@ This cop checks for uses of *begin...end while/until something*.
 
     # good
 
-    # using while
-    while some_condition
+    # while replacement
+    loop do
       do_something
+      break unless some_condition
     end
 
 ### Example:
 
     # good
 
-    # using until
-    until some_condition
+    # until replacement
+    loop do
       do_something
+      break if some_condition
     end
