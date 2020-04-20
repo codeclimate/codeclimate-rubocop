@@ -13,7 +13,15 @@ module CC::Engine
         end
       CODE
       create_source_file(".rubocop.yml", <<~CONFIG)
+        Layout/SpaceAroundMethodCallOperator:
+          Enabled: false
+        Lint/RaiseException:
+          Enabled: false
+        Lint/StructNewOverride:
+          Enabled: false
         Style/AccessorMethodName:
+          Enabled: false
+        Style/ExponentialNotation:
           Enabled: false
         Style/FrozenStringLiteralComment:
           Enabled: false
@@ -23,10 +31,6 @@ module CC::Engine
           Enabled: true
         Style/HashTransformValues:
           Enabled: true
-        Lint/RaiseException:
-          Enabled: false
-        Lint/StructNewOverride:
-          Enabled: false
       CONFIG
 
       # No warnings about obsolete cop name
