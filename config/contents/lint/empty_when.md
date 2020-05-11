@@ -3,17 +3,38 @@ This cop checks for the presence of `when` branches without a body.
 ### Example:
 
     # bad
-
     case foo
-    when bar then 1
-    when baz then # nothing
+    when bar
+      do_something
+    when baz
     end
 
 ### Example:
 
     # good
+    case condition
+    when foo
+      do_something
+    when bar
+      nil
+    end
 
-    case foo
-    when bar then 1
-    when baz then 2
+### Example: AllowComments: true (default)
+
+    # good
+    case condition
+    when foo
+      do_something
+    when bar
+      # noop
+    end
+
+### Example: AllowComments: false
+
+    # bad
+    case condition
+    when foo
+      do_something
+    when bar
+      # do nothing
     end

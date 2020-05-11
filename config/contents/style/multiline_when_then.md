@@ -16,3 +16,9 @@ in multi-line when statements.
     case foo
     when bar then do_something
     end
+
+    # good
+    case foo
+    when bar then do_something(arg1,
+                               arg2)
+    end

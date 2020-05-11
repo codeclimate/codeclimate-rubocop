@@ -30,3 +30,14 @@ expression
     # good
     raise 'exception' if something
     ok
+
+    # bad
+    if something
+      foo || raise('exception')
+    else
+      ok
+    end
+
+    # good
+    foo || raise('exception') if something
+    ok
