@@ -13,6 +13,8 @@ module CC::Engine
         end
       CODE
       create_source_file(".rubocop.yml", <<~CONFIG)
+        Layout/EmptyLinesAroundAttributeAccessor:
+          Enabled: true
         Layout/SpaceAroundMethodCallOperator:
           Enabled: false
         Lint/RaiseException:
@@ -30,6 +32,8 @@ module CC::Engine
         Style/HashTransformKeys:
           Enabled: true
         Style/HashTransformValues:
+          Enabled: true
+        Style/SlicingWithRange:
           Enabled: true
       CONFIG
 
