@@ -1,4 +1,3 @@
-RuboCop::Cop::Layout::FirstArgumentIndentation
 RuboCop::Cop::Layout::IndentFirstArgument
 RuboCop::Cop::Metrics::LineLength
 RuboCop::Cop::Migration::DepartmentName

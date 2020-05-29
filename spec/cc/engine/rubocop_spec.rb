@@ -24,7 +24,7 @@ module CC::Engine
       it "reads the configured ruby_style file" do
         create_source_file("foo.rb", <<~EORUBY)
           def method
-            unused = "x" and "y"
+            unused = "x" if "y" and "z"
 
             return false
           end
@@ -61,7 +61,7 @@ module CC::Engine
       it "respects the default .rubocop.yml file" do
         create_source_file("foo.rb", <<~EORUBY)
           def method
-            unused = "x" and "y"
+            unused = "x" if "y" and "z"
 
             return false
           end
