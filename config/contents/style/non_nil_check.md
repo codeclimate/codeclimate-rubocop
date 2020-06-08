@@ -6,7 +6,7 @@ change behavior.
 
 With `IncludeSemanticChanges` set to `true`, this cop reports offenses
 for `!x.nil?` and autocorrects that and `x != nil` to solely `x`, which
-is **usually** OK, but might change behavior.
+is *usually* OK, but might change behavior.
 
 ### Example:
     # bad

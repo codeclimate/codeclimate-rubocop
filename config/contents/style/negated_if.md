@@ -1,9 +1,9 @@
 Checks for uses of if with a negated condition. Only ifs
 without else are considered. There are three different styles:
 
-    - both
-    - prefix
-    - postfix
+* both
+* prefix
+* postfix
 
 ### Example: EnforcedStyle: both (default)
     # enforces `unless` for `prefix` and `postfix` conditionals
