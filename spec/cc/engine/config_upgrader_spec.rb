@@ -37,6 +37,8 @@ module CC::Engine
           Enabled: true
         Style/HashTransformValues:
           Enabled: true
+        Style/RedundantFetchBlock:
+          Enabled: true
         Style/SlicingWithRange:
           Enabled: true
         Style/RedundantRegexpCharacterClass:
