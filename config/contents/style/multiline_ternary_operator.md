@@ -12,9 +12,8 @@ This cop checks for multi-line ternary op expressions.
 
     # good
     a = cond ? b : c
-    a =
-      if cond
-        b
-      else
-        c
-      end
+    a = if cond
+      b
+    else
+      c
+    end
