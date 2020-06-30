@@ -17,6 +17,8 @@ module CC::Engine
           Enabled: true
         Layout/SpaceAroundMethodCallOperator:
           Enabled: false
+        Lint/DeprecatedOpenSSLConstant:
+          Enabled: false
         Lint/RaiseException:
           Enabled: false
         Lint/StructNewOverride:
