@@ -2,7 +2,7 @@ This cop checks the indentation of the first argument in a method call.
 Arguments after the first one are checked by Layout/ArgumentAlignment,
 not by this cop.
 
-For indenting the first parameter of method *definitions*, check out
+For indenting the first parameter of method _definitions_, check out
 Layout/FirstParameterIndentation.
 
 ### Example:

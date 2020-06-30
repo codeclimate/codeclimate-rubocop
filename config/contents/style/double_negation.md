@@ -5,12 +5,17 @@ that use boolean as a return value. When using `EnforcedStyle: forbidden`, doubl
 should be forbidden always.
 
 ### Example:
-
     # bad
     !!something
 
     # good
     !something.nil?
+
+### Example: EnforcedStyle: allowed_in_returns (default)
+    # good
+    def foo?
+      !!return_value
+    end
 
 ### Example: EnforcedStyle: forbidden
     # bad
