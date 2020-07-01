@@ -19,6 +19,8 @@ module CC::Engine
           Enabled: false
         Lint/DeprecatedOpenSSLConstant:
           Enabled: false
+        Lint/MixedRegexpCaptureTypes:
+          Enabled: true
         Lint/RaiseException:
           Enabled: false
         Lint/StructNewOverride:
@@ -36,6 +38,10 @@ module CC::Engine
         Style/HashTransformValues:
           Enabled: true
         Style/SlicingWithRange:
+          Enabled: true
+        Style/RedundantRegexpCharacterClass:
+          Enabled: true
+        Style/RedundantRegexpEscape:
           Enabled: true
       CONFIG
 
