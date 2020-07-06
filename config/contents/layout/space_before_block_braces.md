@@ -22,3 +22,17 @@ brace depending on configuration.
     foo.map{ |a|
       a.bar.to_s
     }
+
+### Example: EnforcedStyleForEmptyBraces: space (default)
+    # bad
+    7.times{}
+
+    # good
+    7.times {}
+
+### Example: EnforcedStyleForEmptyBraces: no_space
+    # bad
+    7.times {}
+
+    # good
+    7.times{}
