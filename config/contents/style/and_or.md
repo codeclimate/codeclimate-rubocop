@@ -2,7 +2,7 @@ This cop checks for uses of `and` and `or`, and suggests using `&&` and
 `||` instead. It can be configured to check only in conditions or in
 all contexts.
 
-### Example: EnforcedStyle: always (default)
+### Example: EnforcedStyle: always
     # bad
     foo.save and return
 
@@ -17,7 +17,7 @@ all contexts.
     if foo && bar
     end
 
-### Example: EnforcedStyle: conditionals
+### Example: EnforcedStyle: conditionals (default)
     # bad
     if foo and bar
     end

@@ -17,6 +17,10 @@ module CC::Engine
           Enabled: true
         Layout/SpaceAroundMethodCallOperator:
           Enabled: false
+        Lint/DeprecatedOpenSSLConstant:
+          Enabled: false
+        Lint/MixedRegexpCaptureTypes:
+          Enabled: true
         Lint/RaiseException:
           Enabled: false
         Lint/StructNewOverride:
@@ -33,7 +37,13 @@ module CC::Engine
           Enabled: true
         Style/HashTransformValues:
           Enabled: true
+        Style/RedundantFetchBlock:
+          Enabled: true
         Style/SlicingWithRange:
+          Enabled: true
+        Style/RedundantRegexpCharacterClass:
+          Enabled: true
+        Style/RedundantRegexpEscape:
           Enabled: true
       CONFIG
 

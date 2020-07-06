@@ -14,6 +14,8 @@ eg. `5 == x`
     foo == "bar"
     foo <= 42
     bar > 10
+    "#{interpolation}" == foo
+    /#{interpolation}/ == foo
 
 ### Example: EnforcedStyle: forbid_for_equality_operators_only
     # bad
