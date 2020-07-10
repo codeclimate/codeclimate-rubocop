@@ -1,4 +1,6 @@
-This cop checks for non-ascii characters in identifier names.
+This cop checks for non-ascii characters in identifier and constant names.
+Identifiers are always checked and whether constants are checked
+can be controlled using AsciiConstants config.
 
 ### Example:
     # bad
@@ -28,3 +30,17 @@ This cop checks for non-ascii characters in identifier names.
 
     # good
     params[:width_gteq]
+
+### Example: AsciiConstants: true (default)
+    # bad
+    class Foö
+    end
+
+    FOÖ = "foo"
+
+### Example: AsciiConstants: false
+    # good
+    class Foö
+    end
+
+    FOÖ = "foo"

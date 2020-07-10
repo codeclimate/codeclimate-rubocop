@@ -10,7 +10,7 @@ instead.
     OpenSSL::Cipher::AES.new(128, :GCM)
 
     # good
-    OpenSSL::Cipher.new('AES-128-GCM')
+    OpenSSL::Cipher.new('aes-128-gcm')
 
 ### Example:
 
