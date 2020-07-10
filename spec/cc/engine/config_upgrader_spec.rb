@@ -25,6 +25,10 @@ module CC::Engine
           Enabled: false
         Lint/StructNewOverride:
           Enabled: false
+        Style/AccessorGrouping:
+          Enabled: true
+        Style/BisectedAttrAccessor:
+          Enabled: true
         Style/AccessorMethodName:
           Enabled: false
         Style/ExponentialNotation:
@@ -36,6 +40,8 @@ module CC::Engine
         Style/HashTransformKeys:
           Enabled: true
         Style/HashTransformValues:
+          Enabled: true
+        Style/RedundantAssignment:
           Enabled: true
         Style/RedundantFetchBlock:
           Enabled: true
