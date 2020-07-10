@@ -3,8 +3,17 @@ multiple lines.
 
 ### Example:
 
-    Thread.list.find_all do |t|
+    # bad
+    Thread.list.select do |t|
       t.alive?
     end.map do |t|
+      t.object_id
+    end
+
+    # good
+    alive_threads = Thread.list.select do |t|
+      t.alive?
+    end
+    alive_threads.map do |t|
       t.object_id
     end

@@ -4,22 +4,6 @@ module CC::Engine
   describe "Rubocop cops patch" do
     include RubocopRunner
 
-    it "patches all relevant cops" do
-      patchable_cops =
-        RuboCop::Cop::Cop.registry.select do |cop|
-          cop.ancestors.include?(RuboCop::Cop::MethodComplexity) ||
-            cop.ancestors.include?(RuboCop::Cop::ClassishLength) ||
-            cop.ancestors.include?(RuboCop::Cop::TooManyLines)
-        end
-
-      patched_cops =
-        RuboCop::Cop::Cop.registry.select do |cop|
-          cop.ancestors.include?(RuboCopCopNodeLoc)
-        end
-
-      expect(patched_cops).to match_array patchable_cops
-    end
-
     describe "Metrics::AbcSize patch" do
       it "includes complete method body for cyclomatic complexity issue" do
         create_source_file("my_script", <<~EORUBY)

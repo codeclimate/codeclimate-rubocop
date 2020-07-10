@@ -14,6 +14,15 @@ use a class instance variable instead.
       @@test = 10
     end
 
+    class A
+      def self.test(name, value)
+        class_variable_set("@@#{name}", value)
+      end
+    end
+
+    class A; end
+    A.class_variable_set(:@@test, 10)
+
     # good
     class A
       @test = 10
@@ -22,5 +31,11 @@ use a class instance variable instead.
     class A
       def test
         @@test # you can access class variable without offense
+      end
+    end
+
+    class A
+      def self.test(name)
+        class_variable_get("@@#{name}") # you can access without offense
       end
     end
