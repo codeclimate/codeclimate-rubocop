@@ -68,6 +68,8 @@ GEM
       rubocop
     rubocop-rspec (1.41.0)
       rubocop (>= 0.68.1)
+    rubocop-sequel (0.0.6)
+      rubocop (~> 0.55, >= 0.55)
     rubocop-thread_safety (0.4.1)
       rubocop (>= 0.51.0)
     ruby-progressbar (1.10.1)
@@ -97,6 +99,7 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rake
   rubocop-rspec
+  rubocop-sequel
   rubocop-thread_safety
   safe_yaml
   test-prof
