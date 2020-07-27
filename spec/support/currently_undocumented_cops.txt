@@ -1,3 +1,5 @@
+RuboCop::Cop::Layout::IndentFirstArgument
 RuboCop::Cop::Lint::Syntax
+RuboCop::Cop::Metrics::LineLength
 RuboCop::Cop::Migration::DepartmentName
 RuboCop::Cop::Style::ConditionalAssignment

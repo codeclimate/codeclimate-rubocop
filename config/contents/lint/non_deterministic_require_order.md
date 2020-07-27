@@ -29,19 +29,3 @@ always sort the list.
     Dir.glob(Rails.root.join(__dir__, 'test', '*.rb')).sort.each do |file|
       require file
     end
-
-### Example:
-
-    # bad
-    Dir['./lib/**/*.rb'].each(&method(:require))
-
-    # good
-    Dir['./lib/**/*.rb'].sort.each(&method(:require))
-
-### Example:
-
-    # bad
-    Dir.glob(Rails.root.join('test', '*.rb'), &method(:require))
-
-    # good
-    Dir.glob(Rails.root.join('test', '*.rb')).sort.each(&method(:require))
