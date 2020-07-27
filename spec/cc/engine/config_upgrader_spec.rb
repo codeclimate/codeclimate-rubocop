@@ -19,6 +19,8 @@ module CC::Engine
           Enabled: false
         Lint/DeprecatedOpenSSLConstant:
           Enabled: false
+        Lint/DuplicateElsifCondition:
+          Enabled: false
         Lint/MixedRegexpCaptureTypes:
           Enabled: true
         Lint/RaiseException:
@@ -31,12 +33,20 @@ module CC::Engine
           Enabled: true
         Style/AccessorMethodName:
           Enabled: false
+        Style/ArrayCoercion:
+          Enabled: false
+        Style/CaseLikeIf:
+          Enabled: false
         Style/ExponentialNotation:
           Enabled: false
         Style/FrozenStringLiteralComment:
           Enabled: false
+        Style/HashAsLastArrayItem:
+          Enabled: false
         Style/HashEachMethods:
           Enabled: true
+        Style/HashLikeCase:
+          Enabled: false
         Style/HashTransformKeys:
           Enabled: true
         Style/HashTransformValues:
@@ -47,6 +57,8 @@ module CC::Engine
           Enabled: true
         Style/SlicingWithRange:
           Enabled: true
+        Style/RedundantFileExtensionInRequire:
+          Enabled: false
         Style/RedundantRegexpCharacterClass:
           Enabled: true
         Style/RedundantRegexpEscape:
