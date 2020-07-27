@@ -30,3 +30,8 @@ required by gemspec.
     Gem::Specification.new do |spec|
       spec.required_ruby_version = ['>= 2.5.0', '< 2.7.0']
     end
+
+    # good
+    Gem::Specification.new do |spec|
+      spec.required_ruby_version = '~> 2.5'
+    end
