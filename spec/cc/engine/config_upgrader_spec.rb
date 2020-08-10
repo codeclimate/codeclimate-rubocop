@@ -17,16 +17,34 @@ module CC::Engine
           Enabled: true
         Layout/SpaceAroundMethodCallOperator:
           Enabled: false
+        Lint/BinaryOperatorWithIdenticalOperands:
+          Enabled: false
         Lint/DeprecatedOpenSSLConstant:
           Enabled: false
         Lint/DuplicateElsifCondition:
           Enabled: false
+        Lint/DuplicateRescueException:
+          Enabled: false
+        Lint/EmptyConditionalBody:
+          Enabled: false
+        Lint/FloatComparison:
+          Enabled: false
+        Lint/MissingSuper:
+          Enabled: false
         Lint/MixedRegexpCaptureTypes:
           Enabled: true
+        Lint/OutOfRangeRegexpRef:
+          Enabled: false
         Lint/RaiseException:
+          Enabled: false
+        Lint/SelfAssignment:
           Enabled: false
         Lint/StructNewOverride:
           Enabled: false
+        Lint/TopLevelReturnWithArgument:
+          Enabled: false
+        Lint/UnreachableLoop:
+            Enabled: false
         Style/AccessorGrouping:
           Enabled: true
         Style/BisectedAttrAccessor:
@@ -37,9 +55,13 @@ module CC::Engine
           Enabled: false
         Style/CaseLikeIf:
           Enabled: false
+        Style/ExplicitBlockArgument:
+          Enabled: false
         Style/ExponentialNotation:
           Enabled: false
         Style/FrozenStringLiteralComment:
+          Enabled: false
+        Style/GlobalStdStream:
           Enabled: false
         Style/HashAsLastArrayItem:
           Enabled: false
@@ -51,12 +73,18 @@ module CC::Engine
           Enabled: true
         Style/HashTransformValues:
           Enabled: true
+        Style/OptionalBooleanParameter:
+          Enabled: false
         Style/RedundantAssignment:
           Enabled: true
         Style/RedundantFetchBlock:
           Enabled: true
+        Style/SingleArgumentDig:
+          Enabled: false
         Style/SlicingWithRange:
           Enabled: true
+        Style/StringConcatenation:
+          Enabled: false
         Style/RedundantFileExtensionInRequire:
           Enabled: false
         Style/RedundantRegexpCharacterClass:
