@@ -1,10 +1,15 @@
-Checks that `required_ruby_version` of gemspec and `TargetRubyVersion`
-of .rubocop.yml are equal.
+Checks that `required_ruby_version` of gemspec is specified and
+equal to `TargetRubyVersion` of .rubocop.yml.
 Thereby, RuboCop to perform static analysis working on the version
 required by gemspec.
 
 ### Example:
     # When `TargetRubyVersion` of .rubocop.yml is `2.5`.
+
+    # bad
+    Gem::Specification.new do |spec|
+      # no `required_ruby_version` specified
+    end
 
     # bad
     Gem::Specification.new do |spec|

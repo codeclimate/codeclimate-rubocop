@@ -12,58 +12,9 @@ module CC::Engine
           true
         end
       CODE
-      create_source_file(".rubocop.yml", <<~CONFIG)
-        Layout/EmptyLinesAroundAttributeAccessor:
-          Enabled: true
-        Layout/SpaceAroundMethodCallOperator:
-          Enabled: false
-        Lint/DeprecatedOpenSSLConstant:
-          Enabled: false
-        Lint/DuplicateElsifCondition:
-          Enabled: false
-        Lint/MixedRegexpCaptureTypes:
-          Enabled: true
-        Lint/RaiseException:
-          Enabled: false
-        Lint/StructNewOverride:
-          Enabled: false
-        Style/AccessorGrouping:
-          Enabled: true
-        Style/BisectedAttrAccessor:
-          Enabled: true
-        Style/AccessorMethodName:
-          Enabled: false
-        Style/ArrayCoercion:
-          Enabled: false
-        Style/CaseLikeIf:
-          Enabled: false
-        Style/ExponentialNotation:
-          Enabled: false
-        Style/FrozenStringLiteralComment:
-          Enabled: false
-        Style/HashAsLastArrayItem:
-          Enabled: false
-        Style/HashEachMethods:
-          Enabled: true
-        Style/HashLikeCase:
-          Enabled: false
-        Style/HashTransformKeys:
-          Enabled: true
-        Style/HashTransformValues:
-          Enabled: true
-        Style/RedundantAssignment:
-          Enabled: true
-        Style/RedundantFetchBlock:
-          Enabled: true
-        Style/SlicingWithRange:
-          Enabled: true
-        Style/RedundantFileExtensionInRequire:
-          Enabled: false
-        Style/RedundantRegexpCharacterClass:
-          Enabled: true
-        Style/RedundantRegexpEscape:
-          Enabled: true
-      CONFIG
+
+      create_source_file(".rubocop.yml",
+                         File.read("spec/support/config_upgrader_rubocop.yml"))
 
       # No warnings about obsolete cop name
       expect do
