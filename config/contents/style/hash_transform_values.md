@@ -13,7 +13,9 @@ This cop should only be enabled on Ruby version 2.4 or newer
 ### Example:
     # bad
     {a: 1, b: 2}.each_with_object({}) { |(k, v), h| h[k] = foo(v) }
-    {a: 1, b: 2}.map { |k, v| [k, v * v] }
+    Hash[{a: 1, b: 2}.collect { |k, v| [k, foo(v)] }]
+    {a: 1, b: 2}.map { |k, v| [k, v * v] }.to_h
+    {a: 1, b: 2}.to_h { |k, v| [k, v * v] }
 
     # good
     {a: 1, b: 2}.transform_values { |v| foo(v) }

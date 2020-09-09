@@ -15,4 +15,3 @@ Note: When ``Layout/LineLength``'s `AllowHeredoc` is false (not default),
     <<~RUBY
       something
     RUBY
-
