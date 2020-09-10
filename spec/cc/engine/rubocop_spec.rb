@@ -149,10 +149,12 @@ module CC::Engine
       end
 
       it "handles different locations properly" do
+        pseudo_source_range_klass = RuboCop::Cop::Offense::const_get(:PseudoSourceRange)
+
         allow_any_instance_of(RuboCop::Cop::Team).to receive(:inspect_file).and_return(
           [
             OpenStruct.new(
-              location: RuboCop::Cop::Offense::PseudoSourceRange.new(
+              location: pseudo_source_range_klass.new(
                 1, 0, ""
               ),
               cop_name: "fake",

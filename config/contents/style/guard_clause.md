@@ -12,6 +12,7 @@ expression
     # good
     def test
       return unless something
+
       work
     end
 

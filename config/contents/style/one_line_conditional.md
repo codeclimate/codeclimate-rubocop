@@ -1,19 +1,27 @@
-TODO: Make configurable.
-Checks for uses of if/then/else/end on a single line.
+Checks for uses of if/then/else/end constructs on a single line.
+AlwaysCorrectToMultiline config option can be set to true to auto-convert all offenses to
+multi-line constructs. When AlwaysCorrectToMultiline is false (default case) the
+auto-correct will first try converting them to ternary operators.
 
 ### Example:
     # bad
-    if foo then boo else doo end
-    unless foo then boo else goo end
+    if foo then bar else baz end
+
+    # bad
+    unless foo then baz else bar end
 
     # good
-    foo ? boo : doo
-    boo if foo
-    if foo then boo end
+    foo ? bar : baz
+
+    # good
+    bar if foo
+
+    # good
+    if foo then bar end
 
     # good
     if foo
-      boo
+      bar
     else
-      doo
+      baz
     end
