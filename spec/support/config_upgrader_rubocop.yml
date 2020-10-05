@@ -3,6 +3,16 @@ Style/AccessorMethodName:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# 0.91
+Layout/BeginEndAlignment: # (new in 0.91)
+  Enabled: true
+Lint/ConstantDefinitionInBlock: # (new in 0.91)
+  Enabled: true
+Lint/IdentityComparison: # (new in 0.91)
+  Enabled: true
+Lint/UselessTimes: # (new in 0.91)
+  Enabled: true
+
 # New Cops
 Layout/EmptyLinesAroundAttributeAccessor:
   Enabled: false
