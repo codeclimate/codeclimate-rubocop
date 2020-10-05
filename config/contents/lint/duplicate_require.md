@@ -9,3 +9,7 @@ This cop checks for duplicate `require`s and `require_relative`s.
     # good
     require 'foo'
     require 'bar'
+
+    # good
+    require 'foo'
+    require_relative 'foo'
