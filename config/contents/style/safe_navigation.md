@@ -44,6 +44,10 @@ returns.
     foo && foo < bar
     foo < bar if foo
 
+    # When checking `foo&.empty?` in a conditional, `foo` being `nil` will actually
+    # do the opposite of what the author intends.
+    foo && foo.empty?
+
     # This could start returning `nil` as well as the return of the method
     foo.nil? || foo.bar
     !foo || foo.bar

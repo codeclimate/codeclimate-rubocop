@@ -1,5 +1,8 @@
 This cop checks for multi-line ternary op expressions.
 
+NOTE: `return if ... else ... end` is syntax error. If `return` is used before
+multiline ternary operator expression, it cannot be auto-corrected.
+
 ### Example:
     # bad
     a = cond ?
