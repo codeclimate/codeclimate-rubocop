@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "spec_helper"
+require "cc/engine/config_upgrader"
 
 module CC::Engine
   describe ConfigUpgrader do
