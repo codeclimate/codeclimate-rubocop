@@ -5,7 +5,6 @@ require "delegate"
 require "pathname"
 require "rubocop"
 require "rubocop/config_patch"
-require "cc/engine/config_upgrader"
 require "cc/engine/source_file"
 require "cc/engine/category_parser"
 require "cc/engine/file_list_resolver"
@@ -24,6 +23,7 @@ module CC
       end
 
       def run
+        check_mry_dependency
         Dir.chdir(root) do
           files_to_inspect.each do |path|
             SourceFile.new(
@@ -54,6 +54,11 @@ module CC
             config_store.options_config = config_file
           end
         end
+      end
+
+      # MRY fell behind, may negatively alter rubocop config
+      def check_mry_dependency
+        require "cc/engine/config_upgrader" unless engine_config.dig("checks", "mry", "disabled")
       end
     end
   end
