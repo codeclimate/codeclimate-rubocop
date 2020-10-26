@@ -17,7 +17,6 @@ You can find some basic setup instructions and links to the RuboCop OSS project 
       rubocop:
         enabled: true
     ```
-2. Run `codeclimate engines:install`. This command installs the engines enabled it in your `.codeclimate.yml` file.
 3. You're ready to analyze! Browse into your project's folder and run `codeclimate analyze`.
 
 ### Need help?
