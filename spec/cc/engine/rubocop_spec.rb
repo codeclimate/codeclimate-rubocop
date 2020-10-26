@@ -258,6 +258,22 @@ module CC::Engine
 
         expect(issues).to_not include_check "Lint/UselessAssignment"
       end
+
+      it "does not upgrade the RuboCop config if Mry is disabled" do
+        create_source_file("test.rb", <<~CODE)
+          def get_true
+            true
+          end
+        CODE
+        create_source_file(".rubocop.yml", <<~CONFIG)
+          Layout/EmptyLinesAroundAttributeAccessor:
+            Enabled: true
+        CONFIG
+
+        expect do
+          run_engine("checks" => {"mry" => {"disabled" => false}})
+        end.to output.to_stderr
+      end
     end
   end
 end
