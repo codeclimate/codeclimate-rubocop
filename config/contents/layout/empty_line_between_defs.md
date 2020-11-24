@@ -8,7 +8,8 @@ number of empty lines permitted.
 `AllowAdjacentOneLineDefs` configures whether adjacent
 one-line method definitions are considered an offense.
 
-### Example:
+### Example: EmptyLineBetweenMethodDefs: true (default)
+    # checks for empty lines between method definitions.
 
     # bad
     def a
@@ -20,6 +21,52 @@ one-line method definitions are considered an offense.
 
     # good
     def a
+    end
+
+    def b
+    end
+
+### Example: EmptyLineBetweenClassDefs: true (default)
+    # checks for empty lines between class definitions.
+
+    # bad
+    class A
+    end
+    class B
+    end
+    def b
+    end
+
+### Example:
+
+    # good
+    class A
+    end
+
+    class B
+    end
+
+    def b
+    end
+
+### Example: EmptyLineBetweenModuleDefs: true (default)
+    # checks for empty lines between module definitions.
+
+    # bad
+    module A
+    end
+    module B
+    end
+    def b
+    end
+
+### Example:
+
+    # good
+    module A
+    end
+
+    module B
     end
 
     def b

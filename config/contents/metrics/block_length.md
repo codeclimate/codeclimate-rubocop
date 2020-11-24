@@ -24,3 +24,5 @@ will be counted as one line regardless of its actual size.
         content.
       HEREDOC
     end                 # 5 points
+
+NOTE: This cop does not apply for `Struct` definitions.

@@ -15,6 +15,11 @@ be set or referenced outside of the memoization method.
       @something ||= calculate_expensive_thing
     end
 
+    def foo
+      return @something if defined?(@something)
+      @something = calculate_expensive_thing
+    end
+
     # good
     def _foo
       @foo ||= calculate_expensive_thing
@@ -49,6 +54,11 @@ be set or referenced outside of the memoization method.
       @foo ||= calculate_expensive_thing
     end
 
+    def foo
+      return @foo if defined?(@foo)
+      @foo = calculate_expensive_thing
+    end
+
     # good
     def foo
       @_foo ||= calculate_expensive_thing
@@ -57,6 +67,11 @@ be set or referenced outside of the memoization method.
     # good
     def _foo
       @_foo ||= calculate_expensive_thing
+    end
+
+    def foo
+      return @_foo if defined?(@_foo)
+      @_foo = calculate_expensive_thing
     end
 
 ### Example: EnforcedStyleForLeadingUnderscores :optional
@@ -78,4 +93,10 @@ be set or referenced outside of the memoization method.
     # good
     def _foo
       @_foo ||= calculate_expensive_thing
+    end
+
+    # good
+    def foo
+      return @_foo if defined?(@_foo)
+      @_foo = calculate_expensive_thing
     end

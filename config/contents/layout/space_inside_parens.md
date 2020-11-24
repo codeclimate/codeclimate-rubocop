@@ -6,10 +6,12 @@ Checks for spaces inside ordinary round parentheses.
     # bad
     f( 3)
     g = (a + 3 )
+    f( )
 
     # good
     f(3)
     g = (a + 3)
+    f()
 
 ### Example: EnforcedStyle: space
     # The `space` style enforces that parentheses have a space at the
