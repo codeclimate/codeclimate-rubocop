@@ -26,8 +26,7 @@ module CC
         "Rails/HasAndBelongsToMany" => "Style",
         "Rails/TimeZone" => "Style",
         "Rails/Validation" => "Style",
-        "Style" => "Style",
-        "Migrations/RemoveIndex" => "Performance",
+        "Style" => "Style"
       }.freeze
 
       attr_reader :cop_name
