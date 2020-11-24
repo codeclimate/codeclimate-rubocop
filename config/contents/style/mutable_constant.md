@@ -9,6 +9,8 @@ frozen objects so there is a decent chance of getting some false
 positives. Luckily, there is no harm in freezing an already
 frozen object.
 
+NOTE: Regexp and Range literals are frozen objects since Ruby 3.0.
+
 ### Example: EnforcedStyle: literals (default)
     # bad
     CONST = [1, 2, 3]

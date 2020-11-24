@@ -28,7 +28,28 @@ to encoded URLs or Date/Time formatting strings.
 
     # bad
     format('%<greeting>s', greeting: 'Hello')
-    format('%{greeting}', 'Hello')
+    format('%{greeting}', greeting: 'Hello')
 
     # good
     format('%s', 'Hello')
+
+It is allowed to contain unannotated token
+if the number of them is less than or equals to
+`MaxUnannotatedPlaceholdersAllowed`.
+
+### Example: MaxUnannotatedPlaceholdersAllowed: 0
+
+    # bad
+    format('%06d', 10)
+    format('%s %s.', 'Hello', 'world')
+
+    # good
+    format('%<number>06d', number: 10)
+
+### Example: MaxUnannotatedPlaceholdersAllowed: 1 (default)
+
+    # bad
+    format('%s %s.', 'Hello', 'world')
+
+    # good
+    format('%06d', 10)

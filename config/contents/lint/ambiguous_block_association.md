@@ -10,6 +10,8 @@ when param passed without parentheses.
 
     # good
     # With parentheses, there's no ambiguity.
+    some_method(a { |val| puts val })
+    # or (different meaning)
     some_method(a) { |val| puts val }
 
     # good

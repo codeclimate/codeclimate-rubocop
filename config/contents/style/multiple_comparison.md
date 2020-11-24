@@ -1,5 +1,8 @@
 This cop checks against comparing a variable with multiple items, where
-`Array#include?` could be used instead to avoid code repetition.
+`Array#include?`, `Set#include?` or a `case` could be used instead
+to avoid code repetition.
+It accepts comparisons of multiple method calls to avoid unnecessary method calls
+by default. It can be configured by `AllowMethodComparison` option.
 
 ### Example:
     # bad
@@ -9,3 +12,26 @@ This cop checks against comparing a variable with multiple items, where
     # good
     a = 'a'
     foo if ['a', 'b', 'c'].include?(a)
+
+    VALUES = Set['a', 'b', 'c'].freeze
+    # elsewhere...
+    foo if VALUES.include?(a)
+
+    case foo
+    when 'a', 'b', 'c' then foo
+    # ...
+    end
+
+    # accepted (but consider `case` as above)
+    foo if a == b.lightweight || a == b.heavyweight
+
+### Example: AllowMethodComparison: true (default)
+    # good
+    foo if a == b.lightweight || a == b.heavyweight
+
+### Example: AllowMethodComparison: false
+    # bad
+    foo if a == b.lightweight || a == b.heavyweight
+
+    # good
+    foo if [b.lightweight, b.heavyweight].include?(a)

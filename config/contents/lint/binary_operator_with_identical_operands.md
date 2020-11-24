@@ -12,6 +12,7 @@ and thus can generate false positives:
 
 ### Example:
     # bad
+    x / x
     x.top >= x.top
 
     if a.x != 0 && a.x != 0
@@ -21,3 +22,7 @@ and thus can generate false positives:
     def childs?
       left_child || left_child
     end
+
+    # good
+    x + x
+    1 << 1

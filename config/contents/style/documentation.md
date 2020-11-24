@@ -49,3 +49,8 @@ same for all its children.
       module Namespace
         Public = Class.new
       end
+
+      # Macro calls
+      module Namespace
+        extend Foo
+      end

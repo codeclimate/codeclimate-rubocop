@@ -44,3 +44,14 @@ For meta-programming, use `const_set`.
         const_set(:LIST, [])
       end
     end
+
+### Example: AllowedMethods: ['enums'] (default)
+    # good
+
+    # `enums` for Typed Enums via `T::Enum` in Sorbet.
+    # https://sorbet.org/docs/tenum
+    class TestEnum < T::Enum
+      enums do
+        Foo = new("foo")
+      end
+    end

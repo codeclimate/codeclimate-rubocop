@@ -1,5 +1,7 @@
 This cop checks for memoized methods whose instance variable name
-does not match the method name.
+does not match the method name. Applies to both regular methods
+(defined with `def`) and dynamic methods (defined with
+`define_method` or `define_singleton_method`).
 
 This cop can be configured with the EnforcedStyleForLeadingUnderscores
 directive. It can be configured to allow for memoized instance variables
@@ -13,6 +15,11 @@ be set or referenced outside of the memoization method.
     # not `@foo`. This can cause confusion and bugs.
     def foo
       @something ||= calculate_expensive_thing
+    end
+
+    def foo
+      return @something if defined?(@something)
+      @something = calculate_expensive_thing
     end
 
     # good
@@ -38,6 +45,17 @@ be set or referenced outside of the memoization method.
       @foo ||= calculate_expensive_thing(helper_variable)
     end
 
+    # good
+    define_method(:foo) do
+      @foo ||= calculate_expensive_thing
+    end
+
+    # good
+    define_method(:foo) do
+      return @foo if defined?(@foo)
+      @foo = calculate_expensive_thing
+    end
+
 ### Example: EnforcedStyleForLeadingUnderscores: required
     # bad
     def foo
@@ -49,6 +67,11 @@ be set or referenced outside of the memoization method.
       @foo ||= calculate_expensive_thing
     end
 
+    def foo
+      return @foo if defined?(@foo)
+      @foo = calculate_expensive_thing
+    end
+
     # good
     def foo
       @_foo ||= calculate_expensive_thing
@@ -57,6 +80,22 @@ be set or referenced outside of the memoization method.
     # good
     def _foo
       @_foo ||= calculate_expensive_thing
+    end
+
+    def foo
+      return @_foo if defined?(@_foo)
+      @_foo = calculate_expensive_thing
+    end
+
+    # good
+    define_method(:foo) do
+      @_foo ||= calculate_expensive_thing
+    end
+
+    # good
+    define_method(:foo) do
+      return @_foo if defined?(@_foo)
+      @_foo = calculate_expensive_thing
     end
 
 ### Example: EnforcedStyleForLeadingUnderscores :optional
@@ -77,5 +116,21 @@ be set or referenced outside of the memoization method.
 
     # good
     def _foo
+      @_foo ||= calculate_expensive_thing
+    end
+
+    # good
+    def foo
+      return @_foo if defined?(@_foo)
+      @_foo = calculate_expensive_thing
+    end
+
+    # good
+    define_method(:foo) do
+      @foo ||= calculate_expensive_thing
+    end
+
+    # good
+    define_method(:foo) do
       @_foo ||= calculate_expensive_thing
     end

@@ -19,3 +19,12 @@ configured in the `Layout/LineLength` cop.
 
     # good
     x += 1 until x > 10
+
+### Example:
+    # bad
+    x += 100 while x < 500 # a long comment that makes code too long if it were a single line
+
+    # good
+    while x < 500 # a long comment that makes code too long if it were a single line
+      x += 100
+    end
