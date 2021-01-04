@@ -3,7 +3,7 @@
 require "rubocop/config"
 
 module RuboCopConfigRescue
-  def reject_obsolete_cops_and_parameters
+  def reject_obsolete!
     super
   rescue RuboCop::ValidationError => e
     warn e.message
