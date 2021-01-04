@@ -98,7 +98,7 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rake
   rubocop-rspec
-  rubocop-sequel (= 0.1.0)
+  rubocop-sequel
   rubocop-sorbet
   rubocop-thread_safety
   safe_yaml
