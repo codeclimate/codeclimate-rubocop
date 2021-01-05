@@ -1,6 +1,10 @@
-This cop checks for odd else block layout - like
-having an expression on the same line as the else keyword,
+This cop checks for odd `else` block layout - like
+having an expression on the same line as the `else` keyword,
 which is usually a mistake.
+
+Its auto-correction tweaks layout to keep the syntax. So, this auto-correction
+is compatible correction for bad case syntax, but if your code makes a mistake
+with `elsif` and `else`, you will have to correct it manually.
 
 ### Example:
 
@@ -16,9 +20,18 @@ which is usually a mistake.
 
     # good
 
+    # This code is compatible with the bad case. It will be auto-corrected like this.
     if something
       # ...
     else
       do_this
+      do_that
+    end
+
+    # This code is incompatible with the bad case.
+    # If `do_this` is a condition, `elsif` should be used instead of `else`.
+    if something
+      # ...
+    elsif do_this
       do_that
     end

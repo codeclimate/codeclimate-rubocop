@@ -1,6 +1,11 @@
 This cop checks for the presence of constructors and lifecycle callbacks
 without calls to `super`.
 
+This cop does not consider `method_missing` (and `respond_to_missing?`)
+because in some cases it makes sense to overtake what is considered a
+missing method. In other cases, the theoretical ideal handling could be
+challenging or verbose for no actual gain.
+
 ### Example:
     # bad
     class Employee < Person

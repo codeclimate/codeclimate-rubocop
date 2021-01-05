@@ -1,4 +1,5 @@
 This cop checks for calls to debugger or pry.
+The cop can be configured to define which methods and receivers must be fixed.
 
 ### Example:
 

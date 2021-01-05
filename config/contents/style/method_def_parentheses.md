@@ -1,6 +1,9 @@
 This cop checks for parentheses around the arguments in method
 definitions. Both instance and class/singleton methods are checked.
 
+This cop does not consider endless methods, since parentheses are
+always required for them.
+
 ### Example: EnforcedStyle: require_parentheses (default)
     # The `require_parentheses` style requires method definitions
     # to always use parentheses

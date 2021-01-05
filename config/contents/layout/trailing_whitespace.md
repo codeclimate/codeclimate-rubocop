@@ -9,14 +9,25 @@ This cop looks for trailing whitespace in the source code.
     # good
     x = 0
 
-### Example: AllowInHeredoc: false
+### Example: AllowInHeredoc: false (default)
     # The line in this example contains spaces after the 0.
     # bad
     code = <<~RUBY
       x = 0
     RUBY
 
-### Example: AllowInHeredoc: true (default)
+    # ok
+    code = <<~RUBY
+      x = 0 #{}
+    RUBY
+
+    # good
+    trailing_whitespace = ' '
+    code = <<~RUBY
+      x = 0#{trailing_whitespace}
+    RUBY
+
+### Example: AllowInHeredoc: true
     # The line in this example contains spaces after the 0.
     # good
     code = <<~RUBY

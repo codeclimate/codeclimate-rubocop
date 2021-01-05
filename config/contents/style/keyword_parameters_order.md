@@ -15,3 +15,13 @@ and optional parameters at the end.
     def some_method(second:, first: false, third: 10)
       # body omitted
     end
+
+    # bad
+    do_something do |first: false, second:, third: 10|
+      # body omitted
+    end
+
+    # good
+    do_something do |second:, first: false, third: 10|
+      # body omitted
+    end

@@ -20,3 +20,12 @@ A Gem's requirements should be listed only once in a Gemfile.
 
     # good
     gem 'rubocop', groups: [:development, :test]
+
+    # good - conditional declaration
+    if Dir.exist?(local)
+      gem 'rubocop', path: local
+    elsif ENV['RUBOCOP_VERSION'] == 'master'
+      gem 'rubocop', git: 'https://github.com/rubocop-hq/rubocop.git'
+    else
+      gem 'rubocop', '~> 0.90.0'
+    end

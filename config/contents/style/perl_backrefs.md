@@ -1,5 +1,6 @@
 This cop looks for uses of Perl-style regexp match
-backreferences like $1, $2, etc.
+backreferences and their English versions like
+$1, $2, $&, &+, $MATCH, $PREMATCH, etc.
 
 ### Example:
     # bad

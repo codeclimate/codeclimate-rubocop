@@ -1,5 +1,7 @@
 Checks that operators have space around them, except for ** which
 should or shouldn't have surrounding space depending on configuration.
+It allows vertical alignment consisting of one or more whitespace
+around operators.
 
 This cop has `AllowForAlignment` option. When `true`, allows most
 uses of extra spacing if the intent is to align with an operator on

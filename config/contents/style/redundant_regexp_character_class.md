@@ -14,5 +14,11 @@ This cop checks for unnecessary single-element Regexp character classes.
     # good
     r = /\s/
 
+    # bad
+    r = %r{/[b]}
+
+    # good
+    r = %r{/b}
+
     # good
     r = /[ab]/

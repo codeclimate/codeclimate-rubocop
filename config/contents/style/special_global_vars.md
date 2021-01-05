@@ -21,10 +21,6 @@ This cop looks for uses of Perl-style global variables.
     puts $LAST_MATCH_INFO
     puts $IGNORECASE
     puts $ARGV # or ARGV
-    puts $MATCH
-    puts $PREMATCH
-    puts $POSTMATCH
-    puts $LAST_PAREN_MATCH
 
 ### Example: EnforcedStyle: use_perl_names
     # good
@@ -46,7 +42,3 @@ This cop looks for uses of Perl-style global variables.
     puts $~
     puts $=
     puts $*
-    puts $&
-    puts $`
-    puts $'
-    puts $+

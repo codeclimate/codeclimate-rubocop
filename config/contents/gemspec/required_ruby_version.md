@@ -31,12 +31,13 @@ required by gemspec.
       spec.required_ruby_version = '>= 2.5'
     end
 
-    # good
+    # accepted but not recommended
     Gem::Specification.new do |spec|
       spec.required_ruby_version = ['>= 2.5.0', '< 2.7.0']
     end
 
-    # good
+    # accepted but not recommended, since
+    # Ruby does not really follow semantic versionning
     Gem::Specification.new do |spec|
       spec.required_ruby_version = '~> 2.5'
     end

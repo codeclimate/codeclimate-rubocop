@@ -6,6 +6,9 @@ You can set literals you want to fold with `CountAsOne`.
 Available are: 'array', 'hash', and 'heredoc'. Each literal
 will be counted as one line regardless of its actual size.
 
+NOTE: The `ExcludedMethods` configuration is deprecated and only kept
+for backwards compatibility. Please use `IgnoredMethods` instead.
+
 ### Example: CountAsOne: ['array', 'heredoc']
 
     def m
