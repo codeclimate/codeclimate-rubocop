@@ -1,6 +1,6 @@
-FROM ruby:2.6.5-alpine3.11
+FROM ruby:2.7-alpine3.11
 
-LABEL name="Ruby-2.6" \
+LABEL name="Ruby-2.7" \
       version="1.0"
 
 WORKDIR /usr/src/app
