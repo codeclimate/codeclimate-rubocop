@@ -11,14 +11,14 @@ style.
     if a +
         b
       something &&
-      something_else
+        something_else
     end
 
     # good
     if a +
        b
       something &&
-        something_else
+      something_else
     end
 
 ### Example: EnforcedStyle: indented
