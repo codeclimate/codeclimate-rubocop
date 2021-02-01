@@ -1,6 +1,6 @@
 This cop checks for non-ascii (non-English) characters
 in comments. You could set an array of allowed non-ascii chars in
-AllowedChars attribute (empty by default).
+`AllowedChars` attribute (copyright notice "©" by default).
 
 ### Example:
     # bad

@@ -87,6 +87,6 @@ Both are enabled by default.
     # good
     :some_sym_1
 
-### Example: AllowedIdentifier: [capture3]
+### Example: AllowedIdentifiers: [capture3]
     # good
     expect(Open3).to receive(:capture3)

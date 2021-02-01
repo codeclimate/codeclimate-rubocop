@@ -20,12 +20,18 @@ with `Integer()` and can be ignored with `IgnoredMethods`.
     '10'.to_i
     '10.2'.to_f
     '10'.to_c
+    ['1', '2', '3'].map(&:to_i)
+    foo.try(:to_f)
+    bar.send(:to_c)
 
     # good
 
     Integer('10', 10)
     Float('10.2')
     Complex('10')
+    ['1', '2', '3'].map { |i| Integer(i, 10) }
+    foo.try { |i| Float(i) }
+    bar.send { |i| Complex(i) }
 
 ### Example: IgnoredMethods: [minutes]
 
