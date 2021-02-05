@@ -1,9 +1,12 @@
 This cop checks the indentation of the first argument in a method call.
-Arguments after the first one are checked by Layout/ArgumentAlignment,
+Arguments after the first one are checked by `Layout/ArgumentAlignment`,
 not by this cop.
 
 For indenting the first parameter of method _definitions_, check out
-Layout/FirstParameterIndentation.
+`Layout/FirstParameterIndentation`.
+
+This cop will respect `Layout/ArgumentAlignment` and will not work when
+`EnforcedStyle: with_fixed_indentation` is specified for `Layout/ArgumentAlignment`.
 
 ### Example:
 

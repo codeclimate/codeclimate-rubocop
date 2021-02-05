@@ -1,6 +1,11 @@
-This cop checks `eval` method usage. `eval` can receive source location
-metadata, that are filename and line number. The metadata is used by
-backtraces. This cop recommends to pass the metadata to `eval` method.
+This cop ensures that eval methods (`eval`, `instance_eval`, `class_eval`
+and `module_eval`) are given filename and line number values (`__FILE__`
+and `__LINE__`). This data is used to ensure that any errors raised
+within the evaluated code will be given the correct identification
+in a backtrace.
+
+The cop also checks that the line number given relative to `__LINE__` is
+correct.
 
 ### Example:
     # bad
