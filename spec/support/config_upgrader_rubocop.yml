@@ -3,6 +3,12 @@ Style/AccessorMethodName:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# 1.10
+Gemspec/DateAssignment: # (new in 1.10)
+  Enabled: true
+Style/HashConversion: # (new in 1.10)
+  Enabled: true
+
 # 1.9
 Lint/NumberedParameterAssignment: # (new in 1.9)
   Enabled: true
