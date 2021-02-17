@@ -20,3 +20,21 @@ clear, and prevents outside actors from touching private state.
       BAZ = 43
       public_constant :BAZ
     end
+
+### Example: IgnoreModules: false (default)
+    # bad
+    class Foo
+      MyClass = Struct.new()
+    end
+
+    # good
+    class Foo
+      MyClass = Struct.new()
+      public_constant :MyClass
+    end
+
+### Example: IgnoreModules: true
+    # good
+    class Foo
+      MyClass = Struct.new()
+    end

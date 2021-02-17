@@ -6,13 +6,9 @@ comparison operators.
 ### Example:
 
     # bad
-
     x < y < z
     10 <= x <= 20
 
-### Example:
-
     # good
-
     x < y && y < z
     10 <= x && x <= 20
