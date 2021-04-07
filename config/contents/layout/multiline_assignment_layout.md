@@ -26,3 +26,28 @@ after the assignment operator.
     foo = if expression
       'bar'
     end
+
+### Example: SupportedTypes: ['block', 'case', 'class', 'if', 'kwbegin', 'module'] (default)
+    # good
+    foo =
+      if expression
+        'bar'
+      end
+
+    # good
+    foo =
+      [1].map do |i|
+        i + 1
+      end
+
+### Example: SupportedTypes: ['block']
+    # good
+    foo = if expression
+      'bar'
+    end
+
+    # good
+    foo =
+      [1].map do |i|
+        'bar' * i
+      end
