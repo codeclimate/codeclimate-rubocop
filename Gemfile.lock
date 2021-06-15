@@ -93,12 +93,8 @@ DEPENDENCIES
   pry
   rake
   rspec
-<<<<<<< HEAD
-  rubocop (= 1.10.0)
-  rubocop-graphql
-=======
   rubocop (= 1.11.0)
->>>>>>> 8ff2e66 (Update rubocop to v1.11.0)
+  rubocop-graphql
   rubocop-i18n
   rubocop-minitest
   rubocop-performance
