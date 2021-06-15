@@ -11,7 +11,7 @@ Specific default groups can be disabled if necessary:
 ----
 Lint/Debugger:
     WebConsole: ~
----
+----
 
 
 ### Example:
