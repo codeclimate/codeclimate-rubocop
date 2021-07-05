@@ -2,7 +2,11 @@ This cop checks for blocks without a body.
 Such empty blocks are typically an oversight or we should provide a comment
 be clearer what we're aiming for.
 
-Empty lambdas are ignored by default.
+Empty lambdas and procs are ignored by default.
+
+NOTE: For backwards compatibility, the configuration that allows/disallows
+empty lambdas and procs is called `AllowEmptyLambdas`, even though it also
+applies to procs.
 
 ### Example:
     # bad
@@ -35,6 +39,10 @@ Empty lambdas are ignored by default.
     end
     (callable || placeholder).call
 
+    proc { }
+
+    Proc.new { }
+
 ### Example: AllowEmptyLambdas: false
     # bad
     allow(subject).to receive(:callable).and_return(-> {})
@@ -42,3 +50,7 @@ Empty lambdas are ignored by default.
     placeholder = lambda do
     end
     (callable || placeholder).call
+
+    proc { }
+
+    Proc.new { }

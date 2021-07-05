@@ -5,30 +5,36 @@ definition are aligned.
     # good
 
     foo :bar,
-        :baz
+        :baz,
+        key: value
 
     foo(
       :bar,
-      :baz
+      :baz,
+      key: value
     )
 
     # bad
 
     foo :bar,
-      :baz
+      :baz,
+      key: value
 
     foo(
       :bar,
-        :baz
+        :baz,
+        key: value
     )
 
 ### Example: EnforcedStyle: with_fixed_indentation
     # good
 
     foo :bar,
-      :baz
+      :baz,
+      key: value
 
     # bad
 
     foo :bar,
-        :baz
+        :baz,
+        key: value
