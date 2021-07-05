@@ -7,7 +7,7 @@ if an annotation keyword starts another line. This is done to prevent
 incorrect registering of keywords (eg. `review`) inside a paragraph as an
 annotation.
 
-### Example:
+### Example: RequireColon: true (default)
     # bad
     # TODO make better
 
@@ -31,3 +31,22 @@ annotation.
 
     # good
     # OPTIMIZE: does not work
+
+### Example: RequireColon: false
+    # bad
+    # TODO: make better
+
+    # good
+    # TODO make better
+
+    # bad
+    # fixme does not work
+
+    # good
+    # FIXME does not work
+
+    # bad
+    # Optimize does not work
+
+    # good
+    # OPTIMIZE does not work
