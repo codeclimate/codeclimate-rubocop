@@ -3,6 +3,10 @@ Style/AccessorMethodName:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# 1.12
+Style/StringChars: # (new in 1.12)
+  Enabled: true
+
 # 1.10
 Gemspec/DateAssignment: # (new in 1.10)
   Enabled: true
