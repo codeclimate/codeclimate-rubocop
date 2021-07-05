@@ -134,3 +134,7 @@ be set or referenced outside of the memoization method.
     define_method(:foo) do
       @_foo ||= calculate_expensive_thing
     end
+
+This cop relies on the pattern `@instance_var ||= ...`,
+but this is sometimes used for other purposes than memoization
+so this cop is considered unsafe.

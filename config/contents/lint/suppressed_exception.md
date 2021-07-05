@@ -59,3 +59,41 @@ This cop checks for `rescue` blocks with no body.
     rescue
       # do nothing
     end
+
+### Example: AllowNil: true (default)
+
+    # good
+    def some_method
+      do_something
+    rescue
+      nil
+    end
+
+    # good
+    begin
+      do_something
+    rescue
+      # do nothing
+    end
+
+    # good
+    do_something rescue nil
+
+### Example: AllowNil: false
+
+    # bad
+    def some_method
+      do_something
+    rescue
+      nil
+    end
+
+    # bad
+    begin
+      do_something
+    rescue
+      nil
+    end
+
+    # bad
+    do_something rescue nil
