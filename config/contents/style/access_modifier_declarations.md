@@ -42,7 +42,7 @@ using AllowModifiersOnSymbols config.
 
     end
 
-### Example: AllowModifiersOnSymbols: true
+### Example: AllowModifiersOnSymbols: true (default)
     # good
     class Foo
 
