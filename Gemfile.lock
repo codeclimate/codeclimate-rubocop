@@ -41,7 +41,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
-    rubocop (1.14.0)
+    rubocop (1.15.0)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
@@ -93,7 +93,7 @@ DEPENDENCIES
   pry
   rake
   rspec
-  rubocop (= 1.14.0)
+  rubocop (= 1.15.0)
   rubocop-graphql
   rubocop-i18n
   rubocop-minitest
