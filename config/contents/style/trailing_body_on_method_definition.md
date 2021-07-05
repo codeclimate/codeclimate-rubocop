@@ -1,5 +1,7 @@
 This cop checks for trailing code after the method definition.
 
+NOTE: It always accepts endless method definitions that are basically on the same line.
+
 ### Example:
     # bad
     def some_method; do_stuff
@@ -18,3 +20,5 @@ This cop checks for trailing code after the method definition.
       b = foo
       b[c: x]
     end
+
+    def endless_method = do_stuff

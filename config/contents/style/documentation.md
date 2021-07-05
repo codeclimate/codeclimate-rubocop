@@ -54,3 +54,12 @@ same for all its children.
       module Namespace
         extend Foo
       end
+
+### Example: AllowedConstants: ['ClassMethods']
+
+     # good
+     module A
+       module ClassMethods
+         # ...
+       end
+      end
