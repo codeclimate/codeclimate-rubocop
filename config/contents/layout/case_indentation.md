@@ -1,7 +1,7 @@
-This cop checks how the ``when``s of a `case` expression
+This cop checks how the `when` and `in`s of a `case` expression
 are indented in relation to its `case` or `end` keyword.
 
-It will register a separate offense for each misaligned `when`.
+It will register a separate offense for each misaligned `when` and `in`.
 
 ### Example:
     # If Layout/EndAlignment is set to keyword style (default)
@@ -17,9 +17,23 @@ It will register a separate offense for each misaligned `when`.
         y / 3
     end
 
+    case n
+      in pattern
+        x * 2
+      else
+        y / 3
+    end
+
     # good for all styles
     case n
     when 0
+      x * 2
+    else
+      y / 3
+    end
+
+    case n
+    in pattern
       x * 2
     else
       y / 3
@@ -38,9 +52,23 @@ It will register a separate offense for each misaligned `when`.
       y / 3
     end
 
+    a = case n
+    in pattern
+      x * 2
+    else
+      y / 3
+    end
+
     # good
     a = case n
         when 0
+          x * 2
+        else
+          y / 3
+    end
+
+    a = case n
+        in pattern
           x * 2
         else
           y / 3
@@ -55,9 +83,23 @@ It will register a separate offense for each misaligned `when`.
           y / 3
     end
 
+    a = case n
+        in pattern
+          x * 2
+        else
+          y / 3
+    end
+
     # good
     a = case n
     when 0
+      x * 2
+    else
+      y / 3
+    end
+
+    a = case n
+    in pattern
       x * 2
     else
       y / 3

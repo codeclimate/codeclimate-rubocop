@@ -3,6 +3,22 @@ Style/AccessorMethodName:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# 1.18
+Layout/LineEndStringConcatenationIndentation: # (new in 1.18)
+  Enabled: true
+Naming/InclusiveLanguage: # (new in 1.18)
+  Enabled: true
+
+# 1.16
+Lint/EmptyInPattern: # (new in 1.16)
+  Enabled: true
+Style/InPatternThen: # (new in 1.16)
+  Enabled: true
+Style/MultilineInPatternThen: # (new in 1.16)
+  Enabled: true
+Style/QuotedSymbols: # (new in 1.16)
+  Enabled: true
+
 # 1.12
 Style/StringChars: # (new in 1.12)
   Enabled: true

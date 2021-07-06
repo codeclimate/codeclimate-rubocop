@@ -12,3 +12,8 @@ NOTE: If you have an array of two-element arrays, you can put
     # good
     hash.each_key { |k| p k }
     hash.each_value { |v| p v }
+
+### Example: AllowedReceivers: ['execute']
+    # good
+    execute(sql).keys.each { |v| p v }
+    execute(sql).values.each { |v| p v }
