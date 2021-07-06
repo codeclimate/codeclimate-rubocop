@@ -69,7 +69,7 @@ as offenses if they return a constant value.
     else 250
     end
 
-### Example: IgnoreLiteralBranches: true
+### Example: IgnoreConstantBranches: true
     # good
     case size
     when "small" then SMALL_SIZE
