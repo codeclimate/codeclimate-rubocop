@@ -74,6 +74,30 @@ endless method definition (>= Ruby 3.0).
     # good
     foo.enforce strict: true
 
+    # good
+    # Allows parens for calls that won't produce valid Ruby or be ambiguous.
+    model.validate strict(true)
+
+    # good
+    # Allows parens for calls that won't produce valid Ruby or be ambiguous.
+    yield path, File.basename(path)
+
+    # good
+    # Operators methods calls with parens
+    array&.[](index)
+
+    # good
+    # Operators methods without parens, if you prefer
+    array.[] index
+
+    # good
+    # Operators methods calls with parens
+    array&.[](index)
+
+    # good
+    # Operators methods without parens, if you prefer
+    array.[] index
+
 ### Example: IgnoreMacros: true (default)
 
     # good
@@ -141,3 +165,19 @@ endless method definition (>= Ruby 3.0).
 
     # good
     Array 1
+
+### Example: AllowParenthesesInStringInterpolation: false (default)
+
+    # bad
+    "#{t('this.is.bad')}"
+
+    # good
+    "#{t 'this.is.better'}"
+
+### Example: AllowParenthesesInStringInterpolation: true
+
+    # good
+    "#{t('this.is.good')}"
+
+    # good
+    "#{t 'this.is.also.good'}"
