@@ -8,6 +8,7 @@ gem "parser"
 gem "pry", require: false
 gem "rubocop", "1.10.0", require: false
 gem "rubocop-i18n", require: false
+gem "rubocop-graphql", require: false
 gem "rubocop-minitest", require: false
 gem "rubocop-performance", require: false
 gem "rubocop-rails", require: false
