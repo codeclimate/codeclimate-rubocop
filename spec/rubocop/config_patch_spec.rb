@@ -32,7 +32,7 @@ module CC::Engine
       expected = <<~EOM
         The `Layout/AlignArguments` cop has been renamed to `Layout/ArgumentAlignment`.
         (obsolete configuration found in .rubocop.yml, please update it)
-        unrecognized cop Layout/AlignArguments found in .rubocop.yml
+        unrecognized cop or department Layout/AlignArguments found in .rubocop.yml
         Did you mean `Layout/HashAlignment`?
       EOM
 
@@ -53,7 +53,7 @@ module CC::Engine
       expected = <<~EOM
         The `Style/TrailingComma` cop has been removed. Please use `Style/TrailingCommaInArguments`, `Style/TrailingCommaInArrayLiteral` and/or `Style/TrailingCommaInHashLiteral` instead.
         (obsolete configuration found in .rubocop.yml, please update it)
-        unrecognized cop Style/TrailingComma found in .rubocop.yml
+        unrecognized cop or department Style/TrailingComma found in .rubocop.yml
         Did you mean `Style/TrailingCommaInArguments`?
       EOM
 

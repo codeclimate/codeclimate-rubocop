@@ -3,6 +3,12 @@ Style/AccessorMethodName:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# 1.19
+Lint/AmbiguousRange:
+  Enabled: true
+Style/RedundantSelfAssignmentBranch:
+  Enabled: true
+
 # 1.18
 Layout/LineEndStringConcatenationIndentation: # (new in 1.18)
   Enabled: true
