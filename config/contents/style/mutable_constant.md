@@ -9,7 +9,15 @@ frozen objects so there is a decent chance of getting some false
 positives. Luckily, there is no harm in freezing an already
 frozen object.
 
+From Ruby 3.0, this cop honours the magic comment
+'shareable_constant_value'. When this magic comment is set to any
+acceptable value other than none, it will suppress the offenses
+raised by this cop. It enforces frozen state.
+
 NOTE: Regexp and Range literals are frozen objects since Ruby 3.0.
+
+NOTE: From Ruby 3.0, this cop allows explicit freezing of interpolated
+string literals when `# frozen-string-literal: true` is used.
 
 ### Example: EnforcedStyle: literals (default)
     # bad
@@ -47,3 +55,17 @@ NOTE: Regexp and Range literals are frozen objects since Ruby 3.0.
         puts 1
       end
     end.freeze
+
+### Example:
+    # Magic comment - shareable_constant_value: literal
+
+    # bad
+    CONST = [1, 2, 3]
+
+    # good
+    # shareable_constant_value: literal
+    CONST = [1, 2, 3]
+
+NOTE: This special directive helps to create constants
+that hold only immutable objects, or Ractor-shareable
+constants. - ruby docs

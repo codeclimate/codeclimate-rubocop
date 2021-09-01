@@ -1,8 +1,13 @@
 
 This cop looks for uses of Perl-style global variables.
+Correcting to global variables in the 'English' library
+will add a require statement to the top of the file if
+enabled by RequireEnglish config.
 
 ### Example: EnforcedStyle: use_english_names (default)
     # good
+    require 'English' # or this could be in another file.
+
     puts $LOAD_PATH
     puts $LOADED_FEATURES
     puts $PROGRAM_NAME

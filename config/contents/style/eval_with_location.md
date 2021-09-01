@@ -38,7 +38,7 @@ line values.
     RUBY
 
 This cop works only when a string literal is given as a code string.
-No offence is reported if a string variable is given as below:
+No offense is reported if a string variable is given as below:
 
 ### Example:
     # not checked
