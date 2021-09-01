@@ -18,7 +18,7 @@ GEM
     mry (0.78.0.0)
       rubocop (>= 0.41.0)
     parallel (1.20.1)
-    parser (3.0.1.1)
+    parser (3.0.2.0)
       ast (~> 2.4.1)
     pry (0.14.1)
       coderay (~> 1.1)
@@ -41,16 +41,16 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.2)
-    rubocop (1.18.3)
+    rubocop (1.20.0)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml
-      rubocop-ast (>= 1.7.0, < 2.0)
+      rubocop-ast (>= 1.9.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.7.0)
+    rubocop-ast (1.11.0)
       parser (>= 3.0.1.1)
     rubocop-graphql (0.9.0)
       rubocop (>= 0.87, < 2)
@@ -94,7 +94,7 @@ DEPENDENCIES
   pry
   rake
   rspec
-  rubocop (= 1.18.3)
+  rubocop (= 1.20.0)
   rubocop-graphql
   rubocop-i18n
   rubocop-minitest
