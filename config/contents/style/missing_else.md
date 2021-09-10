@@ -1,5 +1,8 @@
 Checks for `if` expressions that do not have an `else` branch.
 
+NOTE: Pattern matching is allowed to have no `else` branch because unlike `if` and `case`,
+it raises `NoMatchingPatternError` if the pattern doesn't match and without having `else`.
+
 Supported styles are: if, case, both.
 
 ### Example: EnforcedStyle: if

@@ -6,8 +6,7 @@ first part. There are some exceptions, such as implicit return values, where the
 concatenated string parts shall be indented regardless of `EnforcedStyle` configuration.
 
 If `EnforcedStyle: indented` is set, it's the second line that shall be indented one step
-more than the first line. Lines 3 and forward shall be aligned with line 2. Here too there
-are exceptions. Values in a hash literal are always aligned.
+more than the first line. Lines 3 and forward shall be aligned with line 2.
 
 ### Example:
     # bad
@@ -29,25 +28,40 @@ are exceptions. Values in a hash literal are always aligned.
         'z'
     end
 
-    my_hash = {
-      first: 'a message' \
-             'in two parts'
-    }
-
 ### Example: EnforcedStyle: aligned (default)
     # bad
     puts 'x' \
       'y'
 
+    my_hash = {
+      first: 'a message' \
+        'in two parts'
+    }
+
     # good
     puts 'x' \
          'y'
+
+    my_hash = {
+      first: 'a message' \
+             'in two parts'
+    }
 
 ### Example: EnforcedStyle: indented
     # bad
     result = 'x' \
              'y'
 
+    my_hash = {
+      first: 'a message' \
+             'in two parts'
+    }
+
     # good
     result = 'x' \
       'y'
+
+    my_hash = {
+      first: 'a message' \
+        'in two parts'
+    }
