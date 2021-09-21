@@ -17,7 +17,7 @@ GEM
     minitest (5.14.4)
     mry (0.78.0.0)
       rubocop (>= 0.41.0)
-    parallel (1.20.1)
+    parallel (1.21.0)
     parser (3.0.2.0)
       ast (~> 2.4.1)
     pry (0.14.1)
@@ -41,7 +41,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.2)
-    rubocop (1.20.0)
+    rubocop (1.21.0)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
@@ -81,7 +81,7 @@ GEM
     test-prof (1.0.6)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    unicode-display_width (2.0.0)
+    unicode-display_width (2.1.0)
     zeitwerk (2.4.2)
 
 PLATFORMS
@@ -94,7 +94,7 @@ DEPENDENCIES
   pry
   rake
   rspec
-  rubocop (= 1.20.0)
+  rubocop (= 1.21.0)
   rubocop-graphql
   rubocop-i18n
   rubocop-minitest
