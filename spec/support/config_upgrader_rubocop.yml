@@ -3,6 +3,12 @@ Style/AccessorMethodName:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# 1.21
+Lint/AmbiguousOperatorPrecedence:
+  Enabled: true
+Lint/IncompatibleIoSelectWithFiberScheduler:
+  Enabled: true
+
 # 1.19
 Lint/AmbiguousRange:
   Enabled: true
