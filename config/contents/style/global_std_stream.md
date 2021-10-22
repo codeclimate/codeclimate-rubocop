@@ -3,6 +3,11 @@ This cop enforces the use of `$stdout/$stderr/$stdin` instead of `STDOUT/STDERR/
 reassign (possibly to redirect some stream) constants in Ruby, you'll get
 an interpreter warning if you do so.
 
+### Safety:
+
+Autocorrection is unsafe because `STDOUT` and `$stdout` may point to different
+objects, for example.
+
 ### Example:
     # bad
     STDOUT.puts('hello')

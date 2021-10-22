@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.1.4)
+    activesupport (6.1.4.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -17,7 +17,7 @@ GEM
     minitest (5.14.4)
     mry (0.78.0.0)
       rubocop (>= 0.41.0)
-    parallel (1.20.1)
+    parallel (1.21.0)
     parser (3.0.2.0)
       ast (~> 2.4.1)
     pry (0.14.1)
@@ -25,7 +25,7 @@ GEM
       method_source (~> 1.0)
     rack (2.2.3)
     rainbow (3.0.0)
-    rake (13.0.4)
+    rake (13.0.6)
     regexp_parser (2.1.1)
     rexml (3.2.5)
     rspec (3.10.0)
@@ -41,48 +41,47 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.2)
-    rubocop (1.20.0)
+    rubocop (1.22.2)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml
-      rubocop-ast (>= 1.9.1, < 2.0)
+      rubocop-ast (>= 1.12.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.11.0)
+    rubocop-ast (1.12.0)
       parser (>= 3.0.1.1)
-    rubocop-graphql (0.9.0)
+    rubocop-graphql (0.10.2)
       rubocop (>= 0.87, < 2)
     rubocop-i18n (3.0.0)
       rubocop (~> 1.0)
-    rubocop-minitest (0.14.0)
+    rubocop-minitest (0.15.2)
       rubocop (>= 0.90, < 2.0)
-    rubocop-performance (1.11.3)
+    rubocop-performance (1.12.0)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
-    rubocop-rails (2.11.2)
+    rubocop-rails (2.12.4)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
     rubocop-rake (0.6.0)
       rubocop (~> 1.0)
-    rubocop-rspec (2.4.0)
-      rubocop (~> 1.0)
-      rubocop-ast (>= 1.1.0)
-    rubocop-sequel (0.2.0)
+    rubocop-rspec (2.5.0)
+      rubocop (~> 1.19)
+    rubocop-sequel (0.3.3)
       rubocop (~> 1.0)
     rubocop-sorbet (0.6.2)
       rubocop
-    rubocop-thread_safety (0.4.2)
+    rubocop-thread_safety (0.4.4)
       rubocop (>= 0.53.0)
     ruby-progressbar (1.11.0)
     safe_yaml (1.0.5)
-    test-prof (1.0.6)
+    test-prof (1.0.7)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    unicode-display_width (2.0.0)
-    zeitwerk (2.4.2)
+    unicode-display_width (2.1.0)
+    zeitwerk (2.5.1)
 
 PLATFORMS
   ruby
@@ -94,7 +93,7 @@ DEPENDENCIES
   pry
   rake
   rspec
-  rubocop (= 1.20.0)
+  rubocop (= 1.22.2)
   rubocop-graphql
   rubocop-i18n
   rubocop-minitest

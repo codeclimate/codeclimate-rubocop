@@ -25,10 +25,18 @@ can be replaced by `do_something(...)`.
       bar(*args)
     end
 
+    def foo(**kwargs)
+      bar(**kwargs)
+    end
+
 ### Example: AllowOnlyRestArgument: false
     # bad
     # The following code can replace the arguments with `...`,
     # but it will change the behavior. Because `...` forwards block also.
     def foo(*args)
       bar(*args)
+    end
+
+    def foo(**kwargs)
+      bar(**kwargs)
     end

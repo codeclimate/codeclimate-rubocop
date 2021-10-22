@@ -5,7 +5,7 @@ given by `ruby -cw` prior to Ruby 2.6:
 
 NOTE: Shadowing of variables in block passed to `Ractor.new` is allowed
 because `Ractor` should not access outer variables.
-eg. following syle is encouraged:
+eg. following style is encouraged:
 
     worker_id, pipe = env
     Ractor.new(worker_id, pipe) do |worker_id, pipe|

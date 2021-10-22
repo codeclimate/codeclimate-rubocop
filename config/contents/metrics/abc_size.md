@@ -3,6 +3,12 @@ configured maximum. The ABC size is based on assignments, branches
 (method calls), and conditions. See http://c2.com/cgi/wiki?AbcMetric
 and https://en.wikipedia.org/wiki/ABC_Software_Metric.
 
+Interpreting ABC size:
+
+* <= 17 satisfactory
+* 18..30 unsatisfactory
+* > 30 dangerous
+
 You can have repeated "attributes" calls count as a single "branch".
 For this purpose, attributes are any method with no argument; no attempt
 is meant to distinguish actual `attr_reader` from other methods.

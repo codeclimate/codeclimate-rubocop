@@ -27,3 +27,24 @@ Checks for spaces inside ordinary round parentheses.
     f( 3 )
     g = ( a + 3 )
     y()
+
+### Example: EnforcedStyle: compact
+    # The `compact` style enforces that parentheses have a space at the
+    # beginning with the exception that successive parentheses are allowed.
+    # Note: Empty parentheses should not have spaces.
+
+    # bad
+    f(3)
+    g = (a + 3)
+    y( )
+    g( f( x ) )
+    g( f( x( 3 ) ), 5 )
+    g( ( ( 3 + 5 ) * f) ** x, 5 )
+
+    # good
+    f( 3 )
+    g = ( a + 3 )
+    y()
+    g( f( x ))
+    g( f( x( 3 )), 5 )
+    g((( 3 + 5 ) * f ) ** x, 5 )

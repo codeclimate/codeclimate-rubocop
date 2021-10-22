@@ -1,8 +1,10 @@
 This cop checks for uses of the case equality operator(===).
 
+If `AllowOnConstant` option is enabled, the cop will ignore violations when the receiver of
+the case equality operator is a constant.
+
 ### Example:
     # bad
-    Array === something
     (1..100) === 7
     /something/ === some_string
 
@@ -11,15 +13,10 @@ This cop checks for uses of the case equality operator(===).
     (1..100).include?(7)
     /something/.match?(some_string)
 
-### Example: AllowOnConstant
-    # Style/CaseEquality:
-    #   AllowOnConstant: true
-
+### Example: AllowOnConstant: false (default)
     # bad
-    (1..100) === 7
-    /something/ === some_string
+    Array === something
 
+### Example: AllowOnConstant: true
     # good
     Array === something
-    (1..100).include?(7)
-    /something/.match?(some_string)

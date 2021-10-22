@@ -4,6 +4,11 @@ Correcting to global variables in the 'English' library
 will add a require statement to the top of the file if
 enabled by RequireEnglish config.
 
+### Safety:
+
+Autocorrection is marked as unsafe because if `RequireEnglish` is not
+true, replacing perl-style variables with english variables will break.
+
 ### Example: EnforcedStyle: use_english_names (default)
     # good
     require 'English' # or this could be in another file.

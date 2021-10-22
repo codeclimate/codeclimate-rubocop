@@ -16,8 +16,18 @@ raised by this cop. It enforces frozen state.
 
 NOTE: Regexp and Range literals are frozen objects since Ruby 3.0.
 
-NOTE: From Ruby 3.0, this cop allows explicit freezing of interpolated
-string literals when `# frozen-string-literal: true` is used.
+NOTE: From Ruby 3.0, interpolated strings are not frozen when
+`# frozen-string-literal: true` is used, so this cop enforces explicit
+freezing for such strings.
+
+NOTE: From Ruby 3.0, this cop allows explicit freezing of constants when
+the `shareable_constant_value` directive is used.
+
+### Safety:
+
+This cop's autocorrection is unsafe since any mutations on objects that
+are made frozen will change from being accepted to raising `FrozenError`,
+and will need to be manually refactored.
 
 ### Example: EnforcedStyle: literals (default)
     # bad
@@ -65,7 +75,3 @@ string literals when `# frozen-string-literal: true` is used.
     # good
     # shareable_constant_value: literal
     CONST = [1, 2, 3]
-
-NOTE: This special directive helps to create constants
-that hold only immutable objects, or Ractor-shareable
-constants. - ruby docs

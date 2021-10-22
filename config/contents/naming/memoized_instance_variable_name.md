@@ -9,6 +9,12 @@ prefixed with an underscore. Prefixing ivars with an underscore is a
 convention that is used to implicitly indicate that an ivar should not
 be set or referenced outside of the memoization method.
 
+### Safety:
+
+This cop relies on the pattern `@instance_var ||= ...`,
+but this is sometimes used for other purposes than memoization
+so this cop is considered unsafe.
+
 ### Example: EnforcedStyleForLeadingUnderscores: disallowed (default)
     # bad
     # Method foo is memoized using an instance variable that is
@@ -134,7 +140,3 @@ be set or referenced outside of the memoization method.
     define_method(:foo) do
       @_foo ||= calculate_expensive_thing
     end
-
-This cop relies on the pattern `@instance_var ||= ...`,
-but this is sometimes used for other purposes than memoization
-so this cop is considered unsafe.

@@ -18,6 +18,11 @@ left side (receiver of `+` method call) is a string literal.
 This is useful when the receiver is some expression that returns string like `Pathname`
 instead of a string literal.
 
+### Safety:
+
+This cop is unsafe in `aggressive` mode, as it cannot be guaranteed that
+the receiver is actually a string, which can result in a false positive.
+
 ### Example: Mode: aggressive (default)
     # bad
     email_with_name = user.name + ' <' + user.email + '>'

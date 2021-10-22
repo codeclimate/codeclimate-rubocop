@@ -13,6 +13,12 @@ method (for instance, `Time` and `DateTime` values are allowed by this
 cop by default). Similarly, Rails' duration methods do not work well
 with `Integer()` and can be ignored with `IgnoredMethods`.
 
+### Safety:
+
+Autocorrection is unsafe because it is not guaranteed that the
+replacement `Kernel` methods are able to properly handle the
+input if it is not a standard class.
+
 ### Example:
 
     # bad

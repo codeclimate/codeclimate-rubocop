@@ -3,6 +3,24 @@ Style/AccessorMethodName:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# 1.22
+Lint/RequireRelativeSelfPath:
+  Enabled: true
+Security/IoMethods:
+  Enabled: true
+Style/NumberedParameters:
+  Enabled: true
+Style/NumberedParametersLimit:
+  Enabled: true
+Style/SelectByRegexp:
+  Enabled: true
+
+# 1.21
+Lint/AmbiguousOperatorPrecedence:
+  Enabled: true
+Lint/IncompatibleIoSelectWithFiberScheduler:
+  Enabled: true
+
 # 1.19
 Lint/AmbiguousRange:
   Enabled: true

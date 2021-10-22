@@ -7,11 +7,10 @@ debug entrypoints are configured (`Kernel`, `Byebug`, `Capybara`, `debug.rb`,
 
 Specific default groups can be disabled if necessary:
 
-[source,yaml]
-----
+```yaml
 Lint/Debugger:
-    WebConsole: ~
-----
+  WebConsole: ~
+```
 
 
 ### Example:
