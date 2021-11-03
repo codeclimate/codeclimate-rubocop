@@ -1,6 +1,12 @@
 Sometimes using dig method ends up with just a single
 argument. In such cases, dig should be replaced with [].
 
+### Safety:
+
+This cop is unsafe because it cannot be guaranteed that the receiver
+is an `Enumerable` or does not have a nonstandard implementation
+of `dig`.
+
 ### Example:
     # bad
     { key: 'value' }.dig(:key)

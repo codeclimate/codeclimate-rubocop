@@ -19,7 +19,7 @@ restricted names that will always register an offense.
     # With `AllowNamesEndingInNumbers` set to false
     foo { |num1, num2| num1 * num2 }
 
-    # With `MinParamNameLength` set to number greater than 1
+    # With `MinNameLength` set to number greater than 1
     baz { |a, b, c| do_stuff(a, b, c) }
 
     # good

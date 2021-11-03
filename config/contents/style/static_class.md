@@ -2,7 +2,9 @@ This cop checks for places where classes with only class methods can be
 replaced with a module. Classes should be used only when it makes sense to create
 instances out of them.
 
-This cop is marked as unsafe, because it is possible that this class is a parent
+### Safety:
+
+This cop is unsafe, because it is possible that this class is a parent
 for some other subclass, monkey-patched with instance methods or
 a dummy instance is instantiated from it somewhere.
 

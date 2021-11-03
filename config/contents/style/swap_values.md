@@ -1,6 +1,9 @@
 This cop enforces the use of shorthand-style swapping of 2 variables.
-Its autocorrection is marked as unsafe, because it can erroneously remove
-the temporary variable which is used later.
+
+### Safety:
+
+Autocorrection is unsafe, because the temporary variable used to
+swap variables will be removed, but may be referred to elsewhere.
 
 ### Example:
     # bad

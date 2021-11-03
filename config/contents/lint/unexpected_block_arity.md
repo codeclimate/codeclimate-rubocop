@@ -8,14 +8,19 @@ be used. Blocks that have no receiver, or take splatted arguments
 Keyword arguments (including `**kwargs`) do not get counted towards
 this, as they are not used by the methods in question.
 
-NOTE: This cop matches for method names only and hence cannot tell apart
-methods with same name in different classes.
-
 Method names and their expected arity can be configured like this:
 
+```yaml
 Methods:
-    inject: 2
-    reduce: 2
+  inject: 2
+  reduce: 2
+```
+
+### Safety:
+
+ This cop matches for method names only and hence cannot tell apart
+ methods with same name in different classes, which may lead to a
+ false positive.
 
 ### Example:
     # bad

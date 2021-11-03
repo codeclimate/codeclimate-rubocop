@@ -4,6 +4,12 @@ NOTE: If you have an array of two-element arrays, you can put
     parentheses around the block arguments to indicate that you're not
     working with a hash, and suppress RuboCop offenses.
 
+### Safety:
+
+This cop is unsafe because it cannot be guaranteed that the receiver
+is a `Hash`. The `AllowedReceivers` configuration can mitigate,
+but not fully resolve, this safety issue.
+
 ### Example:
     # bad
     hash.keys.each { |k| p k }

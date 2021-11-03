@@ -6,6 +6,11 @@ So, it may lead to a serious security risk by using variable input to
 the argument of `Kernel#open` and `URI.open`. It would be better to use
 `File.open`, `IO.popen` or `URI.parse#open` explicitly.
 
+### Safety:
+
+This cop could register false positives if `open` is redefined
+in a class and then used without a receiver in that class.
+
 ### Example:
     # bad
     open(something)

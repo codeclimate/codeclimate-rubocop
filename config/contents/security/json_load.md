@@ -1,7 +1,9 @@
 This cop checks for the use of JSON class methods which have potential
 security issues.
 
-Autocorrect is disabled by default because it's potentially dangerous.
+### Safety:
+
+This cop's autocorrection is unsafe because it's potentially dangerous.
 If using a stream, like `JSON.load(open('file'))`, it will need to call
 `#read` manually, like `JSON.parse(open('file').read)`.
 If reading single values (rather than proper JSON objects), like

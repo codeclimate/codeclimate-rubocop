@@ -19,49 +19,47 @@ Consider an example of code style that covers the following order:
 
 You can configure the following order:
 
-[source,yaml]
-----
+```yaml
  Layout/ClassStructure:
-     ExpectedOrder:
-       - module_inclusion
-       - constants
-       - association
-       - public_attribute_macros
-       - public_delegate
-       - macros
-       - public_class_methods
-       - initializer
-       - public_methods
-       - protected_attribute_macros
-       - protected_methods
-       - private_attribute_macros
-       - private_delegate
-       - private_methods
-----
+   ExpectedOrder:
+     - module_inclusion
+     - constants
+     - association
+     - public_attribute_macros
+     - public_delegate
+     - macros
+     - public_class_methods
+     - initializer
+     - public_methods
+     - protected_attribute_macros
+     - protected_methods
+     - private_attribute_macros
+     - private_delegate
+     - private_methods
+```
 
 Instead of putting all literals in the expected order, is also
 possible to group categories of macros. Visibility levels are handled
 automatically.
 
-[source,yaml]
-----
+```yaml
  Layout/ClassStructure:
-     Categories:
-       association:
-         - has_many
-         - has_one
-       attribute_macros:
-         - attr_accessor
-         - attr_reader
-         - attr_writer
-       macros:
-         - validates
-         - validate
-       module_inclusion:
-         - include
-         - prepend
-         - extend
-----
+   Categories:
+     association:
+       - has_many
+       - has_one
+     attribute_macros:
+       - attr_accessor
+       - attr_reader
+       - attr_writer
+     macros:
+       - validates
+       - validate
+     module_inclusion:
+       - include
+       - prepend
+       - extend
+```
 
 ### Example:
     # bad

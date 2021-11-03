@@ -4,6 +4,12 @@ although highly overlapping, have particularities that make them not
 replaceable in certain situations when dealing with multiple timezones
 and/or DST.
 
+### Safety:
+
+Autocorrection is not safe, because `DateTime` and `Time` do not have
+exactly the same behaviour, although in most cases the autocorrection
+will be fine.
+
 ### Example:
 
     # bad - uses `DateTime` for current time

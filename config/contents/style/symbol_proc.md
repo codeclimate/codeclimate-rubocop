@@ -3,6 +3,32 @@ Use symbols as procs when possible.
 If you prefer a style that allows block for method with arguments,
 please set `true` to `AllowMethodsWithArguments`.
 
+### Safety:
+
+This cop is unsafe because `proc`s and blocks work differently
+when additional arguments are passed in. A block will silently
+ignore additional arguments, but a `proc` will raise
+an `ArgumentError`.
+
+For example:
+
+```ruby
+class Foo
+  def bar
+    :bar
+  end
+end
+
+def call(options = {}, &block)
+  block.call(Foo.new, options)
+end
+
+call { |x| x.bar }
+#=> :bar
+call(&:bar)
+# ArgumentError: wrong number of arguments (given 1, expected 0)
+```
+
 ### Example:
     # bad
     something.map { |s| s.upcase }

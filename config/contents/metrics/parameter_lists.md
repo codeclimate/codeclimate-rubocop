@@ -4,6 +4,9 @@ The maximum number of parameters is configurable.
 Keyword arguments can optionally be excluded from the total count,
 as they add less complexity than positional or optional parameters.
 
+NOTE: Explicit block argument `&block` is not counted to prevent
+        erroneous change that is avoided by making block argument implicit.
+
 ### Example: Max: 3
     # good
     def foo(a, b, c = 1)

@@ -1,7 +1,13 @@
-This cop (by default) checks for uses of methods Hash#has_key? and
-Hash#has_value? where it enforces Hash#key? and Hash#value?
-It is configurable to enforce the inverse, using `verbose` method
-names also.
+This cop checks for uses of methods `Hash#has_key?` and
+`Hash#has_value?`, and suggests using `Hash#key?` and `Hash#value?` instead.
+
+It is configurable to enforce the verbose method names, by using the
+`EnforcedStyle: verbose` configuration.
+
+### Safety:
+
+This cop is unsafe because it cannot be guaranteed that the receiver
+is a `Hash` or responds to the replacement methods.
 
 ### Example: EnforcedStyle: short (default)
  # bad

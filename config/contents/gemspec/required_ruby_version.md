@@ -1,7 +1,8 @@
-Checks that `required_ruby_version` of gemspec is specified and
-equal to `TargetRubyVersion` of .rubocop.yml.
-Thereby, RuboCop to perform static analysis working on the version
-required by gemspec.
+Checks that `required_ruby_version` in a gemspec file is set to a valid
+value (non-blank) and matches `TargetRubyVersion` as set in RuboCop's
+configuration for the gem.
+
+This ensures that RuboCop is using the same Ruby version as the gem.
 
 ### Example:
     # When `TargetRubyVersion` of .rubocop.yml is `2.5`.
@@ -21,6 +22,11 @@ required by gemspec.
       spec.required_ruby_version = '>= 2.6.0'
     end
 
+    # bad
+    Gem::Specification.new do |spec|
+      spec.required_ruby_version = ''
+    end
+
     # good
     Gem::Specification.new do |spec|
       spec.required_ruby_version = '>= 2.5.0'
@@ -37,7 +43,7 @@ required by gemspec.
     end
 
     # accepted but not recommended, since
-    # Ruby does not really follow semantic versionning
+    # Ruby does not really follow semantic versioning
     Gem::Specification.new do |spec|
       spec.required_ruby_version = '~> 2.5'
     end

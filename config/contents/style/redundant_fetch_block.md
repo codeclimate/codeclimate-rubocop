@@ -4,6 +4,11 @@ can be replaced by `fetch(key, value)`.
 In such cases `fetch(key, value)` method is faster
 than `fetch(key) { value }`.
 
+### Safety:
+
+This cop is unsafe because it cannot be guaranteed that the receiver
+does not have a different implementation of `fetch`.
+
 ### Example: SafeForConstants: false (default)
     # bad
     hash.fetch(:key) { 5 }

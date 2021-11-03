@@ -11,6 +11,12 @@ The cop ignores comparisons to global variables, since they are often
 populated with objects which can be compared with integers, but are
 not themselves `Integer` polymorphic.
 
+### Safety:
+
+This cop is unsafe because it cannot be guaranteed that the receiver
+defines the predicates or can be compared to a number, which may lead
+to a false positive for non-standard classes.
+
 ### Example: EnforcedStyle: predicate (default)
     # bad
 

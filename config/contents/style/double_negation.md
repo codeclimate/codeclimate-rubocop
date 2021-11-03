@@ -4,6 +4,21 @@ When using `EnforcedStyle: allowed_in_returns`, allow double negation in context
 that use boolean as a return value. When using `EnforcedStyle: forbidden`, double negation
 should be forbidden always.
 
+NOTE: when `something` is a boolean value
+`!!something` and `!something.nil?` are not the same thing.
+As you're unlikely to write code that can accept values of any type
+this is rarely a problem in practice.
+
+### Safety:
+
+Autocorrection is unsafe when the value is `false`, because the result
+of the expression will change.
+
+```ruby
+!!false     #=> false
+!false.nil? #=> true
+```
+
 ### Example:
     # bad
     !!something
@@ -22,8 +37,3 @@ should be forbidden always.
     def foo?
       !!return_value
     end
-
-Please, note that when something is a boolean value
-!!something and !something.nil? are not the same thing.
-As you're unlikely to write code that can accept values of any type
-this is rarely a problem in practice.
