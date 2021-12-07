@@ -26,6 +26,7 @@ input if it is not a standard class.
     '10'.to_i
     '10.2'.to_f
     '10'.to_c
+    '1/3'.to_r
     ['1', '2', '3'].map(&:to_i)
     foo.try(:to_f)
     bar.send(:to_c)
@@ -35,6 +36,7 @@ input if it is not a standard class.
     Integer('10', 10)
     Float('10.2')
     Complex('10')
+    Rational('1/3')
     ['1', '2', '3'].map { |i| Integer(i, 10) }
     foo.try { |i| Float(i) }
     bar.send { |i| Complex(i) }

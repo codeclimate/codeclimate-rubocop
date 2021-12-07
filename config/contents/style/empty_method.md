@@ -4,7 +4,7 @@ line (compact style), but it can be configured to enforce the `end`
 to go on its own line (expanded style).
 
 NOTE: A method definition is not considered empty if it contains
-        comments.
+comments.
 
 ### Example: EnforcedStyle: compact (default)
     # bad
