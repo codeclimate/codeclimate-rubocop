@@ -72,9 +72,30 @@ one-line definitions are considered an offense.
     def b
     end
 
-### Example: AllowAdjacentOneLineDefs: true
+### Example: AllowAdjacentOneLineDefs: true (default)
 
     # good
     class ErrorA < BaseError; end
     class ErrorB < BaseError; end
+    class ErrorC < BaseError; end
+
+    # good
+    class ErrorA < BaseError; end
+
+    class ErrorB < BaseError; end
+
+    class ErrorC < BaseError; end
+
+### Example: AllowAdjacentOneLineDefs: false
+
+    # bad
+    class ErrorA < BaseError; end
+    class ErrorB < BaseError; end
+    class ErrorC < BaseError; end
+
+    # good
+    class ErrorA < BaseError; end
+
+    class ErrorB < BaseError; end
+
     class ErrorC < BaseError; end

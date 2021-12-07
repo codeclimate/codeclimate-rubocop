@@ -3,6 +3,14 @@ Style/AccessorMethodName:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# 1.23
+Gemspec/RequireMFA:
+  Enabled: true
+Lint/UselessRuby2Keywords:
+  Enabled: true
+Style/OpenStructUse:
+  Enabled: true
+
 # 1.22
 Lint/RequireRelativeSelfPath:
   Enabled: true
