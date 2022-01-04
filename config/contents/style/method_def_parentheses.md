@@ -1,8 +1,13 @@
 This cop checks for parentheses around the arguments in method
 definitions. Both instance and class/singleton methods are checked.
 
-This cop does not consider endless methods, since parentheses are
-always required for them.
+Regardless of style, parentheses are necessary for:
+
+1. Endless methods
+2. Argument lists containing a `forward-arg` (`...`)
+3. Argument lists containing an anonymous block forwarding (`&`)
+
+Removing the parens would be a syntax error here.
 
 ### Example: EnforcedStyle: require_parentheses (default)
     # The `require_parentheses` style requires method definitions

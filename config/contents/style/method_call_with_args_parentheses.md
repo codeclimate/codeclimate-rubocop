@@ -38,9 +38,11 @@ options.
 NOTE: Parentheses are still allowed in cases where omitting them
 results in ambiguous or syntactically incorrect code. For example,
 parentheses are required around a method with arguments when inside an
-endless method definition introduced in Ruby 3.0.  Parentheses are also
+endless method definition introduced in Ruby 3.0. Parentheses are also
 allowed when forwarding arguments with the triple-dot syntax introduced
 in Ruby 2.7 as omitting them starts an endless range.
+And Ruby 3.1's hash omission syntax has a case that requires parentheses
+because the issue https://bugs.ruby-lang.org/issues/18396.
 
 ### Example: EnforcedStyle: require_parentheses (default)
 
