@@ -21,3 +21,8 @@ of digits in them.
 
     # bad
     10_000_00 # typical representation of $10,000 in cents
+
+### Example: AllowedNumbers: [3000]
+
+    # good
+    3000 # You can specify allowed numbers. (e.g. port number)

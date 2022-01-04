@@ -3,6 +3,16 @@ Style/AccessorMethodName:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# 1.24
+Naming/BlockForwarding:
+  Enabled: true
+Style/FileRead:
+  Enabled: true
+Style/FileWrite:
+  Enabled: true
+Style/MapToHash:
+  Enabled: true
+
 # 1.23
 Gemspec/RequireMFA:
   Enabled: true

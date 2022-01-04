@@ -14,3 +14,8 @@ This cop checks for `IO.select` that is incompatible with Fiber Scheduler since 
 
     # good
     io.wait_writable(timeout)
+
+### Safety:
+
+This cop's autocorrection is unsafe because `NoMethodError` occurs
+if `require 'io/wait'` is not called.

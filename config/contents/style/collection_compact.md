@@ -12,6 +12,7 @@ when the receiver is a hash object.
 
 ### Example:
     # bad
+    array.reject(&:nil?)
     array.reject { |e| e.nil? }
     array.select { |e| !e.nil? }
 
@@ -19,6 +20,7 @@ when the receiver is a hash object.
     array.compact
 
     # bad
+    hash.reject!(&:nil?)
     hash.reject! { |k, v| v.nil? }
     hash.select! { |k, v| !v.nil? }
 
