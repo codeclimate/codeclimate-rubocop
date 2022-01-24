@@ -32,6 +32,6 @@ will return a boolean value. Those methods can be allowed with `AllowedMethods` 
     # good (but potentially an unsafe correction)
     foo.do_something?
 
-### Example: AllowedMethods: ['nonzero?']
+### Example: AllowedMethods: ['nonzero?'] (default)
     # good
     num.nonzero? ? true : false
