@@ -21,7 +21,7 @@ restricted names that will always register an offense.
       num1 * num2
     end
 
-    # With `MinArgNameLength` set to number greater than 1
+    # With `MinNameLength` set to number greater than 1
     def baz(a, b, c)
       do_stuff(a, b, c)
     end
