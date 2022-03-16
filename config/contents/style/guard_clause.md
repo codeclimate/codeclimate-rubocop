@@ -42,3 +42,34 @@ expression
     # good
     foo || raise('exception') if something
     ok
+
+### Example: AllowConsecutiveConditionals: false (default)
+    # bad
+    if foo?
+      work
+    end
+
+    if bar?  # <- reports an offense
+      work
+    end
+
+### Example: AllowConsecutiveConditionals: true
+    # good
+    if foo?
+      work
+    end
+
+    if bar?
+      work
+    end
+
+    # bad
+    if foo?
+      work
+    end
+
+    do_someting
+
+    if bar?  # <- reports an offense
+      work
+    end

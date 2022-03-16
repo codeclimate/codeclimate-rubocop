@@ -1,7 +1,8 @@
 This cop checks for multi-line ternary op expressions.
 
 NOTE: `return if ... else ... end` is syntax error. If `return` is used before
-multiline ternary operator expression, it cannot be auto-corrected.
+multiline ternary operator expression, it will be auto-corrected to single-line
+ternary operator. The same is true for `break`, `next`, and method call.
 
 ### Example:
     # bad
@@ -13,6 +14,10 @@ multiline ternary operator expression, it cannot be auto-corrected.
         b :
         c
 
+    return cond ?
+           b :
+           c
+
     # good
     a = cond ? b : c
     a = if cond
@@ -20,3 +25,5 @@ multiline ternary operator expression, it cannot be auto-corrected.
     else
       c
     end
+
+    return cond ? b : c

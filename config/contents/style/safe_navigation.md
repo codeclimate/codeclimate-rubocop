@@ -2,8 +2,7 @@ This cop transforms usages of a method call safeguarded by a non `nil`
 check for the variable whose method is being called to
 safe navigation (`&.`). If there is a method chain, all of the methods
 in the chain need to be checked for safety, and all of the methods will
-need to be changed to use safe navigation. We have limited the cop to
-not register an offense for method chains that exceed 2 methods.
+need to be changed to use safe navigation.
 
 The default for `ConvertCodeThatCanStartToReturnNil` is `false`.
 When configured to `true`, this will
@@ -12,6 +11,10 @@ the return of this code is limited to `false` and whatever the return
 of the method is. If this is converted to safe navigation,
 `foo&.bar` can start returning `nil` as well as what the method
 returns.
+
+The default for `MaxChainLength` is `2`
+We have limited the cop to not register an offense for method chains
+that exceed this option is set.
 
 ### Safety:
 

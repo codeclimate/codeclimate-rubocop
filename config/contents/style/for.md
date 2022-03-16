@@ -32,3 +32,8 @@ allowed.
         puts n
       end
     end
+
+### Safety:
+
+This cop's autocorrection is unsafe because the scope of
+variables is different between `each` and `for`.
