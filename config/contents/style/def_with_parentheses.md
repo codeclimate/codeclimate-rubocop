@@ -6,25 +6,31 @@ class/singleton methods are checked.
 
     # bad
     def foo()
-      # does a thing
+      do_something
     end
 
     # good
     def foo
-      # does a thing
+      do_something
     end
 
-    # also good
-    def foo() does_a_thing end
+    # bad
+    def foo() = do_something
+
+    # good
+    def foo = do_something
+
+    # good (without parentheses it's a syntax error)
+    def foo() do_something end
 
 ### Example:
 
     # bad
     def Baz.foo()
-      # does a thing
+      do_something
     end
 
     # good
     def Baz.foo
-      # does a thing
+      do_something
     end

@@ -3,6 +3,24 @@ Style/AccessorMethodName:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# 1.28
+Security/CompoundHash:
+  Enabled: true
+Style/FetchEnvVar:
+  Enabled: true
+Style/ObjectThen: # new in 1.28
+  Enabled: true
+
+# 1.27
+Lint/RefinementImportMethods:
+  Enabled: true
+Style/RedundantInitialize:
+  Enabled: true
+
+# 1.26
+Style/NestedFileDirname:
+  Enabled: true
+
 # 1.24
 Naming/BlockForwarding:
   Enabled: true

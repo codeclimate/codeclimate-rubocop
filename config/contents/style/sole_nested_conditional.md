@@ -10,6 +10,11 @@ This helps to keep the nesting level from getting too deep.
       end
     end
 
+    # bad
+    if condition_b
+      do_something
+    end if condition_a
+
     # good
     if condition_a && condition_b
       do_something
@@ -21,8 +26,18 @@ This helps to keep the nesting level from getting too deep.
       do_something if condition_b
     end
 
+    # bad
+    if condition_b
+      do_something
+    end if condition_a
+
 ### Example: AllowModifier: true
     # good
     if condition_a
       do_something if condition_b
     end
+
+    # good
+    if condition_b
+      do_something
+    end if condition_a

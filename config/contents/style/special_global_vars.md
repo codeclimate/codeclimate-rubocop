@@ -52,3 +52,31 @@ true, replacing perl-style variables with english variables will break.
     puts $~
     puts $=
     puts $*
+
+### Example: EnforcedStyle: use_builtin_english_names
+
+Like `use_perl_names` but allows builtin global vars.
+
+    # good
+    puts $LOAD_PATH
+    puts $LOADED_FEATURES
+    puts $PROGRAM_NAME
+    puts ARGV
+    puts $:
+    puts $"
+    puts $0
+    puts $!
+    puts $@
+    puts $;
+    puts $,
+    puts $/
+    puts $\
+    puts $.
+    puts $_
+    puts $>
+    puts $<
+    puts $$
+    puts $?
+    puts $~
+    puts $=
+    puts $*

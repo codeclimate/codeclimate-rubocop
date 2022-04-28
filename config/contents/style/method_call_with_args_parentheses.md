@@ -3,7 +3,7 @@ method calls containing parameters.
 
 In the default style (require_parentheses), macro methods are ignored.
 Additional methods can be added to the `IgnoredMethods`
-or `IgnoredPatterns` list. These options are
+or `AllowedPatterns` list. These options are
 valid only in the default style. Macros can be included by
 either setting `IgnoreMacros` to false or adding specific macros to
 the `IncludedMacros` list.
@@ -11,7 +11,7 @@ the `IncludedMacros` list.
 Precedence of options is all follows:
 
 1. `IgnoredMethods`
-2. `IgnoredPatterns`
+2. `AllowedPatterns`
 3. `IncludedMacros`
 
 eg. If a method is listed in both
@@ -63,7 +63,7 @@ because of the following issue: https://bugs.ruby-lang.org/issues/18396.
     # okay with `puts` listed in `IgnoredMethods`
     puts 'test'
 
-    # okay with `^assert` listed in `IgnoredPatterns`
+    # okay with `^assert` listed in `AllowedPatterns`
     assert_equal 'test', x
 
 ### Example: EnforcedStyle: omit_parentheses

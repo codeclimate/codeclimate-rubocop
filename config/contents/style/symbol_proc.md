@@ -47,3 +47,19 @@ call(&:bar)
 ### Example: AllowMethodsWithArguments: true
     # good
     something.do_something(foo) { |o| o.bar }
+
+### Example: AllowComments: false (default)
+    # bad
+    something.do_something do |s| # some comment
+      # some comment
+      s.upcase # some comment
+      # some comment
+    end
+
+### Example: AllowComments: true
+    # good  - if there are comment in either position
+    something.do_something do |s| # some comment
+      # some comment
+      s.upcase # some comment
+      # some comment
+    end

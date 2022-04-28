@@ -19,7 +19,7 @@ one.
       end
     end
 
-### Example: IgnoredPatterns: ['^\s*module']
+### Example: AllowedPatterns: ['^\s*module']
     # bad
     module A
     class B
