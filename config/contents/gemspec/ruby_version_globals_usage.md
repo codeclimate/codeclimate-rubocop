@@ -8,7 +8,7 @@ to execute `rake release` and not user's ruby version.
 
     # bad
     Gem::Specification.new do |spec|
-      if RUBY_VERSION >= '2.5'
+      if RUBY_VERSION >= '3.0'
         spec.add_runtime_dependency 'gem_a'
       else
         spec.add_runtime_dependency 'gem_b'

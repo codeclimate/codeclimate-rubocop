@@ -3,12 +3,16 @@ Style/AccessorMethodName:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# 1.29
+Style/EnvHome:
+  Enabled: true
+
 # 1.28
 Security/CompoundHash:
   Enabled: true
 Style/FetchEnvVar:
   Enabled: true
-Style/ObjectThen: # new in 1.28
+Style/ObjectThen:
   Enabled: true
 
 # 1.27

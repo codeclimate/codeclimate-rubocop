@@ -7,7 +7,7 @@ and/or DST.
 ### Safety:
 
 Autocorrection is not safe, because `DateTime` and `Time` do not have
-exactly the same behaviour, although in most cases the autocorrection
+exactly the same behavior, although in most cases the autocorrection
 will be fine.
 
 ### Example:

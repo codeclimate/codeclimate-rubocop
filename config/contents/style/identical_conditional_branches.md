@@ -9,7 +9,7 @@ in a future major RuboCop release.
 ### Safety:
 
 Auto-correction is unsafe because changing the order of method invocations
-may change the behaviour of the code. For example:
+may change the behavior of the code. For example:
 
 ```ruby
 if method_that_modifies_global_state # 1
@@ -22,7 +22,7 @@ end
 ```
 
 In this example, `method_that_relies_on_global_state` will be moved before
-`method_that_modifies_global_state`, which changes the behaviour of the program.
+`method_that_modifies_global_state`, which changes the behavior of the program.
 
 ### Example:
     # bad

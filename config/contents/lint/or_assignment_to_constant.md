@@ -7,7 +7,7 @@ locations, the result may vary depending on the order of `require`.
 ### Safety:
 
 This cop is unsafe because code that is already conditionally
-assigning a constant may have its behaviour changed by
+assigning a constant may have its behavior changed by
 auto-correction.
 
 ### Example:

@@ -19,7 +19,7 @@ that exceed this option is set.
 ### Safety:
 
 Autocorrection is unsafe because if a value is `false`, the resulting
-code will have different behaviour or raise an error.
+code will have different behavior or raise an error.
 
 ```ruby
 x = false

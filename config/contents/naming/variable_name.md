@@ -14,3 +14,7 @@ snake_case or camelCase, for their names.
 
     # good
     fooBar = 1
+
+### Example: AllowedPatterns: ['_v\d+\z']
+    # good
+    :release_v1

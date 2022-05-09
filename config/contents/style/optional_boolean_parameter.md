@@ -5,7 +5,7 @@ These are customizable with `AllowedMethods` option.
 ### Safety:
 
 This cop is unsafe because changing a method signature will
-implicitly change behaviour.
+implicitly change behavior.
 
 ### Example:
     # bad

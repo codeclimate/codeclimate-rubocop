@@ -90,3 +90,7 @@ Both are enabled by default.
 ### Example: AllowedIdentifiers: [capture3]
     # good
     expect(Open3).to receive(:capture3)
+
+### Example: AllowedPatterns: ['_v\d+\z']
+    # good
+    :some_sym_v1

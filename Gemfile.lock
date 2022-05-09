@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.0.2.3)
+    activesupport (7.0.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -25,7 +25,7 @@ GEM
     rack (2.2.3)
     rainbow (3.1.1)
     rake (13.0.6)
-    regexp_parser (2.3.0)
+    regexp_parser (2.3.1)
     rexml (3.2.5)
     rspec (3.11.0)
       rspec-core (~> 3.11.0)
@@ -40,12 +40,12 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.11.0)
     rspec-support (3.11.0)
-    rubocop (1.28.1)
+    rubocop (1.29.0)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
-      rexml
+      rexml (>= 3.2.5, < 4.0)
       rubocop-ast (>= 1.17.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
@@ -72,13 +72,13 @@ GEM
       rubocop (~> 1.0)
     rubocop-shopify (2.5.0)
       rubocop (~> 1.25)
-    rubocop-sorbet (0.6.7)
+    rubocop-sorbet (0.6.8)
       rubocop (>= 0.90.0)
     rubocop-thread_safety (0.4.4)
       rubocop (>= 0.53.0)
     ruby-progressbar (1.11.0)
     safe_yaml (1.0.5)
-    test-prof (1.0.8)
+    test-prof (1.0.9)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
@@ -93,7 +93,7 @@ DEPENDENCIES
   pry
   rake
   rspec
-  rubocop (= 1.28.1)
+  rubocop (= 1.29.0)
   rubocop-graphql
   rubocop-i18n
   rubocop-minitest
