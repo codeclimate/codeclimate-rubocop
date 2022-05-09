@@ -4,7 +4,7 @@ that do not come at the end of the argument list.
 ### Safety:
 
 This cop is unsafe because changing a method signature will
-implicitly change behaviour.
+implicitly change behavior.
 
 ### Example:
     # bad

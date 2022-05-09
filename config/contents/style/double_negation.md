@@ -32,8 +32,24 @@ of the expression will change.
       !!return_value
     end
 
+    define_method :foo? do
+      !!return_value
+    end
+
+    define_singleton_method :foo? do
+      !!return_value
+    end
+
 ### Example: EnforcedStyle: forbidden
     # bad
     def foo?
+      !!return_value
+    end
+
+    define_method :foo? do
+      !!return_value
+    end
+
+    define_singleton_method :foo? do
       !!return_value
     end

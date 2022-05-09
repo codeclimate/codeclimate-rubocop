@@ -14,7 +14,7 @@ NOTE: This cop will be deprecated and removed when supporting only Ruby 3.0 and 
 ### Safety:
 
 This cop is unsafe in the case where sorting files changes existing
-expected behaviour.
+expected behavior.
 
 ### Example:
 

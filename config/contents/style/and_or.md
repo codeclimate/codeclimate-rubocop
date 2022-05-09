@@ -6,7 +6,7 @@ all contexts.
 
 Auto-correction is unsafe because there is a different operator precedence
 between logical operators (`&&` and `||`) and semantic operators (`and` and `or`),
-and that might change the behaviour.
+and that might change the behavior.
 
 ### Example: EnforcedStyle: always
     # bad
