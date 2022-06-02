@@ -1,4 +1,4 @@
-This cop checks for inconsistent indentation.
+Checks for inconsistent indentation.
 
 The difference between `indented_internal_methods` and `normal` is
 that the `indented_internal_methods` style prescribes that in

@@ -1,4 +1,4 @@
-This cop checks for use of the lambda.(args) syntax.
+Checks for use of the lambda.(args) syntax.
 
 ### Example: EnforcedStyle: call (default)
  # bad

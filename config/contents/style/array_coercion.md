@@ -1,4 +1,4 @@
-This cop enforces the use of `Array()` instead of explicit `Array` check or `[*var]`.
+Enforces the use of `Array()` instead of explicit `Array` check or `[*var]`.
 
 The cop is disabled by default due to safety concerns.
 

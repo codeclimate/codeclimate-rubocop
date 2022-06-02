@@ -1,4 +1,4 @@
-This cop checks for loops that will have at most one iteration.
+Checks for loops that will have at most one iteration.
 
 A loop that can never reach the second iteration is a possible error in the code.
 In rare cases where only one iteration (or at most one iteration) is intended behavior,

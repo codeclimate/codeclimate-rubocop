@@ -1,4 +1,4 @@
-This cop checks for endless methods.
+Checks for endless methods.
 
 It can enforce either the use of endless methods definitions
 for single-lined method bodies, or disallow endless methods.

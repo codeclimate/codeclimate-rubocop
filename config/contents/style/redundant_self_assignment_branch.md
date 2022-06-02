@@ -1,4 +1,4 @@
-This cop checks for places where conditional branch makes redundant self-assignment.
+Checks for places where conditional branch makes redundant self-assignment.
 
 It only detects local variable because it may replace state of instance variable,
 class variable, and global variable that have state across methods with `nil`.

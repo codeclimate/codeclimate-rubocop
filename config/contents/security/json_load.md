@@ -1,4 +1,4 @@
-This cop checks for the use of JSON class methods which have potential
+Checks for the use of JSON class methods which have potential
 security issues.
 
 ### Safety:

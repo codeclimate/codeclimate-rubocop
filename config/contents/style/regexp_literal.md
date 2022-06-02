@@ -1,4 +1,4 @@
-This cop enforces using // or %r around regular expressions.
+Enforces using // or %r around regular expressions.
 
 ### Example: EnforcedStyle: slashes (default)
     # bad

@@ -1,4 +1,4 @@
-This cop checks that there is an `# rubocop:enable ...` statement
+Checks that there is an `# rubocop:enable ...` statement
 after a `# rubocop:disable ...` statement. This will prevent leaving
 cop disables on wide ranges of code, that latter contributors to
 a file wouldn't be aware of.

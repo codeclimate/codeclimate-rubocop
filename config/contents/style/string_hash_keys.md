@@ -1,4 +1,4 @@
-This cop checks for the use of strings as keys in hashes. The use of
+Checks for the use of strings as keys in hashes. The use of
 symbols is preferred instead.
 
 ### Safety:

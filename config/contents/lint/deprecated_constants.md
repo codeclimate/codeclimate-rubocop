@@ -1,4 +1,4 @@
-This cop checks for deprecated constants.
+Checks for deprecated constants.
 
 It has `DeprecatedConstants` config. If there is an alternative method, you can set
 alternative value as `Alternative`. And you can set the deprecated version as

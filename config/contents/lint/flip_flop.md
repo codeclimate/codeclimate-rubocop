@@ -1,4 +1,4 @@
-This cop looks for uses of flip-flop operator
+Looks for uses of flip-flop operator
 based on the Ruby Style Guide.
 
 Here is the history of flip-flops in Ruby.

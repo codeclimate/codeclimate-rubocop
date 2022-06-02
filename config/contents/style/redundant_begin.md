@@ -1,4 +1,4 @@
-This cop checks for redundant `begin` blocks.
+Checks for redundant `begin` blocks.
 
 Currently it checks for code like this:
 
@@ -31,6 +31,7 @@ Currently it checks for code like this:
     do_something
 
     # bad
+    # When using Ruby 2.5 or later.
     do_something do
       begin
         something

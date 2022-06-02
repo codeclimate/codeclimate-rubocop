@@ -1,4 +1,4 @@
-This cop checks for setter call to local variable as the final
+Checks for setter call to local variable as the final
 expression of a function definition.
 
 ### Safety:
@@ -7,7 +7,7 @@ There are edge cases in which the local variable references a
 value that is also accessible outside the local scope. This is not
 detected by the cop, and it can yield a false positive.
 
-As well, auto-correction is unsafe because the method's
+As well, autocorrection is unsafe because the method's
 return value will be changed.
 
 ### Example:

@@ -1,4 +1,4 @@
-This cop checks for use of the `File.expand_path` arguments.
+Checks for use of the `File.expand_path` arguments.
 Likewise, it also checks for the `Pathname.new` argument.
 
 Contrastive bad case and good case are alternately shown in

@@ -1,4 +1,4 @@
-This cop enforces consistency when using exponential notation
+Enforces consistency when using exponential notation
 for numbers in the code (eg 1.2e4). Different styles are supported:
 
 * `scientific` which enforces a mantissa between 1 (inclusive) and 10 (exclusive).

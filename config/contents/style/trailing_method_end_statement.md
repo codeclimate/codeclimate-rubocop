@@ -1,4 +1,4 @@
-This cop checks for trailing code after the method definition.
+Checks for trailing code after the method definition.
 
 ### Example:
     # bad

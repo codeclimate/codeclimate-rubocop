@@ -1,4 +1,4 @@
-This cop checks for circular argument references in optional keyword
+Checks for circular argument references in optional keyword
 arguments and optional ordinal arguments.
 
 This cop mirrors a warning produced by MRI since 2.2.

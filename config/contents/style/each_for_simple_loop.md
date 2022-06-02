@@ -1,4 +1,4 @@
-This cop checks for loops which iterate a constant number of times,
+Checks for loops which iterate a constant number of times,
 using a Range literal and `#each`. This can be done more readably using
 `Integer#times`.
 

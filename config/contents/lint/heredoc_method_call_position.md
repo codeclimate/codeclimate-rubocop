@@ -1,4 +1,4 @@
-This cop checks for the ordering of a method call where
+Checks for the ordering of a method call where
 the receiver of the call is a HEREDOC.
 
 ### Example:

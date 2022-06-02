@@ -1,4 +1,4 @@
-This cop looks for trailing blank lines and a final newline in the
+Looks for trailing blank lines and a final newline in the
 source code.
 
 ### Example: EnforcedStyle: final_blank_line

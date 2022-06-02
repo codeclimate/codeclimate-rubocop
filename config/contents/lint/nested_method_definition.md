@@ -1,4 +1,4 @@
-This cop checks for nested method definitions.
+Checks for nested method definitions.
 
 ### Example:
 

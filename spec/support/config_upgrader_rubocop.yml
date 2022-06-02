@@ -3,6 +3,12 @@ Style/AccessorMethodName:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# 1.30
+Gemspec/DeprecatedAttributeAssignment:
+  Enabled: true
+Style/MapCompactWithConditionalBlock:
+  Enabled: true
+
 # 1.29
 Style/EnvHome:
   Enabled: true

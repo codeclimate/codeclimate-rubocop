@@ -1,4 +1,4 @@
-This cop looks for trailing whitespace in the source code.
+Looks for trailing whitespace in the source code.
 
 ### Example:
     # The line in this example contains spaces after the 0.

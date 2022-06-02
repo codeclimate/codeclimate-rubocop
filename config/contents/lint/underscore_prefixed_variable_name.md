@@ -1,4 +1,4 @@
-This cop checks for underscore-prefixed variables that are actually
+Checks for underscore-prefixed variables that are actually
 used.
 
 Since block keyword arguments cannot be arbitrarily named at call

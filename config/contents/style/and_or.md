@@ -1,10 +1,10 @@
-This cop checks for uses of `and` and `or`, and suggests using `&&` and
+Checks for uses of `and` and `or`, and suggests using `&&` and
 `||` instead. It can be configured to check only in conditions or in
 all contexts.
 
 ### Safety:
 
-Auto-correction is unsafe because there is a different operator precedence
+Autocorrection is unsafe because there is a different operator precedence
 between logical operators (`&&` and `||`) and semantic operators (`and` and `or`),
 and that might change the behavior.
 

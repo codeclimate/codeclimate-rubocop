@@ -1,4 +1,4 @@
-This cop identifies places where `fetch(key) { value }`
+Identifies places where `fetch(key) { value }`
 can be replaced by `fetch(key, value)`.
 
 In such cases `fetch(key, value)` method is faster

@@ -1,4 +1,4 @@
-This cop checks for empty `ensure` blocks
+Checks for empty `ensure` blocks
 
 ### Example:
 

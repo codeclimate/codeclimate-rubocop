@@ -1,4 +1,4 @@
-This cop enforces using `def self.method_name` or `class << self` to define class methods.
+Enforces using `def self.method_name` or `class << self` to define class methods.
 
 ### Example: EnforcedStyle: def_self (default)
     # bad

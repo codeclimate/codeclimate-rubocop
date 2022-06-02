@@ -1,4 +1,4 @@
-This cop checks if a file which has a shebang line as
+Checks if a file which has a shebang line as
 its first line is granted execute permission.
 
 ### Example:

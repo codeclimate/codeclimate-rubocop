@@ -1,4 +1,4 @@
-This cop checks for cases when you could use a block
+Checks for cases when you could use a block
 accepting version of a method that does automatic
 resource cleanup.
 

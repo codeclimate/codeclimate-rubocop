@@ -1,4 +1,4 @@
-This cop checks for unneeded usages of splat expansion
+Checks for unneeded usages of splat expansion
 
 ### Example:
 

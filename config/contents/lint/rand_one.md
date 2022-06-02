@@ -1,4 +1,4 @@
-This cop checks for `rand(1)` calls.
+Checks for `rand(1)` calls.
 Such calls always return `0`.
 
 ### Example:

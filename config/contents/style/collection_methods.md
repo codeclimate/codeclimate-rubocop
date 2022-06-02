@@ -1,4 +1,4 @@
-This cop enforces the use of consistent method names
+Enforces the use of consistent method names
 from the Enumerable module.
 
 You can customize the mapping from undesired method to desired method.

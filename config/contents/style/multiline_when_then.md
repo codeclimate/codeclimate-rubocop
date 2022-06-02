@@ -1,4 +1,4 @@
-This cop checks uses of the `then` keyword
+Checks uses of the `then` keyword
 in multi-line when statements.
 
 ### Example:

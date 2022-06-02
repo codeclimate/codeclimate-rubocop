@@ -1,4 +1,4 @@
-This cop enforces the use of `Object#instance_of?` instead of class comparison
+Enforces the use of `Object#instance_of?` instead of class comparison
 for equality.
 
 ### Example:

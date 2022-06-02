@@ -1,4 +1,4 @@
-This cop checks for unnecessary conditional expressions.
+Checks for unnecessary conditional expressions.
 
 ### Example:
     # bad

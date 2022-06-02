@@ -1,4 +1,4 @@
-This cop checks for places where the `#__dir__` method can replace more
+Checks for places where the `#__dir__` method can replace more
 complex constructs to retrieve a canonicalized absolute path to the
 current file.
 

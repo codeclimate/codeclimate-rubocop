@@ -1,4 +1,4 @@
-This cop checks empty comment.
+Checks empty comment.
 
 ### Example:
     # bad

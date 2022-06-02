@@ -1,4 +1,4 @@
-This cop checks that `date =` is not used in gemspec file.
+Checks that `date =` is not used in gemspec file.
 It is set automatically when the gem is packaged.
 
 ### Example:

@@ -1,4 +1,4 @@
-This cop checks for the presence of empty expressions.
+Checks for the presence of empty expressions.
 
 ### Example:
 

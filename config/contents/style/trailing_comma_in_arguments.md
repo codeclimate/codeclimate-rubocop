@@ -1,4 +1,4 @@
-This cop checks for trailing comma in argument lists.
+Checks for trailing comma in argument lists.
 The supported styles are:
 
 * `consistent_comma`: Requires a comma after the last argument,

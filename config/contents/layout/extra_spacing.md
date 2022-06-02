@@ -1,4 +1,4 @@
-This cop checks for extra/unnecessary whitespace.
+Checks for extra/unnecessary whitespace.
 
 ### Example:
 

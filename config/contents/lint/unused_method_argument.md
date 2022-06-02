@@ -1,4 +1,4 @@
-This cop checks for unused method arguments.
+Checks for unused method arguments.
 
 ### Example:
     # bad

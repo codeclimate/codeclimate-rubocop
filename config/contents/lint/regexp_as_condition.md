@@ -1,4 +1,4 @@
-This cop checks for regexp literals used as `match-current-line`.
+Checks for regexp literals used as `match-current-line`.
 If a regexp literal is in condition, the regexp matches `$_` implicitly.
 
 ### Example:

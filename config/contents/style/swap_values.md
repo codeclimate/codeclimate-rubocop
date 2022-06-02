@@ -1,4 +1,4 @@
-This cop enforces the use of shorthand-style swapping of 2 variables.
+Enforces the use of shorthand-style swapping of 2 variables.
 
 ### Safety:
 

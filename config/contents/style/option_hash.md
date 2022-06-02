@@ -1,4 +1,4 @@
-This cop checks for options hashes and discourages them if the
+Checks for options hashes and discourages them if the
 current Ruby version supports keyword arguments.
 
 ### Example:

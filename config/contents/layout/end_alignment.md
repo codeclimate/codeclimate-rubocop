@@ -1,4 +1,4 @@
-This cop checks whether the end keywords are aligned properly.
+Checks whether the end keywords are aligned properly.
 
 Three modes are supported through the `EnforcedStyleAlignWith`
 configuration parameter:

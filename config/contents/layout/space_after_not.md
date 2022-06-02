@@ -1,4 +1,4 @@
-This cop checks for space after `!`.
+Checks for space after `!`.
 
 ### Example:
     # bad

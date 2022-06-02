@@ -1,4 +1,4 @@
-This cop checks whether class/module/method definitions are
+Checks whether class/module/method definitions are
 separated by one or more empty lines.
 
 `NumberOfEmptyLines` can be an integer (default is 1) or

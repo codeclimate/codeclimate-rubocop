@@ -1,4 +1,4 @@
-This cop checks whether the end keywords are aligned properly for do
+Checks whether the end keywords are aligned properly for do
 end blocks.
 
 Three modes are supported through the `EnforcedStyleAlignWith`

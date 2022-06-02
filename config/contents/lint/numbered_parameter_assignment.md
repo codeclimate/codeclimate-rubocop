@@ -1,4 +1,4 @@
-This cop checks for uses of numbered parameter assignment.
+Checks for uses of numbered parameter assignment.
 It emulates the following warning in Ruby 2.7:
 
     % ruby -ve '_1 = :value'

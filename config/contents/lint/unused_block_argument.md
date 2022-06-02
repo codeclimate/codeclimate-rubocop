@@ -1,4 +1,4 @@
-This cop checks for unused block arguments.
+Checks for unused block arguments.
 
 ### Example:
     # bad

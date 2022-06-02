@@ -1,4 +1,4 @@
-This cop checks for nested percent literals.
+Checks for nested percent literals.
 
 ### Example:
 

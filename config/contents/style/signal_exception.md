@@ -1,4 +1,4 @@
-This cop checks for uses of `fail` and `raise`.
+Checks for uses of `fail` and `raise`.
 
 ### Example: EnforcedStyle: only_raise (default)
     # The `only_raise` style enforces the sole use of `raise`.

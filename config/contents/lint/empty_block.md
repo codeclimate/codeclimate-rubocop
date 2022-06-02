@@ -1,4 +1,4 @@
-This cop checks for blocks without a body.
+Checks for blocks without a body.
 Such empty blocks are typically an oversight or we should provide a comment
 be clearer what we're aiming for.
 

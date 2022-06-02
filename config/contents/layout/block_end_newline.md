@@ -1,4 +1,4 @@
-This cop checks whether the end statement of a do..end block
+Checks whether the end statement of a do..end block
 is on its own line.
 
 ### Example:

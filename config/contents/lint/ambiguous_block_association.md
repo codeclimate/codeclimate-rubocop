@@ -1,4 +1,4 @@
-This cop checks for ambiguous block association with method
+Checks for ambiguous block association with method
 when param passed without parentheses.
 
 This cop can customize ignored methods with `IgnoredMethods`.

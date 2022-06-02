@@ -1,4 +1,4 @@
-This cop checks whether certain expressions, e.g. method calls, that could fit
+Checks whether certain expressions, e.g. method calls, that could fit
 completely on a single line, are broken up into multiple lines unnecessarily.
 
 ### Example: any configuration

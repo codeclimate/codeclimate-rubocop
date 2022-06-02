@@ -1,4 +1,4 @@
-This cop checks for duplicated instance (or singleton) method
+Checks for duplicated instance (or singleton) method
 definitions.
 
 ### Example:

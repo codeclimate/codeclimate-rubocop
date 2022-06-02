@@ -1,4 +1,4 @@
-This cop checks if empty lines exist around the bodies of `begin`
+Checks if empty lines exist around the bodies of `begin`
 sections. This cop doesn't check empty lines at `begin` body
 beginning/end and around method definition body.
 `Style/EmptyLinesAroundBeginBody` or `Style/EmptyLinesAroundMethodBody`

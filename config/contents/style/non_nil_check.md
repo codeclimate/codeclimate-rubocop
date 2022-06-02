@@ -1,4 +1,4 @@
-This cop checks for non-nil checks, which are usually redundant.
+Checks for non-nil checks, which are usually redundant.
 
 With `IncludeSemanticChanges` set to `false` by default, this cop
 does not report offenses for `!x.nil?` and does no changes that might

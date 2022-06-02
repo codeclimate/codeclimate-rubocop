@@ -1,4 +1,4 @@
-This cop checks for uses of `begin...end while/until something`.
+Checks for uses of `begin...end while/until something`.
 
 ### Safety:
 

@@ -1,4 +1,4 @@
-This cop checks the indentation of the next line after a line that ends with a string
+Checks the indentation of the next line after a line that ends with a string
 literal and a backslash.
 
 If `EnforcedStyle: aligned` is set, the concatenated string parts shall be aligned with the

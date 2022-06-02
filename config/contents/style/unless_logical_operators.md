@@ -1,4 +1,4 @@
-This cop checks for the use of logical operators in an `unless` condition.
+Checks for the use of logical operators in an `unless` condition.
 It discourages such code, as the condition becomes more difficult
 to read and understand.
 

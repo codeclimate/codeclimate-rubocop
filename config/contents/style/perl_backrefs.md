@@ -1,4 +1,4 @@
-This cop looks for uses of Perl-style regexp match
+Looks for uses of Perl-style regexp match
 backreferences and their English versions like
 $1, $2, $&, &+, $MATCH, $PREMATCH, etc.
 

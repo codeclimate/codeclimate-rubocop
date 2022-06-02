@@ -1,4 +1,4 @@
-This cop checks for places where classes with only class methods can be
+Checks for places where classes with only class methods can be
 replaced with a module. Classes should be used only when it makes sense to create
 instances out of them.
 

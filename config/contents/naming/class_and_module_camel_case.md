@@ -1,4 +1,4 @@
-This cop checks for class and module names with
+Checks for class and module names with
 an underscore in them.
 
 `AllowedNames` config takes an array of permitted names.

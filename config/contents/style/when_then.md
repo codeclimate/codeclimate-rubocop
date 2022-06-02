@@ -1,4 +1,4 @@
-This cop checks for `when;` uses in `case` expressions.
+Checks for `when;` uses in `case` expressions.
 
 ### Example:
     # bad

@@ -1,4 +1,4 @@
-This cop makes sure that all methods use the configured style,
+Makes sure that all methods use the configured style,
 snake_case or camelCase, for their names.
 
 This cop has `AllowedPatterns` configuration option.
