@@ -1,4 +1,4 @@
-This cop looks for uses of global variables.
+Looks for uses of global variables.
 It does not report offenses for built-in global variables.
 Built-in global variables are allowed by default. Additionally
 users can allow additional variables via the AllowedVariables option.

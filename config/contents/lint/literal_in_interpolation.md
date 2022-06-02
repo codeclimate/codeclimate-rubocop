@@ -1,4 +1,4 @@
-This cop checks for interpolated literals.
+Checks for interpolated literals.
 
 ### Example:
 

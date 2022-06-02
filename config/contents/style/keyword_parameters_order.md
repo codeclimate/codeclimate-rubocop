@@ -1,4 +1,4 @@
-This cop enforces that optional keyword parameters are placed at the
+Enforces that optional keyword parameters are placed at the
 end of the parameters list.
 
 This improves readability, because when looking through the source,

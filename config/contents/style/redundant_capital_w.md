@@ -1,4 +1,4 @@
-This cop checks for usage of the %W() syntax when %w() would do.
+Checks for usage of the %W() syntax when %w() would do.
 
 ### Example:
     # bad

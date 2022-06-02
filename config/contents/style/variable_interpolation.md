@@ -1,4 +1,4 @@
-This cop checks for variable interpolation (like "#@ivar").
+Checks for variable interpolation (like "#@ivar").
 
 ### Example:
     # bad

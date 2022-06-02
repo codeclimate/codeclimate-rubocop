@@ -1,4 +1,4 @@
-This cop checks uses of lambda without a literal block.
+Checks uses of lambda without a literal block.
 It emulates the following warning in Ruby 3.0:
 
     % ruby -vwe 'lambda(&proc {})'
@@ -7,7 +7,7 @@ It emulates the following warning in Ruby 3.0:
     lambda instead
 
 This way, proc object is never converted to lambda.
-Auto-correction replaces with compatible proc argument.
+Autocorrection replaces with compatible proc argument.
 
 ### Example:
 

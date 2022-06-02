@@ -1,4 +1,4 @@
-This cop checks for redundant safe navigation calls.
+Checks for redundant safe navigation calls.
 `instance_of?`, `kind_of?`, `is_a?`, `eql?`, `respond_to?`, and `equal?` methods
 are checked by default. These are customizable with `AllowedMethods` option.
 
@@ -7,9 +7,9 @@ because `NilClass` has methods like `respond_to?` and `is_a?`.
 
 ### Safety:
 
-This cop is unsafe, because auto-correction can change the return type of
+This cop is unsafe, because autocorrection can change the return type of
 the expression. An offending expression that previously could return `nil`
-will be auto-corrected to never return `nil`.
+will be autocorrected to never return `nil`.
 
 ### Example:
     # bad

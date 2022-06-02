@@ -1,4 +1,4 @@
-This cop checks for the use of local variable names from an outer scope
+Checks for the use of local variable names from an outer scope
 in block arguments or block-local variables. This mirrors the warning
 given by `ruby -cw` prior to Ruby 2.6:
 "shadowing outer local variable - foo".

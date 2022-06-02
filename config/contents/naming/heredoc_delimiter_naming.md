@@ -1,4 +1,4 @@
-This cop checks that your heredocs are using meaningful delimiters.
+Checks that your heredocs are using meaningful delimiters.
 By default it disallows `END` and `EO*`, and can be configured through
 forbidden listing additional delimiters.
 

@@ -1,4 +1,4 @@
-This cop checks for uses of Module#attr.
+Checks for uses of Module#attr.
 
 ### Example:
     # bad - creates a single attribute accessor (deprecated in Ruby 1.9)

@@ -1,4 +1,4 @@
-This cop checks for ambiguous operators in the first argument of a
+Checks for ambiguous operators in the first argument of a
 method invocation without parentheses.
 
 ### Example:

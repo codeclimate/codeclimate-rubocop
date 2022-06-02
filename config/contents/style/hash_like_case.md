@@ -1,4 +1,4 @@
-This cop checks for places where `case-when` represents a simple 1:1
+Checks for places where `case-when` represents a simple 1:1
 mapping and can be replaced with a hash lookup.
 
 ### Example: MinBranchesCount: 3 (default)

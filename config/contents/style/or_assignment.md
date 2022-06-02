@@ -1,4 +1,4 @@
-This cop checks for potential usage of the `||=` operator.
+Checks for potential usage of the `||=` operator.
 
 ### Example:
     # bad

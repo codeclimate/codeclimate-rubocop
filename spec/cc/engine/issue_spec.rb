@@ -33,7 +33,7 @@ module CC::Engine
         expect(attributes["location"]["positions"]["begin"]["column"]).to eq(4)
         expect(attributes["location"]["positions"]["end"]["column"]).to eq(100)
         expect(attributes["content"]["body"].squish).to include(
-          "This cop checks that the cyclomatic complexity of methods is not higher than the configured maximum."
+          "Checks that the cyclomatic complexity of methods is not higher than the configured maximum."
         )
       end
 

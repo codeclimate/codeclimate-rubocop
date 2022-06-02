@@ -1,4 +1,4 @@
-This cop checks the usage of pre-2.1 `Hash[args]` method of converting enumerables and
+Checks the usage of pre-2.1 `Hash[args]` method of converting enumerables and
 sequences of values to hashes.
 
 Correction code from splat argument (`Hash[*ary]`) is not simply determined. For example,

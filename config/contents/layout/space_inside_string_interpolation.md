@@ -1,4 +1,4 @@
-This cop checks for whitespace within string interpolations.
+Checks for whitespace within string interpolations.
 
 ### Example: EnforcedStyle: no_space (default)
     # bad

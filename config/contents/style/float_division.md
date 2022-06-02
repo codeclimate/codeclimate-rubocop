@@ -1,4 +1,4 @@
-This cop checks for division with integers coerced to floats.
+Checks for division with integers coerced to floats.
 It is recommended to either always use `fdiv` or coerce one side only.
 This cop also provides other options for code consistency.
 

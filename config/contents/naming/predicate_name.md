@@ -1,4 +1,4 @@
-This cop makes sure that predicates are named properly.
+Makes sure that predicates are named properly.
 
 ### Example:
     # bad

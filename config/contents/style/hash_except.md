@@ -1,4 +1,4 @@
-This cop checks for usages of `Hash#reject`, `Hash#select`, and `Hash#filter` methods
+Checks for usages of `Hash#reject`, `Hash#select`, and `Hash#filter` methods
 that can be replaced with `Hash#except` method.
 
 This cop should only be enabled on Ruby version 3.0 or higher.

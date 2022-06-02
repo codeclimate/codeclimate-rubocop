@@ -1,4 +1,4 @@
-This cop checks for hardcoded IP addresses, which can make code
+Checks for hardcoded IP addresses, which can make code
 brittle. IP addresses are likely to need to be changed when code
 is deployed to a different server or environment, which may break
 a deployment if forgotten. Prefer setting IP addresses in ENV or

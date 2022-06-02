@@ -1,4 +1,4 @@
-This cop checks ensures source files have no utf-8 encoding comments.
+Checks ensures source files have no utf-8 encoding comments.
 ### Example:
     # bad
     # encoding: UTF-8

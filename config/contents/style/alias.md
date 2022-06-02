@@ -1,4 +1,4 @@
-This cop enforces the use of either `#alias` or `#alias_method`
+Enforces the use of either `#alias` or `#alias_method`
 depending on configuration.
 It also flags uses of `alias :symbol` rather than `alias bareword`.
 

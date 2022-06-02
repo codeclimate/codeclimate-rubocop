@@ -1,4 +1,4 @@
-This cop check to make sure that if safe navigation is used for a method
+Check to make sure that if safe navigation is used for a method
 call in an `&&` or `||` condition that safe navigation is used for all
 method calls on that same object.
 

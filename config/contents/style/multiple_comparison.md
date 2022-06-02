@@ -1,4 +1,4 @@
-This cop checks against comparing a variable with multiple items, where
+Checks against comparing a variable with multiple items, where
 `Array#include?`, `Set#include?` or a `case` could be used instead
 to avoid code repetition.
 It accepts comparisons of multiple method calls to avoid unnecessary method calls

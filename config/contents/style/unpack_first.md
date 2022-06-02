@@ -1,4 +1,4 @@
-This cop checks for accessing the first element of `String#unpack`
+Checks for accessing the first element of `String#unpack`
 which can be replaced with the shorter method `unpack1`.
 
 ### Example:

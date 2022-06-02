@@ -1,4 +1,4 @@
-This cop checks for self-assignments.
+Checks for self-assignments.
 
 ### Example:
     # bad

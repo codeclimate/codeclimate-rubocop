@@ -1,4 +1,4 @@
-This cop checks for END blocks.
+Checks for END blocks.
 
 ### Example:
     # bad

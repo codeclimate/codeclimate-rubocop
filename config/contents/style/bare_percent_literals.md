@@ -1,4 +1,4 @@
-This cop checks if usage of %() or %Q() matches configuration.
+Checks if usage of %() or %Q() matches configuration.
 
 ### Example: EnforcedStyle: bare_percent (default)
     # bad

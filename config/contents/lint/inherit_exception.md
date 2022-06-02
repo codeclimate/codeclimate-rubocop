@@ -1,4 +1,4 @@
-This cop looks for error classes inheriting from `Exception`.
+Looks for error classes inheriting from `Exception`.
 It is configurable to suggest using either `StandardError` (default) or
 `RuntimeError` instead.
 

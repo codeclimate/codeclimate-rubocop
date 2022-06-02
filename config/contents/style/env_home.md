@@ -1,4 +1,4 @@
-This cop checks for consistent usage of `ENV['HOME']`. If `nil` is used as
+Checks for consistent usage of `ENV['HOME']`. If `nil` is used as
 the second argument of `ENV.fetch`, it is treated as a bad case like `ENV[]`.
 
 ### Safety:

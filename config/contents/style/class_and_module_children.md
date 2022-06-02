@@ -1,4 +1,4 @@
-This cop checks the style of children definitions at classes and
+Checks the style of children definitions at classes and
 modules. Basically there are two different styles:
 
 ### Safety:

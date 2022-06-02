@@ -1,4 +1,4 @@
-This cop looks for `ruby2_keywords` calls for methods that do not need it.
+Looks for `ruby2_keywords` calls for methods that do not need it.
 
 `ruby2_keywords` should only be called on methods that accept an argument splat
 (`*args`) but do not explicit keyword arguments (`k:` or `k: true`) or

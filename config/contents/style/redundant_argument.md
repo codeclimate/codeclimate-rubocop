@@ -1,4 +1,4 @@
-This cop checks for a redundant argument passed to certain methods.
+Checks for a redundant argument passed to certain methods.
 
 NOTE: This cop is limited to methods with single parameter.
 

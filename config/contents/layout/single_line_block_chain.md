@@ -1,4 +1,4 @@
-This cop checks if method calls are chained onto single line blocks. It considers that a
+Checks if method calls are chained onto single line blocks. It considers that a
 line break before the dot improves the readability of the code.
 
 ### Example:

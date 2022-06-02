@@ -1,4 +1,4 @@
-This cop makes sure that all variables use the configured style,
+Makes sure that all variables use the configured style,
 snake_case or camelCase, for their names.
 
 ### Example: EnforcedStyle: snake_case (default)

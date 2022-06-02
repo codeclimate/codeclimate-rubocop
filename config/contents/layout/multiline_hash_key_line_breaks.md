@@ -1,4 +1,4 @@
-This cop ensures that each key in a multi-line hash
+Ensures that each key in a multi-line hash
 starts on a separate line.
 
 ### Example:

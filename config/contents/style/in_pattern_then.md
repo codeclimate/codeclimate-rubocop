@@ -1,4 +1,4 @@
-This cop checks for `in;` uses in `case` expressions.
+Checks for `in;` uses in `case` expressions.
 
 ### Example:
     # bad

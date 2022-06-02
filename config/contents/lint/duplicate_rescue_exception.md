@@ -1,4 +1,4 @@
-This cop checks that there are no repeated exceptions
+Checks that there are no repeated exceptions
 used in 'rescue' expressions.
 
 ### Example:

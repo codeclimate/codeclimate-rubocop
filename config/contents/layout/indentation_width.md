@@ -1,4 +1,4 @@
-This cop checks for indentation that doesn't use the specified number
+Checks for indentation that doesn't use the specified number
 of spaces.
 
 See also the IndentationConsistency cop which is the companion to this

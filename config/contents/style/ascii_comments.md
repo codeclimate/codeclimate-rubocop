@@ -1,4 +1,4 @@
-This cop checks for non-ascii (non-English) characters
+Checks for non-ascii (non-English) characters
 in comments. You could set an array of allowed non-ascii chars in
 `AllowedChars` attribute (copyright notice "©" by default).
 

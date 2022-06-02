@@ -1,4 +1,4 @@
-This cop checks for Windows-style line endings in the source code.
+Checks for Windows-style line endings in the source code.
 
 ### Example: EnforcedStyle: native (default)
     # The `native` style means that CR+LF (Carriage Return + Line Feed) is

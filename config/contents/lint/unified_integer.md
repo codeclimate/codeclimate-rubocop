@@ -1,4 +1,4 @@
-This cop checks for using Fixnum or Bignum constant.
+Checks for using Fixnum or Bignum constant.
 
 ### Example:
 

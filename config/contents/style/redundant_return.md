@@ -1,4 +1,4 @@
-This cop checks for redundant `return` expressions.
+Checks for redundant `return` expressions.
 
 ### Example:
     # These bad cases should be extended to handle methods whose body is

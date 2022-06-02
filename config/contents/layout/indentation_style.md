@@ -1,4 +1,4 @@
-This cop checks that the indentation method is consistent.
+Checks that the indentation method is consistent.
 Either tabs only or spaces only are used for indentation.
 
 ### Example: EnforcedStyle: spaces (default)

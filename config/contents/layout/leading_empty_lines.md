@@ -1,4 +1,4 @@
-This cop checks for unnecessary leading blank lines at the beginning
+Checks for unnecessary leading blank lines at the beginning
 of a file.
 
 ### Example:

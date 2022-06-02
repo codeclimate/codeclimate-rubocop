@@ -1,4 +1,4 @@
-This cop checks for trailing comma in hash literals.
+Checks for trailing comma in hash literals.
 The configuration options are:
 
 * `consistent_comma`: Requires a comma after the

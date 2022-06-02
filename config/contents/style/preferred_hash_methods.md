@@ -1,4 +1,4 @@
-This cop checks for uses of methods `Hash#has_key?` and
+Checks for uses of methods `Hash#has_key?` and
 `Hash#has_value?`, and suggests using `Hash#key?` and `Hash#value?` instead.
 
 It is configurable to enforce the verbose method names, by using the

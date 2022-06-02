@@ -1,4 +1,4 @@
-This cop checks block parameter names for how descriptive they
+Checks block parameter names for how descriptive they
 are. It is highly configurable.
 
 The `MinNameLength` config option takes an integer. It represents

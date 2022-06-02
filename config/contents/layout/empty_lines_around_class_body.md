@@ -1,4 +1,4 @@
-This cop checks if empty lines around the bodies of classes match
+Checks if empty lines around the bodies of classes match
 the configuration.
 
 ### Example: EnforcedStyle: empty_lines

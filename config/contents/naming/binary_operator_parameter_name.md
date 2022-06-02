@@ -1,4 +1,4 @@
-This cop makes sure that certain binary operator methods have their
+Makes sure that certain binary operator methods have their
 sole  parameter named `other`.
 
 ### Example:

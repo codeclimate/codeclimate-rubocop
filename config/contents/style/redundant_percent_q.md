@@ -1,4 +1,4 @@
-This cop checks for usage of the %q/%Q syntax when '' or "" would do.
+Checks for usage of the %q/%Q syntax when '' or "" would do.
 
 ### Example:
 

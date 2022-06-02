@@ -1,4 +1,4 @@
-This cop checks for the presence of `method_missing` without also
+Checks for the presence of `method_missing` without also
 defining `respond_to_missing?`.
 
 ### Example:

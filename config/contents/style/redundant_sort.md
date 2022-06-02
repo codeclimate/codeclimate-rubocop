@@ -1,4 +1,4 @@
-This cop is used to identify instances of sorting and then
+Identifies instances of sorting and then
 taking only the first or last element. The same behavior can
 be accomplished without a relatively expensive sort by using
 `Enumerable#min` instead of sorting and taking the first

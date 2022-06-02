@@ -1,4 +1,4 @@
-This cop checks for uses of the deprecated class method usages.
+Checks for uses of the deprecated class method usages.
 
 ### Example:
 
