@@ -5,6 +5,35 @@ it raises `NoMatchingPatternError` if the pattern doesn't match and without havi
 
 Supported styles are: if, case, both.
 
+### Example: EnforcedStyle: both (default)
+    # warn when an `if` or `case` expression is missing an `else` branch.
+
+    # bad
+    if condition
+      statement
+    end
+
+    # bad
+    case var
+    when condition
+      statement
+    end
+
+    # good
+    if condition
+      statement
+    else
+      # the content of `else` branch will be determined by Style/EmptyElse
+    end
+
+    # good
+    case var
+    when condition
+      statement
+    else
+      # the content of `else` branch will be determined by Style/EmptyElse
+    end
+
 ### Example: EnforcedStyle: if
     # warn when an `if` expression is missing an `else` branch.
 
@@ -58,35 +87,6 @@ Supported styles are: if, case, both.
 
     # good
     if condition
-      statement
-    else
-      # the content of `else` branch will be determined by Style/EmptyElse
-    end
-
-### Example: EnforcedStyle: both (default)
-    # warn when an `if` or `case` expression is missing an `else` branch.
-
-    # bad
-    if condition
-      statement
-    end
-
-    # bad
-    case var
-    when condition
-      statement
-    end
-
-    # good
-    if condition
-      statement
-    else
-      # the content of `else` branch will be determined by Style/EmptyElse
-    end
-
-    # good
-    case var
-    when condition
       statement
     else
       # the content of `else` branch will be determined by Style/EmptyElse

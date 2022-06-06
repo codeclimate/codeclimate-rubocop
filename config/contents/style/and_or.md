@@ -8,21 +8,6 @@ Autocorrection is unsafe because there is a different operator precedence
 between logical operators (`&&` and `||`) and semantic operators (`and` and `or`),
 and that might change the behavior.
 
-### Example: EnforcedStyle: always
-    # bad
-    foo.save and return
-
-    # bad
-    if foo and bar
-    end
-
-    # good
-    foo.save && return
-
-    # good
-    if foo && bar
-    end
-
 ### Example: EnforcedStyle: conditionals (default)
     # bad
     if foo and bar
@@ -33,6 +18,21 @@ and that might change the behavior.
 
     # good
     foo.save and return
+
+    # good
+    if foo && bar
+    end
+
+### Example: EnforcedStyle: always
+    # bad
+    foo.save and return
+
+    # bad
+    if foo and bar
+    end
+
+    # good
+    foo.save && return
 
     # good
     if foo && bar
