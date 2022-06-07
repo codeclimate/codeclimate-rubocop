@@ -2,21 +2,21 @@ Checks for rescuing `StandardError`. There are two supported
 styles `implicit` and `explicit`. This cop will not register an offense
 if any error other than `StandardError` is specified.
 
-### Example: EnforcedStyle: implicit
-    # `implicit` will enforce using `rescue` instead of
-    # `rescue StandardError`.
+### Example: EnforcedStyle: explicit (default)
+    # `explicit` will enforce using `rescue StandardError`
+    # instead of `rescue`.
 
     # bad
     begin
       foo
-    rescue StandardError
+    rescue
       bar
     end
 
     # good
     begin
       foo
-    rescue
+    rescue StandardError
       bar
     end
 
@@ -34,21 +34,21 @@ if any error other than `StandardError` is specified.
       bar
     end
 
-### Example: EnforcedStyle: explicit (default)
-    # `explicit` will enforce using `rescue StandardError`
-    # instead of `rescue`.
+### Example: EnforcedStyle: implicit
+    # `implicit` will enforce using `rescue` instead of
+    # `rescue StandardError`.
 
     # bad
     begin
       foo
-    rescue
+    rescue StandardError
       bar
     end
 
     # good
     begin
       foo
-    rescue StandardError
+    rescue
       bar
     end
 
