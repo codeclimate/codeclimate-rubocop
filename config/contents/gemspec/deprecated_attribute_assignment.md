@@ -1,5 +1,5 @@
 Checks that deprecated attribute attributes are not set in a gemspec file.
-Removing `test_files` allows the user to receive smaller packed gems.
+Removing deprecated attributes allows the user to receive smaller packed gems.
 
 ### Example:
 

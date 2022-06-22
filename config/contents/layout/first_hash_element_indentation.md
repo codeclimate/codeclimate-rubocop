@@ -27,6 +27,14 @@ styles are 'consistent' and 'align_braces'. Here are examples:
     and_in_a_method_call({
       no: :difference
                          })
+    takes_multi_pairs_hash(x: {
+      a: 1,
+      b: 2
+    },
+                           y: {
+                             c: 1,
+                             d: 2
+                           })
 
     # good
     special_inside_parentheses
@@ -36,6 +44,14 @@ styles are 'consistent' and 'align_braces'. Here are examples:
     but_in_a_method_call({
                            its_like: :this
                          })
+    takes_multi_pairs_hash(x: {
+                             a: 1,
+                             b: 2
+                           },
+                           y: {
+                             c: 1,
+                             d: 2
+                           })
 
 ### Example: EnforcedStyle: consistent
     # The `consistent` style enforces that the first key in a hash
@@ -59,6 +75,7 @@ styles are 'consistent' and 'align_braces'. Here are examples:
       no: :difference
     })
 
+
 ### Example: EnforcedStyle: align_braces
     # The `align_brackets` style enforces that the opening and closing
     # braces are indented to the same position.
@@ -67,8 +84,24 @@ styles are 'consistent' and 'align_braces'. Here are examples:
     and_now_for_something = {
                               completely: :different
     }
+    takes_multi_pairs_hash(x: {
+      a: 1,
+      b: 2
+    },
+                            y: {
+                                 c: 1,
+                                 d: 2
+                               })
 
     # good
     and_now_for_something = {
                               completely: :different
                             }
+    takes_multi_pairs_hash(x: {
+                                a: 1,
+                                b: 2
+                              },
+                           y: {
+                                c: 1,
+                                d: 2
+                              })

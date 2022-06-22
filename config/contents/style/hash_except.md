@@ -14,6 +14,9 @@ And do not check `Hash#delete_if` and `Hash#keep_if` to change receiver object.
     {foo: 1, bar: 2, baz: 3}.reject {|k, v| k == :bar }
     {foo: 1, bar: 2, baz: 3}.select {|k, v| k != :bar }
     {foo: 1, bar: 2, baz: 3}.filter {|k, v| k != :bar }
+    {foo: 1, bar: 2, baz: 3}.reject {|k, v| %i[foo bar].include?(k) }
+    {foo: 1, bar: 2, baz: 3}.select {|k, v| !%i[foo bar].include?(k) }
+    {foo: 1, bar: 2, baz: 3}.filter {|k, v| !%i[foo bar].include?(k) }
 
     # good
     {foo: 1, bar: 2, baz: 3}.except(:bar)
