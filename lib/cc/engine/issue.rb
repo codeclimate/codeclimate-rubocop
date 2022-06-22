@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
-require "safe_yaml"
 require "cc/engine/content_resolver"
-
-SafeYAML::OPTIONS[:default_mode] = :safe
 
 module CC
   module Engine
@@ -71,7 +68,12 @@ module CC
       end
 
       def cop_list
-        @cop_list ||= YAML.load_file(expand_config_path("cops.yml"))
+        @cop_list ||= yaml_safe_load(expand_config_path("cops.yml"))
+      end
+
+      def yaml_safe_load(path)
+        yaml_code = ERB.new(File.read(path)).result
+        YAML.safe_load(yaml_code)
       end
 
       def expand_config_path(path)
