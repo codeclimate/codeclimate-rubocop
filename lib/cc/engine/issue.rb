@@ -72,8 +72,7 @@ module CC
       end
 
       def yaml_safe_load(path)
-        yaml_code = ERB.new(File.read(path)).result
-        YAML.safe_load(yaml_code)
+        YAML.safe_load(File.read(path))
       end
 
       def expand_config_path(path)
