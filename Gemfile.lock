@@ -71,12 +71,13 @@ GEM
       rubocop (~> 1.19)
     rubocop-sequel (0.3.3)
       rubocop (~> 1.0)
+    rubocop-shopify (2.3.0)
+      rubocop (~> 1.22)
     rubocop-sorbet (0.6.3)
       rubocop (>= 0.90.0)
     rubocop-thread_safety (0.4.4)
       rubocop (>= 0.53.0)
     ruby-progressbar (1.11.0)
-    safe_yaml (1.0.5)
     test-prof (1.0.7)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -102,9 +103,9 @@ DEPENDENCIES
   rubocop-rake
   rubocop-rspec
   rubocop-sequel
+  rubocop-shopify
   rubocop-sorbet
   rubocop-thread_safety
-  safe_yaml
   test-prof
 
 BUNDLED WITH
