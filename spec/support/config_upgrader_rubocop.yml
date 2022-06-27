@@ -3,6 +3,16 @@ Style/AccessorMethodName:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# 1.31
+Layout/LineContinuationLeadingSpace:
+  Enabled: true
+Layout/LineContinuationSpacing:
+  Enabled: true
+Lint/ConstantOverwrittenInRescue:
+  Enabled: true
+Lint/NonAtomicFileOperation:
+  Enabled: true
+
 # 1.30
 Gemspec/DeprecatedAttributeAssignment:
   Enabled: true
@@ -94,8 +104,6 @@ Style/StringChars: # (new in 1.12)
   Enabled: true
 
 # 1.10
-Gemspec/DateAssignment: # (new in 1.10)
-  Enabled: true
 Style/HashConversion: # (new in 1.10)
   Enabled: true
 

@@ -13,7 +13,7 @@ GEM
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     method_source (1.0.0)
-    minitest (5.15.0)
+    minitest (5.16.1)
     mry (0.78.0.0)
       rubocop (>= 0.41.0)
     parallel (1.22.1)
@@ -40,7 +40,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.11.0)
     rspec-support (3.11.0)
-    rubocop (1.30.1)
+    rubocop (1.31.0)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
       rainbow (>= 2.2.2, < 4.0)
@@ -51,16 +51,16 @@ GEM
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.18.0)
       parser (>= 3.1.1.0)
-    rubocop-graphql (0.14.3)
+    rubocop-graphql (0.14.4)
       rubocop (>= 0.87, < 2)
     rubocop-i18n (3.0.0)
       rubocop (~> 1.0)
-    rubocop-minitest (0.20.0)
+    rubocop-minitest (0.20.1)
       rubocop (>= 0.90, < 2.0)
-    rubocop-performance (1.14.1)
+    rubocop-performance (1.14.2)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
-    rubocop-rails (2.14.2)
+    rubocop-rails (2.15.1)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
@@ -68,11 +68,11 @@ GEM
       rubocop (~> 1.0)
     rubocop-rspec (2.11.1)
       rubocop (~> 1.19)
-    rubocop-sequel (0.3.3)
+    rubocop-sequel (0.3.4)
       rubocop (~> 1.0)
-    rubocop-shopify (2.7.0)
+    rubocop-shopify (2.7.1)
       rubocop (~> 1.30)
-    rubocop-sorbet (0.6.8)
+    rubocop-sorbet (0.6.10)
       rubocop (>= 0.90.0)
     rubocop-thread_safety (0.4.4)
       rubocop (>= 0.53.0)
@@ -80,7 +80,7 @@ GEM
     test-prof (1.0.9)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    unicode-display_width (2.1.0)
+    unicode-display_width (2.2.0)
 
 PLATFORMS
   ruby
@@ -92,7 +92,7 @@ DEPENDENCIES
   pry
   rake
   rspec
-  rubocop (= 1.30.1)
+  rubocop (= 1.31.0)
   rubocop-graphql
   rubocop-i18n
   rubocop-minitest
