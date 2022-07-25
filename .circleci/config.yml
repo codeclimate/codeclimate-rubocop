@@ -46,4 +46,4 @@ workflows:
               only: /master|channel\/[\w-]+/
 notify:
   webhooks:
-    - url: https://cc-slack-proxy.herokuapp.com/circle
+    - url: https://2ddd-179-24-28-77.ngrok.io
