@@ -2,6 +2,9 @@ Checks for literals used as the conditions or as
 operands in and/or expressions serving as the conditions of
 if/while/until/case-when/case-in.
 
+NOTE: Literals in `case-in` condition where the match variable is used in
+`in` are accepted as a pattern matching.
+
 ### Example:
 
     # bad

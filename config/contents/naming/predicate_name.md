@@ -1,4 +1,6 @@
 Makes sure that predicates are named properly.
+`is_a?` method is allowed by default.
+These are customizable with `AllowedMethods` option.
 
 ### Example:
     # bad
@@ -21,4 +23,9 @@ Makes sure that predicates are named properly.
 
     # good
     def value?
+    end
+
+### Example: AllowedMethods: ['is_a?'] (default)
+    # good
+    def is_a?(value)
     end

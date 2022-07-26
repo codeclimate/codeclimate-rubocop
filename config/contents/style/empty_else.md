@@ -84,3 +84,37 @@ explicit `nil` depending on the EnforcedStyle.
     if condition
       statement
     end
+
+### Example: AllowComments: false (default)
+
+    # bad
+    if condition
+      statement
+    else
+      # something comment
+      nil
+    end
+
+    # bad
+    if condition
+      statement
+    else
+      # something comment
+    end
+
+### Example: AllowComments: true
+
+    # good
+    if condition
+      statement
+    else
+      # something comment
+      nil
+    end
+
+    # good
+    if condition
+      statement
+    else
+      # something comment
+    end

@@ -2,6 +2,8 @@ Use symbols as procs when possible.
 
 If you prefer a style that allows block for method with arguments,
 please set `true` to `AllowMethodsWithArguments`.
+respond_to , and `define_method?` methods are ignored by default.
+These are customizable with `IgnoredMethods` option.
 
 ### Safety:
 
@@ -63,3 +65,8 @@ call(&:bar)
       s.upcase # some comment
       # some comment
     end
+
+### Example: IgnoredMethods: [respond_to, define_method] (default)
+    # good
+    respond_to { |foo| foo.bar }
+    define_method(:foo) { |foo| foo.bar }

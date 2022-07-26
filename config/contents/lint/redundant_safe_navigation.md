@@ -30,3 +30,10 @@ will be autocorrected to never return `nil`.
 
     # good - without `&.` this will always return `true`
     foo&.respond_to?(:to_a)
+
+### Example: AllowedMethods: [foo?]
+    # bad
+    do_something if attrs&.foo?(:[])
+
+    # good
+    do_something if attrs&.bar?(:[])

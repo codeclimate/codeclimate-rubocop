@@ -3,6 +3,12 @@ Style/AccessorMethodName:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+# 1.32
+Lint/RequireRangeParentheses:
+  Enabled: true
+Style/EmptyHeredoc:
+  Enabled: true
+
 # 1.31
 Layout/LineContinuationLeadingSpace:
   Enabled: true

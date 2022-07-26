@@ -2,6 +2,7 @@ Checks for ambiguous block association with method
 when param passed without parentheses.
 
 This cop can customize ignored methods with `IgnoredMethods`.
+By default, there are no methods to ignored.
 
 ### Example:
 
@@ -23,6 +24,11 @@ This cop can customize ignored methods with `IgnoredMethods`.
     # good
     # Lambda arguments require no disambiguation
     foo = ->(bar) { bar.baz }
+
+### Example: IgnoredMethods: [] (default)
+
+    # bad
+    expect { do_something }.to change { object.attribute }
 
 ### Example: IgnoredMethods: [change]
 
