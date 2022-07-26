@@ -3,7 +3,6 @@
 source 'https://rubygems.org'
 
 gem "activesupport", require: false
-gem "mry", require: false
 gem "parser"
 gem "pry", require: false
 gem "rubocop", "1.22.3", require: false

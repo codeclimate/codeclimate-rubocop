@@ -15,8 +15,6 @@ GEM
       concurrent-ruby (~> 1.0)
     method_source (1.0.0)
     minitest (5.14.4)
-    mry (0.78.0.0)
-      rubocop (>= 0.41.0)
     parallel (1.21.0)
     parser (3.0.2.0)
       ast (~> 2.4.1)
@@ -87,7 +85,6 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
-  mry
   parser
   pry
   rake
