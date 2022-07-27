@@ -21,16 +21,18 @@ The atomic processing of the replacement destination is not guaranteed
 to be strictly equivalent to that before the replacement.
 
 ### Example:
-    # bad
-    unless FileTest.exist?(path)
-      FileUtils.makedirs(path)
+    # bad - race condition with another process may result in an error in `mkdir`
+    unless Dir.exist?(path)
+      FileUtils.mkdir(path)
     end
 
-    if FileTest.exist?(path)
+    # good - atomic and idempotent creation
+    FileUtils.mkdir_p(path)
+
+    # bad - race condition with another process may result in an error in `remove`
+    if File.exist?(path)
       FileUtils.remove(path)
     end
 
-    # good
-    FileUtils.mkdir_p(path)
-
-    FileUtils.rm_rf(path)
+    # good - atomic and idempotent removal
+    FileUtils.rm_f(path)

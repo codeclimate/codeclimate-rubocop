@@ -7,6 +7,7 @@ The reason is that _unannotated_ format is very similar
 to encoded URLs or Date/Time formatting strings.
 
 This cop can be customized ignored methods with `IgnoredMethods`.
+By default, there are no methods to ignored.
 
 ### Example: EnforcedStyle: annotated (default)
 
@@ -55,6 +56,11 @@ if the number of them is less than or equals to
 
     # good
     format('%06d', 10)
+
+### Example: IgnoredMethods: [] (default)
+
+    # bad
+    redirect('foo/%{bar_id}')
 
 ### Example: IgnoredMethods: [redirect]
 
