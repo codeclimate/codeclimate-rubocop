@@ -3,14 +3,14 @@ Checks for usage of comparison operators (`==`,
 These can be replaced by their respective predicate methods.
 This cop can also be configured to do the reverse.
 
-This cop can be customized ignored methods with `IgnoredMethods`.
-By default, there are no methods to ignored.
+This cop can be customized allowed methods with `AllowedMethods`.
+By default, there are no methods to allowed.
 
 This cop disregards `#nonzero?` as its value is truthy or falsey,
 but not `true` and `false`, and thus not always interchangeable with
 `!= 0`.
 
-This cop ignores comparisons to global variables, since they are often
+This cop allows comparisons to global variables, since they are often
 populated with objects which can be compared with integers, but are
 not themselves `Integer` polymorphic.
 
@@ -42,16 +42,31 @@ to a false positive for non-standard classes.
     0 > foo
     bar.baz > 0
 
-### Example: IgnoredMethods: [] (default) with EnforcedStyle: predicate
+### Example: AllowedMethods: [] (default) with EnforcedStyle: predicate
     # bad
     foo == 0
     0 > foo
     bar.baz > 0
 
-### Example: IgnoredMethods: [==] with EnforcedStyle: predicate
+### Example: AllowedMethods: [==] with EnforcedStyle: predicate
     # good
     foo == 0
 
     # bad
     0 > foo
     bar.baz > 0
+
+### Example: AllowedPatterns: [] (default) with EnforcedStyle: comparison
+    # bad
+    foo.zero?
+    foo.negative?
+    bar.baz.positive?
+
+### Example: AllowedPatterns: [/zero/] with EnforcedStyle: predicate
+    # good
+    # bad
+    foo.zero?
+
+    # bad
+    foo.negative?
+    bar.baz.positive?

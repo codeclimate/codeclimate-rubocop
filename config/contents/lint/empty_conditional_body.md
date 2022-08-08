@@ -1,4 +1,7 @@
 Checks for the presence of `if`, `elsif` and `unless` branches without a body.
+
+NOTE: empty `else` branches are handled by `Style/EmptyElse`.
+
 ### Example:
     # bad
     if condition

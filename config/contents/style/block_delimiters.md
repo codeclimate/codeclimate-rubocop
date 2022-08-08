@@ -4,7 +4,7 @@ multi-line blocks.
 Methods that can be either procedural or functional and cannot be
 categorised from their usage alone is ignored.
 `lambda`, `proc`, and `it` are their defaults.
-Additional methods can be added to the `IgnoredMethods`.
+Additional methods can be added to the `AllowedMethods`.
 
 ### Example: EnforcedStyle: line_count_based (default)
     # bad - single line block
@@ -60,7 +60,7 @@ Additional methods can be added to the `IgnoredMethods`.
       x
     }.inspect
 
-    # The AllowBracesOnProceduralOneLiners option is ignored unless the
+    # The AllowBracesOnProceduralOneLiners option is allowed unless the
     # EnforcedStyle is set to `semantic`. If so:
 
     # If the AllowBracesOnProceduralOneLiners option is unspecified, or
@@ -110,7 +110,7 @@ Additional methods can be added to the `IgnoredMethods`.
 
     # Methods listed in the BracesRequiredMethods list, such as 'sig'
     # in this example, will require `{...}` braces. This option takes
-    # precedence over all other configurations except IgnoredMethods.
+    # precedence over all other configurations except AllowedMethods.
 
     # bad
     sig do
@@ -132,7 +132,7 @@ Additional methods can be added to the `IgnoredMethods`.
       puts foo
     end
 
-### Example: IgnoredMethods: ['lambda', 'proc', 'it' ] (default)
+### Example: AllowedMethods: ['lambda', 'proc', 'it' ] (default)
 
     # good
     foo = lambda do |x|
@@ -142,3 +142,19 @@ Additional methods can be added to the `IgnoredMethods`.
     foo = lambda do |x|
       x * 100
     end
+
+### Example: AllowedPatterns: [] (default)
+
+    # bad
+    things.map { |thing|
+      something = thing.some_method
+      process(something)
+    }
+
+### Example: AllowedPatterns: [/map/]
+
+    # good
+    things.map { |thing|
+      something = thing.some_method
+      process(something)
+    }

@@ -9,9 +9,18 @@ Specific default groups can be disabled if necessary:
 
 ```yaml
 Lint/Debugger:
-  WebConsole: ~
+  DebuggerMethods:
+    WebConsole: ~
 ```
 
+You can also add your own methods by adding a new category:
+
+```yaml
+Lint/Debugger:
+  DebuggerMethods:
+    MyDebugger:
+      MyDebugger.debug_this
+```
 
 ### Example:
 

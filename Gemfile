@@ -6,7 +6,7 @@ gem "activesupport", require: false
 gem "mry", require: false
 gem "parser"
 gem "pry", require: false
-gem "rubocop", "1.32.0", require: false
+gem "rubocop", "1.33.0", require: false
 gem "rubocop-i18n", require: false
 gem "rubocop-graphql", require: false
 gem "rubocop-minitest", require: false

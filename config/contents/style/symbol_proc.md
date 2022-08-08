@@ -2,14 +2,14 @@ Use symbols as procs when possible.
 
 If you prefer a style that allows block for method with arguments,
 please set `true` to `AllowMethodsWithArguments`.
-respond_to , and `define_method?` methods are ignored by default.
-These are customizable with `IgnoredMethods` option.
+respond_to , and `define_method?` methods are allowed by default.
+These are customizable with `AllowedMethods` option.
 
 ### Safety:
 
 This cop is unsafe because `proc`s and blocks work differently
 when additional arguments are passed in. A block will silently
-ignore additional arguments, but a `proc` will raise
+allow additional arguments, but a `proc` will raise
 an `ArgumentError`.
 
 For example:
@@ -66,7 +66,16 @@ call(&:bar)
       # some comment
     end
 
-### Example: IgnoredMethods: [respond_to, define_method] (default)
+### Example: AllowedMethods: [respond_to, define_method] (default)
     # good
     respond_to { |foo| foo.bar }
     define_method(:foo) { |foo| foo.bar }
+
+
+### Example: AllowedPatterns: [] (default)
+    # bad
+    something.map { |s| s.upcase }
+
+### Example: AllowedPatterns: [/map/] (default)
+    # good
+    something.map { |s| s.upcase }
