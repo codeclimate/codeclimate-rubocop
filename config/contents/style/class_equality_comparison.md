@@ -1,7 +1,7 @@
 Enforces the use of `Object#instance_of?` instead of class comparison
 for equality.
-`==`, `equal?`, and `eql?` methods are ignored by default.
-These are customizable with `IgnoredMethods` option.
+`==`, `equal?`, and `eql?` methods are allowed by default.
+These are customizable with `AllowedMethods` option.
 
 ### Example:
     # bad
@@ -13,7 +13,7 @@ These are customizable with `IgnoredMethods` option.
     # good
     var.instance_of?(Date)
 
-### Example: IgnoreMethods: [] (default)
+### Example: AllowedMethods: [] (default)
     # good
     var.instance_of?(Date)
 
@@ -23,7 +23,7 @@ These are customizable with `IgnoredMethods` option.
     var.class.eql?(Date)
     var.class.name == 'Date'
 
-### Example: IgnoreMethods: [`==`]
+### Example: AllowedMethods: [`==`]
     # good
     var.instance_of?(Date)
     var.class == Date
@@ -32,3 +32,23 @@ These are customizable with `IgnoredMethods` option.
     # bad
     var.class.equal?(Date)
     var.class.eql?(Date)
+
+### Example: AllowedPatterns: [] (default)
+    # good
+    var.instance_of?(Date)
+
+    # bad
+    var.class == Date
+    var.class.equal?(Date)
+    var.class.eql?(Date)
+    var.class.name == 'Date'
+
+### Example: AllowedPatterns: [`/eq/`]
+    # good
+    var.instance_of?(Date)
+    var.class.equal?(Date)
+    var.class.eql?(Date)
+
+    # bad
+    var.class == Date
+    var.class.name == 'Date'

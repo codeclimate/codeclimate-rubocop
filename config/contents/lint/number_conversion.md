@@ -11,8 +11,8 @@ always correct to raise if a value is not numeric.
 NOTE: Some values cannot be converted properly using one of the `Kernel`
 method (for instance, `Time` and `DateTime` values are allowed by this
 cop by default). Similarly, Rails' duration methods do not work well
-with `Integer()` and can be ignored with `IgnoredMethods`. By default,
-there are no methods to ignored.
+with `Integer()` and can be allowed with `AllowedMethods`. By default,
+there are no methods to allowed.
 
 ### Safety:
 
@@ -42,12 +42,22 @@ input if it is not a standard class.
     foo.try { |i| Float(i) }
     bar.send { |i| Complex(i) }
 
-### Example: IgnoredMethods: [] (default)
+### Example: AllowedMethods: [] (default)
 
     # bad
     10.minutes.to_i
 
-### Example: IgnoredMethods: [minutes]
+### Example: AllowedMethods: [minutes]
+
+    # good
+    10.minutes.to_i
+
+### Example: AllowedPatterns: [] (default)
+
+    # bad
+    10.minutes.to_i
+
+### Example: AllowedPatterns: [/min*/]
 
     # good
     10.minutes.to_i

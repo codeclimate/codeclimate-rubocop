@@ -9,8 +9,8 @@ will be counted as one line regardless of its actual size.
 
 
 NOTE: The `ExcludedMethods` configuration is deprecated and only kept
-for backwards compatibility. Please use `IgnoredMethods` instead.
-By default, there are no methods to ignored.
+for backwards compatibility. Please use `AllowedMethods` and `AllowedPatterns`
+instead. By default, there are no methods to allowed.
 
 ### Example: CountAsOne: ['array', 'heredoc']
 

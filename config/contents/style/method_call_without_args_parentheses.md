@@ -1,7 +1,7 @@
 Checks for unwanted parentheses in parameterless method calls.
 
-This cop can be customized ignored methods with `IgnoredMethods`.
-By default, there are no methods to ignored.
+This cop can be customized allowed methods with `AllowedMethods`.
+By default, there are no methods to allowed.
 
 ### Example:
     # bad
@@ -10,10 +10,10 @@ By default, there are no methods to ignored.
     # good
     object.some_method
 
-### Example: IgnoredMethods: [] (default)
+### Example: AllowedMethods: [] (default)
     # bad
     object.foo()
 
-### Example: IgnoredMethods: [foo]
+### Example: AllowedMethods: [foo]
     # good
     object.foo()
