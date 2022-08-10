@@ -1,5 +1,13 @@
-Checks for big numeric literals without _ between groups
+Checks for big numeric literals without `_` between groups
 of digits in them.
+
+Additional allowed patterns can be added by adding regexps to
+the `AllowedPatterns` configuration. All regexps are treated
+as anchored even if the patterns do not contain anchors (so
+`\d{4}_\d{4}` will allow `1234_5678` but not `1234_5678_9012`).
+
+NOTE: Even if `AllowedPatterns` are given, autocorrection will
+only correct to the standard pattern of an `_` every 3 digits.
 
 ### Example:
 
