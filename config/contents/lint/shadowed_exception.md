@@ -2,6 +2,14 @@ Checks for a rescued exception that get shadowed by a
 less specific exception being rescued before a more specific
 exception is rescued.
 
+An exception is considered shadowed if it is rescued after its
+ancestor is, or if it and its ancestor are both rescued in the
+same `rescue` statement. In both cases, the more specific rescue is
+unnecessary because it is covered by rescuing the less specific
+exception. (ie. `rescue Exception, StandardError` has the same behavior
+whether `StandardError` is included or not, because all `StandardError`s
+are rescued by `rescue Exception`).
+
 ### Example:
 
     # bad
@@ -12,6 +20,13 @@ exception is rescued.
       handle_exception
     rescue StandardError
       handle_standard_error
+    end
+
+    # bad
+    begin
+      something
+    rescue Exception, StandardError
+      handle_error
     end
 
     # good
