@@ -15,6 +15,7 @@ are recommended to further format the broken lines.
 (Many of these are enabled by default.)
 
 * ArgumentAlignment
+* ArrayAlignment
 * BlockAlignment
 * BlockDelimiters
 * BlockEndNewline
