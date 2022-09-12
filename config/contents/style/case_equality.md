@@ -2,6 +2,8 @@ Checks for uses of the case equality operator(===).
 
 If `AllowOnConstant` option is enabled, the cop will ignore violations when the receiver of
 the case equality operator is a constant.
+If `AllowOnSelfClass` option is enabled, the cop will ignore violations when the receiver of
+the case equality operator is `self.class`. Note intermediate variables are not accepted.
 
 ### Example:
     # bad
@@ -20,3 +22,11 @@ the case equality operator is a constant.
 ### Example: AllowOnConstant: true
     # good
     Array === something
+
+### Example: AllowOnSelfClass: false (default)
+    # bad
+    self.class === something
+
+### Example: AllowOnSelfClass: true
+    # good
+    self.class === something

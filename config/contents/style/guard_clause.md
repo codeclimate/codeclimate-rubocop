@@ -1,6 +1,10 @@
 Use a guard clause instead of wrapping the code inside a conditional
 expression
 
+A condition with an `elsif` or `else` branch is allowed unless
+one of `return`, `break`, `next`, `raise`, or `fail` is used
+in the body of the conditional expression.
+
 ### Example:
     # bad
     def test
@@ -45,31 +49,37 @@ expression
 
 ### Example: AllowConsecutiveConditionals: false (default)
     # bad
-    if foo?
-      work
-    end
+    def test
+      if foo?
+        work
+      end
 
-    if bar?  # <- reports an offense
-      work
+      if bar?  # <- reports an offense
+        work
+      end
     end
 
 ### Example: AllowConsecutiveConditionals: true
     # good
-    if foo?
-      work
-    end
+    def test
+      if foo?
+        work
+      end
 
-    if bar?
-      work
+      if bar?
+        work
+      end
     end
 
     # bad
-    if foo?
-      work
-    end
+    def test
+      if foo?
+        work
+      end
 
-    do_something
+      do_something
 
-    if bar?  # <- reports an offense
-      work
+      if bar?  # <- reports an offense
+        work
+      end
     end

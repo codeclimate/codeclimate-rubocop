@@ -4,6 +4,12 @@ EnforcedStyle config covers only method definitions.
 Applications of visibility methods to symbols can be controlled
 using AllowModifiersOnSymbols config.
 
+### Safety:
+
+Autocorrection is not safe, because the visibility of dynamically
+defined methods can vary depending on the state determined by
+the group access modifier.
+
 ### Example: EnforcedStyle: group (default)
     # bad
     class Foo

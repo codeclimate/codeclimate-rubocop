@@ -4,7 +4,7 @@ A loop that can never reach the second iteration is a possible error in the code
 In rare cases where only one iteration (or at most one iteration) is intended behavior,
 the code should be refactored to use `if` conditionals.
 
-NOTE: Block methods that are used with `Enumerable`s are considered to be loops.
+NOTE: Block methods that are used with ``Enumerable``s are considered to be loops.
 
 `AllowedPatterns` can be used to match against the block receiver in order to allow
 code that would otherwise be registered as an offense (eg. `times` used not in an
