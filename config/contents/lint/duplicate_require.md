@@ -1,4 +1,4 @@
-Checks for duplicate `require`s and `require_relative`s.
+Checks for duplicate ``require``s and ``require_relative``s.
 
 ### Safety:
 

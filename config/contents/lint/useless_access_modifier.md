@@ -26,8 +26,8 @@ create other methods in the module's current access context.
     # bad
     class Foo
       # The following is redundant (methods defined on the class'
-      # singleton class are not affected by the public modifier)
-      public
+      # singleton class are not affected by the private modifier)
+      private
 
       def self.method3
       end
