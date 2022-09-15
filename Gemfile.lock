@@ -38,7 +38,7 @@ GEM
     rspec-mocks (3.11.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.11.0)
-    rspec-support (3.11.0)
+    rspec-support (3.11.1)
     rubocop (1.36.0)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -66,12 +66,12 @@ GEM
       rubocop (>= 1.33.0, < 2.0)
     rubocop-rake (0.6.0)
       rubocop (~> 1.0)
-    rubocop-rspec (2.13.0)
+    rubocop-rspec (2.13.1)
       rubocop (~> 1.33)
     rubocop-sequel (0.3.4)
       rubocop (~> 1.0)
-    rubocop-shopify (2.9.0)
-      rubocop (~> 1.33)
+    rubocop-shopify (2.10.1)
+      rubocop (~> 1.35)
     rubocop-sorbet (0.6.11)
       rubocop (>= 0.90.0)
     rubocop-thread_safety (0.4.4)
@@ -80,7 +80,7 @@ GEM
     test-prof (1.0.10)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
-    unicode-display_width (2.2.0)
+    unicode-display_width (2.3.0)
 
 PLATFORMS
   ruby
