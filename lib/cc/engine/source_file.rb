@@ -24,7 +24,10 @@ module CC
       attr_reader :config_store, :io, :path, :root
 
       def processed_source
-        RuboCop::ProcessedSource.from_file(path, target_ruby_version)
+        processed_source = RuboCop::ProcessedSource.from_file(path, target_ruby_version)
+        processed_source.config = config_store if processed_source.respond_to?(:config=)
+        processed_source.registry = RuboCop::Cop::Cop.registry if processed_source.respond_to?(:registry=)
+        processed_source
       end
 
       def target_ruby_version

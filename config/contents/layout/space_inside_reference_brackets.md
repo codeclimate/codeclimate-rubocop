@@ -33,6 +33,8 @@ surrounding space depending on configuration.
     # bad
     foo[ ]
     foo[     ]
+    foo[
+    ]
 
     # good
     foo[]
@@ -44,6 +46,8 @@ surrounding space depending on configuration.
     # bad
     foo[]
     foo[    ]
+    foo[
+    ]
 
     # good
     foo[ ]

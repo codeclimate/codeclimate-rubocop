@@ -151,7 +151,7 @@ Additional methods can be added to the `AllowedMethods`.
       process(something)
     }
 
-### Example: AllowedPatterns: [/map/]
+### Example: AllowedPatterns: ['map']
 
     # good
     things.map { |thing|

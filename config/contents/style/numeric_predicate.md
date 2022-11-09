@@ -62,7 +62,7 @@ to a false positive for non-standard classes.
     foo.negative?
     bar.baz.positive?
 
-### Example: AllowedPatterns: [/zero/] with EnforcedStyle: predicate
+### Example: AllowedPatterns: ['zero'] with EnforcedStyle: predicate
     # good
     # bad
     foo.zero?

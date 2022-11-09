@@ -34,7 +34,7 @@ corrected to a multi-line definition.
 
 ### Example: EnforcedStyle: disallow
     # bad
-    def my_method; x end
+    def my_method() = x
 
     # bad
     def my_method() = x.foo

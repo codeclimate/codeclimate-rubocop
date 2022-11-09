@@ -77,6 +77,6 @@ call(&:bar)
     # bad
     something.map { |s| s.upcase }
 
-### Example: AllowedPatterns: [/map/] (default)
+### Example: AllowedPatterns: ['map'] (default)
     # good
     something.map { |s| s.upcase }
