@@ -72,7 +72,7 @@ if the number of them is less than or equals to
     # bad
     redirect('foo/%{bar_id}')
 
-### Example: AllowedPatterns: [/redirect/]
+### Example: AllowedPatterns: ['redirect']
 
     # good
     redirect('foo/%{bar_id}')

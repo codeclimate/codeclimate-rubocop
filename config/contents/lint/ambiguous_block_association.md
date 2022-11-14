@@ -40,7 +40,7 @@ By default, there are no methods to allowed.
     # bad
     expect { do_something }.to change { object.attribute }
 
-### Example: AllowedPatterns: [/change/]
+### Example: AllowedPatterns: ['change']
 
     # good
     expect { do_something }.to change { object.attribute }

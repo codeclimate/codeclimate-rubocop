@@ -57,7 +57,7 @@ input if it is not a standard class.
     # bad
     10.minutes.to_i
 
-### Example: AllowedPatterns: [/min*/]
+### Example: AllowedPatterns: ['min*']
 
     # good
     10.minutes.to_i

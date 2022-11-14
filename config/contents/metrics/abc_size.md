@@ -15,7 +15,7 @@ is meant to distinguish actual `attr_reader` from other methods.
 
 ### Example: CountRepeatedAttributes: false (default is true)
 
-     # `model` and `current_user`, refenced 3 times each,
+     # `model` and `current_user`, referenced 3 times each,
      # are each counted as only 1 branch each if
      # `CountRepeatedAttributes` is set to 'false'
 

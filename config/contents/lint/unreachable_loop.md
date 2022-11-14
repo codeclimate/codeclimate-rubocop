@@ -74,7 +74,7 @@ code that would otherwise be registered as an offense (eg. `times` used not in a
     # bad
     2.times { raise ArgumentError }
 
-### Example: AllowedPatterns: [/(exactly|at_least|at_most)\(\d+\)\.times/] (default)
+### Example: AllowedPatterns: ['(exactly|at_least|at_most)\(\d+\)\.times'] (default)
 
     # good
     exactly(2).times { raise StandardError }

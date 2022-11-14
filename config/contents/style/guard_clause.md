@@ -5,6 +5,9 @@ A condition with an `elsif` or `else` branch is allowed unless
 one of `return`, `break`, `next`, `raise`, or `fail` is used
 in the body of the conditional expression.
 
+NOTE: Autocorrect works in most cases except with if-else statements
+    that contain logical operators such as `foo || raise('exception')`
+
 ### Example:
     # bad
     def test

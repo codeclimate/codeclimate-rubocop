@@ -23,7 +23,7 @@ The supported styles are:
 * always - forces use of the 3.1 syntax (e.g. {foo:})
 * never - forces use of explicit hash literal value
 * either - accepts both shorthand and explicit use of hash literal value
-* consistent - like "always", but will avoid mixing styles in a single hash
+* consistent - like "either", but will avoid mixing styles in a single hash
 
 ### Example: EnforcedStyle: ruby19 (default)
     # bad

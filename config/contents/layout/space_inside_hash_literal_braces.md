@@ -41,10 +41,13 @@ surrounding space depending on configuration.
     # bad
     foo = { }
     bar = {    }
+    baz = {
+    }
 
     # good
     foo = {}
     bar = {}
+    baz = {}
 
 ### Example: EnforcedStyleForEmptyBraces: space
     # The `space` EnforcedStyleForEmptyBraces style enforces that
@@ -55,5 +58,6 @@ surrounding space depending on configuration.
 
     # good
     foo = { }
-    foo = {  }
-    foo = {     }
+    foo = {    }
+    foo = {
+    }

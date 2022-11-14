@@ -43,7 +43,7 @@ These are customizable with `AllowedMethods` option.
     var.class.eql?(Date)
     var.class.name == 'Date'
 
-### Example: AllowedPatterns: [`/eq/`]
+### Example: AllowedPatterns: ['eq']
     # good
     var.instance_of?(Date)
     var.class.equal?(Date)
