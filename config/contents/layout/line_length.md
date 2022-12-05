@@ -30,6 +30,7 @@ are recommended to further format the broken lines.
 * MultilineHashBraceLayout
 * MultilineHashKeyLineBreaks
 * MultilineMethodArgumentLineBreaks
+* MultilineMethodParameterLineBreaks
 * ParameterAlignment
 
 Together, these cops will pretty print hashes, arrays,

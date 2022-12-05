@@ -10,6 +10,7 @@ will be counted as one line regardless of its actual size.
 
 NOTE: The `ExcludedMethods` configuration is deprecated and only kept
 for backwards compatibility. Please use `IgnoredMethods` instead.
+By default, there are no methods to ignored.
 
 ### Example: CountAsOne: ['array', 'heredoc']
 
