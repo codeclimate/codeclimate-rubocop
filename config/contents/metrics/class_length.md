@@ -2,11 +2,11 @@ Checks if the length a class exceeds some maximum value.
 Comment lines can optionally be ignored.
 The maximum allowed length is configurable.
 
-You can set literals you want to fold with `CountAsOne`.
-Available are: 'array', 'hash', and 'heredoc'. Each literal
+You can set constructs you want to fold with `CountAsOne`.
+Available are: 'array', 'hash', 'heredoc', and 'method_call'. Each construct
 will be counted as one line regardless of its actual size.
 
-### Example: CountAsOne: ['array', 'heredoc']
+### Example: CountAsOne: ['array', 'heredoc', 'method_call']
 
     class Foo
       ARRAY = [         # +1
@@ -22,7 +22,12 @@ will be counted as one line regardless of its actual size.
         Heredoc
         content.
       HEREDOC
-    end                 # 5 points
+
+      foo(              # +1
+        1,
+        2
+      )
+    end                 # 6 points
 
 
 NOTE: This cop also applies for `Struct` definitions.

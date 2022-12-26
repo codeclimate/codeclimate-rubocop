@@ -7,6 +7,7 @@ Method names and their redundant arguments can be configured like this:
 ```yaml
 Methods:
   join: ''
+  sum: 0
   split: ' '
   chomp: "\n"
   chomp!: "\n"
@@ -28,6 +29,7 @@ This cop is unsafe because of the following limitations:
     # bad
     array.join('')
     [1, 2, 3].join("")
+    array.sum(0)
     string.split(" ")
     "first\nsecond".split(" ")
     string.chomp("\n")
@@ -37,6 +39,7 @@ This cop is unsafe because of the following limitations:
     # good
     array.join
     [1, 2, 3].join
+    array.sum
     string.split
     "first second".split
     string.chomp
