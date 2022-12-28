@@ -4,7 +4,42 @@ starts on a separate line.
 NOTE: This cop does not move the first argument, if you want that to
 be on a separate line, see `Layout/FirstMethodParameterLineBreak`.
 
-### Example:
+### Example: AllowMultilineFinalElement: false (default)
+
+    # bad
+    def foo(a, b,
+      c
+    )
+    end
+
+    # bad
+    def foo(a, b = {
+      foo: "bar",
+    })
+    end
+
+    # good
+    def foo(
+      a,
+      b,
+      c
+    )
+    end
+
+    # good
+    def foo(
+      a,
+      b = {
+        foo: "bar",
+      }
+    )
+    end
+
+    # good
+    def foo(a, b, c)
+    end
+
+### Example: AllowMultilineFinalElement: true
 
     # bad
     def foo(a, b,
@@ -13,10 +48,25 @@ be on a separate line, see `Layout/FirstMethodParameterLineBreak`.
     end
 
     # good
+    def foo(a, b = {
+      foo: "bar",
+    })
+    end
+
+    # good
     def foo(
       a,
       b,
       c
+    )
+    end
+
+    # good
+    def foo(
+      a,
+      b = {
+        foo: "bar",
+      }
     )
     end
 

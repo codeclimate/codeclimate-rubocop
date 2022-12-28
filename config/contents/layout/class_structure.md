@@ -124,5 +124,3 @@ automatically.
       def some_private_method
       end
     end
-
-@see https://rubystyle.guide#consistent-classes
