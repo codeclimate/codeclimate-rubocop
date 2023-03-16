@@ -1,4 +1,4 @@
-Checks for operators, variables, literals, and nonmutating
+Checks for operators, variables, literals, lambda, proc and nonmutating
 methods used in void context.
 
 ### Example: CheckForMethodsWithNoSideEffects: false (default)

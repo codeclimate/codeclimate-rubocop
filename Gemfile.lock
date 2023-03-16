@@ -12,11 +12,11 @@ GEM
     diff-lcs (1.5.0)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
-    json (2.6.2)
+    json (2.6.3)
     method_source (1.0.0)
     minitest (5.16.3)
     parallel (1.22.1)
-    parser (3.1.2.1)
+    parser (3.2.1.1)
       ast (~> 2.4.1)
     pry (0.14.1)
       coderay (~> 1.1)
@@ -24,7 +24,7 @@ GEM
     rack (3.0.0)
     rainbow (3.1.1)
     rake (13.0.6)
-    regexp_parser (2.6.0)
+    regexp_parser (2.7.0)
     rexml (3.2.5)
     rspec (3.12.0)
       rspec-core (~> 3.12.0)
@@ -39,18 +39,18 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
     rspec-support (3.12.0)
-    rubocop (1.39.0)
+    rubocop (1.48.1)
       json (~> 2.3)
       parallel (~> 1.10)
-      parser (>= 3.1.2.1)
+      parser (>= 3.2.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml (>= 3.2.5, < 4.0)
-      rubocop-ast (>= 1.23.0, < 2.0)
+      rubocop-ast (>= 1.26.0, < 2.0)
       ruby-progressbar (~> 1.7)
-      unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.23.0)
-      parser (>= 3.1.1.0)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.27.0)
+      parser (>= 3.2.1.0)
     rubocop-graphql (0.18.0)
       rubocop (>= 0.87, < 2)
     rubocop-i18n (3.0.0)
@@ -76,11 +76,11 @@ GEM
       rubocop (>= 0.90.0)
     rubocop-thread_safety (0.4.4)
       rubocop (>= 0.53.0)
-    ruby-progressbar (1.11.0)
+    ruby-progressbar (1.13.0)
     test-prof (1.0.11)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
-    unicode-display_width (2.3.0)
+    unicode-display_width (2.4.2)
 
 PLATFORMS
   ruby
@@ -91,7 +91,7 @@ DEPENDENCIES
   pry
   rake
   rspec
-  rubocop (= 1.39.0)
+  rubocop (= 1.48.1)
   rubocop-graphql
   rubocop-i18n
   rubocop-minitest
