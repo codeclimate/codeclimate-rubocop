@@ -4,7 +4,7 @@ Checks that arrays are sliced with endless ranges instead of
 ### Safety:
 
 This cop is unsafe because `x..-1` and `x..` are only guaranteed to
-be equivalent for `Array#[]`, and the cop cannot determine what class
+be equivalent for `Array#[]`, `String#[]`, and the cop cannot determine what class
 the receiver is.
 
 For example:

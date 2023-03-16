@@ -22,6 +22,25 @@ array of 2 or fewer elements.
     # bad (contains spaces)
     %w[foo\ bar baz\ quux]
 
+    # bad
+    [
+      ['one', 'One'],
+      ['two', 'Two']
+    ]
+
+    # good
+    [
+      %w[one One],
+      %w[two Two]
+    ]
+
+    # good (2d array containing spaces)
+    [
+      ['one', 'One'],
+      ['two', 'Two'],
+      ['forty two', 'Forty Two']
+    ]
+
 ### Example: EnforcedStyle: brackets
     # good
     ['foo', 'bar', 'baz']
@@ -31,3 +50,15 @@ array of 2 or fewer elements.
 
     # good (contains spaces)
     ['foo bar', 'baz quux']
+
+    # good
+    [
+      ['one', 'One'],
+      ['two', 'Two']
+    ]
+
+    # bad
+    [
+      %w[one One],
+      %w[two Two]
+    ]
