@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem "activesupport", require: false
 gem "parser"
 gem "pry", require: false
-gem "rubocop", "1.46.0", require: false
+gem "rubocop", "1.48.1", require: false
 gem "rubocop-i18n", require: false
 gem "rubocop-graphql", require: false
 gem "rubocop-minitest", require: false
