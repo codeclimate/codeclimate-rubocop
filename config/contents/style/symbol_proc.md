@@ -2,7 +2,7 @@ Use symbols as procs when possible.
 
 If you prefer a style that allows block for method with arguments,
 please set `true` to `AllowMethodsWithArguments`.
-respond_to , and `define_method?` methods are allowed by default.
+`define_method?` methods are allowed by default.
 These are customizable with `AllowedMethods` option.
 
 ### Safety:
@@ -67,11 +67,9 @@ call(&:bar)
       # some comment
     end
 
-### Example: AllowedMethods: [respond_to, define_method] (default)
+### Example: AllowedMethods: [define_method] (default)
     # good
-    respond_to { |foo| foo.bar }
     define_method(:foo) { |foo| foo.bar }
-
 
 ### Example: AllowedPatterns: [] (default)
     # bad

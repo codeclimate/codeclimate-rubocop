@@ -23,6 +23,21 @@ challenging or verbose for no actual gain.
     end
 
     # bad
+    Employee = Class.new(Person) do
+      def initialize(name, salary)
+        @salary = salary
+      end
+    end
+
+    # good
+    Employee = Class.new(Person) do
+      def initialize(name, salary)
+        super(name)
+        @salary = salary
+      end
+    end
+
+    # bad
     class Parent
       def self.inherited(base)
         do_something
