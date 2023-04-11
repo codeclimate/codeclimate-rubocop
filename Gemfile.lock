@@ -13,6 +13,7 @@ GEM
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     json (2.6.3)
+    language_server-protocol (3.17.0.3)
     method_source (1.0.0)
     minitest (5.17.0)
     parallel (1.22.1)
@@ -78,8 +79,12 @@ GEM
     rubocop-sorbet (0.7.0)
       rubocop (>= 0.90.0)
     rubocop-thread_safety (0.4.4)
-      rubocop (>= 0.53.0)    
+      rubocop (>= 0.53.0)
     ruby-progressbar (1.13.0)
+    standard (1.26.0)
+      language_server-protocol (~> 3.17.0.2)
+      rubocop (~> 1.48.1)
+      rubocop-performance (~> 1.16.0)
     test-prof (1.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
@@ -106,6 +111,7 @@ DEPENDENCIES
   rubocop-shopify
   rubocop-sorbet
   rubocop-thread_safety
+  standard
   test-prof
 
 BUNDLED WITH
