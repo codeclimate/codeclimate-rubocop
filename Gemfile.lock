@@ -77,6 +77,9 @@ GEM
     rubocop-thread_safety (0.4.4)
       rubocop (>= 0.53.0)
     ruby-progressbar (1.11.0)
+    standard (1.18.0)
+      rubocop (= 1.39.0)
+      rubocop-performance (= 1.15.0)
     test-prof (1.0.11)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
@@ -103,6 +106,7 @@ DEPENDENCIES
   rubocop-shopify
   rubocop-sorbet
   rubocop-thread_safety
+  standard
   test-prof
 
 BUNDLED WITH
