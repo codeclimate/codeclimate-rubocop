@@ -9,12 +9,25 @@ as it might be intended like Sorbet.
     # bad
     class Foo
       attr_reader :bar
+      attr_reader :bax
       attr_reader :baz
     end
 
     # good
     class Foo
-      attr_reader :bar, :baz
+      attr_reader :bar, :bax, :baz
+    end
+
+    # good
+    class Foo
+      # may be intended comment for bar.
+      attr_reader :bar
+
+      sig { returns(String) }
+      attr_reader :bax
+
+      may_be_intended_annotation :baz
+      attr_reader :baz
     end
 
 ### Example: EnforcedStyle: separated

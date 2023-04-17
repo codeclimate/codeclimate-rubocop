@@ -6,6 +6,19 @@ The maximum line length is configured in the `Layout/LineLength`
 cop. The tab size is configured in the `IndentationWidth` of the
 `Layout/IndentationStyle` cop.
 
+NOTE: It is allowed when `defined?` argument has an undefined value,
+because using the modifier form causes the following incompatibility:
+
+```ruby
+unless defined?(undefined_foo)
+  undefined_foo = 'default_value'
+end
+undefined_foo # => 'default_value'
+
+undefined_bar = 'default_value' unless defined?(undefined_bar)
+undefined_bar # => nil
+```
+
 ### Example:
     # bad
     if condition
