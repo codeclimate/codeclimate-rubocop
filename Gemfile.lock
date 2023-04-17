@@ -20,6 +20,7 @@ GEM
     parallel (1.20.1)
     parser (3.0.1.1)
       ast (~> 2.4.1)
+    prettier_print (1.2.1)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -78,6 +79,8 @@ GEM
       rubocop (>= 0.53.0)
     ruby-progressbar (1.11.0)
     safe_yaml (1.0.5)
+    syntax_tree (6.1.1)
+      prettier_print (>= 1.2.0)
     test-prof (1.0.6)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -106,6 +109,7 @@ DEPENDENCIES
   rubocop-sorbet
   rubocop-thread_safety
   safe_yaml
+  syntax_tree
   test-prof
 
 BUNDLED WITH
