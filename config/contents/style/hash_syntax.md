@@ -83,6 +83,9 @@ The supported styles are:
     {foo: foo, bar: bar}
 
     # good
+    {foo: foo, bar:}
+
+    # good
     {foo:, bar:}
 
 ### Example: EnforcedShorthandSyntax: consistent

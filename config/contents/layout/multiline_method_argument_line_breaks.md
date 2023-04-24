@@ -4,7 +4,7 @@ starts on a separate line.
 NOTE: This cop does not move the first argument, if you want that to
 be on a separate line, see `Layout/FirstMethodArgumentLineBreak`.
 
-### Example: AllowMultilineFinalElement: false (default)
+### Example:
 
     # bad
     foo(a, b,
@@ -25,6 +25,8 @@ be on a separate line, see `Layout/FirstMethodArgumentLineBreak`.
 
     # good
     foo(a, b, c)
+
+### Example: AllowMultilineFinalElement: false (default)
 
     # good
     foo(
@@ -36,26 +38,6 @@ be on a separate line, see `Layout/FirstMethodArgumentLineBreak`.
     )
 
 ### Example: AllowMultilineFinalElement: true
-
-    # bad
-    foo(a, b,
-      c
-    )
-
-    # good
-    foo(a, b, {
-      foo: "bar",
-    })
-
-    # good
-    foo(
-      a,
-      b,
-      c
-    )
-
-    # good
-    foo(a, b, c)
 
     # good
     foo(

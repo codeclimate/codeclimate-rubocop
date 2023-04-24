@@ -6,6 +6,17 @@ The maximum line length is configured in the `Layout/LineLength`
 cop. The tab size is configured in the `IndentationWidth` of the
 `Layout/IndentationStyle` cop.
 
+One-line pattern matching is always allowed. To ensure that there are few cases
+where the match variable is not used, and to prevent oversights. The variable `x`
+becomes undefined and raises `NameError` when the following example is changed to
+the modifier form:
+
+```ruby
+if [42] in [x]
+  x # `x` is undefined when using modifier form.
+end
+```
+
 NOTE: It is allowed when `defined?` argument has an undefined value,
 because using the modifier form causes the following incompatibility:
 
