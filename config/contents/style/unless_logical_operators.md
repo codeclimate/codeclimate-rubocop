@@ -3,6 +3,7 @@ It discourages such code, as the condition becomes more difficult
 to read and understand.
 
 This cop supports two styles:
+
 - `forbid_mixed_logical_operators` (default)
 - `forbid_logical_operators`
 

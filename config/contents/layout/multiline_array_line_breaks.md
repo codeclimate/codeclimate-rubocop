@@ -15,3 +15,26 @@ starts on a separate line.
       b,
       c
     ]
+
+    # good
+    [
+      a,
+      b,
+      foo(
+        bar
+      )
+    ]
+
+### Example: AllowMultilineFinalElement: false (default)
+
+    # bad
+    [a, b, foo(
+      bar
+    )]
+
+### Example: AllowMultilineFinalElement: true
+
+    # good
+    [a, b, foo(
+      bar
+    )]

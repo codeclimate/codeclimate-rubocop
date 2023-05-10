@@ -22,12 +22,16 @@ These are customizable with `AllowedMethods` option.
     var.class.equal?(Date)
     var.class.eql?(Date)
     var.class.name == 'Date'
+    var.class.to_s == 'Date'
+    var.class.inspect == 'Date'
 
 ### Example: AllowedMethods: [`==`]
     # good
     var.instance_of?(Date)
     var.class == Date
     var.class.name == 'Date'
+    var.class.to_s == 'Date'
+    var.class.inspect == 'Date'
 
     # bad
     var.class.equal?(Date)
@@ -42,6 +46,8 @@ These are customizable with `AllowedMethods` option.
     var.class.equal?(Date)
     var.class.eql?(Date)
     var.class.name == 'Date'
+    var.class.to_s == 'Date'
+    var.class.inspect == 'Date'
 
 ### Example: AllowedPatterns: ['eq']
     # good
@@ -52,3 +58,5 @@ These are customizable with `AllowedMethods` option.
     # bad
     var.class == Date
     var.class.name == 'Date'
+    var.class.to_s == 'Date'
+    var.class.inspect == 'Date'

@@ -5,7 +5,9 @@ Regardless of style, parentheses are necessary for:
 
 1. Endless methods
 2. Argument lists containing a `forward-arg` (`...`)
-3. Argument lists containing an anonymous block forwarding (`&`)
+3. Argument lists containing an anonymous rest arguments forwarding (`*`)
+4. Argument lists containing an anonymous keyword rest arguments forwarding (`**`)
+5. Argument lists containing an anonymous block forwarding (`&`)
 
 Removing the parens would be a syntax error here.
 

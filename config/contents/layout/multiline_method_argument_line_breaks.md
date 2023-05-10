@@ -11,6 +11,11 @@ be on a separate line, see `Layout/FirstMethodArgumentLineBreak`.
       c
     )
 
+    # bad
+    foo(a, b, {
+      foo: "bar",
+    })
+
     # good
     foo(
       a,
@@ -20,3 +25,25 @@ be on a separate line, see `Layout/FirstMethodArgumentLineBreak`.
 
     # good
     foo(a, b, c)
+
+### Example: AllowMultilineFinalElement: false (default)
+
+    # good
+    foo(
+      a,
+      b,
+      {
+        foo: "bar",
+      }
+    )
+
+### Example: AllowMultilineFinalElement: true
+
+    # good
+    foo(
+      a,
+      b,
+      {
+        foo: "bar",
+      }
+    )

@@ -3,6 +3,7 @@ because numbered capture is ignored if they're mixed.
 Replace numbered captures with non-capturing groupings or
 named captures.
 
+### Example:
     # bad
     /(?<foo>FOO)(BAR)/
 

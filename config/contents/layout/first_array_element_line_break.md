@@ -3,11 +3,34 @@ multi-line array.
 
 ### Example:
 
-      # bad
-      [ :a,
-        :b]
+    # bad
+    [ :a,
+      :b]
 
-      # good
-      [
-        :a,
-        :b]
+    # good
+    [
+      :a,
+      :b]
+
+    # good
+    [:a, :b]
+
+### Example: AllowMultilineFinalElement: false (default)
+
+    # bad
+    [ :a, {
+      :b => :c
+    }]
+
+    # good
+    [
+      :a, {
+      :b => :c
+    }]
+
+### Example: AllowMultilineFinalElement: true
+
+    # good
+    [:a, {
+      :b => :c
+    }]

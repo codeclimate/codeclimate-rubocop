@@ -32,3 +32,29 @@ This cop's autocorrection is unsafe because it will obviously change the executi
     require 'b'
     require_relative 'c'
     require 'a'
+
+    # bad
+    require 'a'
+    require 'c' if foo
+    require 'b'
+
+    # good
+    require 'a'
+    require 'b'
+    require 'c' if foo
+
+    # bad
+    require 'c'
+    if foo
+      require 'd'
+      require 'b'
+    end
+    require 'a'
+
+    # good
+    require 'c'
+    if foo
+      require 'b'
+      require 'd'
+    end
+    require 'a'

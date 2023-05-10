@@ -7,7 +7,8 @@ parameter but this maximum can be configured by setting `Max`.
 
 ### Example: Max: 1 (default)
     # bad
-    foo { _1.call(_2, _3, _4) }
+    use_multiple_numbered_parameters { _1.call(_2, _3, _4) }
 
     # good
-    foo { do_something(_1) }
+    array.each { use_array_element_as_numbered_parameter(_1) }
+    hash.each { use_only_hash_value_as_numbered_parameter(_2) }
