@@ -15,6 +15,10 @@ snake_case or camelCase, for their names.
     # good
     fooBar = 1
 
+### Example: AllowedIdentifiers: ['fooBar']
+    # good (with EnforcedStyle: snake_case)
+    fooBar = 1
+
 ### Example: AllowedPatterns: ['_v\d+\z']
-    # good
+    # good (with EnforcedStyle: camelCase)
     :release_v1

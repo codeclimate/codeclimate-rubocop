@@ -1,5 +1,7 @@
+Checks for `IO.select` that is incompatible with Fiber Scheduler since Ruby 3.0.
 
-This cop checks for `IO.select` that is incompatible with Fiber Scheduler since Ruby 3.0.
+When an array of IO objects waiting for an exception (the third argument of `IO.select`)
+is used as an argument, there is no alternative API, so offenses are not registered.
 
 NOTE: When the method is successful the return value of `IO.select` is `[[IO]]`,
 and the return value of `io.wait_readable` and `io.wait_writable` are `self`.

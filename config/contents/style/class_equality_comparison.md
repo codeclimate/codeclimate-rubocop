@@ -1,6 +1,6 @@
 Enforces the use of `Object#instance_of?` instead of class comparison
 for equality.
-`==`, `equal?`, and `eql?` methods are allowed by default.
+`==`, `equal?`, and `eql?` custom method definitions are allowed by default.
 These are customizable with `AllowedMethods` option.
 
 ### Example:
@@ -13,50 +13,28 @@ These are customizable with `AllowedMethods` option.
     # good
     var.instance_of?(Date)
 
-### Example: AllowedMethods: [] (default)
+### Example: AllowedMethods: ['==', 'equal?', 'eql?'] (default)
     # good
-    var.instance_of?(Date)
+    def ==(other)
+      self.class == other.class && name == other.name
+    end
 
-    # bad
-    var.class == Date
-    var.class.equal?(Date)
-    var.class.eql?(Date)
-    var.class.name == 'Date'
-    var.class.to_s == 'Date'
-    var.class.inspect == 'Date'
+    def equal?(other)
+      self.class.equal?(other.class) && name.equal?(other.name)
+    end
 
-### Example: AllowedMethods: [`==`]
-    # good
-    var.instance_of?(Date)
-    var.class == Date
-    var.class.name == 'Date'
-    var.class.to_s == 'Date'
-    var.class.inspect == 'Date'
-
-    # bad
-    var.class.equal?(Date)
-    var.class.eql?(Date)
+    def eql?(other)
+      self.class.eql?(other.class) && name.eql?(other.name)
+    end
 
 ### Example: AllowedPatterns: [] (default)
-    # good
-    var.instance_of?(Date)
-
     # bad
-    var.class == Date
-    var.class.equal?(Date)
-    var.class.eql?(Date)
-    var.class.name == 'Date'
-    var.class.to_s == 'Date'
-    var.class.inspect == 'Date'
+    def eq(other)
+      self.class.eq(other.class) && name.eq(other.name)
+    end
 
 ### Example: AllowedPatterns: ['eq']
     # good
-    var.instance_of?(Date)
-    var.class.equal?(Date)
-    var.class.eql?(Date)
-
-    # bad
-    var.class == Date
-    var.class.name == 'Date'
-    var.class.to_s == 'Date'
-    var.class.inspect == 'Date'
+    def eq(other)
+      self.class.eq(other.class) && name.eq(other.name)
+    end

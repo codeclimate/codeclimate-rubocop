@@ -1,6 +1,6 @@
-FROM ruby:2.7-alpine3.11
+FROM ruby:3.2-alpine3.18
 
-LABEL name="Ruby-2.7" \
+LABEL name="Ruby-3.2" \
       version="1.0"
 
 WORKDIR /usr/src/app
@@ -10,7 +10,6 @@ RUN adduser -u 9000 -D app
 COPY Gemfile Gemfile.lock /usr/src/app/
 
 RUN apk add --update build-base git && \
-    gem install bundler -v 2.0.2 && \
     bundle install --quiet -j 4 && \
     chown -R app:app /usr/local/bundle && \
     rm -fr ~/.gem ~/.bundle ~/.wh..gem && \

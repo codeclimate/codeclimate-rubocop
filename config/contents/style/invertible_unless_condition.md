@@ -5,12 +5,15 @@ is disabled by default.
 Methods that can be inverted should be defined in `InverseMethods`. Note that
 the relationship of inverse methods needs to be defined in both directions.
 For example,
-    InverseMethods:
-      :!=: :==
-      :even?: :odd?
-      :odd?: :even?
 
- will suggest both `even?` and `odd?` to be inverted, but only `!=` (and not `==`).
+```yaml
+InverseMethods:
+  :!=: :==
+  :even?: :odd?
+  :odd?: :even?
+```
+
+will suggest both `even?` and `odd?` to be inverted, but only `!=` (and not `==`).
 
 ### Safety:
 

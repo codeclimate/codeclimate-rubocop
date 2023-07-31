@@ -61,6 +61,14 @@ automatically.
        - extend
 ```
 
+### Safety:
+
+Autocorrection is unsafe because class methods and module inclusion
+can behave differently, based on which methods or constants have
+already been defined.
+
+Constants will only be moved when they are assigned with literals.
+
 ### Example:
     # bad
     # Expect extend be before constant
