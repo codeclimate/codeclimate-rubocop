@@ -14,19 +14,20 @@ This cop is unsafe because binary operators can be defined
 differently on different classes, and are not guaranteed to
 have the same result if reversed.
 
-### Example: SupportedOperators: ['*', '+', '&'']
+### Example: SupportedOperators: ['*', '+', '&', '|', '^'] (default)
     # bad
-    1 + x
     10 * y
+    1 + x
     1 & z
+    1 | x
+    1 ^ x
     1 + CONST
 
     # good
-    60 * 24
-    x + 1
     y * 10
+    x + 1
     z & 1
+    x | 1
+    x ^ 1
     CONST + 1
-
-    # good
-    1 | x
+    60 * 24

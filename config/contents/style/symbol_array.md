@@ -17,6 +17,15 @@ array of 2 or fewer elements.
     # bad
     [:foo, :bar, :baz]
 
+    # bad (contains spaces)
+    %i[foo\ bar baz\ quux]
+
+    # bad (contains [] with spaces)
+    %i[foo \[ \]]
+
+    # bad (contains () with spaces)
+    %i(foo \( \))
+
 ### Example: EnforcedStyle: brackets
     # good
     [:foo, :bar, :baz]

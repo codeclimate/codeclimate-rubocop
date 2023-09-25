@@ -14,7 +14,7 @@ Checks method call operators to not have spaces around them.
     foo &. bar
     foo &. bar&. buzz
     RuboCop:: Cop
-    RuboCop:: Cop:: Cop
+    RuboCop:: Cop:: Base
     :: RuboCop::Cop
 
     # good
@@ -26,5 +26,5 @@ Checks method call operators to not have spaces around them.
     foo&.bar
     foo&.bar&.buzz
     RuboCop::Cop
-    RuboCop::Cop::Cop
+    RuboCop::Cop::Base
     ::RuboCop::Cop

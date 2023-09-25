@@ -40,7 +40,15 @@ Dependencies in the gemspec should be alphabetically sorted.
 
     spec.add_runtime_dependency 'rspec'
 
-    # good only if TreatCommentsAsGroupSeparators is true
+### Example: TreatCommentsAsGroupSeparators: true (default)
+    # good
+    # For code quality
+    spec.add_dependency 'rubocop'
+    # For tests
+    spec.add_dependency 'rspec'
+
+### Example: TreatCommentsAsGroupSeparators: false
+    # bad
     # For code quality
     spec.add_dependency 'rubocop'
     # For tests

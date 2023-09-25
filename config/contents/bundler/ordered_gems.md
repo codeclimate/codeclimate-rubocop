@@ -14,7 +14,15 @@ Gems should be alphabetically sorted within groups.
 
     gem 'rspec'
 
-    # good only if TreatCommentsAsGroupSeparators is true
+### Example: TreatCommentsAsGroupSeparators: true (default)
+    # good
+    # For code quality
+    gem 'rubocop'
+    # For tests
+    gem 'rspec'
+
+### Example: TreatCommentsAsGroupSeparators: false
+    # bad
     # For code quality
     gem 'rubocop'
     # For tests

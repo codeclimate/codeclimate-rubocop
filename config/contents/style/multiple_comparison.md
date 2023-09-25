@@ -35,3 +35,11 @@ by default. It can be configured by `AllowMethodComparison` option.
 
     # good
     foo if [b.lightweight, b.heavyweight].include?(a)
+
+### Example: ComparisonsThreshold: 2 (default)
+    # bad
+    foo if a == 'a' || a == 'b'
+
+### Example: ComparisonsThreshold: 3
+    # good
+    foo if a == 'a' || a == 'b'

@@ -3,6 +3,8 @@ top-level return statement with an argument, then the argument is
 always ignored. This is detected automatically since Ruby 2.7.
 
 ### Example:
+    # bad
+    return 1
 
-    # Detected since Ruby 2.7
-    return 1 # 1 is always ignored.
+    # good
+    return

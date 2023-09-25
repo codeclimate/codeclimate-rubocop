@@ -1,4 +1,19 @@
-Enforces empty line after guard clause
+Enforces empty line after guard clause.
+
+This cop allows `# :nocov:` directive after guard clause because
+SimpleCov excludes code from the coverage report by wrapping it in `# :nocov:`:
+
+```ruby
+def foo
+  # :nocov:
+  return if condition
+  # :nocov:
+  bar
+end
+```
+
+Refer to SimpleCov's documentation for more details:
+https://github.com/simplecov-ruby/simplecov#ignoringskipping-code
 
 ### Example:
 

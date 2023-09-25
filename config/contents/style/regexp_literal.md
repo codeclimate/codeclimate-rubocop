@@ -1,4 +1,12 @@
-Enforces using // or %r around regular expressions.
+Enforces using `//` or `%r` around regular expressions.
+
+NOTE: The following `%r` cases using a regexp starts with a blank or `=`
+as a method argument allowed to prevent syntax errors.
+
+```ruby
+do_something %r{ regexp} # `do_something / regexp/` is an invalid syntax.
+do_something %r{=regexp} # `do_something /=regexp/` is an invalid syntax.
+```
 
 ### Example: EnforcedStyle: slashes (default)
     # bad

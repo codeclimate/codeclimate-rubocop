@@ -13,7 +13,8 @@ be set or referenced outside of the memoization method.
 
 This cop relies on the pattern `@instance_var ||= ...`,
 but this is sometimes used for other purposes than memoization
-so this cop is considered unsafe.
+so this cop is considered unsafe. Also, its autocorrection is unsafe
+because it may conflict with instance variable names already in use.
 
 ### Example: EnforcedStyleForLeadingUnderscores: disallowed (default)
     # bad
