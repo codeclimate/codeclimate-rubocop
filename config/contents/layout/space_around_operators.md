@@ -45,3 +45,17 @@ the previous or next line, not counting empty lines or comment lines.
 
     # good
     a ** b
+
+### Example: EnforcedStyleForRationalLiterals: no_space (default)
+    # bad
+    1 / 48r
+
+    # good
+    1/48r
+
+### Example: EnforcedStyleForRationalLiterals: space
+    # bad
+    1/48r
+
+    # good
+    1 / 48r

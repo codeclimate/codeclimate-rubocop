@@ -6,6 +6,8 @@ You can set constructs you want to fold with `CountAsOne`.
 Available are: 'array', 'hash', 'heredoc', and 'method_call'. Each construct
 will be counted as one line regardless of its actual size.
 
+NOTE: This cop also applies for `Struct` definitions.
+
 ### Example: CountAsOne: ['array', 'heredoc', 'method_call']
 
     class Foo
@@ -28,6 +30,3 @@ will be counted as one line regardless of its actual size.
         2
       )
     end                 # 6 points
-
-
-NOTE: This cop also applies for `Struct` definitions.

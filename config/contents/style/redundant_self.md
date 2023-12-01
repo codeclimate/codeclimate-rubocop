@@ -12,7 +12,8 @@ Note, with using explicit self you can only send messages with public or
 protected scope, you cannot send private messages this way.
 
 Note we allow uses of `self` with operators because it would be awkward
-otherwise.
+otherwise. Also allows the use of `self.it` without arguments in blocks,
+as in `0.times { self.it }`, following `Lint/ItWithoutArgumentsInBlock` cop.
 
 ### Example:
 

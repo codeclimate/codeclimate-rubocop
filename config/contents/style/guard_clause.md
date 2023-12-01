@@ -50,6 +50,25 @@ NOTE: Autocorrect works in most cases except with if-else statements
     foo || raise('exception') if something
     ok
 
+    # bad
+    define_method(:test) do
+      if something
+        work
+      end
+    end
+
+    # good
+    define_method(:test) do
+      return unless something
+
+      work
+    end
+
+    # also good
+    define_method(:test) do
+      work if something
+    end
+
 ### Example: AllowConsecutiveConditionals: false (default)
     # bad
     def test

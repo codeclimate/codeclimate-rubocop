@@ -11,3 +11,11 @@ resource cleanup.
     File.open('file') do |f|
       # ...
     end
+
+    # bad
+    f = Tempfile.open('temp')
+
+    # good
+    Tempfile.open('temp') do |f|
+      # ...
+    end

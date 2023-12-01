@@ -19,6 +19,7 @@ in a class and then used without a receiver in that class.
     # bad
     open(something)
     open("| #{something}")
+    open("| foo")
     URI.open(something)
 
     # good
@@ -28,5 +29,4 @@ in a class and then used without a receiver in that class.
 
     # good (literal strings)
     open("foo.text")
-    open("| foo")
     URI.open("http://example.com")
