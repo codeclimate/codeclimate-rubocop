@@ -1,13 +1,16 @@
 Checks for RuntimeError as the argument of raise/fail.
 
-It checks for code like this:
-
 ### Example:
-    # Bad
+    # bad
     raise RuntimeError, 'message'
-
-    # Bad
     raise RuntimeError.new('message')
 
-    # Good
+    # good
     raise 'message'
+
+    # bad - message is not a string
+    raise RuntimeError, Object.new
+    raise RuntimeError.new(Object.new)
+
+    # good
+    raise Object.new.to_s

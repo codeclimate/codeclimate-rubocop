@@ -13,6 +13,10 @@ if you perform any arithmetic operations involving precision loss.
     # good - using BigDecimal
     x.to_d == 0.1.to_d
 
+ # good - comparing against zero
+    x == 0.0
+    x != 0.0
+
     # good
     (x - 0.1).abs < Float::EPSILON
 

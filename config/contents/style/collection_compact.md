@@ -19,6 +19,8 @@ when the receiver is a hash object.
     array.reject { |e| e.nil? }
     array.delete_if { |e| e.nil? }
     array.select { |e| !e.nil? }
+    array.grep_v(nil)
+    array.grep_v(NilClass)
 
     # good
     array.compact

@@ -1,6 +1,15 @@
 Checks for operators, variables, literals, lambda, proc and nonmutating
 methods used in void context.
 
+`each` blocks are allowed to prevent false positives.
+For example, the expression inside the `each` block below.
+It's not void, especially when the receiver is an `Enumerator`:
+
+```ruby
+enumerator = [1, 2, 3].filter
+enumerator.each { |item| item >= 2 } #=> [2, 3]
+```
+
 ### Example: CheckForMethodsWithNoSideEffects: false (default)
     # bad
     def some_method

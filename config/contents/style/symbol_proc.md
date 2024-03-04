@@ -32,6 +32,41 @@ call(&:bar)
 # ArgumentError: wrong number of arguments (given 1, expected 0)
 ```
 
+It is also unsafe because `Symbol#to_proc` does not work with
+`protected` methods which would otherwise be accessible.
+
+For example:
+
+```ruby
+class Box
+  def initialize
+    @secret = rand
+  end
+
+  def normal_matches?(*others)
+    others.map { |other| other.secret }.any?(secret)
+  end
+
+  def symbol_to_proc_matches?(*others)
+    others.map(&:secret).any?(secret)
+  end
+
+  protected
+
+  attr_reader :secret
+end
+
+boxes = [Box.new, Box.new]
+Box.new.normal_matches?(*boxes)
+# => false
+boxes.first.normal_matches?(*boxes)
+# => true
+Box.new.symbol_to_proc_matches?(*boxes)
+# => NoMethodError: protected method `secret' called for #<Box...>
+boxes.first.symbol_to_proc_matches?(*boxes)
+# => NoMethodError: protected method `secret' called for #<Box...>
+```
+
 ### Example:
     # bad
     something.map { |s| s.upcase }

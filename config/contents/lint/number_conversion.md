@@ -4,7 +4,7 @@ fails. Cop prefer parsing with number class instead.
 
 Conversion with `Integer`, `Float`, etc. will raise an `ArgumentError`
 if given input that is not numeric (eg. an empty string), whereas
-`to_i`, etc. will try to convert regardless of input (`''.to_i => 0`).
+`to_i`, etc. will try to convert regardless of input (``''.to_i => 0``).
 As such, this cop is disabled by default because it's not necessarily
 always correct to raise if a value is not numeric.
 

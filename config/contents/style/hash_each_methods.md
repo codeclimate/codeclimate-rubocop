@@ -13,10 +13,16 @@ but not fully resolve, this safety issue.
 ### Example:
     # bad
     hash.keys.each { |k| p k }
-    hash.values.each { |v| p v }
+    hash.each { |k, unused_value| p k }
 
     # good
     hash.each_key { |k| p k }
+
+    # bad
+    hash.values.each { |v| p v }
+    hash.each { |unused_key, v| p v }
+
+    # good
     hash.each_value { |v| p v }
 
 ### Example: AllowedReceivers: ['execute']
