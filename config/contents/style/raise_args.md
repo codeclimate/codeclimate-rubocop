@@ -11,6 +11,10 @@ passed multiple arguments.
 The exploded style has an `AllowedCompactTypes` configuration
 option that takes an Array of exception name Strings.
 
+### Safety:
+
+This cop is unsafe because `raise Foo` calls `Foo.exception`, not `Foo.new`.
+
 ### Example: EnforcedStyle: exploded (default)
     # bad
     raise StandardError.new('message')
