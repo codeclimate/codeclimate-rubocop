@@ -15,7 +15,9 @@ start of the line where the matching keyword appears.
 This `Layout/EndAlignment` cop aligns with keywords (e.g. `if`, `while`, `case`)
 by default. On the other hand, `Layout/BeginEndAlignment` cop aligns with
 `EnforcedStyleAlignWith: start_of_line` by default due to `||= begin` tends
-to align with the start of the line. These style can be configured by each cop.
+to align with the start of the line. `Layout/DefEndAlignment` cop also aligns with
+`EnforcedStyleAlignWith: start_of_line` by default.
+These style can be configured by each cop.
 
 ### Example: EnforcedStyleAlignWith: keyword (default)
     # bad

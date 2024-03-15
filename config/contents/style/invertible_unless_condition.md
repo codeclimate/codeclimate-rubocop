@@ -27,12 +27,14 @@ actually inverse of each other.
     foo unless x != y
     foo unless x >= 10
     foo unless x.even?
+    foo unless odd?
 
     # good
     foo if bar
     foo if x == y
     foo if x < 10
     foo if x.odd?
+    foo if even?
 
     # bad (complex condition)
     foo unless x != y || x.even?

@@ -1,6 +1,7 @@
 Checks for redundant safe navigation calls.
 Use cases where a constant, named in camel case for classes and modules is `nil` are rare,
-and an offense is not detected when the receiver is a snake case constant.
+and an offense is not detected when the receiver is a constant. The detection also applies
+to literal receivers, except for `nil`.
 
 For all receivers, the `instance_of?`, `kind_of?`, `is_a?`, `eql?`, `respond_to?`,
 and `equal?` methods are checked by default.
