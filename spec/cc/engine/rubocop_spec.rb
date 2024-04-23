@@ -1,5 +1,6 @@
 require "spec_helper"
 require "cc/engine/rubocop"
+require "ostruct"
 require "tmpdir"
 
 module CC::Engine

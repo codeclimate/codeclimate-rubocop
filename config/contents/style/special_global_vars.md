@@ -54,9 +54,8 @@ true, replacing perl-style variables with english variables will break.
 
 ### Example: EnforcedStyle: use_builtin_english_names
 
-Like `use_perl_names` but allows builtin global vars.
-
     # good
+    # Like `use_perl_names` but allows builtin global vars.
     puts $LOAD_PATH
     puts $LOADED_FEATURES
     puts $PROGRAM_NAME

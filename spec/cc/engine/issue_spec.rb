@@ -1,5 +1,6 @@
 require "spec_helper"
 require "cc/engine/issue"
+require "ostruct"
 
 module CC::Engine
   describe Issue do

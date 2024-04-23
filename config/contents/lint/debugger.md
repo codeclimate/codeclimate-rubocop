@@ -22,6 +22,11 @@ Lint/Debugger:
       MyDebugger.debug_this
 ```
 
+Some gems also ship files that will start a debugging session when required,
+for example `require 'debug/start'` from `ruby/debug`. These requires can
+be configured through `DebuggerRequires`. It has the same structure as
+`DebuggerMethods`, which you can read about above.
+
 ### Example:
 
     # bad (ok during development)
@@ -57,3 +62,9 @@ Lint/Debugger:
     def some_method
       my_debugger
     end
+
+### Example: DebuggerRequires: [my_debugger/start]
+
+    # bad (ok during development)
+
+    require 'my_debugger/start'
