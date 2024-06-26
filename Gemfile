@@ -13,6 +13,7 @@ gem "rubocop-performance", require: false
 gem "rubocop-rails", require: false
 gem "rubocop-rake", require: false
 gem "rubocop-rspec", require: false
+gem "rubocop-rspec_rails", require: false
 gem "rubocop-sequel", require: false
 gem "rubocop-shopify", require: false
 gem "rubocop-sorbet", require: false
