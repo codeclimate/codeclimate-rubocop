@@ -117,6 +117,7 @@ DEPENDENCIES
   rspec
   rubocop (= 1.62.1)
   rubocop-capybara
+  rubocop-factory_bot
   rubocop-graphql
   rubocop-i18n
   rubocop-minitest
