@@ -116,6 +116,7 @@ DEPENDENCIES
   rake
   rspec
   rubocop (= 1.62.1)
+  rubocop-capybara
   rubocop-graphql
   rubocop-i18n
   rubocop-minitest
