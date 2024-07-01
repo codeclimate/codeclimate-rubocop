@@ -113,3 +113,20 @@ boxes.first.symbol_to_proc_matches?(*boxes)
 ### Example: AllowedPatterns: ['map'] (default)
     # good
     something.map { |s| s.upcase }
+
+### Example: AllCops:ActiveSupportExtensionsEnabled: false (default)
+    # bad
+    ->(x) { x.foo }
+    proc { |x| x.foo }
+    Proc.new { |x| x.foo }
+
+    # good
+    lambda(&:foo)
+    proc(&:foo)
+    Proc.new(&:foo)
+
+### Example: AllCops:ActiveSupportExtensionsEnabled: true
+    # good
+    ->(x) { x.foo }
+    proc { |x| x.foo }
+    Proc.new { |x| x.foo }

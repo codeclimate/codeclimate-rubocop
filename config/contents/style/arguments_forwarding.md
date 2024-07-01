@@ -24,6 +24,8 @@ e.g., `*args`, `**options`, `&block`, and so on.
 
 Names not on this list are likely to be meaningful and are allowed by default.
 
+This cop handles not only method forwarding but also forwarding to `super`.
+
 ### Example:
     # bad
     def foo(*args, &block)

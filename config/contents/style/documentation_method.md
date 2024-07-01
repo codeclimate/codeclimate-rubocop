@@ -89,3 +89,14 @@ they are called constructor to distinguish it from method.
       def do_something
       end
     end
+
+### Example: AllowedMethods: ['method_missing', 'respond_to_missing?']
+
+     # good
+     class Foo
+       def method_missing(name, *args)
+       end
+
+       def respond_to_missing?(symbol, include_private)
+       end
+     end
