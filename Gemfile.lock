@@ -77,6 +77,9 @@ GEM
     rubocop-minitest (0.35.0)
       rubocop (>= 1.61, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
+    rubocop-obsession (0.1.9)
+      activesupport
+      rubocop (~> 1.41)
     rubocop-performance (1.21.1)
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
@@ -127,6 +130,7 @@ DEPENDENCIES
   rubocop-graphql
   rubocop-i18n
   rubocop-minitest
+  rubocop-obsession
   rubocop-performance
   rubocop-rails
   rubocop-rails-omakase
@@ -140,4 +144,4 @@ DEPENDENCIES
   test-prof
 
 BUNDLED WITH
-   2.4.10
+   2.4.17
