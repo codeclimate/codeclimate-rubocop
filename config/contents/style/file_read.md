@@ -1,8 +1,7 @@
 Favor `File.(bin)read` convenience methods.
 
 ### Example:
-    ## text mode
-    # bad
+    # bad - text mode
     File.open(filename).read
     File.open(filename, &:read)
     File.open(filename) { |f| f.read }
@@ -18,9 +17,7 @@ Favor `File.(bin)read` convenience methods.
     # good
     File.read(filename)
 
-### Example:
-    ## binary mode
-    # bad
+    # bad - binary mode
     File.open(filename, 'rb').read
     File.open(filename, 'rb', &:read)
     File.open(filename, 'rb') do |f|

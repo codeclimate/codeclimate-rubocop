@@ -3,14 +3,16 @@ removed.
 
 When comment enables all cops at once `rubocop:enable all`
 that cop checks whether any cop was actually enabled.
+
 ### Example:
+
     # bad
     foo = 1
     # rubocop:enable Layout/LineLength
 
     # good
     foo = 1
-### Example:
+
     # bad
     # rubocop:disable Style/StringLiterals
     foo = "1"

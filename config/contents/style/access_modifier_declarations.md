@@ -64,6 +64,9 @@ the group access modifier.
     class Foo
 
       private :bar, :baz
+      private *%i[qux quux]
+      private *METHOD_NAMES
+      private *private_methods
 
     end
 
@@ -72,6 +75,9 @@ the group access modifier.
     class Foo
 
       private :bar, :baz
+      private *%i[qux quux]
+      private *METHOD_NAMES
+      private *private_methods
 
     end
 
@@ -100,5 +106,25 @@ the group access modifier.
       protected attr_writer :baz
       private attr_accessor :qux
       private attr :quux
+
+    end
+
+### Example: AllowModifiersOnAliasMethod: true (default)
+    # good
+    class Foo
+
+      public alias_method :bar, :foo
+      protected alias_method :baz, :foo
+      private alias_method :qux, :foo
+
+    end
+
+### Example: AllowModifiersOnAliasMethod: false
+    # bad
+    class Foo
+
+      public alias_method :bar, :foo
+      protected alias_method :baz, :foo
+      private alias_method :qux, :foo
 
     end

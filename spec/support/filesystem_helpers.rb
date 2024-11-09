@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FilesystemHelpers
   def create_source_file(path, content)
     abs_path = File.join(@code, path)

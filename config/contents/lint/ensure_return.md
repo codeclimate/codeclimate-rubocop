@@ -8,7 +8,6 @@ If you want to rescue some (or all) exceptions, best to do it explicitly
 ### Example:
 
     # bad
-
     def foo
       do_something
     ensure
@@ -16,10 +15,7 @@ If you want to rescue some (or all) exceptions, best to do it explicitly
       return self
     end
 
-### Example:
-
     # good
-
     def foo
       do_something
       self
@@ -27,8 +23,7 @@ If you want to rescue some (or all) exceptions, best to do it explicitly
       cleanup
     end
 
-    # also good
-
+    # good
     def foo
       begin
         do_something

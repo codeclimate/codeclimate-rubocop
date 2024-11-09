@@ -15,7 +15,7 @@ module CC
         Metrics/PerceivedComplexity
       ].freeze
 
-      URL_REGEX = / \(https?\:.+\)/
+      URL_REGEX = / \(https?:.+\)/
       LINES_REGEX = / \[.+\]$/
 
       def initialize(path, cop_name, message)

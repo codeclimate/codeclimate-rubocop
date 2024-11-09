@@ -1,16 +1,15 @@
 Checks for places where binary operator has identical operands.
 
-It covers arithmetic operators: `-`, `/`, `%`;
-comparison operators: `==`, `===`, `=~`, `>`, `>=`, `<`, ``<=``;
+It covers comparison operators: `==`, `===`, `=~`, `>`, `>=`, `<`, ``<=``;
 bitwise operators: `|`, `^`, `&`;
 boolean operators: `&&`, `||`
 and "spaceship" operator - ``<=>``.
 
 Simple arithmetic operations are allowed by this cop: `+`, `*`, `**`, `<<` and `>>`.
 Although these can be rewritten in a different way, it should not be necessary to
-do so. This does not include operations such as `-` or `/` where the result will
-always be the same (`x - x` will always be 0; `x / x` will always be 1), and
-thus are legitimate offenses.
+do so. Operations such as `-` or `/` where the result will always be the same
+(`x - x` will always be 0; `x / x` will always be 1) are offenses, but these
+are covered by `Lint/NumericOperationWithConstantResult` instead.
 
 ### Safety:
 
@@ -25,7 +24,6 @@ end
 
 ### Example:
     # bad
-    x / x
     x.top >= x.top
 
     if a.x != 0 && a.x != 0

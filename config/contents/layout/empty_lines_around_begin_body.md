@@ -3,16 +3,14 @@ blocks.
 
 ### Example:
 
-    # good
-
+    # bad
     begin
+
       # ...
+
     end
 
-    # bad
-
+    # good
     begin
-
       # ...
-
     end

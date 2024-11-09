@@ -7,9 +7,11 @@ surrounding space depending on configuration.
 
     # bad
     array = [ a, b, c, d ]
+    array = [ a, [ b, c ]]
 
     # good
     array = [a, b, c, d]
+    array = [a, [b, c]]
 
 ### Example: EnforcedStyle: space
     # The `space` style enforces that array literals have
@@ -17,9 +19,11 @@ surrounding space depending on configuration.
 
     # bad
     array = [a, b, c, d]
+    array = [ a, [ b, c ]]
 
     # good
     array = [ a, b, c, d ]
+    array = [ a, [ b, c ] ]
 
 ### Example: EnforcedStyle: compact
     # The `compact` style normally requires a space inside
@@ -27,6 +31,7 @@ surrounding space depending on configuration.
     # or right brackets are collapsed together in nested arrays.
 
     # bad
+    array = [a, b, c, d]
     array = [ a, [ b, c ] ]
     array = [
       [ a ],
@@ -34,6 +39,7 @@ surrounding space depending on configuration.
     ]
 
     # good
+    array = [ a, b, c, d ]
     array = [ a, [ b, c ]]
     array = [[ a ],
       [ b, c ]]

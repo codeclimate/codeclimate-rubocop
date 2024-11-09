@@ -23,8 +23,6 @@ class/singleton methods are checked.
     # good (without parentheses it's a syntax error)
     def foo() do_something end
 
-### Example:
-
     # bad
     def Baz.foo()
       do_something

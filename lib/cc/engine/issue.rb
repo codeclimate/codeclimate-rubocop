@@ -5,7 +5,7 @@ require "cc/engine/content_resolver"
 module CC
   module Engine
     class Issue < SimpleDelegator
-      MULTIPLIER_REGEX = %r{\[([\d\.]+)\/([\d\.]+)\]}
+      MULTIPLIER_REGEX = %r{\[([\d.]+)/([\d.]+)\]}
       DEFAULT_REMEDIATION_POINTS = 50_000
       DEFAULT_BASE_POINTS = 200_000
       DEFAULT_OVERAGE_POINTS = 50_000
@@ -18,7 +18,7 @@ module CC
       end
 
       # rubocop:disable Metrics/MethodLength
-      def to_json
+      def to_json(*_args)
         hash = {
           type: "Issue",
           check_name: check_name,
@@ -38,6 +38,7 @@ module CC
 
         hash.to_json
       end
+      # rubocop:enable Metrics/MethodLength
 
       def check_name
         "Rubocop/#{cop_name}"

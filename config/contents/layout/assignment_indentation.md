@@ -1,6 +1,9 @@
 Checks the indentation of the first line of the
 right-hand-side of a multi-line assignment.
 
+The indentation of the remaining lines can be corrected with
+other cops such as `Layout/IndentationConsistency` and `Layout/EndAlignment`.
+
 ### Example:
     # bad
     value =
@@ -13,6 +16,3 @@ right-hand-side of a multi-line assignment.
       if foo
         'bar'
       end
-
-The indentation of the remaining lines can be corrected with
-other cops such as `IndentationConsistency` and `EndAlignment`.

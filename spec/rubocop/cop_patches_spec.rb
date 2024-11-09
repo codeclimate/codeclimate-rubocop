@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 module CC::Engine
   describe "Rubocop cops patch" do
-    include RubocopRunner
+    include ::RubocopRunner
 
     describe "Metrics::AbcSize patch" do
       it "includes complete method body for cyclomatic complexity issue" do

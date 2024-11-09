@@ -39,7 +39,6 @@ will return a boolean value. Those methods can be allowed with `AllowedMethods` 
     # good
     foo == bar
 
-### Example:
     # bad
     if foo.do_something?
       true

@@ -13,7 +13,7 @@ if you perform any arithmetic operations involving precision loss.
     # good - using BigDecimal
     x.to_d == 0.1.to_d
 
- # good - comparing against zero
+    # good - comparing against zero
     x == 0.0
     x != 0.0
 
@@ -23,6 +23,9 @@ if you perform any arithmetic operations involving precision loss.
     # good
     tolerance = 0.0001
     (x - 0.1).abs < tolerance
+
+    # good - comparing against nil
+    Float(x, exception: false) == nil
 
     # Or some other epsilon based type of comparison:
     # https://www.embeddeduse.com/2019/08/26/qt-compare-two-floats/

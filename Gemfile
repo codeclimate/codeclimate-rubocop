@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem "activesupport", require: false
 gem "parser"
 gem "pry", require: false
-gem "rubocop", "1.64.1", require: false
+gem "rubocop", "1.75.2", require: false
 gem "rubocop-capybara", require: false
 gem "rubocop-factory_bot", require: false
 gem "rubocop-graphql", require: false
@@ -24,6 +24,7 @@ gem "rubocop-thread_safety", require: false
 gem "test-prof", require: false
 
 group :test do
+  gem "ostruct", require: false
   gem "rake"
   gem "rspec"
 end

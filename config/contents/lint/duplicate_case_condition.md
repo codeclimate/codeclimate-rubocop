@@ -4,7 +4,6 @@ used in case 'when' expressions.
 ### Example:
 
     # bad
-
     case x
     when 'first'
       do_something
@@ -12,10 +11,7 @@ used in case 'when' expressions.
       do_something_else
     end
 
-### Example:
-
     # good
-
     case x
     when 'first'
       do_something

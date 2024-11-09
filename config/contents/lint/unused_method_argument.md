@@ -34,6 +34,8 @@ Checks for unused method arguments.
     end
 
 ### Example: IgnoreNotImplementedMethods: true (default)
+    # with default value of `NotImplementedExceptions: ['NotImplementedError']`
+
     # good
     def do_something(unused)
       raise NotImplementedError
@@ -41,6 +43,14 @@ Checks for unused method arguments.
 
     def do_something_else(unused)
       fail "TODO"
+    end
+
+### Example: IgnoreNotImplementedMethods: true
+    # with `NotImplementedExceptions: ['AbstractMethodError']`
+
+    # good
+    def do_something(unused)
+      raise AbstractMethodError
     end
 
 ### Example: IgnoreNotImplementedMethods: false

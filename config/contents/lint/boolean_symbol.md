@@ -15,8 +15,6 @@ changed to actual booleans.
     # good
     true
 
-### Example:
-
     # bad
     :false
 

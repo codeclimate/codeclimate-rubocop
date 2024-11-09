@@ -8,8 +8,10 @@ NOTE: The return value of `Enumerable#each` is `self`, whereas the
 return value of `Enumerable#map` is an `Array`. They are not autocorrected
 when a return value could be used because these types differ.
 
-NOTE: It only detects when the mapping destination is a local variable
-initialized as an empty array and referred to only by the pushing operation.
+NOTE: It only detects when the mapping destination is either:
+* a local variable initialized as an empty array and referred to only by the
+pushing operation;
+* or, if it is the single block argument to a `[].tap` block.
 This is because, if not, it's challenging to statically guarantee that the
 mapping destination variable remains an empty array:
 
@@ -33,6 +35,14 @@ with a block, not all objects that have a `map` method return an array
     dest = []
     src.each { |e| dest << e * 2 }
     dest
+
+    # good
+    dest = src.map { |e| e * 2 }
+
+    # bad
+    [].tap do |dest|
+      src.each { |e| dest << e * 2 }
+    end
 
     # good
     dest = src.map { |e| e * 2 }

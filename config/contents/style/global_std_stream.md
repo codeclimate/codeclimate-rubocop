@@ -3,6 +3,9 @@ Enforces the use of `$stdout/$stderr/$stdin` instead of `STDOUT/STDERR/STDIN`.
 reassign (possibly to redirect some stream) constants in Ruby, you'll get
 an interpreter warning if you do so.
 
+Additionally, `$stdout/$stderr/$stdin` can safely be accessed in a Ractor because they
+are ractor-local, while `STDOUT/STDERR/STDIN` will raise `Ractor::IsolationError`.
+
 ### Safety:
 
 Autocorrection is unsafe because `STDOUT` and `$stdout` may point to different

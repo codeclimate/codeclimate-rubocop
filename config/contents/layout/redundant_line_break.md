@@ -1,25 +1,29 @@
 Checks whether certain expressions, e.g. method calls, that could fit
 completely on a single line, are broken up into multiple lines unnecessarily.
 
-### Example: any configuration
+### Example:
     # bad
     foo(
       a,
       b
     )
 
+    # good
+    foo(a, b)
+
+    # bad
     puts 'string that fits on ' \
          'a single line'
 
+    # good
+    puts 'string that fits on a single line'
+
+    # bad
     things
       .select { |thing| thing.cond? }
       .join('-')
 
     # good
-    foo(a, b)
-
-    puts 'string that fits on a single line'
-
     things.select { |thing| thing.cond? }.join('-')
 
 ### Example: InspectBlocks: false (default)
