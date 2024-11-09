@@ -1,4 +1,4 @@
-Checks for duplicate elements in Regexp character classes.
+Checks for duplicate elements in `Regexp` character classes.
 
 ### Example:
 

@@ -17,8 +17,6 @@ one-line definitions are considered an offense.
     def b
     end
 
-### Example:
-
     # good
     def a
     end
@@ -36,8 +34,6 @@ one-line definitions are considered an offense.
     end
     def b
     end
-
-### Example:
 
     # good
     class A
@@ -59,8 +55,6 @@ one-line definitions are considered an offense.
     end
     def b
     end
-
-### Example:
 
     # good
     module A

@@ -1,4 +1,4 @@
-Checks for semicolon (;) preceded by space.
+Checks for semicolon (`;`) preceded by space.
 
 ### Example:
     # bad

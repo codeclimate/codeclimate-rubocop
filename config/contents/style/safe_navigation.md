@@ -12,9 +12,14 @@ of the method is. If this is converted to safe navigation,
 `foo&.bar` can start returning `nil` as well as what the method
 returns.
 
-The default for `MaxChainLength` is `2`
+The default for `MaxChainLength` is `2`.
 We have limited the cop to not register an offense for method chains
-that exceed this option is set.
+that exceed this option's value.
+
+NOTE: This cop will recognize offenses but not autocorrect code when the
+right hand side (RHS) of the `&&` statement is an `||` statement
+(eg. `foo && (foo.bar? || foo.baz?)`). It can be corrected
+manually by removing the `foo &&` and adding `&.` to each `foo` on the RHS.
 
 ### Safety:
 

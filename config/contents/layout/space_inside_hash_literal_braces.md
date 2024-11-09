@@ -7,9 +7,11 @@ surrounding space depending on configuration.
 
     # bad
     h = {a: 1, b: 2}
+    foo = {{ a: 1 } => { b: { c: 2 }}}
 
     # good
     h = { a: 1, b: 2 }
+    foo = { { a: 1 } => { b: { c: 2 } } }
 
 ### Example: EnforcedStyle: no_space
     # The `no_space` style enforces that hash literals have
@@ -17,9 +19,11 @@ surrounding space depending on configuration.
 
     # bad
     h = { a: 1, b: 2 }
+    foo = {{ a: 1 } => { b: { c: 2 }}}
 
     # good
     h = {a: 1, b: 2}
+    foo = {{a: 1} => {b: {c: 2}}}
 
 ### Example: EnforcedStyle: compact
     # The `compact` style normally requires a space inside

@@ -13,16 +13,12 @@ return value will be changed.
 ### Example:
 
     # bad
-
     def something
       x = Something.new
       x.attr = 5
     end
 
-### Example:
-
     # good
-
     def something
       x = Something.new
       x.attr = 5

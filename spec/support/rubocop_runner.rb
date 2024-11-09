@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require "cc/engine/rubocop"
 require "tmpdir"
 
 module RubocopRunner
   def self.included(example_group)
-    example_group.include FilesystemHelpers
+    example_group.include ::FilesystemHelpers
     example_group.around do |example|
       Dir.mktmpdir do |code|
         @code = code

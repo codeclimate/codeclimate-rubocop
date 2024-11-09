@@ -26,6 +26,19 @@ Names not on this list are likely to be meaningful and are allowed by default.
 
 This cop handles not only method forwarding but also forwarding to `super`.
 
+[NOTE]
+====
+Because of a bug in Ruby 3.3.0, when a block is referenced inside of another block,
+no offense will be registered until Ruby 3.4:
+
+```ruby
+def foo(&block)
+  # Using an anonymous block would be a syntax error on Ruby 3.3.0
+  block_method { bar(&block) }
+end
+```
+====
+
 ### Example:
     # bad
     def foo(*args, &block)

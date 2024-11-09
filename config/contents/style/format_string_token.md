@@ -1,13 +1,21 @@
-Use a consistent style for named format string tokens.
+Use a consistent style for tokens within a format string.
 
-NOTE: `unannotated` style cop only works for strings
-which are passed as arguments to those methods:
-`printf`, `sprintf`, `format`, `%`.
-The reason is that _unannotated_ format is very similar
-to encoded URLs or Date/Time formatting strings.
+By default, all strings are evaluated. In some cases, this may be undesirable,
+as they could be used as arguments to a method that does not consider
+them to be tokens, but rather other identifiers or just part of the string.
 
-This cop can be customized allowed methods with `AllowedMethods`.
-By default, there are no methods to allowed.
+`AllowedMethods` or `AllowedPatterns` can be configured with in order to mark specific
+methods as always allowed, thereby avoiding an offense from the cop. By default, there
+are no allowed methods.
+
+Additionally, the cop can be made conservative by configuring it with
+`Mode: conservative` (default `aggressive`). In this mode, tokens (regardless
+of `EnforcedStyle`) are only considered if used in the format string argument to the
+methods `printf`, `sprintf`, `format` and `%`.
+
+NOTE: Tokens in the `unannotated` style (eg. `%s`) are always treated as if
+configured with `Conservative: true`. This is done in order to prevent false positives,
+because this format is very similar to encoded URLs or Date/Time formatting strings.
 
 ### Example: EnforcedStyle: annotated (default)
 
@@ -76,3 +84,17 @@ if the number of them is less than or equals to
 
     # good
     redirect('foo/%{bar_id}')
+
+### Example: Mode: conservative, EnforcedStyle: annotated
+    # In `conservative` mode, offenses are only registered for strings
+    # given to a known formatting method.
+
+    # good
+    "%{greeting}"
+    foo("%{greeting}")
+
+    # bad
+    format("%{greeting}", greeting: 'Hello')
+    printf("%{greeting}", greeting: 'Hello')
+    sprintf("%{greeting}", greeting: 'Hello')
+    "%{greeting}" % { greeting: 'Hello' }

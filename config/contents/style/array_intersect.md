@@ -23,6 +23,7 @@ actually arrays while method `intersect?` is for arrays only.
     # bad
     (array1 & array2).any?
     (array1 & array2).empty?
+    (array1 & array2).none?
 
     # good
     array1.intersect?(array2)

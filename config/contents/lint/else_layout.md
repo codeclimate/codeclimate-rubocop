@@ -16,8 +16,6 @@ with `elsif` and `else`, you will have to correct it manually.
       do_that
     end
 
-### Example:
-
     # good
 
     # This code is compatible with the bad case. It will be autocorrected like this.

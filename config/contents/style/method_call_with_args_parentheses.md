@@ -1,5 +1,5 @@
 Enforces the presence (default) or absence of parentheses in
-method calls containing parameters.
+method calls containing arguments.
 
 In the default style (require_parentheses), macro methods are allowed.
 Additional methods can be added to the `AllowedMethods` or
@@ -56,6 +56,8 @@ Non-exhaustive list of examples:
     https://bugs.ruby-lang.org/issues/18396.
 - Parentheses are required in anonymous arguments, keyword arguments
     and block passing in Ruby 3.2.
+- Parentheses are required when the first argument is a beginless range or
+    the last argument is an endless range.
 
 ### Example: EnforcedStyle: require_parentheses (default)
 

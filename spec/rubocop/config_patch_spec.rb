@@ -4,7 +4,6 @@ require "spec_helper"
 
 module CC::Engine
   describe "Rubocop config patch" do
-
     it "prevents config from raising on obsolete cops" do
       config = RuboCop::Config.new(
         {
@@ -19,6 +18,7 @@ module CC::Engine
         expect { config.validate }.to_not raise_error
       end.to output(//).to_stderr
     end
+
     it "warns about obsolete cops" do
       config = RuboCop::Config.new(
         {
@@ -48,7 +48,6 @@ module CC::Engine
         },
         ".rubocop.yml"
       )
-
 
       expected = <<~EOM
         The `Style/TrailingComma` cop has been removed. Please use `Style/TrailingCommaInArguments`, `Style/TrailingCommaInArrayLiteral` and/or `Style/TrailingCommaInHashLiteral` instead.

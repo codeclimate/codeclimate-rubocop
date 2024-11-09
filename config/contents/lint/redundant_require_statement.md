@@ -12,17 +12,11 @@ Below are the features that each `TargetRubyVersion` targets.
     * 2.0+ ... `enumerator`
     * 2.1+ ... `thread`
     * 2.2+ ... Add `rational` and `complex` above
-    * 2.5+ ... Add `pp` above
     * 2.7+ ... Add `ruby2_keywords` above
     * 3.1+ ... Add `fiber` above
     * 3.2+ ... `set`
 
 This cop target those features.
-
-### Safety:
-
-This cop's autocorrection is unsafe because if `require 'pp'` is removed from one file,
-`NameError` can be encountered when another file uses `PP.pp`.
 
 ### Example:
     # bad

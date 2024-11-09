@@ -14,4 +14,4 @@ engine_config =
     {}
   end
 
-CC::Engine::Rubocop.new(Dir.pwd, engine_config, STDOUT).run
+CC::Engine::Rubocop.new(Dir.pwd, engine_config, $stdout).run

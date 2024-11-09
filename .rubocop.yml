@@ -1,8 +1,13 @@
-inherit_from: base_rubocop.yml
-
 require: rubocop-rspec
 
+inherit_from:
+  - .rubocop_todo.yml
+  - base_rubocop.yml
+
 Layout/MultilineOperationIndentation:
+  Enabled: false
+
+Naming/HeredocDelimiterNaming:
   Enabled: false
 
 Naming/FileName:
@@ -19,4 +24,25 @@ Style/TrailingCommaInHashLiteral:
   Enabled: false
 
 Style/TrailingCommaInArguments:
+  Enabled: false
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/DescribedClass:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MessageChain:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NotToNot:
   Enabled: false

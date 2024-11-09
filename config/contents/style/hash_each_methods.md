@@ -1,4 +1,4 @@
-Checks for uses of `each_key` and `each_value` Hash methods.
+Checks for uses of `each_key` and `each_value` `Hash` methods.
 
 NOTE: If you have an array of two-element arrays, you can put
     parentheses around the block arguments to indicate that you're not
