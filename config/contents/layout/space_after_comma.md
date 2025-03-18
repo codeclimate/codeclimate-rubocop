@@ -1,4 +1,4 @@
-Checks for comma (,) not followed by some kind of space.
+Checks for comma (`,`) not followed by some kind of space.
 
 ### Example:
 

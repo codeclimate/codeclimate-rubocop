@@ -1,4 +1,5 @@
-Checks if `return` or `return nil` is used in predicate method definitions.
+Checks for predicate method definitions that return `nil`.
+A predicate method should only return a boolean value.
 
 ### Safety:
 
@@ -25,6 +26,24 @@ from `nil` to `false` could potentially lead to incompatibility issues.
       return false if condition
 
       do_something?
+    end
+
+    # bad
+    def foo?
+      if condition
+        nil
+      else
+        true
+      end
+    end
+
+    # good
+    def foo?
+      if condition
+        false
+      else
+        true
+      end
     end
 
 ### Example: AllowedMethods: ['foo?']

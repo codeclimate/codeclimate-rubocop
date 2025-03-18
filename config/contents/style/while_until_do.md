@@ -12,8 +12,6 @@ Checks for uses of `do` in multi-line `while/until` statements.
       do_something(x.pop)
     end
 
-### Example:
-
     # bad
     until x.empty? do
       do_something(x.pop)

@@ -57,3 +57,9 @@ multi-line method call.
         qux: "b",
       }
     )
+
+### Example: AllowedMethods: ['some_method']
+
+    # good
+    some_method(foo, bar,
+      baz)

@@ -7,11 +7,7 @@ rather than meant to be part of the resulting symbols.
 ### Example:
 
     # bad
-
     %i(:foo, :bar)
 
-### Example:
-
     # good
-
     %i(foo bar)

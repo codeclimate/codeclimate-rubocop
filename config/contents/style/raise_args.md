@@ -9,7 +9,7 @@ will also suggest constructing error objects when the exception is
 passed multiple arguments.
 
 The exploded style has an `AllowedCompactTypes` configuration
-option that takes an Array of exception name Strings.
+option that takes an `Array` of exception name Strings.
 
 ### Safety:
 

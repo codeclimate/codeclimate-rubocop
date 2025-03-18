@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 require "cc/engine/rubocop"
 require "ostruct"
@@ -5,7 +7,7 @@ require "tmpdir"
 
 module CC::Engine
   describe Rubocop do
-    include RubocopRunner
+    include ::RubocopRunner
 
     describe "#run" do
       it "analyzes ruby files using rubocop" do
@@ -150,9 +152,9 @@ module CC::Engine
       end
 
       it "handles different locations properly" do
-        pseudo_source_range_klass = RuboCop::Cop::Offense::const_get(:PseudoSourceRange)
+        pseudo_source_range_klass = RuboCop::Cop::Offense.const_get(:PseudoSourceRange)
 
-        allow_any_instance_of(RuboCop::Cop::Team).to receive(:inspect_file).and_return(
+        allow_any_instance_of(RuboCop::Cop::Team).to receive_message_chain(:investigate, :offenses).and_return(
           [
             OpenStruct.new(
               location: pseudo_source_range_klass.new(
@@ -230,7 +232,7 @@ module CC::Engine
           i["description"] == "unexpected token tCOLON"
         end
 
-        expect(issue).to be nil
+        expect(issue).to be_nil
       end
 
       it "includes Ruby files even if they don't end with .rb" do

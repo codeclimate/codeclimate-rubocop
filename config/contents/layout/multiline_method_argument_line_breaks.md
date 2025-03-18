@@ -28,6 +28,18 @@ be on a separate line, see `Layout/FirstMethodArgumentLineBreak`.
 
 ### Example: AllowMultilineFinalElement: false (default)
 
+    # bad
+    foo(a, b,
+      c
+    )
+
+    # bad
+    foo(
+      a, b, {
+        foo: "bar",
+      }
+    )
+
     # good
     foo(
       a,
@@ -38,6 +50,18 @@ be on a separate line, see `Layout/FirstMethodArgumentLineBreak`.
     )
 
 ### Example: AllowMultilineFinalElement: true
+
+    # bad
+    foo(a, b,
+      c
+    )
+
+    # good
+    foo(
+      a, b, {
+        foo: "bar",
+      }
+    )
 
     # good
     foo(

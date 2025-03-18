@@ -1,4 +1,4 @@
-Looks for places where an subset of an Enumerable (array,
+Looks for places where a subset of an Enumerable (array,
 range, set, etc.; see note below) is calculated based on a `Regexp`
 match, and suggests `grep` or `grep_v` instead.
 
@@ -23,7 +23,7 @@ Additionally, the cop cannot guarantee that the receiver of
 so the correction may not be actually equivalent.
 
 ### Example:
-    # bad (select or find_all)
+    # bad (select, filter, or find_all)
     array.select { |x| x.match? /regexp/ }
     array.select { |x| /regexp/.match?(x) }
     array.select { |x| x =~ /regexp/ }

@@ -3,7 +3,7 @@ for numbers in the code (eg 1.2e4). Different styles are supported:
 
 * `scientific` which enforces a mantissa between 1 (inclusive) and 10 (exclusive).
 * `engineering` which enforces the exponent to be a multiple of 3 and the mantissa
-    to be between 0.1 (inclusive) and 10 (exclusive).
+    to be between 0.1 (inclusive) and 1000 (exclusive).
 * `integral` which enforces the mantissa to always be a whole number without
     trailing zeroes.
 

@@ -7,16 +7,15 @@ NOTE: Shadowing of variables in block passed to `Ractor.new` is allowed
 because `Ractor` should not access outer variables.
 eg. following style is encouraged:
 
-    ```ruby
-    worker_id, pipe = env
-    Ractor.new(worker_id, pipe) do |worker_id, pipe|
-    end
-    ```
+```ruby
+worker_id, pipe = env
+Ractor.new(worker_id, pipe) do |worker_id, pipe|
+end
+```
 
 ### Example:
 
     # bad
-
     def some_method
       foo = 1
 
@@ -25,10 +24,7 @@ eg. following style is encouraged:
       end
     end
 
-### Example:
-
     # good
-
     def some_method
       foo = 1
 

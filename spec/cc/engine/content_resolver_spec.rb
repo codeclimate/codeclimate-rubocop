@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 require "rubocop"
 require "cc/engine/content_resolver"
 
 module CC::Engine
   describe ContentResolver do
-    cops = RuboCop::Cop::Cop.all
+    cops = RuboCop::Cop::Registry.all
     # The more docs the better -- feel free to unwhitelist cops and add readups
     whitelist = File.read("./spec/support/currently_undocumented_cops.txt").lines.map(&:chomp)
 
@@ -17,7 +19,7 @@ module CC::Engine
         context "for #{cop.name}" do
           if whitelist.include?(cop.name)
             it "has no content" do
-              expect(ContentResolver.new(cop.name).content).to eq false
+              expect(ContentResolver.new(cop.name).content).to be false
             end
           else
             it "has content" do

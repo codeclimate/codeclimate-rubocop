@@ -9,8 +9,6 @@ Checks for the presence of `when` branches without a body.
     when baz
     end
 
-### Example:
-
     # good
     case condition
     when foo

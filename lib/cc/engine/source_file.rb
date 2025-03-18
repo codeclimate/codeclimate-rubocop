@@ -11,7 +11,7 @@ module CC
       end
 
       def inspect
-        rubocop_team.inspect_file(processed_source).each do |offense|
+        rubocop_team.investigate(processed_source).offenses.each do |offense|
           next if offense.disabled?
 
           io.print Issue.new(offense, display_path).to_json
@@ -26,7 +26,7 @@ module CC
       def processed_source
         processed_source = RuboCop::ProcessedSource.from_file(path, target_ruby_version)
         processed_source.config = config_store if processed_source.respond_to?(:config=)
-        processed_source.registry = RuboCop::Cop::Cop.registry if processed_source.respond_to?(:registry=)
+        processed_source.registry = RuboCop::Cop::Registry.global if processed_source.respond_to?(:registry=)
         processed_source
       end
 
@@ -35,7 +35,7 @@ module CC
       end
 
       def rubocop_team
-        RuboCop::Cop::Team.new(RuboCop::Cop::Cop.registry, config_store, display_cop_names: false)
+        RuboCop::Cop::Team.mobilize(RuboCop::Cop::Registry.global, config_store, display_cop_names: false)
       end
 
       def display_path
