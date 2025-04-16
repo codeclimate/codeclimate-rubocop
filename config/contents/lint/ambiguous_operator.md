@@ -9,8 +9,6 @@ method invocation without parentheses.
     # a `*` method invocation (i.e. `do_something.*(some_array)`).
     do_something *some_array
 
-### Example:
-
     # good
 
     # With parentheses, there's no ambiguity.

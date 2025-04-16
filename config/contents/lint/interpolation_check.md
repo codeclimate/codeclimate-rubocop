@@ -10,11 +10,7 @@ the expression `foo`.
 ### Example:
 
     # bad
-
     foo = 'something with #{interpolation} inside'
 
-### Example:
-
     # good
-
     foo = "something with #{interpolation} inside"

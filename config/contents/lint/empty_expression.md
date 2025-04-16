@@ -9,8 +9,6 @@ Checks for the presence of empty expressions.
       bar
     end
 
-### Example:
-
     # good
 
     foo = (some_expression)

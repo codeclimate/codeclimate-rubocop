@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 require "cc/engine/fingerprint"
 
@@ -21,7 +23,7 @@ module CC::Engine
 
         computed = Fingerprint.new(path, cop_name, message).compute
 
-        expect(computed).not_to be
+        expect(computed).to be_nil
       end
 
       it "computes same fingerprint regardles of message url detail" do

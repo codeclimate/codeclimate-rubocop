@@ -2,7 +2,7 @@ Checks the indentation of the first key in a hash literal
 where the opening brace and the first key are on separate lines. The
 other keys' indentations are handled by the HashAlignment cop.
 
-By default, Hash literals that are arguments in a method call with
+By default, `Hash` literals that are arguments in a method call with
 parentheses, and where the opening curly brace of the hash is on the
 same line as the opening parenthesis of the method call, shall have
 their first key indented one step (two spaces) more than the position

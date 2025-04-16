@@ -37,8 +37,6 @@ be configured through `DebuggerRequires`. It has the same structure as
       do_something
     end
 
-### Example:
-
     # bad (ok during development)
 
     # using byebug
@@ -46,8 +44,6 @@ be configured through `DebuggerRequires`. It has the same structure as
       byebug
       do_something
     end
-
-### Example:
 
     # good
 

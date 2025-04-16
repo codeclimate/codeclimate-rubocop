@@ -7,14 +7,10 @@ This cop checks for the problem outlined above.
 ### Example:
 
     # bad
-
     x&.foo.bar
     x&.foo + bar
     x&.foo[bar]
 
-### Example:
-
     # good
-
     x&.foo&.bar
     x&.foo || bar

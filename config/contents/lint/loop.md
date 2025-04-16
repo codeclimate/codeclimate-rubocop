@@ -15,17 +15,6 @@ loop body raises a `StopIteration` exception (which `Kernel#loop` rescues).
       do_something
     end while some_condition
 
-### Example:
-
-    # bad
-
-    # using until
-    begin
-      do_something
-    end until some_condition
-
-### Example:
-
     # good
 
     # while replacement
@@ -34,7 +23,12 @@ loop body raises a `StopIteration` exception (which `Kernel#loop` rescues).
       break unless some_condition
     end
 
-### Example:
+    # bad
+
+    # using until
+    begin
+      do_something
+    end until some_condition
 
     # good
 

@@ -11,7 +11,7 @@ start of the line where the `do` appeared.
 start of the line where the expression started.
 
 `either` (which is the default) : the `end` is allowed to be in either
-location. The autofixer will default to `start_of_line`.
+location. The autocorrect will default to `start_of_line`.
 
 ### Example: EnforcedStyleAlignWith: either (default)
     # bad

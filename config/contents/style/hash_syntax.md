@@ -63,13 +63,16 @@ The supported styles are:
     {a: 1, b: 2}
     {:c => 3, 'd' => 4}
 
-### Example: EnforcedShorthandSyntax: always (default)
+### Example: EnforcedShorthandSyntax: always
 
     # bad
     {foo: foo, bar: bar}
 
     # good
     {foo:, bar:}
+
+    # good - allowed to mix syntaxes
+    {foo:, bar: baz}
 
 ### Example: EnforcedShorthandSyntax: never
 
@@ -79,7 +82,7 @@ The supported styles are:
     # good
     {foo: foo, bar: bar}
 
-### Example: EnforcedShorthandSyntax: either
+### Example: EnforcedShorthandSyntax: either (default)
 
     # good
     {foo: foo, bar: bar}

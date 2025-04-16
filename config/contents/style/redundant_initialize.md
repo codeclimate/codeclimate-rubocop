@@ -6,6 +6,9 @@ an argument that accepts multiple values (`restarg`, `kwrestarg`, etc.) it
 will not register an offense, because it allows the initializer to take a different
 number of arguments as its superclass potentially does.
 
+NOTE: If an initializer takes any arguments and has an empty body, RuboCop
+assumes it to *not* be redundant. This is to prevent potential `ArgumentError`.
+
 NOTE: If an initializer argument has a default value, RuboCop assumes it
 to *not* be redundant.
 
@@ -15,8 +18,10 @@ initializer.
 
 ### Safety:
 
-This cop is unsafe because if subclass overrides `initialize` method with
-a different arity than superclass.
+This cop is unsafe because removing an empty initializer may alter
+the behavior of the code, particularly if the superclass initializer
+raises an exception. In such cases, the empty initializer may act as
+a safeguard to prevent unintended errors from propagating.
 
 ### Example:
     # bad
@@ -62,6 +67,10 @@ a different arity than superclass.
     # good (default value)
     def initialize(a, b: 5)
       super
+    end
+
+    # good (changes the parameter requirements)
+    def initialize(_)
     end
 
     # good (changes the parameter requirements)

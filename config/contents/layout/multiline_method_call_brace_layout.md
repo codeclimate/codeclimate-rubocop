@@ -7,7 +7,7 @@ If a method call's opening brace is on the same line as the first
 argument of the call, then the closing brace should be on the same
 line as the last argument of the call.
 
-If an method call's opening brace is on the line above the first
+If a method call's opening brace is on the line above the first
 argument of the call, then the closing brace should be on the line
 below the last argument of the call.
 

@@ -4,7 +4,7 @@ cop is not enabled, the default `EnforcedStyle` is `single_quotes`.
 
 String interpolation is always kept in double quotes.
 
-Note: `Lint/SymbolConversion` can be used in parallel to ensure that symbols
+NOTE: `Lint/SymbolConversion` can be used in parallel to ensure that symbols
 are not quoted that don't need to be. This cop is for configuring the quoting
 style to use for symbols that require quotes.
 

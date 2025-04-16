@@ -17,9 +17,5 @@ its receiver in place.
     args += foo
     hash.merge!(other)
 
-    # bad
-    self.foo = foo.concat(ary)
-
     # good
     foo.concat(ary)
-    self.foo += ary

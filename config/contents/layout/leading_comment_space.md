@@ -43,3 +43,40 @@ or rackup options.
 
     #ruby=2.7.0
     #ruby-gemset=myproject
+
+### Example: AllowRBSInlineAnnotation: false (default)
+
+    # bad
+
+    include Enumerable #[Integer]
+
+    attr_reader :name #: String
+    attr_reader :age  #: Integer?
+
+### Example: AllowRBSInlineAnnotation: true
+
+    # good
+
+    include Enumerable #[Integer]
+
+    attr_reader :name #: String
+    attr_reader :age  #: Integer?
+
+### Example: AllowSteepAnnotation: false (default)
+
+    # bad
+    [1, 2, 3].each_with_object([]) do |n, list| #$ Array[Integer]
+      list << n
+    end
+
+    name = 'John'      #: String
+
+### Example: AllowSteepAnnotation: true
+
+    # good
+
+    [1, 2, 3].each_with_object([]) do |n, list| #$ Array[Integer]
+      list << n
+    end
+
+    name = 'John'      #: String

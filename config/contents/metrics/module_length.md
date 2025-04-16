@@ -3,10 +3,11 @@ Comment lines can optionally be ignored.
 The maximum allowed length is configurable.
 
 You can set constructs you want to fold with `CountAsOne`.
-Available are: 'array', 'hash', 'heredoc', and 'method_call'. Each construct
-will be counted as one line regardless of its actual size.
 
-### Example: CountAsOne: ['array', 'heredoc', 'method_call']
+Available are: 'array', 'hash', 'heredoc', and 'method_call'.
+Each construct will be counted as one line regardless of its actual size.
+
+### Example: CountAsOne: ['array', 'hash', 'heredoc', 'method_call']
 
     module M
       ARRAY = [         # +1
@@ -14,7 +15,7 @@ will be counted as one line regardless of its actual size.
         2
       ]
 
-      HASH = {          # +3
+      HASH = {          # +1
         key: 'value'
       }
 
@@ -27,4 +28,4 @@ will be counted as one line regardless of its actual size.
         1,
         2
       )
-    end                 # 6 points
+    end                 # 4 points

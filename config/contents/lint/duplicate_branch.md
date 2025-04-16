@@ -10,6 +10,9 @@ the above basic literal values.
 With `IgnoreConstantBranches: true`, branches are not registered
 as offenses if they return a constant value.
 
+With `IgnoreDuplicateElseBranch: true`, in conditionals with multiple branches,
+duplicate 'else' branches are not registered as offenses.
+
 ### Example:
     # bad
     if foo
@@ -76,4 +79,14 @@ as offenses if they return a constant value.
     when "medium" then MEDIUM_SIZE
     when "large" then LARGE_SIZE
     else MEDIUM_SIZE
+    end
+
+### Example: IgnoreDuplicateElseBranch: true
+    # good
+    if foo
+      do_foo
+    elsif bar
+      do_bar
+    else
+      do_foo
     end

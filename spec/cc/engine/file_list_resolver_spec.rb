@@ -1,12 +1,15 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 require "rubocop"
 require "cc/engine/file_list_resolver"
 
 module CC::Engine
   describe FileListResolver do
-    include FilesystemHelpers
+    include ::FilesystemHelpers
 
     before { @code = Dir.mktmpdir }
+
     let(:rubocop_config) { RuboCop::ConfigStore.new }
 
     it "uses default include path" do
@@ -25,7 +28,7 @@ module CC::Engine
         create_source_file("bin/some_script", "#!/usr/bin/env ruby")
 
         resolver = FileListResolver.new(root: @code, engine_config: {}, config_store: rubocop_config)
-        expect(resolver.expanded_list).to eq %w[a.rb bin/some_script].map { |fn| Pathname.new(fn).realpath.to_s }
+        expect(resolver.expanded_list).to eq(%w[a.rb bin/some_script].map { |fn| Pathname.new(fn).realpath.to_s })
       end
     end
 

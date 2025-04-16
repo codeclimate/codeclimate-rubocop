@@ -12,16 +12,12 @@ Checks for nested method definitions.
       end
     end
 
-### Example:
-
     # good
 
     def foo
       bar = -> { puts 'hello' }
       bar.call
     end
-
-### Example:
 
     # good
 
@@ -41,8 +37,6 @@ Checks for nested method definitions.
         end
       end
     end
-
-### Example:
 
     # good
 

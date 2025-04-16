@@ -1,4 +1,4 @@
-Checks for exact regexp match inside Regexp literals.
+Checks for exact regexp match inside `Regexp` literals.
 
 ### Example:
 

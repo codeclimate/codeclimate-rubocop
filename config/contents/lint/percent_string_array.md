@@ -17,11 +17,7 @@ and that might have been done purposely.
 ### Example:
 
     # bad
-
     %w('foo', "bar")
 
-### Example:
-
     # good
-
     %w(foo bar)

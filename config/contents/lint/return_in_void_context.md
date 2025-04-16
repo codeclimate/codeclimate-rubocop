@@ -14,8 +14,6 @@ where the value will be ignored. (initialize and setter methods)
       return 42
     end
 
-### Example:
-
     # good
     def initialize
       foo

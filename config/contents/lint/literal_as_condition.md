@@ -13,12 +13,15 @@ NOTE: Literals in `case-in` condition where the match variable is used in
     end
 
     # bad
-    if some_var && true
+    # We're only interested in the left hand side being a truthy literal,
+    # because it affects the evaluation of the &&, whereas the right hand
+    # side will be conditionally executed/called and can be a literal.
+    if true && some_var
       do_something
     end
 
     # good
-    if some_var && some_condition
+    if some_var
       do_something
     end
 

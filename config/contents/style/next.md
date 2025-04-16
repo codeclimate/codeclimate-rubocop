@@ -41,3 +41,34 @@ Use `next` to skip iteration instead of a condition at the end.
       next unless a == 1
       puts a
     end
+
+### Example: AllowConsecutiveConditionals: false (default)
+    # bad
+    [1, 2].each do |a|
+      if a == 1
+        puts a
+      end
+      if a == 2
+        puts a
+      end
+    end
+
+    # good
+    [1, 2].each do |a|
+      if a == 1
+        puts a
+      end
+      next unless a == 2
+      puts a
+    end
+
+### Example: AllowConsecutiveConditionals: true
+    # good
+    [1, 2].each do |a|
+      if a == 1
+        puts a
+      end
+      if a == 2
+        puts a
+      end
+    end

@@ -46,7 +46,6 @@ styles are 'consistent' and 'align_brackets'. Here are examples:
     # defined inside a method call.
 
     # bad
-    # consistent
     array = [
       :value
     ]
@@ -67,13 +66,11 @@ styles are 'consistent' and 'align_brackets'. Here are examples:
     # brackets are indented to the same position.
 
     # bad
-    # align_brackets
     and_now_for_something = [
                               :completely_different
     ]
 
     # good
-    # align_brackets
     and_now_for_something = [
                               :completely_different
                             ]

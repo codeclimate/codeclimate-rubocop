@@ -4,7 +4,6 @@ definitions.
 ### Example:
 
     # bad
-
     def foo
       1
     end
@@ -13,20 +12,14 @@ definitions.
       2
     end
 
-### Example:
-
     # bad
-
     def foo
       1
     end
 
     alias foo bar
 
-### Example:
-
     # good
-
     def foo
       1
     end
@@ -35,10 +28,7 @@ definitions.
       2
     end
 
-### Example:
-
     # good
-
     def foo
       1
     end

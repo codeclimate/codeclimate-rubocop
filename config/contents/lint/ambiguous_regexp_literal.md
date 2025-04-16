@@ -10,8 +10,6 @@ a method invocation without parentheses.
     # (i.e. `do_something./(pattern)./(i)`)
     do_something /pattern/i
 
-### Example:
-
     # good
 
     # With parentheses, there's no ambiguity.
